@@ -52,6 +52,26 @@
   .toc a.active{ background: var(--kraken-purple); color:#fff; }
   @media(max-width: 920px){ .toc{ display:none; } }
 
+  /* ---------- mobile menu ---------- */
+  .menu-btn{ display:none; background:none; border:1px solid var(--border-gray); border-radius:9px;
+    width:40px; height:40px; cursor:pointer; align-items:center; justify-content:center;
+    flex-direction:column; gap:4px; padding:0; }
+  .menu-btn span{ display:block; width:18px; height:2px; background:#101114; border-radius:2px;
+    transition: transform .22s var(--ease), opacity .22s var(--ease); }
+  .menu-btn.open span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+  .menu-btn.open span:nth-child(2){ opacity:0; }
+  .menu-btn.open span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+  .mobile-menu{ display:none; position:fixed; top:64px; left:0; right:0; z-index:49;
+    background: rgba(255,255,255,0.97); backdrop-filter: blur(24px);
+    border-bottom:1px solid var(--border-gray); padding:8px;
+    max-height: calc(100vh - 64px); overflow:auto; }
+  .mobile-menu.open{ display:grid; grid-template-columns:1fr 1fr; gap:4px; }
+  .mobile-menu a{ font-size:15px; color:var(--cool-gray); text-decoration:none;
+    padding:12px 14px; border-radius:10px; }
+  .mobile-menu a:hover{ background: var(--kraken-purple-subtle); color: var(--kraken-purple); text-decoration:none; }
+  @media(max-width: 920px){ .menu-btn{ display:flex; } }
+  @media(min-width: 921px){ .mobile-menu{ display:none !important; } }
+
   .wrap{ max-width: var(--maxw); margin:0 auto; padding: 0 24px; }
 
   /* ---------- hero ---------- */
@@ -282,8 +302,41 @@
       <a href="#c11">Teams</a>
       <a href="#c12">Judging</a>
     </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#c1">Distance</a>
+  <a href="#c2">Character</a>
+  <a href="#c3">Discomfort</a>
+  <a href="#c4">Sponge</a>
+  <a href="#c5">Imperfectionist</a>
+  <a href="#c6">Play</a>
+  <a href="#c7">Passion</a>
+  <a href="#c8">Detours</a>
+  <a href="#c9">Compass</a>
+  <a href="#c10">Tutor</a>
+  <a href="#c11">Teams</a>
+  <a href="#c12">Judging</a>
+</div>
+<script>
+  (function(){
+    var btn = document.getElementById('menuBtn');
+    var menu = document.getElementById('mobileMenu');
+    if(!btn || !menu) return;
+    function close(){ btn.classList.remove('open'); menu.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+    function toggle(){
+      var open = menu.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    btn.addEventListener('click', toggle);
+    menu.addEventListener('click', function(e){ if(e.target.tagName === 'A') close(); });
+    window.addEventListener('resize', function(){ if(window.innerWidth > 920) close(); });
+  })();
+</script>
 
 <!-- ===================== HERO ===================== -->
 <header class="hero">
