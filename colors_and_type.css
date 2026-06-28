@@ -1,0 +1,357 @@
+/* ========================================================================
+   KRAKEN DESIGN SYSTEM — Core tokens
+   Import once at the top of any HTML file:
+   <link rel="stylesheet" href="/colors_and_type.css">
+   ======================================================================== */
+
+/* --- Fonts -------------------------------------------------------------- */
+/* IBM Plex Sans loaded from Google Fonts as the Kraken-Product fallback.
+   If real Kraken-Brand / Kraken-Product .woff2 files become available,
+   replace the @import below with local @font-face declarations. */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* =====================================================================
+     COLORS — Brand
+     ===================================================================== */
+  --kraken-purple:        #7132f5;  /* Primary brand — CTAs, links */
+  --kraken-purple-dark:   #5741d8;  /* Outlined borders, hover states */
+  --kraken-purple-deep:   #5b1ecf;  /* Deepest purple — press state */
+  --kraken-purple-subtle: rgba(133, 91, 251, 0.16); /* Subtle bg tint */
+
+  /* =====================================================================
+     COLORS — Neutrals (cool blue-gray scale)
+     ===================================================================== */
+  --near-black:    #101114;  /* Primary text */
+  --cool-gray:     #686b82;  /* Body secondary */
+  --silver-blue:   #9497a9;  /* Muted / tertiary */
+  --border-gray:   #dedee5;  /* Dividers */
+  --white:         #ffffff;  /* Primary surface */
+
+  --hairline:      rgba(104, 107, 130, 0.24);
+  --neutral-subtle: rgba(148, 151, 169, 0.08);
+  --neutral-chip:   rgba(104, 107, 130, 0.12);
+  --neutral-chip-text: #484b5e;
+
+  /* =====================================================================
+     COLORS — Semantic
+     ===================================================================== */
+  --success:        #149e61;
+  --success-subtle: rgba(20, 158, 97, 0.16);
+  --success-text:   #026b3f;
+
+  --danger:         #e2495b;
+  --danger-subtle:  rgba(226, 73, 91, 0.12);
+  --danger-text:    #b01a2b;
+
+  --warning:        #d59307;
+  --warning-subtle: rgba(213, 147, 7, 0.12);
+
+  /* =====================================================================
+     SEMANTIC ROLE TOKENS
+     ===================================================================== */
+  --fg-1: var(--near-black);     /* Primary text */
+  --fg-2: var(--cool-gray);      /* Secondary text */
+  --fg-3: var(--silver-blue);    /* Tertiary / muted */
+  --fg-brand: var(--kraken-purple);
+  --fg-on-brand: var(--white);
+
+  --bg-1: var(--white);          /* Primary surface */
+  --bg-2: #fafafb;               /* Subtle app chrome */
+  --bg-3: #f4f4f7;               /* Quiet rows */
+  --bg-brand: var(--kraken-purple);
+  --bg-brand-subtle: var(--kraken-purple-subtle);
+
+  --border-1: var(--border-gray);
+  --border-2: var(--hairline);
+  --border-brand: var(--kraken-purple-dark);
+
+  /* =====================================================================
+     TYPOGRAPHY — Families
+     ===================================================================== */
+  --font-brand:   'Kraken-Brand', 'IBM Plex Sans', Helvetica, Arial, sans-serif;
+  --font-product: 'Kraken-Product', 'IBM Plex Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono:    'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* =====================================================================
+     TYPOGRAPHY — Scale
+     ===================================================================== */
+  --fs-display:   48px;
+  --fs-h1:        36px;
+  --fs-h2:        28px;
+  --fs-h3:        22px;
+  --fs-body:      16px;
+  --fs-caption:   14px;
+  --fs-small:     12px;
+  --fs-micro:     7px;
+
+  --lh-display:   1.17;
+  --lh-h1:        1.22;
+  --lh-h2:        1.29;
+  --lh-h3:        1.20;
+  --lh-body:      1.38;
+  --lh-caption:   1.43;
+  --lh-small:     1.33;
+
+  --tracking-display: -1px;
+  --tracking-h1:      -0.5px;
+  --tracking-h2:      -0.5px;
+  --tracking-normal:  normal;
+
+  /* =====================================================================
+     SPACING — 1..25px ladder per the brief
+     ===================================================================== */
+  --sp-1:  1px;
+  --sp-2:  2px;
+  --sp-3:  3px;
+  --sp-4:  4px;
+  --sp-5:  5px;
+  --sp-6:  6px;
+  --sp-8:  8px;
+  --sp-10: 10px;
+  --sp-12: 12px;
+  --sp-13: 13px;
+  --sp-15: 15px;
+  --sp-16: 16px;
+  --sp-20: 20px;
+  --sp-24: 24px;
+  --sp-25: 25px;
+
+  /* =====================================================================
+     RADII
+     ===================================================================== */
+  --r-3:    3px;
+  --r-6:    6px;
+  --r-8:    8px;
+  --r-10:   10px;
+  --r-12:   12px;   /* Buttons — signature */
+  --r-16:   16px;   /* Cards */
+  --r-pill: 9999px;
+  --r-full: 50%;
+
+  /* =====================================================================
+     ELEVATION
+     ===================================================================== */
+  --shadow-subtle: 0px 4px 24px rgba(0, 0, 0, 0.03);
+  --shadow-micro:  0px 1px 4px  rgba(16, 24, 40, 0.04);
+  --shadow-nav:    0px 1px 0px  var(--border-gray);
+
+  /* =====================================================================
+     MOTION
+     ===================================================================== */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:  120ms;
+  --dur-base:  180ms;
+  --dur-slow:  280ms;
+
+  /* =====================================================================
+     BREAKPOINTS (reference only — use in media queries)
+     ===================================================================== */
+  --bp-xs: 375px;
+  --bp-sm: 425px;
+  --bp-md: 640px;
+  --bp-lg: 768px;
+  --bp-xl: 1024px;
+  --bp-2xl: 1280px;
+  --bp-3xl: 1536px;
+}
+
+/* ========================================================================
+   RESET (light — plays nice with inline styles)
+   ======================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--font-product);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg-1);
+  background: var(--bg-1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ========================================================================
+   TYPOGRAPHY — Element defaults
+   ======================================================================== */
+.display, h1.display {
+  font-family: var(--font-brand);
+  font-weight: 700;
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-display);
+  color: var(--fg-1);
+  margin: 0;
+}
+
+h1, .h1 {
+  font-family: var(--font-brand);
+  font-weight: 700;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-h1);
+  letter-spacing: var(--tracking-h1);
+  color: var(--fg-1);
+  margin: 0;
+}
+
+h2, .h2 {
+  font-family: var(--font-brand);
+  font-weight: 700;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--tracking-h2);
+  color: var(--fg-1);
+  margin: 0;
+}
+
+h3, .h3 {
+  font-family: var(--font-product);
+  font-weight: 600;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  color: var(--fg-1);
+  margin: 0;
+}
+
+p, .body {
+  font-family: var(--font-product);
+  font-weight: 400;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--fg-1);
+  margin: 0;
+}
+
+.body-medium {
+  font-family: var(--font-product);
+  font-weight: 500;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.caption {
+  font-family: var(--font-product);
+  font-weight: 400;
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
+  color: var(--fg-2);
+}
+
+.small {
+  font-family: var(--font-product);
+  font-weight: 400;
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--fg-2);
+}
+
+.micro {
+  font-family: var(--font-product);
+  font-weight: 500;
+  font-size: var(--fs-micro);
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+a {
+  color: var(--fg-brand);
+  text-decoration: none;
+  transition: opacity var(--dur-fast) var(--ease-standard);
+}
+a:hover { text-decoration: underline; }
+
+/* ========================================================================
+   BUTTONS
+   ======================================================================== */
+.btn {
+  font-family: var(--font-product);
+  font-weight: 600;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  border: 0;
+  cursor: pointer;
+  padding: 13px 16px;
+  border-radius: var(--r-12);
+  transition: background var(--dur-fast) var(--ease-standard),
+              color var(--dur-fast) var(--ease-standard),
+              border-color var(--dur-fast) var(--ease-standard);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn--primary {
+  background: var(--kraken-purple);
+  color: var(--white);
+}
+.btn--primary:hover  { background: var(--kraken-purple-dark); }
+.btn--primary:active { background: var(--kraken-purple-deep); }
+
+.btn--outlined {
+  background: var(--white);
+  color: var(--kraken-purple-dark);
+  border: 1px solid var(--kraken-purple-dark);
+  padding: 12px 15px; /* -1px for border */
+}
+.btn--outlined:hover  { background: var(--kraken-purple-subtle); }
+
+.btn--subtle {
+  background: var(--kraken-purple-subtle);
+  color: var(--kraken-purple);
+  padding: 8px 12px;
+}
+.btn--subtle:hover  { background: rgba(133, 91, 251, 0.24); }
+
+.btn--white {
+  background: var(--white);
+  color: var(--near-black);
+  border-radius: var(--r-10);
+  box-shadow: var(--shadow-subtle);
+}
+
+.btn--secondary {
+  background: var(--neutral-subtle);
+  color: var(--near-black);
+}
+.btn--secondary:hover { background: var(--neutral-chip); }
+
+/* ========================================================================
+   BADGES
+   ======================================================================== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-product);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: var(--r-6);
+}
+.badge--success {
+  background: var(--success-subtle);
+  color: var(--success-text);
+}
+.badge--neutral {
+  background: var(--neutral-chip);
+  color: var(--neutral-chip-text);
+  border-radius: var(--r-8);
+}
+
+/* ========================================================================
+   CARDS
+   ======================================================================== */
+.card {
+  background: var(--white);
+  border-radius: var(--r-16);
+  border: 1px solid var(--border-gray);
+  padding: var(--sp-24);
+}
+.card--shadow {
+  border: 0;
+  box-shadow: var(--shadow-subtle);
+}
