@@ -50,7 +50,13 @@
     padding:6px 11px; border-radius:9999px; transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease); }
   .toc a:hover{ background: var(--kraken-purple-subtle); color: var(--kraken-purple); text-decoration:none; }
   .toc a.active{ background: var(--kraken-purple); color:#fff; }
-  @media(max-width: 920px){ .toc{ display:none; } }
+  .toc-next{ display:none; flex:0 0 auto; width:27px; height:27px; border-radius:50%;
+    border:1px solid var(--border-gray); background:#fff; color:var(--kraken-purple);
+    font-size:17px; line-height:1; cursor:pointer; align-items:center; justify-content:center;
+    padding:0 0 2px; box-shadow:0 2px 7px rgba(40,30,90,.12); transition:background .15s; }
+  .toc-next:hover{ background:var(--kraken-purple-subtle); }
+  .toc-next.show{ display:flex; }
+  @media(max-width: 920px){ .toc{ display:none; } .toc-next{ display:none !important; } }
 
   /* ---------- mobile menu ---------- */
   .menu-btn{ display:none; background:none; border:1px solid var(--border-gray); border-radius:9px;
@@ -277,6 +283,29 @@
     opacity:0; pointer-events:none; transition:opacity .4s var(--ease), transform .4s var(--ease); }
   #welcome.show{ opacity:1; transform:translateX(-50%) translateY(0); }
 
+  /* ---------- first-steps walkthrough ---------- */
+  #tour{ position:fixed; inset:0; z-index:300; display:flex; align-items:center; justify-content:center;
+    background:rgba(20,16,40,0.46); backdrop-filter:blur(3px); padding:24px; }
+  #tour[hidden]{ display:none; }
+  #tour .tcard{ background:#fff; border-radius:18px; box-shadow:0 24px 70px rgba(30,20,80,.30);
+    width:100%; max-width:440px; padding:30px 30px 24px; }
+  #tour .tnum{ font-size:12px; font-weight:600; letter-spacing:.6px; text-transform:uppercase;
+    color:var(--kraken-purple); margin:0 0 10px; }
+  #tour h3{ font-family:var(--font-brand); font-size:23px; letter-spacing:-.5px; margin:0 0 10px; }
+  #tour p{ color:var(--cool-gray); font-size:15px; line-height:1.55; margin:0; min-height:96px; }
+  #tour .trow{ display:flex; align-items:center; justify-content:space-between; margin-top:20px; }
+  #tour .dots{ display:flex; gap:7px; }
+  #tour .dots i{ width:8px; height:8px; border-radius:50%; background:var(--border-gray); display:block;
+    transition:background .2s, width .2s; }
+  #tour .dots i.on{ background:var(--kraken-purple); width:20px; border-radius:9999px; }
+  #tour .tbtns{ display:flex; align-items:center; gap:12px; }
+  #tour .skip{ font-size:14px; color:var(--cool-gray); background:none; border:none; cursor:pointer; padding:6px; }
+  #tour .skip:hover{ color:#101114; }
+  #tour .next{ font-family:inherit; font-size:14.5px; font-weight:600; color:#fff; background:var(--kraken-purple);
+    border:none; border-radius:10px; padding:11px 20px; cursor:pointer; transition:background .15s, transform .05s; }
+  #tour .next:hover{ background:var(--kraken-purple-deep); }
+  #tour .next:active{ transform:translateY(1px); }
+
   .userchip{ display:flex; align-items:center; gap:7px; font-size:13px; color:var(--cool-gray); white-space:nowrap; }
   .userchip b{ color:#101114; font-weight:600; }
   .userchip a{ color:var(--kraken-purple); text-decoration:none; cursor:pointer; }
@@ -298,6 +327,21 @@
   </div>
 </div>
 <div id="welcome" role="status" aria-live="polite"></div>
+
+<div id="tour" hidden>
+  <div class="tcard">
+    <div class="tnum" id="tourNum"></div>
+    <h3 id="tourTitle"></h3>
+    <p id="tourBody"></p>
+    <div class="trow">
+      <div class="dots" id="tourDots"></div>
+      <div class="tbtns">
+        <button class="skip" id="tourSkip">Skip</button>
+        <button class="next" id="tourNext">Next →</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script>
 (function(){
@@ -326,6 +370,11 @@
   var err  = document.getElementById('gateErr');
   var btn  = document.getElementById('gateBtn');
   var welcome = document.getElementById('welcome');
+  var tour=document.getElementById('tour'), tourNum=document.getElementById('tourNum'),
+      tourTitle=document.getElementById('tourTitle'), tourBody=document.getElementById('tourBody'),
+      tourDots=document.getElementById('tourDots'), tourNext=document.getElementById('tourNext'),
+      tourSkip=document.getElementById('tourSkip');
+  var tourIdx=0, tourSteps=[];
 
   NAMES.slice().sort(function(a,b){ return a.localeCompare(b,'tr'); }).forEach(function(n){
     var o=document.createElement('option'); o.value=n; o.textContent=n; sel.appendChild(o);
@@ -371,13 +420,39 @@
     });
   }
 
+  function buildTour(name){
+    var fn = firstName(name);
+    tourSteps = [
+      { n:'Welcome', t:'Welcome, '+fn+' 👋',
+        b:'This is your Hidden Potential training guide — twelve ideas reframed for the Mozaik team. There’s no rush: you can take it one concept at a time and pick up where you left off whenever you come back.' },
+      { n:'Step 1 of 3', t:'Jump to any concept',
+        b:'Use the menu along the top to go straight to any of the 12 concepts — Distance, Character, Discomfort and the rest. The menu scrolls sideways, so slide right to reach Tutor, Teams and Judging. On a phone, tap the ☰ icon to open the full list.' },
+      { n:'Step 2 of 3', t:'Read at your own pace',
+        b:'Each concept is a short idea with a simple visual and a “what this means for Mozaik” takeaway. Scroll down to begin with the first one, then keep going whenever you’re ready for the next.' },
+      { n:'Step 3 of 3', t:'Come back anytime',
+        b:'You can leave and return as often as you like — use “Sign out” in the top bar when you’re done. That’s everything you need. Ready to start?' }
+    ];
+  }
+  function renderTour(){
+    var s = tourSteps[tourIdx], last = tourIdx === tourSteps.length-1;
+    tourNum.textContent = s.n; tourTitle.textContent = s.t; tourBody.textContent = s.b;
+    tourNext.textContent = last ? 'Start exploring →' : 'Next →';
+    tourSkip.style.display = last ? 'none' : '';
+    tourDots.innerHTML='';
+    for(var i=0;i<tourSteps.length;i++){ var d=document.createElement('i'); if(i===tourIdx) d.className='on'; tourDots.appendChild(d); }
+  }
+  function startTour(name){ buildTour(name); tourIdx=0; renderTour(); tour.hidden=false; }
+  function closeTour(){ tour.hidden=true; }
+  if(tourNext){ tourNext.addEventListener('click', function(){ if(tourIdx>=tourSteps.length-1){ closeTour(); } else { tourIdx++; renderTour(); } }); }
+  if(tourSkip){ tourSkip.addEventListener('click', closeTour); }
+
   function startSession(name, isFresh){
     sessionUser=name; sessionStart=Date.now(); ended=false;
     document.body.classList.remove('locked');
     gate.hidden = true;
     addUserChip(name);
-    if(isFresh){ send('login', {}); }
-    showWelcome(name);
+    if(isFresh){ send('login', {}); startTour(name); }
+    else { showWelcome(name); }
     window.addEventListener('pagehide', endSession);
     window.addEventListener('beforeunload', endSession);
     document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='hidden') endSession(); });
@@ -497,6 +572,37 @@
     btn.addEventListener('click', toggle);
     menu.addEventListener('click', function(e){ if(e.target.tagName === 'A') close(); });
     window.addEventListener('resize', function(){ if(window.innerWidth > 920) close(); });
+  })();
+</script>
+<script>
+  (function(){
+    var toc = document.getElementById('toc');
+    if(!toc) return;
+    var chev = document.createElement('button');
+    chev.className = 'toc-next'; chev.id = 'tocNext';
+    chev.setAttribute('aria-label', 'Show more concepts');
+    chev.innerHTML = '›';
+    toc.insertAdjacentElement('afterend', chev);
+    chev.addEventListener('click', function(){ toc.scrollBy({ left: 180, behavior: 'smooth' }); });
+    function update(){
+      var max = toc.scrollWidth - toc.clientWidth;
+      var atStart = toc.scrollLeft <= 2;
+      var atEnd = toc.scrollLeft >= max - 2;
+      var mask;
+      if (max <= 2) { mask = 'none'; }
+      else {
+        var l = atStart ? '#000 0' : 'transparent 0, #000 20px';
+        var r = atEnd ? '#000 100%' : '#000 calc(100% - 28px), transparent 100%';
+        mask = 'linear-gradient(to right, ' + l + ', ' + r + ')';
+      }
+      toc.style.webkitMaskImage = mask;
+      toc.style.maskImage = mask;
+      chev.classList.toggle('show', max > 2 && !atEnd);
+    }
+    toc.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+    setTimeout(update, 300);
   })();
 </script>
 
