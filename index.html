@@ -243,6 +243,168 @@
 </head>
 <body>
 
+<!-- ===================== ACCESS GATE ===================== -->
+<style>
+  #gate{ position:fixed; inset:0; z-index:1000; display:flex; align-items:center; justify-content:center;
+    background: linear-gradient(160deg,#f6f5fb 0%, #ece9f9 100%); padding:24px; }
+  #gate[hidden]{ display:none; }
+  #gate .card{ background:#fff; border:1px solid var(--border-gray); border-radius:18px;
+    box-shadow: 0 22px 64px rgba(40,30,90,0.20); width:100%; max-width:420px; padding:36px 32px; }
+  #gate .glogo{ display:flex; align-items:center; gap:10px; margin-bottom:22px; }
+  #gate .glogo .chip{ width:36px;height:36px;border-radius:9px;background:var(--kraken-purple);color:#fff;
+    font-family:var(--font-brand);font-weight:700;font-size:20px;display:flex;align-items:center;justify-content:center;}
+  #gate .glogo .wm{ font-family:var(--font-brand);font-weight:700;font-size:19px;letter-spacing:-.5px;}
+  #gate .glogo .wm span{ color:var(--cool-gray);font-weight:500;}
+  #gate h2{ font-family:var(--font-brand); font-size:24px; letter-spacing:-.6px; margin:0 0 4px;}
+  #gate p.hint{ color:var(--cool-gray); font-size:14px; margin:0 0 22px;}
+  #gate label{ display:block; font-size:12px; font-weight:600; color:var(--cool-gray);
+    text-transform:uppercase; letter-spacing:.5px; margin:0 0 7px;}
+  #gate select, #gate input{ width:100%; box-sizing:border-box; font-size:15px; font-family:inherit;
+    padding:12px 13px; border:1px solid var(--border-gray); border-radius:10px; background:#fff; color:#101114;
+    margin:0 0 18px; transition:border-color .15s, box-shadow .15s;}
+  #gate select:focus, #gate input:focus{ outline:none; border-color:var(--kraken-purple);
+    box-shadow:0 0 0 3px var(--kraken-purple-subtle);}
+  #gate button{ width:100%; font-family:inherit; font-size:15px; font-weight:600; color:#fff; cursor:pointer;
+    background:var(--kraken-purple); border:none; border-radius:10px; padding:13px; transition:background .15s, transform .05s;}
+  #gate button:hover{ background:var(--kraken-purple-deep);}
+  #gate button:active{ transform:translateY(1px);}
+  #gate .err{ color:var(--danger,#e2495b); font-size:13.5px; margin:-8px 0 14px; min-height:18px; }
+  body.locked{ overflow:hidden; }
+
+  #welcome{ position:fixed; top:80px; left:50%; transform:translateX(-50%) translateY(-12px);
+    z-index:200; background:var(--kraken-purple); color:#fff; font-weight:600; font-size:15px;
+    padding:12px 22px; border-radius:9999px; box-shadow:0 14px 34px rgba(80,50,180,.30);
+    opacity:0; pointer-events:none; transition:opacity .4s var(--ease), transform .4s var(--ease); }
+  #welcome.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+
+  .userchip{ display:flex; align-items:center; gap:7px; font-size:13px; color:var(--cool-gray); white-space:nowrap; }
+  .userchip b{ color:#101114; font-weight:600; }
+  .userchip a{ color:var(--kraken-purple); text-decoration:none; cursor:pointer; }
+  .userchip a:hover{ text-decoration:underline; }
+  @media(max-width:520px){ .userchip .lbl{ display:none; } }
+</style>
+
+<div id="gate">
+  <div class="card">
+    <div class="glogo"><div class="chip">M</div><div class="wm">Mozaik <span>Academy</span></div></div>
+    <h2>Sign in</h2>
+    <p class="hint">Select your name and enter the team password to continue.</p>
+    <label for="gateName">Your name</label>
+    <select id="gateName"><option value="" disabled selected>Choose your name…</option></select>
+    <label for="gatePass">Password</label>
+    <input id="gatePass" type="password" autocomplete="off" placeholder="Team password" />
+    <div class="err" id="gateErr"></div>
+    <button id="gateBtn">Enter Academy →</button>
+  </div>
+</div>
+<div id="welcome" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  /* ============ CONFIG ============ */
+  var SITE_PASSWORD = "Mozaik2026!";   /* shared team password */
+  var ANALYTICS_URL = "__ANALYTICS_URL__";   /* Google Apps Script web-app URL (blank = analytics off) */
+  var NAMES = [
+    /* Sales — Retail, Enterprise, Lighting, Sales heads */
+    "Artun Agbulut","Bener Tanberk","Betül Albayrak","Biricik Maltepe","Burçin Karaca",
+    "Candan Özcan Sayat","Ceren Şenyüz","Derin Zaimoğlu","Elif Duysak Tiryaki","Elif Sena Kekeç",
+    "Esin Ertem","İdil Alanyalıoğlu","İrem Beliz Öztürk","İrem Su Eliaçık","Meryem Banu Nazlıca",
+    "Simge Binat","Zeynep Uzel",
+    /* Marketing */
+    "Ceren Acar","Tuana Başak Kök","Zeynep Büyükhanlı",
+    /* Operations */
+    "Caner Doğru","Davut Koncaoğlu","Erhan Aydın","Hüseyin Emre Aydın","Sebahattin Karagöz",
+    "Sima Giray Alkan","Süreyya Kurt","Tayfun İlgen","Zufar Urayev",
+    /* Admin */
+    "Doğan Balamir Nazlıca"
+  ];
+  /* ================================ */
+
+  var gate = document.getElementById('gate');
+  var sel  = document.getElementById('gateName');
+  var pass = document.getElementById('gatePass');
+  var err  = document.getElementById('gateErr');
+  var btn  = document.getElementById('gateBtn');
+  var welcome = document.getElementById('welcome');
+
+  NAMES.slice().sort(function(a,b){ return a.localeCompare(b,'tr'); }).forEach(function(n){
+    var o=document.createElement('option'); o.value=n; o.textContent=n; sel.appendChild(o);
+  });
+
+  var sessionUser=null, sessionStart=null, ended=false;
+  function firstName(n){ return (n||'').trim().split(/\s+/)[0]; }
+
+  function send(event, extra){
+    if(!ANALYTICS_URL || ANALYTICS_URL.indexOf('__')===0) return;
+    var payload = { name: sessionUser, event: event, ts: new Date().toISOString() };
+    if(extra){ for(var k in extra){ payload[k]=extra[k]; } }
+    try{
+      var blob = new Blob([JSON.stringify(payload)], {type:'text/plain;charset=UTF-8'});
+      if(navigator.sendBeacon){ navigator.sendBeacon(ANALYTICS_URL, blob); }
+      else { fetch(ANALYTICS_URL,{method:'POST',mode:'no-cors',body:JSON.stringify(payload)}); }
+    }catch(e){}
+  }
+
+  function endSession(){
+    if(ended || !sessionUser || !sessionStart) return;
+    ended = true;
+    send('session_end', { duration_seconds: Math.round((Date.now()-sessionStart)/1000) });
+  }
+
+  function showWelcome(name){
+    welcome.textContent = 'Welcome, ' + firstName(name) + ' 👋';
+    welcome.classList.add('show');
+    setTimeout(function(){ welcome.classList.remove('show'); }, 4200);
+  }
+
+  function addUserChip(name){
+    var nav = document.querySelector('nav.top .inner');
+    if(!nav || document.getElementById('userChip')) return;
+    var chip = document.createElement('div');
+    chip.className='userchip'; chip.id='userChip';
+    chip.innerHTML = '<span class="lbl"><b>'+firstName(name)+'</b> · </span><a id="signout">Sign out</a>';
+    nav.appendChild(chip);
+    document.getElementById('signout').addEventListener('click', function(){
+      endSession();
+      try{ sessionStorage.removeItem('mozaik_user'); }catch(e){}
+      location.reload();
+    });
+  }
+
+  function startSession(name, isFresh){
+    sessionUser=name; sessionStart=Date.now(); ended=false;
+    document.body.classList.remove('locked');
+    gate.hidden = true;
+    addUserChip(name);
+    if(isFresh){ send('login', {}); }
+    showWelcome(name);
+    window.addEventListener('pagehide', endSession);
+    window.addEventListener('beforeunload', endSession);
+    document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='hidden') endSession(); });
+  }
+
+  function tryLogin(){
+    err.textContent='';
+    var name = sel.value;
+    if(!name){ err.textContent='Please select your name.'; return; }
+    if(pass.value !== SITE_PASSWORD){ err.textContent='Incorrect password. Please try again.'; pass.value=''; pass.focus(); return; }
+    try{ sessionStorage.setItem('mozaik_user', name); }catch(e){}
+    startSession(name, true);
+  }
+
+  btn.addEventListener('click', tryLogin);
+  pass.addEventListener('keydown', function(e){ if(e.key==='Enter'){ e.preventDefault(); tryLogin(); } });
+
+  var existing=null; try{ existing=sessionStorage.getItem('mozaik_user'); }catch(e){}
+  if(existing && NAMES.indexOf(existing)>=0){
+    startSession(existing, false);
+  } else {
+    document.body.classList.add('locked');
+    setTimeout(function(){ sel.focus(); }, 80);
+  }
+})();
+</script>
+
 <div class="progress" id="progress"></div>
 
 <!-- inline icon library (Lucide-style: 24-grid, 2px stroke, round caps) -->
