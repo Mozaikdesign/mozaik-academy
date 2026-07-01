@@ -306,6 +306,34 @@
   #tour .next:hover{ background:var(--kraken-purple-deep); }
   #tour .next:active{ transform:translateY(1px); }
 
+  /* ---------- admin analytics dashboard ---------- */
+  #analytics{ position:fixed; inset:0; z-index:400; display:none; overflow:auto;
+    background:#0f1115; color:#e7e9ee; font-family:var(--font-sans, inherit); }
+  #analytics.open{ display:block; }
+  #analytics .abar{ position:sticky; top:0; display:flex; align-items:center; gap:14px;
+    padding:16px 26px; background:#12141a; border-bottom:1px solid #23262f; }
+  #analytics .atitle{ font-family:var(--font-brand); font-weight:700; font-size:18px; letter-spacing:-.4px; color:#fff; }
+  #analytics .asub{ color:#8b90a0; font-size:12.5px; }
+  #analytics .aspacer{ flex:1; }
+  #analytics .abtn{ font-family:inherit; font-size:13.5px; font-weight:600; border-radius:9px; cursor:pointer;
+    padding:9px 15px; border:1px solid #2b2f3a; background:#1b1e26; color:#e7e9ee; }
+  #analytics .abtn:hover{ background:#232733; }
+  #analytics .aclose{ background:var(--kraken-purple); border-color:var(--kraken-purple); color:#fff; }
+  #analytics .awrap{ max-width:1000px; margin:0 auto; padding:28px 26px 70px; }
+  #analytics .kpis{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+  #analytics .kpi{ background:#161922; border:1px solid #23262f; border-radius:14px; padding:18px 20px; }
+  #analytics .kpi .k{ font-size:11.5px; text-transform:uppercase; letter-spacing:.5px; color:#8b90a0; }
+  #analytics .kpi .v{ font-family:var(--font-brand); font-weight:700; font-size:30px; margin-top:6px; color:#fff; }
+  #analytics h4{ font-family:var(--font-brand); font-size:15px; margin:30px 0 12px; color:#c7cbd6; font-weight:600; }
+  #analytics table{ width:100%; border-collapse:collapse; font-size:14px; }
+  #analytics th{ text-align:left; color:#8b90a0; font-weight:600; font-size:11.5px; text-transform:uppercase;
+    letter-spacing:.4px; padding:10px 12px; border-bottom:1px solid #23262f; }
+  #analytics td{ padding:11px 12px; border-bottom:1px solid #1b1e26; }
+  #analytics tr:hover td{ background:#161922; }
+  #analytics .bar{ height:8px; border-radius:6px; background:var(--kraken-purple); min-width:6px; }
+  #analytics .amuted{ color:#8b90a0; }
+  @media(max-width:720px){ #analytics .kpis{ grid-template-columns:repeat(2,1fr); } }
+
   .userchip{ display:flex; align-items:center; gap:7px; font-size:13px; color:var(--cool-gray); white-space:nowrap; }
   .userchip b{ color:#101114; font-weight:600; }
   .userchip a{ color:var(--kraken-purple); text-decoration:none; cursor:pointer; }
@@ -343,6 +371,31 @@
   </div>
 </div>
 
+<div id="analytics">
+  <div class="abar">
+    <div>
+      <div class="atitle">Usage Analytics</div>
+      <div class="asub">Mozaik Academy · admin view</div>
+    </div>
+    <div class="aspacer"></div>
+    <button class="abtn" id="aRefresh">↻ Refresh</button>
+    <button class="abtn aclose" id="aClose">Close ✕</button>
+  </div>
+  <div class="awrap">
+    <div class="kpis">
+      <div class="kpi"><div class="k">Total sign-ins</div><div class="v" id="kSignins">–</div></div>
+      <div class="kpi"><div class="k">People</div><div class="v" id="kPeople">–</div></div>
+      <div class="kpi"><div class="k">Total time</div><div class="v" id="kTime">–</div></div>
+      <div class="kpi"><div class="k">Avg session</div><div class="v" id="kAvg">–</div></div>
+    </div>
+    <h4 id="aStatus">Loading…</h4>
+    <table id="aTable" style="display:none">
+      <thead><tr><th>Name</th><th>Sign-ins</th><th>Total time</th><th>Last seen</th><th></th></tr></thead>
+      <tbody id="aBody"></tbody>
+    </table>
+  </div>
+</div>
+
 <script>
 (function(){
   /* ============ CONFIG ============ */
@@ -362,6 +415,7 @@
     /* Admin */
     "Doğan Balamir Nazlıca"
   ];
+  var ADMINS = ["Doğan Balamir Nazlıca"];   /* names that can open the Analytics view */
   /* ================================ */
 
   var gate = document.getElementById('gate');
@@ -375,6 +429,7 @@
       tourDots=document.getElementById('tourDots'), tourNext=document.getElementById('tourNext'),
       tourSkip=document.getElementById('tourSkip');
   var tourIdx=0, tourSteps=[];
+  var analytics=document.getElementById('analytics');
 
   NAMES.slice().sort(function(a,b){ return a.localeCompare(b,'tr'); }).forEach(function(n){
     var o=document.createElement('option'); o.value=n; o.textContent=n; sel.appendChild(o);
@@ -406,19 +461,81 @@
     setTimeout(function(){ welcome.classList.remove('show'); }, 4200);
   }
 
+  function isAdmin(name){ return ADMINS.indexOf(name) >= 0; }
+
   function addUserChip(name){
     var nav = document.querySelector('nav.top .inner');
     if(!nav || document.getElementById('userChip')) return;
     var chip = document.createElement('div');
     chip.className='userchip'; chip.id='userChip';
-    chip.innerHTML = '<span class="lbl"><b>'+firstName(name)+'</b> · </span><a id="signout">Sign out</a>';
+    var adminLink = isAdmin(name) ? '<a id="openAnalytics">Analytics</a> · ' : '';
+    chip.innerHTML = adminLink + '<span class="lbl"><b>'+firstName(name)+'</b> · </span><a id="signout">Sign out</a>';
     nav.appendChild(chip);
     document.getElementById('signout').addEventListener('click', function(){
       endSession();
       try{ sessionStorage.removeItem('mozaik_user'); }catch(e){}
       location.reload();
     });
+    var oa = document.getElementById('openAnalytics');
+    if(oa){ oa.addEventListener('click', openAnalytics); }
   }
+
+  function fmtDur(sec){
+    sec = Math.round(sec || 0);
+    var h=Math.floor(sec/3600), m=Math.floor((sec%3600)/60), s=sec%60;
+    if(h>0) return h+'h '+m+'m';
+    if(m>0) return m+'m '+s+'s';
+    return s+'s';
+  }
+  function openAnalytics(){ analytics.classList.add('open'); document.body.classList.add('locked'); loadAnalytics(); }
+  function closeAnalytics(){ analytics.classList.remove('open'); document.body.classList.remove('locked'); }
+  function loadAnalytics(){
+    var status=document.getElementById('aStatus');
+    status.textContent='Loading…';
+    document.getElementById('aTable').style.display='none';
+    if(!ANALYTICS_URL || ANALYTICS_URL.indexOf('__')===0){ status.textContent='Analytics endpoint not configured.'; return; }
+    var s=document.createElement('script');
+    window.__mozAnalytics=function(data){ renderAnalytics(data); try{ document.head.removeChild(s); }catch(e){} };
+    s.onerror=function(){ status.textContent='Could not load data — check your connection and hit Refresh.'; };
+    s.src=ANALYTICS_URL + '?callback=__mozAnalytics&t=' + Date.now();
+    document.head.appendChild(s);
+  }
+  function renderAnalytics(data){
+    var rows=(data && data.rows) || [];
+    var logins=rows.filter(function(r){ return r.event==='login'; });
+    var ends=rows.filter(function(r){ return r.event==='session_end'; });
+    var totalSec=ends.reduce(function(a,r){ return a + (Number(r.duration)||0); }, 0);
+    var people={};
+    rows.forEach(function(r){
+      if(!r.name) return;
+      var p=people[r.name] || (people[r.name]={signins:0, sec:0, last:null});
+      if(r.event==='login') p.signins++;
+      if(r.event==='session_end') p.sec += Number(r.duration)||0;
+      var t=new Date(r.ts).getTime();
+      if(!p.last || t>p.last) p.last=t;
+    });
+    var names=Object.keys(people);
+    document.getElementById('kSignins').textContent=logins.length;
+    document.getElementById('kPeople').textContent=names.length;
+    document.getElementById('kTime').textContent=fmtDur(totalSec);
+    document.getElementById('kAvg').textContent= ends.length ? fmtDur(totalSec/ends.length) : '–';
+    var arr=names.map(function(n){ return { name:n, s:people[n].signins, sec:people[n].sec, last:people[n].last }; });
+    arr.sort(function(a,b){ return b.sec - a.sec; });
+    var max=arr.reduce(function(m,x){ return Math.max(m, x.sec); }, 0) || 1;
+    var body=document.getElementById('aBody'); body.innerHTML='';
+    arr.forEach(function(x){
+      var tr=document.createElement('tr');
+      var last=x.last ? new Date(x.last).toLocaleString() : '—';
+      var pct=Math.max(6, Math.round(x.sec/max*100));
+      tr.innerHTML='<td>'+x.name+'</td><td>'+x.s+'</td><td>'+fmtDur(x.sec)+'</td>'+
+        '<td class="amuted">'+last+'</td><td style="width:130px"><div class="bar" style="width:'+pct+'%"></div></td>';
+      body.appendChild(tr);
+    });
+    document.getElementById('aStatus').textContent = arr.length ? ('Per person — '+arr.length+' total') : 'No usage recorded yet.';
+    document.getElementById('aTable').style.display = arr.length ? 'table' : 'none';
+  }
+  var aCloseBtn=document.getElementById('aClose'); if(aCloseBtn) aCloseBtn.addEventListener('click', closeAnalytics);
+  var aRefreshBtn=document.getElementById('aRefresh'); if(aRefreshBtn) aRefreshBtn.addEventListener('click', loadAnalytics);
 
   function buildTour(name){
     var fn = firstName(name);
