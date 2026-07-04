@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hidden Potential — Mozaik Academy</title>
+<title>Gizli Potansiyel — Mozaik Academy</title>
 <script>
 (function(){
   try{
-    var CUR='en';
+    var CUR='tr';
     var saved=localStorage.getItem('mozaik_lang');
     if(saved && saved!==CUR && location.search.indexOf('l=1')<0){
       location.replace((CUR==='en'?'tr.html':'index.html')+'?l=1');
@@ -187,7 +187,7 @@
   }
   .anchor{ scroll-margin-top: 84px; }
 
-  /* Concept 01 — the walker travels the distance */
+  /* Kavram 01 — the walker travels the distance */
   @keyframes c1walk{
     0%   { transform: translate(0,0);      opacity:0; }
     7%   { opacity:1; }
@@ -203,7 +203,7 @@
     html.anim-on #c1walker{ animation: c1walk 5.5s var(--ease) .4s infinite; }
   }
 
-  /* Concept 06 — the Pure-grind flame flickers like real fire */
+  /* Kavram 06 — the Pure-grind flame flickers like real fire */
   #grindfire{ transform-box: fill-box; transform-origin: 50% 100%; }
   @keyframes fireFlicker{
     0%,100% { transform: scale(1,1); }
@@ -361,15 +361,15 @@
 <div id="gate">
   <div class="card">
     <div class="glogo"><div class="chip">M</div><div class="wm">Mozaik <span>Academy</span></div></div>
-    <a class="langswitch gatelang" href="tr.html" data-setlang="tr">Türkçe</a>
-    <h2>Sign in</h2>
-    <p class="hint">Select your name and enter the team password to continue.</p>
-    <label for="gateName">Your name</label>
-    <select id="gateName"><option value="" disabled selected>Choose your name…</option></select>
-    <label for="gatePass">Password</label>
-    <input id="gatePass" type="password" autocomplete="off" placeholder="Team password" />
+    <a class="langswitch gatelang" href="index.html" data-setlang="en">English</a>
+    <h2>Giriş yap</h2>
+    <p class="hint">Devam etmek için adını seç ve ekip şifresini gir.</p>
+    <label for="gateName">Adınız</label>
+    <select id="gateName"><option value="" disabled selected>Adını seç…</option></select>
+    <label for="gatePass">Şifre</label>
+    <input id="gatePass" type="password" autocomplete="off" placeholder="Ekip şifresi" />
     <div class="err" id="gateErr"></div>
-    <button id="gateBtn">Enter Academy →</button>
+    <button id="gateBtn">Academy'ye Gir →</button>
   </div>
 </div>
 <div id="welcome" role="status" aria-live="polite"></div>
@@ -382,8 +382,8 @@
     <div class="trow">
       <div class="dots" id="tourDots"></div>
       <div class="tbtns">
-        <button class="skip" id="tourSkip">Skip</button>
-        <button class="next" id="tourNext">Next →</button>
+        <button class="skip" id="tourSkip">Atla</button>
+        <button class="next" id="tourNext">İleri →</button>
       </div>
     </div>
   </div>
@@ -392,23 +392,23 @@
 <div id="analytics">
   <div class="abar">
     <div>
-      <div class="atitle">Usage Analytics</div>
-      <div class="asub">Mozaik Academy · admin view</div>
+      <div class="atitle">Kullanım Analizleri</div>
+      <div class="asub">Mozaik Academy · yönetici görünümü</div>
     </div>
     <div class="aspacer"></div>
-    <button class="abtn" id="aRefresh">↻ Refresh</button>
-    <button class="abtn aclose" id="aClose">Close ✕</button>
+    <button class="abtn" id="aRefresh">↻ Yenile</button>
+    <button class="abtn aclose" id="aClose">Kapat ✕</button>
   </div>
   <div class="awrap">
     <div class="kpis">
-      <div class="kpi"><div class="k">Total sign-ins</div><div class="v" id="kSignins">–</div></div>
-      <div class="kpi"><div class="k">People</div><div class="v" id="kPeople">–</div></div>
-      <div class="kpi"><div class="k">Total time</div><div class="v" id="kTime">–</div></div>
-      <div class="kpi"><div class="k">Avg session</div><div class="v" id="kAvg">–</div></div>
+      <div class="kpi"><div class="k">Toplam giriş</div><div class="v" id="kSignins">–</div></div>
+      <div class="kpi"><div class="k">Kişi</div><div class="v" id="kPeople">–</div></div>
+      <div class="kpi"><div class="k">Toplam süre</div><div class="v" id="kTime">–</div></div>
+      <div class="kpi"><div class="k">Ort. oturum</div><div class="v" id="kAvg">–</div></div>
     </div>
     <h4 id="aStatus">Loading…</h4>
     <table id="aTable" style="display:none">
-      <thead><tr><th>Name</th><th>Sign-ins</th><th>Total time</th><th>Last seen</th><th></th></tr></thead>
+      <thead><tr><th>İsim</th><th>Giriş</th><th>Toplam süre</th><th>Son görülme</th><th></th></tr></thead>
       <tbody id="aBody"></tbody>
     </table>
   </div>
@@ -474,7 +474,7 @@
   }
 
   function showWelcome(name){
-    welcome.textContent = 'Welcome, ' + firstName(name) + ' 👋';
+    welcome.textContent = 'Hoş geldin, ' + firstName(name) + ' 👋';
     welcome.classList.add('show');
     setTimeout(function(){ welcome.classList.remove('show'); }, 4200);
   }
@@ -486,8 +486,8 @@
     if(!nav || document.getElementById('userChip')) return;
     var chip = document.createElement('div');
     chip.className='userchip'; chip.id='userChip';
-    var adminLink = isAdmin(name) ? '<a id="openAnalytics">Analytics</a> · ' : '';
-    chip.innerHTML = adminLink + '<span class="lbl"><b>'+firstName(name)+'</b> · </span><a id="signout">Sign out</a>';
+    var adminLink = isAdmin(name) ? '<a id="openAnalytics">Analizler</a> · ' : '';
+    chip.innerHTML = adminLink + '<span class="lbl"><b>'+firstName(name)+'</b> · </span><a id="signout">Çıkış yap</a>';
     nav.appendChild(chip);
     document.getElementById('signout').addEventListener('click', function(){
       endSession();
@@ -509,12 +509,12 @@
   function closeAnalytics(){ analytics.classList.remove('open'); document.body.classList.remove('locked'); }
   function loadAnalytics(){
     var status=document.getElementById('aStatus');
-    status.textContent='Loading…';
+    status.textContent='Yükleniyor…';
     document.getElementById('aTable').style.display='none';
-    if(!ANALYTICS_URL || ANALYTICS_URL.indexOf('__')===0){ status.textContent='Analytics endpoint not configured.'; return; }
+    if(!ANALYTICS_URL || ANALYTICS_URL.indexOf('__')===0){ status.textContent='Analiz uç noktası yapılandırılmamış.'; return; }
     var s=document.createElement('script');
     window.__mozAnalytics=function(data){ renderAnalytics(data); try{ document.head.removeChild(s); }catch(e){} };
-    s.onerror=function(){ status.textContent='Could not load data — check your connection and hit Refresh.'; };
+    s.onerror=function(){ status.textContent='Veri yüklenemedi — bağlantını kontrol edip Yenile\'ye bas.'; };
     s.src=ANALYTICS_URL + '?callback=__mozAnalytics&t=' + Date.now();
     document.head.appendChild(s);
   }
@@ -549,7 +549,7 @@
         '<td class="amuted">'+last+'</td><td style="width:130px"><div class="bar" style="width:'+pct+'%"></div></td>';
       body.appendChild(tr);
     });
-    document.getElementById('aStatus').textContent = arr.length ? ('Per person — '+arr.length+' total') : 'No usage recorded yet.';
+    document.getElementById('aStatus').textContent = arr.length ? ('Kişi başına — '+arr.length+' toplam') : 'Henüz kullanım kaydı yok.';
     document.getElementById('aTable').style.display = arr.length ? 'table' : 'none';
   }
   var aCloseBtn=document.getElementById('aClose'); if(aCloseBtn) aCloseBtn.addEventListener('click', closeAnalytics);
@@ -561,20 +561,20 @@
   function buildTour(name){
     var fn = firstName(name);
     tourSteps = [
-      { n:'Welcome', t:'Welcome, '+fn+' 👋',
-        b:'This is your Hidden Potential training guide — twelve ideas reframed for the Mozaik team. There’s no rush: you can take it one concept at a time and pick up where you left off whenever you come back.' },
-      { n:'Step 1 of 3', t:'Jump to any concept',
-        b:'Use the menu along the top to go straight to any of the 12 concepts — Distance, Character, Discomfort and the rest. The menu scrolls sideways, so slide right to reach Tutor, Teams and Judging. On a phone, tap the ☰ icon to open the full list.' },
-      { n:'Step 2 of 3', t:'Read at your own pace',
-        b:'Each concept is a short idea with a simple visual and a “what this means for Mozaik” takeaway. Scroll down to begin with the first one, then keep going whenever you’re ready for the next.' },
-      { n:'Step 3 of 3', t:'Come back anytime',
-        b:'You can leave and return as often as you like — use “Sign out” in the top bar when you’re done. That’s everything you need. Ready to start?' }
+      { n:'Hoş geldiniz', t:'Hoş geldin, '+fn+' 👋',
+        b:'Bu senin Gizli Potansiyel eğitim rehberin — Mozaik ekibi için yeniden ele alınmış on iki fikir. Acele yok: kavramları teker teker ilerleyebilir, geri döndüğünde kaldığın yerden devam edebilirsin.' },
+      { n:'Adım 1 / 3', t:'Herhangi bir kavrama atla',
+        b:'Üstteki menüyü kullanarak 12 kavramdan herhangi birine doğrudan git — Mesafe, Karakter, Rahatsızlık ve diğerleri. Menü yana kayar; Öğretmen, Ekipler ve Değerlendirme’ye ulaşmak için sağa kaydır. Telefonda tam listeyi açmak için ☰ simgesine dokun.' },
+      { n:'Adım 2 / 3', t:'Kendi hızında oku',
+        b:'Her kavram; kısa bir fikir, basit bir görsel ve “Mozaik için ne anlama geliyor” çıkarımından oluşur. İlkiyle başlamak için aşağı kaydır, sonrakine hazır olduğunda devam et.' },
+      { n:'Adım 3 / 3', t:'İstediğin zaman geri dön',
+        b:'İstediğin kadar ayrılıp geri dönebilirsin — bitirdiğinde üst çubuktaki “Çıkış yap”ı kullan. İhtiyacın olan her şey bu. Başlamaya hazır mısın?' }
     ];
   }
   function renderTour(){
     var s = tourSteps[tourIdx], last = tourIdx === tourSteps.length-1;
     tourNum.textContent = s.n; tourTitle.textContent = s.t; tourBody.textContent = s.b;
-    tourNext.textContent = last ? 'Start exploring →' : 'Next →';
+    tourNext.textContent = last ? 'Keşfetmeye başla →' : 'İleri →';
     tourSkip.style.display = last ? 'none' : '';
     tourDots.innerHTML='';
     for(var i=0;i<tourSteps.length;i++){ var d=document.createElement('i'); if(i===tourIdx) d.className='on'; tourDots.appendChild(d); }
@@ -599,8 +599,8 @@
   function tryLogin(){
     err.textContent='';
     var name = sel.value;
-    if(!name){ err.textContent='Please select your name.'; return; }
-    if(pass.value !== SITE_PASSWORD){ err.textContent='Incorrect password. Please try again.'; pass.value=''; pass.focus(); return; }
+    if(!name){ err.textContent='Lütfen adını seç.'; return; }
+    if(pass.value !== SITE_PASSWORD){ err.textContent='Hatalı şifre. Lütfen tekrar dene.'; pass.value=''; pass.focus(); return; }
     try{ sessionStorage.setItem('mozaik_user', name); }catch(e){}
     startSession(name, true);
   }
@@ -662,21 +662,21 @@
       <div class="chip">M</div>
       <div class="wm">Mozaik <span>Academy</span></div>
     </div>
-    <a class="langswitch navlang" href="tr.html" data-setlang="tr">Türkçe</a>
+    <a class="langswitch navlang" href="index.html" data-setlang="en">English</a>
     <div class="spacer"></div>
     <div class="toc" id="toc">
-      <a href="#c1">Distance</a>
-      <a href="#c2">Character</a>
-      <a href="#c3">Discomfort</a>
-      <a href="#c4">Sponge</a>
-      <a href="#c5">Imperfectionist</a>
-      <a href="#c6">Play</a>
-      <a href="#c7">Passion</a>
-      <a href="#c8">Detours</a>
-      <a href="#c9">Compass</a>
-      <a href="#c10">Tutor</a>
-      <a href="#c11">Teams</a>
-      <a href="#c12">Judging</a>
+      <a href="#c1">Mesafe</a>
+      <a href="#c2">Karakter</a>
+      <a href="#c3">Rahatsızlık</a>
+      <a href="#c4">Sünger</a>
+      <a href="#c5">Kusurlu</a>
+      <a href="#c6">Oyun</a>
+      <a href="#c7">Tutku</a>
+      <a href="#c8">Dolambaç</a>
+      <a href="#c9">Pusula</a>
+      <a href="#c10">Öğretmen</a>
+      <a href="#c11">Ekipler</a>
+      <a href="#c12">Değerlendirme</a>
     </div>
     <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
@@ -684,18 +684,18 @@
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#c1">Distance</a>
-  <a href="#c2">Character</a>
-  <a href="#c3">Discomfort</a>
-  <a href="#c4">Sponge</a>
-  <a href="#c5">Imperfectionist</a>
-  <a href="#c6">Play</a>
-  <a href="#c7">Passion</a>
-  <a href="#c8">Detours</a>
-  <a href="#c9">Compass</a>
-  <a href="#c10">Tutor</a>
-  <a href="#c11">Teams</a>
-  <a href="#c12">Judging</a>
+  <a href="#c1">Mesafe</a>
+  <a href="#c2">Karakter</a>
+  <a href="#c3">Rahatsızlık</a>
+  <a href="#c4">Sünger</a>
+  <a href="#c5">Kusurlu</a>
+  <a href="#c6">Oyun</a>
+  <a href="#c7">Tutku</a>
+  <a href="#c8">Dolambaç</a>
+  <a href="#c9">Pusula</a>
+  <a href="#c10">Öğretmen</a>
+  <a href="#c11">Ekipler</a>
+  <a href="#c12">Değerlendirme</a>
 </div>
 <script>
   (function(){
@@ -747,13 +747,13 @@
 
 <!-- ===================== HERO ===================== -->
 <header class="hero">
-  <span class="eyebrow"><span class="dot"></span><span class="micro" style="color:var(--kraken-purple)">Team Training · Hidden Potential</span></span>
-  <h1>Potential isn't where you start. It's <em>how far you travel.</em></h1>
-  <p class="sub">The twelve core frameworks from Adam Grant's <em>Hidden Potential</em> — redrawn for the Mozaik sales, marketing, and operations team. We systematically overrate talent and underrate growth. This guide is about closing that gap.</p>
+  <span class="eyebrow"><span class="dot"></span><span class="micro" style="color:var(--kraken-purple)">Ekip Eğitimi · Gizli Potansiyel</span></span>
+  <h1>Potansiyel nerede başladığın değil, <em>ne kadar yol aldığındır.</em></h1>
+  <p class="sub">Adam Grant'in <em>Hidden Potential</em> kitabındaki on iki temel çerçeve — Mozaik satış, pazarlama ve operasyon ekibi için yeniden çizildi. Yeteneği sistematik olarak fazla, gelişimi ise az önemsiyoruz. Bu rehber, o açığı kapatmakla ilgili.</p>
   <div class="hero-meta">
-    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">12</div><div class="l">Frameworks</div></div>
-    <div class="stat"><div class="v count">3</div><div class="l">Parts: Character · Scaffolding · Systems</div></div>
-    <div class="stat"><div class="v">∞</div><div class="l">Distance you can still travel</div></div>
+    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">12</div><div class="l">Çerçeve</div></div>
+    <div class="stat"><div class="v count">3</div><div class="l">Bölüm: Karakter · İskele · Sistemler</div></div>
+    <div class="stat"><div class="v">∞</div><div class="l">Alabileceğin yol</div></div>
   </div>
 
   <div class="hero-arc">
@@ -771,16 +771,16 @@
       <path d="M790 268 L905 96 L960 158 L1000 110 L1040 268 Z" fill="var(--kraken-purple-subtle)"/>
       <path d="M905 96 L884 132 L905 124 L922 150 L905 96" fill="#fff" opacity="0.75"/>
       <line x1="60" y1="268" x2="1010" y2="268" stroke="var(--d-axis)" stroke-width="2"/>
-      <text x="60" y="296" class="lbl" fill="var(--silver-blue)" font-size="13">Start line</text>
-      <text x="930" y="296" class="lbl" fill="var(--silver-blue)" font-size="13" text-anchor="middle">Achievement</text>
+      <text x="60" y="296" class="lbl" fill="var(--silver-blue)" font-size="13">Başlangıç çizgisi</text>
+      <text x="930" y="296" class="lbl" fill="var(--silver-blue)" font-size="13" text-anchor="middle">Başarı</text>
 
       <!-- dull short path -->
       <line x1="742" y1="168" x2="900" y2="168" stroke="var(--d-dull)" stroke-width="4" stroke-linecap="round"/>
       <circle cx="742" cy="168" r="13" fill="#fff" stroke="var(--d-dull)" stroke-width="2"/>
       <use href="#ic-pin" x="731" y="157" width="22" height="22" style="color:var(--d-dull)"/>
       <circle cx="900" cy="168" r="6" fill="var(--d-dull)"/>
-      <text x="742" y="142" class="lbl" fill="var(--cool-gray)" font-size="15">Born near the line</text>
-      <text x="742" y="194" class="lbl" fill="var(--silver-blue)" font-size="12.5" font-weight="400">a short hop, loud applause</text>
+      <text x="742" y="142" class="lbl" fill="var(--cool-gray)" font-size="15">Çizgiye yakın doğdu</text>
+      <text x="742" y="194" class="lbl" fill="var(--silver-blue)" font-size="12.5" font-weight="400">kısa bir sıçrayış, gür alkış</text>
 
       <!-- growth long path + area fill -->
       <path d="M92,250 C320,240 450,160 590,128 C735,94 875,76 960,68 L960,268 L92,268 Z" fill="url(#growFill)"/>
@@ -791,10 +791,10 @@
       <!-- flag planted at the summit -->
       <use href="#ic-flag" x="950" y="40" width="30" height="30" style="color:var(--kraken-purple)"/>
       <circle cx="960" cy="68" r="6" fill="var(--kraken-purple)"/>
-      <text x="100" y="232" class="lbl" fill="var(--kraken-purple)" font-size="15">Started far away</text>
+      <text x="100" y="232" class="lbl" fill="var(--kraken-purple)" font-size="15">Uzaktan başladı</text>
       <!-- distance bracket -->
       <path d="M150 286 L150 292 L700 292 L700 286" fill="none" stroke="var(--silver-blue)" stroke-width="1.5"/>
-      <text x="425" y="313" class="lbl" fill="var(--cool-gray)" font-size="13" text-anchor="middle" font-weight="400">the real measure of potential = this distance traveled</text>
+      <text x="425" y="313" class="lbl" fill="var(--cool-gray)" font-size="13" text-anchor="middle" font-weight="400">potansiyelin gerçek ölçüsü = alınan bu mesafe</text>
       <use href="#ic-person" x="103" y="222" width="28" height="28" style="color:var(--kraken-purple)"/>
       <use href="#ic-cheer" x="889" y="66" width="32" height="32" style="color:var(--kraken-purple-deep)"/>
     </svg>
@@ -806,60 +806,60 @@
 <section class="part" id="part1">
   <div class="part-head reveal anchor">
     <div class="part-ghost">01</div>
-    <div class="part-label">The Big Idea</div>
-    <h2>Potential is a trajectory, not a starting point</h2>
-    <p class="lead">We overrate natural talent and underrate growth. The people who achieve the most are rarely the ones who started furthest ahead — they're the ones who learned to travel furthest.</p>
+    <div class="part-label">Ana Fikir</div>
+    <h2>Potansiyel bir başlangıç noktası değil, bir yörüngedir</h2>
+    <p class="lead">Doğuştan gelen yeteneği fazla, gelişimi az önemsiyoruz. En çok başaranlar nadiren en önde başlayanlardır — onlar en uzağa gitmeyi öğrenenlerdir.</p>
   </div>
 
   <!-- C1 -->
   <article class="card-c reveal anchor" id="c1">
-    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-trend"/></svg></span><span class="ctag">Concept 01</span><span class="ckicker">The Big Idea</span></div>
-    <h3>Distance traveled beats starting point</h3>
-    <p class="desc">Two people, same finish line. We celebrate the one born near it; the real story is the one who crossed the whole map to get there. Grant opens with the Raging Rooks — a Harlem public-school chess team that beat elite private schools at the 1991 national championship.</p>
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-trend"/></svg></span><span class="ctag">Kavram 01</span><span class="ckicker">Ana Fikir</span></div>
+    <h3>Alınan yol, başlangıç noktasını yener</h3>
+    <p class="desc">İki kişi, aynı bitiş çizgisi. Çizgiye yakın doğanı alkışlıyoruz; asıl hikaye, oraya varmak için tüm haritayı geçendir. Grant kitaba Raging Rooks ile başlar — 1991 ulusal şampiyonasında elit özel okulları yenen bir Harlem devlet okulu satranç takımı.</p>
     <div class="story">
       <div class="frame">
         <div class="ph"><svg viewBox="0 0 24 24"><use href="#ic-flag"/></svg></div>
-        <div class="cap"><use href="#ic-flag" width="14" height="14" style="color:#fff"/>The Raging Rooks · 1991 national championship</div>
+        <div class="cap"><use href="#ic-flag" width="14" height="14" style="color:#fff"/>Raging Rooks · 1991 ulusal şampiyonası</div>
       </div>
     </div>
     <div class="fig">
       <svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg">
         <path class="fg" style="--i:4" d="M560 200 L645 70 L688 118 L716 86 L740 200 Z" fill="var(--kraken-purple-subtle)"/>
         <line x1="60" y1="200" x2="712" y2="200" stroke="var(--d-axis)" stroke-width="2"/>
-        <text class="fg" style="--i:0" x="60" y="228" fill="var(--silver-blue)" font-size="13">Start line</text>
-        <text class="fg" style="--i:0" x="700" y="228" fill="var(--silver-blue)" font-size="13" text-anchor="end">Achievement</text>
+        <text class="fg" style="--i:0" x="60" y="228" fill="var(--silver-blue)" font-size="13">Başlangıç çizgisi</text>
+        <text class="fg" style="--i:0" x="700" y="228" fill="var(--silver-blue)" font-size="13" text-anchor="end">Başarı</text>
         <!-- short dull journey -->
         <line class="fg" style="--i:1" x1="512" y1="118" x2="648" y2="118" stroke="var(--d-dull)" stroke-width="4" stroke-linecap="round"/>
         <circle class="fg" style="--i:1" cx="512" cy="118" r="13" fill="#fff" stroke="var(--d-dull)" stroke-width="2"/>
         <use class="fg" style="--i:1; color:var(--d-dull)" href="#ic-pin" x="501" y="107" width="22" height="22"/>
         <circle class="fg" style="--i:1" cx="648" cy="118" r="5" fill="var(--d-dull)"/>
-        <text class="fg lbl" style="--i:1" x="512" y="96" fill="var(--cool-gray)" font-size="14">Born near the line</text>
-        <text class="fg" style="--i:1" x="512" y="146" fill="var(--silver-blue)" font-size="12">a short hop, loud applause</text>
+        <text class="fg lbl" style="--i:1" x="512" y="96" fill="var(--cool-gray)" font-size="14">Çizgiye yakın doğdu</text>
+        <text class="fg" style="--i:1" x="512" y="146" fill="var(--silver-blue)" font-size="12">kısa bir sıçrayış, gür alkış</text>
         <!-- long growth journey -->
         <path class="draw" pathLength="1" d="M92,60 L640,60" fill="none" stroke="var(--d-grow)" stroke-width="4.5" stroke-linecap="round"/>
         <circle class="fg" style="--i:2" cx="92" cy="60" r="13" fill="#fff" stroke="var(--d-grow)" stroke-width="2.5"/>
         <use class="fg" style="--i:2; color:var(--d-grow)" href="#ic-pin" x="81" y="49" width="22" height="22"/>
         <use class="fg" style="--i:3; color:var(--d-grow)" href="#ic-flag" x="636" y="34" width="26" height="26"/>
         <circle class="fg" style="--i:3" cx="640" cy="60" r="5" fill="var(--d-grow)"/>
-        <text class="fg lbl" style="--i:2" x="100" y="42" fill="var(--d-grow)" font-size="14">Started far away</text>
+        <text class="fg lbl" style="--i:2" x="100" y="42" fill="var(--d-grow)" font-size="14">Uzaktan başladı</text>
         <!-- distance bracket -->
         <path class="fg" style="--i:3" d="M110 168 L110 174 L470 174 L470 168" fill="none" stroke="var(--silver-blue)" stroke-width="1.5"/>
-        <text class="fg" style="--i:3" x="290" y="192" fill="var(--cool-gray)" font-size="12" text-anchor="middle">the real measure of potential = this distance</text>
+        <text class="fg" style="--i:3" x="290" y="192" fill="var(--cool-gray)" font-size="12" text-anchor="middle">potansiyelin gerçek ölçüsü = bu mesafe</text>
         <use id="c1walker" class="fg" style="--i:2; color:var(--d-grow)" href="#ic-person" x="104" y="36" width="24" height="24"/>
         <use class="fg" style="--i:3; color:var(--d-grow)" href="#ic-cheer" x="604" y="35" width="26" height="26"/>
       </svg>
     </div>
     <div class="callouts">
-      <div class="takeaway"><b>Takeaway:</b> Judge people — and yourself — by growth rate, not current level. A weak first month says almost nothing about year three.</div>
-      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> When reviewing reps, look at trajectory — a junior growing 20% per quarter may be more valuable long-term than a flat senior.</div></div>
+      <div class="takeaway"><b>Çıkarım:</b> İnsanları — ve kendini — mevcut seviyeye göre değil, gelişim hızına göre değerlendir. Zayıf bir ilk ay, üçüncü yıl hakkında neredeyse hiçbir şey söylemez.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik'te:</b> Temsilcileri değerlendirirken yörüngeye bak — çeyrekte %20 büyüyen bir junior, uzun vadede sabit duran bir kıdemliden daha değerli olabilir.</div></div>
     </div>
   </article>
 
   <!-- C2 -->
   <article class="card-c reveal anchor" id="c2">
-    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-zap"/></svg></span><span class="ctag">Concept 02</span><span class="ckicker">The Big Idea</span></div>
-    <h3>Character skills — the engine of growth</h3>
-    <p class="desc">Character isn't personality. Personality is your default; <b>character is the skill of acting on your values despite that default.</b> Grant's research suggests character skills like proactivity, discipline, and prosocial behavior often outpredict raw cognitive ability.</p>
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-zap"/></svg></span><span class="ctag">Kavram 02</span><span class="ckicker">Ana Fikir</span></div>
+    <h3>Karakter becerileri — gelişimin motoru</h3>
+    <p class="desc">Karakter kişilik değildir. Kişilik senin varsayılanındır; <b>karakter ise bu varsayılana rağmen değerlerine göre davranma becerisidir.</b> Grant'in araştırması, proaktiflik, disiplin ve toplum yanlısı davranış gibi karakter becerilerinin çoğu zaman ham bilişsel yetenekten daha belirleyici olduğunu gösteriyor.</p>
     <div class="fig">
       <svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg">
         <!-- four character-skill inputs -->
@@ -867,22 +867,22 @@
           <rect class="fg" style="--i:0" x="24" y="20" width="208" height="44" rx="11" fill="var(--d-box)" stroke="var(--border-gray)"/>
           <circle class="fg" style="--i:0" cx="50" cy="42" r="14" fill="#fff" stroke="var(--d-grow)" stroke-width="1.5"/>
           <use class="fg" style="--i:0; color:var(--d-grow)" href="#ic-zap" x="40" y="32" width="20" height="20"/>
-          <text class="fg lbl" style="--i:0" x="74" y="47" fill="var(--near-black)" font-size="13.5">Proactivity</text>
+          <text class="fg lbl" style="--i:0" x="74" y="47" fill="var(--near-black)" font-size="13.5">Proaktiflik</text>
 
           <rect class="fg" style="--i:0" x="24" y="74" width="208" height="44" rx="11" fill="var(--d-box)" stroke="var(--border-gray)"/>
           <circle class="fg" style="--i:0" cx="50" cy="96" r="14" fill="#fff" stroke="var(--d-grow)" stroke-width="1.5"/>
           <use class="fg" style="--i:0; color:var(--d-grow)" href="#ic-target" x="40" y="86" width="20" height="20"/>
-          <text class="fg lbl" style="--i:0" x="74" y="101" fill="var(--near-black)" font-size="13.5">Discipline</text>
+          <text class="fg lbl" style="--i:0" x="74" y="101" fill="var(--near-black)" font-size="13.5">Disiplin</text>
 
           <rect class="fg" style="--i:1" x="24" y="128" width="208" height="44" rx="11" fill="var(--d-box)" stroke="var(--border-gray)"/>
           <circle class="fg" style="--i:1" cx="50" cy="150" r="14" fill="#fff" stroke="var(--d-grow)" stroke-width="1.5"/>
           <use class="fg" style="--i:1; color:var(--d-grow)" href="#ic-flag" x="40" y="140" width="20" height="20"/>
-          <text class="fg lbl" style="--i:1" x="74" y="155" fill="var(--near-black)" font-size="13.5">Determination</text>
+          <text class="fg lbl" style="--i:1" x="74" y="155" fill="var(--near-black)" font-size="13.5">Kararlılık</text>
 
           <rect class="fg" style="--i:1" x="24" y="182" width="208" height="44" rx="11" fill="var(--d-box)" stroke="var(--border-gray)"/>
           <circle class="fg" style="--i:1" cx="50" cy="204" r="14" fill="#fff" stroke="var(--d-grow)" stroke-width="1.5"/>
           <use class="fg" style="--i:1; color:var(--d-grow)" href="#ic-heart" x="40" y="194" width="20" height="20"/>
-          <text class="fg lbl" style="--i:1" x="74" y="209" fill="var(--near-black)" font-size="13.5">Prosocial habits</text>
+          <text class="fg lbl" style="--i:1" x="74" y="209" fill="var(--near-black)" font-size="13.5">Toplum yanlısı alışkanlıklar</text>
         </g>
         <!-- connectors -->
         <g stroke="var(--d-grow)" stroke-width="2" opacity="0.85">
@@ -894,19 +894,19 @@
         <!-- engine emblem -->
         <rect class="fg" style="--i:3" x="318" y="86" width="132" height="78" rx="16" fill="url(#summitG)"/>
         <use class="fg" style="--i:3; color:#fff" href="#ic-zap" x="360" y="98" width="34" height="34"/>
-        <text class="fg lbl" style="--i:3" x="384" y="152" fill="#fff" font-size="12" text-anchor="middle" opacity="0.95">CHARACTER</text>
-        <text class="fg lbl" style="--i:4" x="384" y="186" fill="var(--d-grow-deep)" font-size="13" text-anchor="middle">the engine of growth</text>
+        <text class="fg lbl" style="--i:3" x="384" y="152" fill="#fff" font-size="12" text-anchor="middle" opacity="0.95">KARAKTER</text>
+        <text class="fg lbl" style="--i:4" x="384" y="186" fill="var(--d-grow-deep)" font-size="13" text-anchor="middle">gelişimin motoru</text>
         <!-- output -->
         <path class="draw" pathLength="1" d="M450,118 L548,118" fill="none" stroke="var(--d-grow)" stroke-width="3"/>
         <polygon class="fg" style="--i:5" points="548,110 564,118 548,126" fill="var(--d-grow)"/>
         <rect class="fg" style="--i:5" x="566" y="90" width="172" height="58" rx="12" fill="var(--d-grow-soft)" stroke="var(--d-grow)"/>
         <use class="fg" style="--i:5; color:var(--d-grow)" href="#ic-trend" x="582" y="106" width="26" height="26"/>
-        <text class="fg lbl" style="--i:5" x="620" y="115" fill="var(--near-black)" font-size="13">Sustained</text>
-        <text class="fg" style="--i:5" x="620" y="133" fill="var(--cool-gray)" font-size="12.5">achievement</text>
+        <text class="fg lbl" style="--i:5" x="620" y="115" fill="var(--near-black)" font-size="13">Sürdürülen</text>
+        <text class="fg" style="--i:5" x="620" y="133" fill="var(--cool-gray)" font-size="12.5">başarı</text>
       </svg>
     </div>
     <div class="callouts">
-      <div class="takeaway"><b>Takeaway:</b> Talent decides how fast you start; character skills decide how far you go. And unlike IQ, they can be trained at any age.</div>
+      <div class="takeaway"><b>Çıkarım:</b> Yetenek ne kadar hızlı başlayacağını belirler; karakter becerileri ne kadar uzağa gideceğini. Ve IQ'nun aksine, her yaşta geliştirilebilirler.</div>
     </div>
   </article>
 </section>
@@ -915,27 +915,27 @@
 <section class="part" id="part2">
   <div class="part-head reveal anchor">
     <div class="part-ghost">02</div>
-    <div class="part-label">Part I — Skills of Character</div>
-    <h2>Discomfort, absorption, imperfection</h2>
-    <p class="lead">Three learnable habits: seek discomfort like the polyglots, absorb feedback like a sponge, and aim for excellent-but-imperfect instead of flawless-but-never-shipped.</p>
+    <div class="part-label">Bölüm I — Karakter Becerileri</div>
+    <h2>Rahatsızlık, özümseme, kusurluluk</h2>
+    <p class="lead">Öğrenilebilir üç alışkanlık: poliglotlar gibi rahatsızlığı ara, sünger gibi geri bildirimi özümse ve kusursuz-ama-hiç-teslim-edilmeyen yerine mükemmel-ama-kusurlu olanı hedefle.</p>
   </div>
 
   <!-- C3 -->
   <article class="card-c reveal anchor" id="c3">
-    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-flame"/></svg></span><span class="ctag">Concept 03</span><span class="ckicker">Skills of Character</span></div>
-    <h3>Become a creature of discomfort</h3>
-    <p class="desc">Polyglots like Benny Lewis learn languages fast by speaking badly from day one. <b>Discomfort isn't a warning sign — it's the sensation of growth.</b> The mistake-avoidance loop feels safe but flattens learning.</p>
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-flame"/></svg></span><span class="ctag">Kavram 03</span><span class="ckicker">Karakter Becerileri</span></div>
+    <h3>Rahatsızlığın insanı ol</h3>
+    <p class="desc">Benny Lewis gibi poliglotlar, ilk günden kötü konuşarak dilleri hızlı öğrenir. <b>Rahatsızlık bir uyarı işareti değil — gelişimin ta kendisinin hissidir.</b> Hata-kaçınma döngüsü güvenli hissettirir ama öğrenmeyi düzleştirir.</p>
     <div class="fig">
       <svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg">
         <line x1="70" y1="220" x2="710" y2="220" stroke="var(--d-axis)" stroke-width="2"/>
         <line x1="70" y1="220" x2="70" y2="30" stroke="var(--d-axis)" stroke-width="2"/>
-        <text class="fg" style="--i:0" x="390" y="248" fill="var(--silver-blue)" font-size="13" text-anchor="middle">Time</text>
-        <text class="fg" style="--i:0" x="40" y="125" fill="var(--silver-blue)" font-size="13" transform="rotate(-90 40 125)" text-anchor="middle">Skill</text>
+        <text class="fg" style="--i:0" x="390" y="248" fill="var(--silver-blue)" font-size="13" text-anchor="middle">Zaman</text>
+        <text class="fg" style="--i:0" x="40" y="125" fill="var(--silver-blue)" font-size="13" transform="rotate(-90 40 125)" text-anchor="middle">Beceri</text>
         <path class="draw" pathLength="1" d="M70,210 C220,195 420,190 700,185" fill="none" stroke="var(--d-dull)" stroke-width="3"/>
-        <text class="fg" style="--i:1" x="500" y="172" fill="var(--cool-gray)" font-size="13" font-weight="600">Avoid mistakes → flat line</text>
+        <text class="fg" style="--i:1" x="500" y="172" fill="var(--cool-gray)" font-size="13" font-weight="600">Hatalardan kaçın → düz çizgi</text>
         <path class="draw" pathLength="1" d="M70,210 C170,205 200,180 260,160 C300,148 310,165 360,130 C420,90 430,110 520,70 C580,45 620,50 700,40" fill="none" stroke="var(--d-grow)" stroke-width="3.5"/>
-        <text class="fg" style="--i:2" x="410" y="55" fill="var(--d-grow)" font-size="13" font-weight="700">Seek mistakes → compounding growth</text>
-        <text class="fg" style="--i:2" x="250" y="135" fill="var(--silver-blue)" font-size="11">awkward dips = learning</text>
+        <text class="fg" style="--i:2" x="410" y="55" fill="var(--d-grow)" font-size="13" font-weight="700">Hataları ara → katlanan gelişim</text>
+        <text class="fg" style="--i:2" x="250" y="135" fill="var(--silver-blue)" font-size="11">beceriksiz düşüşler = öğrenme</text>
         <circle class="fg" style="--i:2" cx="700" cy="40" r="15" fill="#fff" stroke="var(--d-grow)" stroke-width="2"/>
         <use class="fg" style="--i:2; color:var(--d-grow)" href="#ic-zap" x="690" y="30" width="20" height="20"/>
         <circle class="fg" style="--i:1" cx="700" cy="185" r="13" fill="#fff" stroke="var(--d-dull)" stroke-width="2"/>
@@ -943,93 +943,93 @@
       </svg>
     </div>
     <div class="callouts">
-      <div class="takeaway"><b>Takeaway:</b> Set a mistake budget, not a perfection target. If this week produced zero awkward moments, you weren't stretching.</div>
-      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> New reps should pitch real customers in week one — clumsy live practice beats months of polished shadowing.</div></div>
+      <div class="takeaway"><b>Çıkarım:</b> Kusursuzluk hedefi değil, bir hata bütçesi belirle. Bu hafta hiç utandırıcı an yaşamadıysan, kendini zorlamıyordun demektir.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik'te:</b> Yeni temsilciler daha ilk hafta gerçek müşterilere sunum yapmalı — beceriksiz de olsa canlı pratik, aylarca süren cilalı gözlemden iyidir.</div></div>
     </div>
   </article>
 
   <!-- C4 -->
   <article class="card-c reveal anchor" id="c4">
-    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-sponge"/></svg></span><span class="ctag">Concept 04</span><span class="ckicker">Skills of Character</span></div>
-    <h3>The sponge matrix — absorptive capacity</h3>
-    <p class="desc">How much you grow depends on <b>how</b> you take in information (wait for it vs. seek it) and <b>why</b> (protect your ego vs. improve your work). Sponges proactively seek feedback to grow — and they filter, keeping what's useful and wringing out the rest.</p>
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-sponge"/></svg></span><span class="ctag">Kavram 04</span><span class="ckicker">Karakter Becerileri</span></div>
+    <h3>Sünger matrisi — özümseme kapasitesi</h3>
+    <p class="desc">Ne kadar geliştiğin, bilgiyi <b>nasıl</b> aldığına (beklemek mi, aramak mı) ve <b>neden</b> aldığına (egonu korumak mı, işini iyileştirmek mi) bağlıdır. Süngerler gelişmek için proaktif olarak geri bildirim arar — ve süzer, işe yarayanı tutup gerisini sıkıp atar.</p>
     <div class="fig">
       <svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg">
         <line x1="380" y1="44" x2="380" y2="286" stroke="var(--d-axis)" stroke-width="2"/>
         <line x1="120" y1="165" x2="640" y2="165" stroke="var(--d-axis)" stroke-width="2"/>
-        <text class="fg" style="--i:0" x="380" y="30" fill="var(--silver-blue)" font-size="12" text-anchor="middle">Goal: protect ego ← → grow</text>
-        <text class="fg" style="--i:0" x="108" y="169" fill="var(--silver-blue)" font-size="12" text-anchor="end">Reactive</text>
-        <text class="fg" style="--i:0" x="652" y="169" fill="var(--silver-blue)" font-size="12">Proactive</text>
+        <text class="fg" style="--i:0" x="380" y="30" fill="var(--silver-blue)" font-size="12" text-anchor="middle">Amaç: egoyu koru ← → geliş</text>
+        <text class="fg" style="--i:0" x="108" y="169" fill="var(--silver-blue)" font-size="12" text-anchor="end">Tepkisel</text>
+        <text class="fg" style="--i:0" x="652" y="169" fill="var(--silver-blue)" font-size="12">Proaktif</text>
         <!-- Rubber -->
         <rect class="fg" style="--i:1" x="140" y="58" width="220" height="92" rx="12" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/>
         <circle class="fg" style="--i:1" cx="176" cy="92" r="16" fill="#fff" stroke="var(--d-bad)" stroke-width="1.5"/>
         <use class="fg" style="--i:1; color:var(--d-bad)" href="#ic-x" x="167" y="83" width="18" height="18"/>
-        <text class="fg lbl" style="--i:1" x="202" y="98" fill="var(--d-bad-text)" font-size="15">Rubber</text>
-        <text class="fg" style="--i:1" x="160" y="122" fill="var(--cool-gray)" font-size="11.5">feedback bounces off;</text>
-        <text class="fg" style="--i:1" x="160" y="138" fill="var(--cool-gray)" font-size="11.5">nothing changes</text>
-        <!-- Ego-seeker -->
+        <text class="fg lbl" style="--i:1" x="202" y="98" fill="var(--d-bad-text)" font-size="15">Lastik</text>
+        <text class="fg" style="--i:1" x="160" y="122" fill="var(--cool-gray)" font-size="11.5">geri bildirim seker;</text>
+        <text class="fg" style="--i:1" x="160" y="138" fill="var(--cool-gray)" font-size="11.5">hiçbir şey değişmez</text>
+        <!-- Ego arayan -->
         <rect class="fg" style="--i:2" x="400" y="58" width="220" height="92" rx="12" fill="var(--d-box)" stroke="var(--d-dull)"/>
         <circle class="fg" style="--i:2" cx="436" cy="92" r="16" fill="#fff" stroke="var(--d-dull)" stroke-width="1.5"/>
         <use class="fg" style="--i:2; color:var(--d-dull)" href="#ic-star" x="427" y="83" width="18" height="18"/>
-        <text class="fg lbl" style="--i:2" x="462" y="98" fill="var(--cool-gray)" font-size="15">Ego-seeker</text>
-        <text class="fg" style="--i:2" x="420" y="122" fill="var(--cool-gray)" font-size="11.5">hunts only for praise</text>
-        <text class="fg" style="--i:2" x="420" y="138" fill="var(--cool-gray)" font-size="11.5">and validation</text>
-        <!-- Passive absorber -->
+        <text class="fg lbl" style="--i:2" x="462" y="98" fill="var(--cool-gray)" font-size="15">Ego arayan</text>
+        <text class="fg" style="--i:2" x="420" y="122" fill="var(--cool-gray)" font-size="11.5">yalnızca övgü avlar</text>
+        <text class="fg" style="--i:2" x="420" y="138" fill="var(--cool-gray)" font-size="11.5">ve onay</text>
+        <!-- Pasif özümseyici -->
         <rect class="fg" style="--i:3" x="140" y="180" width="220" height="92" rx="12" fill="var(--d-box)" stroke="var(--d-mute)"/>
         <circle class="fg" style="--i:3" cx="176" cy="214" r="16" fill="#fff" stroke="var(--d-mute)" stroke-width="1.5"/>
         <use class="fg" style="--i:3; color:var(--d-mute)" href="#ic-droplet" x="167" y="205" width="18" height="18"/>
-        <text class="fg lbl" style="--i:3" x="202" y="220" fill="var(--cool-gray)" font-size="15">Passive absorber</text>
-        <text class="fg" style="--i:3" x="160" y="244" fill="var(--cool-gray)" font-size="11.5">takes whatever arrives,</text>
-        <text class="fg" style="--i:3" x="160" y="260" fill="var(--cool-gray)" font-size="11.5">good or bad, unfiltered</text>
+        <text class="fg lbl" style="--i:3" x="202" y="220" fill="var(--cool-gray)" font-size="15">Pasif özümseyici</text>
+        <text class="fg" style="--i:3" x="160" y="244" fill="var(--cool-gray)" font-size="11.5">geleni olduğu gibi alır,</text>
+        <text class="fg" style="--i:3" x="160" y="260" fill="var(--cool-gray)" font-size="11.5">iyi ya da kötü, süzülmemiş</text>
         <!-- Sponge -->
         <rect class="fg" style="--i:4" x="400" y="180" width="220" height="92" rx="12" fill="var(--d-grow-soft)" stroke="var(--d-grow)" stroke-width="2"/>
         <circle class="fg" style="--i:4" cx="436" cy="214" r="16" fill="#fff" stroke="var(--d-grow)" stroke-width="1.5"/>
         <use id="spongesqueeze" class="fg" style="--i:4; color:var(--d-grow)" href="#ic-sponge" x="426" y="205" width="20" height="20"/>
-        <text class="fg lbl" style="--i:4" x="464" y="220" fill="var(--d-grow-deep)" font-size="15">Sponge</text>
-        <text class="fg" style="--i:4" x="420" y="244" fill="var(--near-black)" font-size="11.5">seeks feedback to improve,</text>
-        <text class="fg" style="--i:4" x="420" y="260" fill="var(--near-black)" font-size="11.5">filters what's useful, adapts</text>
-        <text class="fg" style="--i:5" x="380" y="306" fill="var(--silver-blue)" font-size="11" text-anchor="middle">Original diagram after Grant's absorptive-capacity framework</text>
+        <text class="fg lbl" style="--i:4" x="464" y="220" fill="var(--d-grow-deep)" font-size="15">Sünger</text>
+        <text class="fg" style="--i:4" x="420" y="244" fill="var(--near-black)" font-size="11.5">gelişmek için geri bildirim arar,</text>
+        <text class="fg" style="--i:4" x="420" y="260" fill="var(--near-black)" font-size="11.5">işe yarayanı süzer, uyarlar</text>
+        <text class="fg" style="--i:5" x="380" y="306" fill="var(--silver-blue)" font-size="11" text-anchor="middle">Grant'in özümseme-kapasitesi çerçevesinden uyarlanan özgün diyagram</text>
       </svg>
     </div>
     <div class="callouts">
-      <div class="takeaway"><b>Takeaway:</b> Ask for <i>advice</i>, not feedback — "What's one thing I could do better next time?" gets you coaching instead of criticism or cheerleading.</div>
+      <div class="takeaway"><b>Çıkarım:</b> Geri bildirim değil, <i>tavsiye</i> iste — "Bir dahaki sefere daha iyi yapabileceğim tek şey ne?" sorusu, sana eleştiri ya da boş övgü yerine koçluk kazandırır.</div>
     </div>
   </article>
 
   <!-- C5 -->
   <article class="card-c reveal anchor" id="c5">
-    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span class="ctag">Concept 05</span><span class="ckicker">Skills of Character</span></div>
-    <h3>The imperfectionist sweet spot</h3>
-    <p class="desc">Architect Tadao Ando builds celebrated buildings from raw, exposed concrete — flaws included. Perfectionists obsess over the wrong details, fear the failures that teach most, and judge themselves harshly. <b>The goal: high standards on what matters, acceptance everywhere else.</b></p>
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span class="ctag">Kavram 05</span><span class="ckicker">Karakter Becerileri</span></div>
+    <h3>Kusurluluğun ideal noktası</h3>
+    <p class="desc">Mimar Tadao Ando, ünlü yapılarını ham, çıplak betondan inşa eder — kusurlar dahil. Kusursuzcular yanlış ayrıntılara takılır, en çok öğreten başarısızlıklardan korkar ve kendilerini sertçe yargılar. <b>Amaç: önemli olanda yüksek standart, geri kalanda kabul.</b></p>
     <div class="story">
       <div class="frame">
         <div class="ph"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></div>
-        <div class="cap"><use href="#ic-check" width="14" height="14" style="color:#fff"/>Tadao Ando · raw concrete, flaws left in</div>
+        <div class="cap"><use href="#ic-check" width="14" height="14" style="color:#fff"/>Tadao Ando · ham beton, kusurlar bırakılmış</div>
       </div>
     </div>
     <div class="fig">
       <svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg">
         <line x1="80" y1="215" x2="690" y2="215" stroke="var(--d-axis)" stroke-width="2"/>
         <path class="draw" pathLength="1" d="M80,210 C220,205 280,60 390,55 C500,60 560,205 690,210" fill="none" stroke="var(--d-grow)" stroke-width="3.5"/>
-        <text class="fg" style="--i:0" x="385" y="243" fill="var(--silver-blue)" font-size="13" text-anchor="middle">Standards →</text>
+        <text class="fg" style="--i:0" x="385" y="243" fill="var(--silver-blue)" font-size="13" text-anchor="middle">Standartlar →</text>
         <circle class="fg" style="--i:1" cx="120" cy="178" r="15" fill="#fff" stroke="var(--d-bad)" stroke-width="2"/>
         <use class="fg" style="--i:1; color:var(--d-bad)" href="#ic-x" x="111" y="169" width="18" height="18"/>
-        <text class="fg lbl" style="--i:1" x="120" y="210" fill="var(--d-bad-text)" font-size="13" text-anchor="middle">Careless</text>
-        <text class="fg" style="--i:1" x="120" y="226" fill="var(--silver-blue)" font-size="10.5" text-anchor="middle">ships junk too early</text>
+        <text class="fg lbl" style="--i:1" x="120" y="210" fill="var(--d-bad-text)" font-size="13" text-anchor="middle">Umursamaz</text>
+        <text class="fg" style="--i:1" x="120" y="226" fill="var(--silver-blue)" font-size="10.5" text-anchor="middle">çöpü çok erken teslim eder</text>
         <circle class="fg" style="--i:2" cx="650" cy="178" r="15" fill="#fff" stroke="var(--d-bad)" stroke-width="2"/>
         <use class="fg" style="--i:2; color:var(--d-bad)" href="#ic-lock" x="641" y="169" width="18" height="18"/>
-        <text class="fg lbl" style="--i:2" x="650" y="210" fill="var(--d-bad-text)" font-size="13" text-anchor="middle">Perfectionist</text>
-        <text class="fg" style="--i:2" x="650" y="226" fill="var(--silver-blue)" font-size="10.5" text-anchor="middle">paralyzed, never ships</text>
+        <text class="fg lbl" style="--i:2" x="650" y="210" fill="var(--d-bad-text)" font-size="13" text-anchor="middle">Kusursuzcu</text>
+        <text class="fg" style="--i:2" x="650" y="226" fill="var(--silver-blue)" font-size="10.5" text-anchor="middle">felç olmuş, hiç teslim etmez</text>
         <circle class="fg" style="--i:3" cx="390" cy="55" r="18" fill="var(--d-grow)"/>
         <use class="fg" style="--i:3; color:#fff" href="#ic-check" x="379" y="44" width="22" height="22"/>
-        <text class="fg lbl" style="--i:3" x="390" y="92" fill="var(--d-grow-deep)" font-size="15" text-anchor="middle">Imperfectionist</text>
-        <text class="fg" style="--i:3" x="390" y="112" fill="var(--cool-gray)" font-size="12" text-anchor="middle">high standards where it counts,</text>
-        <text class="fg" style="--i:3" x="390" y="129" fill="var(--cool-gray)" font-size="12" text-anchor="middle">ships at "excellent", not "flawless"</text>
+        <text class="fg lbl" style="--i:3" x="390" y="92" fill="var(--d-grow-deep)" font-size="15" text-anchor="middle">Kusurlu</text>
+        <text class="fg" style="--i:3" x="390" y="112" fill="var(--cool-gray)" font-size="12" text-anchor="middle">önemli yerde yüksek standart,</text>
+        <text class="fg" style="--i:3" x="390" y="129" fill="var(--cool-gray)" font-size="12" text-anchor="middle">"mükemmel"de teslim eder, "kusursuz"da değil</text>
       </svg>
     </div>
     <div class="callouts">
-      <div class="takeaway"><b>Takeaway:</b> Grade your own work 1–10 before sharing. If it's a 9 on the few dimensions customers actually feel, ship it.</div>
-      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> A showroom proposal delivered Tuesday at 9/10 beats one delivered next month at 9.8 — speed is part of luxury service too.</div></div>
+      <div class="takeaway"><b>Çıkarım:</b> Paylaşmadan önce kendi işini 1–10 arasında puanla. Müşterilerin gerçekten hissettiği birkaç boyutta 9 ise, teslim et.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik'te:</b> Salı günü 9/10 kalitesinde teslim edilen bir showroom teklifi, gelecek ay 9,8 ile teslim edilenden iyidir — hız da lüks hizmetin bir parçasıdır.</div></div>
     </div>
   </article>
 </section>
@@ -1040,94 +1040,94 @@
 <section class="part" id="part3">
   <div class="part-head reveal anchor">
     <div class="part-ghost">03</div>
-    <div class="part-label">Part II — Structures for Motivation</div>
-    <h2>Scaffolding: making the climb sustainable</h2>
-    <p class="lead">Willpower is overrated. The best performers build temporary support structures — play, passion in balance, detours, and mentors — that keep motivation alive through the boring middle.</p>
+    <div class="part-label">Bölüm II — Motivasyon Yapıları</div>
+    <h2>İskele: tırmanışı sürdürülebilir kılmak</h2>
+    <p class="lead">İrade abartılıyor. En iyi performans gösterenler, sıkıcı orta bölümde motivasyonu canlı tutan geçici destek yapıları kurar — oyun, dengeli tutku, dolambaçlı yollar ve mentorlar.</p>
   </div>
 
   <!-- C6 -->
   <article class="card-c reveal anchor" id="c6">
-    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-dice"/></svg></span><span class="ctag">Concept 06</span><span class="ckicker">Structures for Motivation</span></div>
-    <h3>Deliberate play — practice that doesn't burn you out</h3>
-    <p class="desc">Endless grind leads to boreout and burnout. <b>Deliberate play keeps the skill-building of deliberate practice but wraps it in novelty, games, and fun</b> — like turning shooting drills into timed challenges with scores.</p>
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-dice"/></svg></span><span class="ctag">Kavram 06</span><span class="ckicker">Motivasyon Yapıları</span></div>
+    <h3>Bilinçli oyun — seni tüketmeyen pratik</h3>
+    <p class="desc">Bitmeyen didinme, tükenmişliğe ve bıkkınlığa götürür. <b>Bilinçli oyun, bilinçli pratiğin beceri inşasını korur ama onu yenilik, oyunlar ve eğlenceyle sarar</b> — atış çalışmalarını puanlı, süreli meydan okumalara dönüştürmek gibi.</p>
     <div class="fig">
       <svg viewBox="0 0 760 240" xmlns="http://www.w3.org/2000/svg">
         <g text-anchor="middle">
           <rect class="fg" style="--i:0" x="60" y="60" width="190" height="120" rx="14" fill="var(--d-box)" stroke="var(--d-dull)"/>
           <circle class="fg" style="--i:0" cx="155" cy="92" r="18" fill="#fff" stroke="var(--d-dull)" stroke-width="1.5"/>
           <use class="fg" style="--i:0; color:var(--d-dull)" href="#ic-dice" x="144" y="81" width="22" height="22"/>
-          <text class="fg lbl" style="--i:0" x="155" y="137" fill="var(--cool-gray)" font-size="14">Free play</text>
-          <text class="fg" style="--i:0" x="155" y="158" fill="var(--cool-gray)" font-size="11.5">fun, but little growth</text>
+          <text class="fg lbl" style="--i:0" x="155" y="137" fill="var(--cool-gray)" font-size="14">Serbest oyun</text>
+          <text class="fg" style="--i:0" x="155" y="158" fill="var(--cool-gray)" font-size="11.5">eğlenceli ama az gelişim</text>
           <rect class="fg" style="--i:1" x="285" y="34" width="190" height="172" rx="14" fill="var(--d-grow-soft)" stroke="var(--d-grow)" stroke-width="2"/>
           <circle class="fg" style="--i:1" cx="380" cy="72" r="22" fill="url(#summitG)"/>
           <use class="fg" style="--i:1; color:#fff" href="#ic-dumbbell" x="367" y="61" width="26" height="26"/>
-          <text class="fg lbl" style="--i:1" x="380" y="120" fill="var(--d-grow-deep)" font-size="15">Deliberate play</text>
-          <text class="fg" style="--i:1" x="380" y="144" fill="var(--near-black)" font-size="11.5">skill goals + novelty</text>
-          <text class="fg" style="--i:1" x="380" y="162" fill="var(--near-black)" font-size="11.5">+ games — it sustains</text>
+          <text class="fg lbl" style="--i:1" x="380" y="120" fill="var(--d-grow-deep)" font-size="15">Bilinçli oyun</text>
+          <text class="fg" style="--i:1" x="380" y="144" fill="var(--near-black)" font-size="11.5">beceri hedefleri + yenilik</text>
+          <text class="fg" style="--i:1" x="380" y="162" fill="var(--near-black)" font-size="11.5">+ oyunlar — sürdürür</text>
           <text class="fg" style="--i:1" x="380" y="180" fill="var(--near-black)" font-size="11.5">itself</text>
           <rect class="fg" style="--i:2" x="510" y="60" width="190" height="120" rx="14" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/>
           <circle class="fg" style="--i:2" cx="605" cy="92" r="18" fill="#fff" stroke="var(--d-bad)" stroke-width="1.5"/>
           <use class="fg" style="--i:2; color:var(--d-bad)" href="#ic-flame" x="594" y="81" width="22" height="22"/>
           <g class="fg" style="--i:2" id="grindfire"><use href="#ic-fire" x="593" y="79" width="24" height="24"/></g>
-          <text class="fg lbl" style="--i:2" x="605" y="137" fill="var(--d-bad-text)" font-size="14">Pure grind</text>
-          <text class="fg" style="--i:2" x="605" y="158" fill="var(--cool-gray)" font-size="11.5">works, then burns out</text>
+          <text class="fg lbl" style="--i:2" x="605" y="137" fill="var(--d-bad-text)" font-size="14">Saf didinme</text>
+          <text class="fg" style="--i:2" x="605" y="158" fill="var(--cool-gray)" font-size="11.5">çalışır, sonra tükenir</text>
         </g>
-        <text class="fg" style="--i:3" x="380" y="228" fill="var(--silver-blue)" font-size="12" text-anchor="middle">The sweet spot between fun and rigor</text>
+        <text class="fg" style="--i:3" x="380" y="228" fill="var(--silver-blue)" font-size="12" text-anchor="middle">Eğlence ile titizlik arasındaki ideal nokta</text>
       </svg>
     </div>
     <div class="callouts">
-      <div class="takeaway"><b>Takeaway:</b> Gamify the boring parts — targets, streaks, friendly competition, variation. And schedule real rest: relaxation isn't a reward for finishing, it's fuel for continuing.</div>
-      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Turn objection-handling training into a weekly team game with scores — the dashboard already gives us the leaderboard culture.</div></div>
+      <div class="takeaway"><b>Çıkarım:</b> Sıkıcı kısımları oyunlaştır — hedefler, seriler, dostça rekabet, çeşitlilik. Ve gerçek dinlenmeyi planla: rahatlama, bitirmenin ödülü değil, devam etmenin yakıtıdır.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik'te:</b> İtiraz karşılama eğitimini puanlı, haftalık bir ekip oyununa dönüştür — panel bize zaten liderlik tablosu kültürünü veriyor.</div></div>
     </div>
   </article>
 
   <!-- C7 -->
   <article class="card-c reveal anchor" id="c7">
-    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-heart"/></svg></span><span class="ctag">Concept 07</span><span class="ckicker">Structures for Motivation</span></div>
-    <h3>Harmonious vs. obsessive passion</h3>
-    <p class="desc">Two ways to love your work: <b>harmonious passion</b> (you control it; joy in the process) and <b>obsessive passion</b> (it controls you; worth tied to outcomes). Same hours, opposite long-term results.</p>
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-heart"/></svg></span><span class="ctag">Kavram 07</span><span class="ckicker">Motivasyon Yapıları</span></div>
+    <h3>Uyumlu tutku ile takıntılı tutku</h3>
+    <p class="desc">İşini sevmenin iki yolu: <b>uyumlu tutku</b> (sen kontrol edersin; keyif süreçtedir) ve <b>takıntılı tutku</b> (o seni kontrol eder; değerin sonuçlara bağlıdır). Aynı saatler, zıt uzun vadeli sonuçlar.</p>
     <div class="fig">
       <svg viewBox="0 0 760 220" xmlns="http://www.w3.org/2000/svg">
         <g text-anchor="middle">
           <rect class="fg" style="--i:0" x="66" y="28" width="296" height="164" rx="14" fill="var(--d-good-soft)" stroke="var(--d-good)" stroke-width="2"/>
           <circle class="fg" style="--i:0" cx="118" cy="74" r="24" fill="#fff" stroke="var(--d-good)" stroke-width="1.5"/>
           <use id="heartbeat" class="fg" style="--i:0; color:var(--d-good)" href="#ic-heart" x="104" y="60" width="28" height="28"/>
-          <text class="fg lbl" style="--i:0" x="232" y="70" fill="var(--d-good-text)" font-size="16">Harmonious passion</text>
-          <text class="fg" style="--i:0" x="214" y="104" fill="var(--near-black)" font-size="12">you drive the work — joy is</text>
-          <text class="fg" style="--i:0" x="214" y="122" fill="var(--near-black)" font-size="12">in the process, setbacks inform</text>
-          <text class="fg lbl" style="--i:0" x="214" y="166" fill="var(--d-good-text)" font-size="13">→ sustainable excellence</text>
+          <text class="fg lbl" style="--i:0" x="232" y="70" fill="var(--d-good-text)" font-size="16">Uyumlu tutku</text>
+          <text class="fg" style="--i:0" x="214" y="104" fill="var(--near-black)" font-size="12">sen işi sürüklersin — keyif</text>
+          <text class="fg" style="--i:0" x="214" y="122" fill="var(--near-black)" font-size="12">süreçte, aksilikler yol gösterir</text>
+          <text class="fg lbl" style="--i:0" x="214" y="166" fill="var(--d-good-text)" font-size="13">→ sürdürülebilir mükemmellik</text>
           <rect class="fg" style="--i:1" x="398" y="28" width="296" height="164" rx="14" fill="var(--d-bad-soft)" stroke="var(--d-bad)" stroke-width="2"/>
           <circle class="fg" style="--i:1" cx="450" cy="74" r="24" fill="#fff" stroke="var(--d-bad)" stroke-width="1.5"/>
           <use class="fg" style="--i:1; color:var(--d-bad)" href="#ic-flame" x="436" y="60" width="28" height="28"/>
-          <text class="fg lbl" style="--i:1" x="566" y="70" fill="var(--d-bad-text)" font-size="16">Obsessive passion</text>
-          <text class="fg" style="--i:1" x="548" y="104" fill="var(--near-black)" font-size="12">the work drives you — worth</text>
-          <text class="fg" style="--i:1" x="548" y="122" fill="var(--near-black)" font-size="12">tied to results, setbacks threaten</text>
-          <text class="fg lbl" style="--i:1" x="548" y="166" fill="var(--d-bad-text)" font-size="13">→ burnout &amp; fragility</text>
+          <text class="fg lbl" style="--i:1" x="566" y="70" fill="var(--d-bad-text)" font-size="16">Takıntılı tutku</text>
+          <text class="fg" style="--i:1" x="548" y="104" fill="var(--near-black)" font-size="12">iş seni sürükler — değerin</text>
+          <text class="fg" style="--i:1" x="548" y="122" fill="var(--near-black)" font-size="12">sonuçlara bağlı, aksilikler tehdit eder</text>
+          <text class="fg lbl" style="--i:1" x="548" y="166" fill="var(--d-bad-text)" font-size="13">→ tükenmişlik &amp; kırılganlık</text>
         </g>
       </svg>
     </div>
     <div class="callouts">
-      <div class="takeaway"><b>Takeaway:</b> Notice which one you're feeding. If a missed target ruins your week, the passion has turned obsessive — rebalance toward process goals.</div>
+      <div class="takeaway"><b>Çıkarım:</b> Hangisini beslediğini fark et. Kaçırılan bir hedef haftanı mahvediyorsa, tutku takıntıya dönüşmüştür — süreç hedeflerine doğru dengeyi yeniden kur.</div>
     </div>
   </article>
 
   <!-- C8 -->
   <article class="card-c reveal anchor" id="c8">
-    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg></span><span class="ctag">Concept 08</span><span class="ckicker">Structures for Motivation</span></div>
-    <h3>Languishing, plateaus &amp; the power of detours</h3>
-    <p class="desc">Languishing is the stagnant "blah" between depression and flourishing. Grant's case study: pitcher R.A. Dickey, stuck for years in the minor leagues, who took a detour — reinventing himself around the knuckleball — and won the Cy Young at 38. <b>Progress is rarely a straight line.</b></p>
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg></span><span class="ctag">Kavram 08</span><span class="ckicker">Motivasyon Yapıları</span></div>
+    <h3>Durağanlık, platolar &amp; dolambaçlı yolların gücü</h3>
+    <p class="desc">Durağanlık, depresyon ile serpilme arasındaki durgun "boşluk" halidir. Grant'in vaka çalışması: yıllarca alt liglerde takılıp kalan, sonra dolambaçlı bir yola sapan — kendini knuckleball etrafında yeniden icat eden — ve 38 yaşında Cy Young ödülünü kazanan atıcı R.A. Dickey. <b>İlerleme nadiren düz bir çizgidir.</b></p>
     <div class="fig">
       <svg viewBox="0 0 760 270" xmlns="http://www.w3.org/2000/svg">
         <line x1="70" y1="230" x2="710" y2="230" stroke="var(--d-axis)" stroke-width="2"/>
         <line x1="70" y1="230" x2="70" y2="35" stroke="var(--d-axis)" stroke-width="2"/>
-        <text class="fg" style="--i:0" x="390" y="258" fill="var(--silver-blue)" font-size="13" text-anchor="middle">Time</text>
-        <text class="fg" style="--i:0" x="40" y="130" fill="var(--silver-blue)" font-size="13" transform="rotate(-90 40 130)" text-anchor="middle">Progress</text>
+        <text class="fg" style="--i:0" x="390" y="258" fill="var(--silver-blue)" font-size="13" text-anchor="middle">Zaman</text>
+        <text class="fg" style="--i:0" x="40" y="130" fill="var(--silver-blue)" font-size="13" transform="rotate(-90 40 130)" text-anchor="middle">İlerleme</text>
         <line class="fg" style="--i:1" x1="70" y1="225" x2="700" y2="50" stroke="var(--d-dull)" stroke-width="2" stroke-dasharray="6 6" opacity=".55"/>
-        <text class="fg" style="--i:1" x="150" y="135" fill="var(--cool-gray)" font-size="12">what we expect</text>
+        <text class="fg" style="--i:1" x="150" y="135" fill="var(--cool-gray)" font-size="12">beklediğimiz</text>
         <path class="draw" pathLength="1" d="M70,225 C130,200 160,170 200,165 C260,158 300,162 340,160 C360,159 370,175 390,185 C410,195 430,190 450,170 C480,140 500,90 560,70 C610,55 650,50 700,45" fill="none" stroke="var(--d-grow)" stroke-width="3.5"/>
-        <text class="fg" style="--i:2" x="240" y="145" fill="var(--cool-gray)" font-size="12" font-weight="600">plateau (languishing)</text>
-        <text class="fg" style="--i:3" x="378" y="215" fill="var(--d-bad-text)" font-size="12" font-weight="600">the detour — feels like going backward</text>
-        <text class="fg" style="--i:4" x="545" y="100" fill="var(--d-good-text)" font-size="12" font-weight="600">breakthrough</text>
+        <text class="fg" style="--i:2" x="240" y="145" fill="var(--cool-gray)" font-size="12" font-weight="600">plato (durağanlık)</text>
+        <text class="fg" style="--i:3" x="378" y="215" fill="var(--d-bad-text)" font-size="12" font-weight="600">dolambaç — geriye gidiyormuş gibi hissettirir</text>
+        <text class="fg" style="--i:4" x="545" y="100" fill="var(--d-good-text)" font-size="12" font-weight="600">atılım</text>
         <circle class="fg" style="--i:3" cx="390" cy="185" r="13" fill="#fff" stroke="var(--d-bad)" stroke-width="2"/>
         <use class="fg" style="--i:3; color:var(--d-bad)" href="#ic-pin" x="380" y="175" width="20" height="20"/>
         <use class="fg" style="--i:4; color:var(--d-good)" href="#ic-flag" x="548" y="44" width="26" height="26"/>
@@ -1136,15 +1136,15 @@
       </svg>
     </div>
     <div class="callouts">
-      <div class="takeaway"><b>Takeaway:</b> When stuck, don't push harder on the same path. Back up, try a side route, take on something that rebuilds momentum — moving backward briefly is often the fastest way forward.</div>
+      <div class="takeaway"><b>Çıkarım:</b> Takıldığında aynı yolda daha sert zorlama. Geri çekil, yan bir rota dene, ivmeyi yeniden kuran bir şeye giriş — kısa süreliğine geriye gitmek, çoğu zaman ileriye giden en hızlı yoldur.</div>
     </div>
   </article>
 
   <!-- C9 -->
   <article class="card-c reveal anchor" id="c9">
-    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-compass"/></svg></span><span class="ctag">Concept 09</span><span class="ckicker">Structures for Motivation</span></div>
-    <h3>A compass, not a map</h3>
-    <p class="desc">Guides who've already made the climb can't hand you their exact route — conditions change, and their path fit their strengths. <b>What mentors give you is direction.</b> Asking several guides and looking for where their advice intersects beats copying any single one.</p>
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-compass"/></svg></span><span class="ctag">Kavram 09</span><span class="ckicker">Motivasyon Yapıları</span></div>
+    <h3>Harita değil, pusula</h3>
+    <p class="desc">Tırmanışı zaten yapmış rehberler sana tam rotalarını veremez — koşullar değişir ve onların yolu kendi güçlü yanlarına uygundu. <b>Mentorların sana verdiği şey yöndür.</b> Birkaç rehbere sormak ve tavsiyelerinin kesiştiği yeri aramak, tek birini kopyalamaktan iyidir.</p>
     <div class="fig">
       <svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg">
         <g stroke-width="2.5" fill="none">
@@ -1155,19 +1155,19 @@
         <circle class="fg" style="--i:0" cx="150" cy="125" r="26" fill="var(--d-grow-soft)" stroke="var(--d-grow)" stroke-width="2"/>
         <g class="fg" style="--i:0" id="compassneedle"><polygon points="150,108 145.5,125 150,123 154.5,125" fill="var(--d-grow)"/><polygon points="150,142 145.5,125 150,127 154.5,125" fill="var(--silver-blue)"/></g>
         <circle class="fg" style="--i:0" cx="150" cy="125" r="2.6" fill="#fff" stroke="var(--d-grow)" stroke-width="1.4"/>
-        <text class="fg lbl" style="--i:0" x="150" y="176" fill="var(--d-grow-deep)" font-size="13" text-anchor="middle">You</text>
+        <text class="fg lbl" style="--i:0" x="150" y="176" fill="var(--d-grow-deep)" font-size="13" text-anchor="middle">Sen</text>
         <use class="fg" style="--i:5; color:var(--d-good)" href="#ic-flag" x="648" y="40" width="26" height="26"/>
         <circle class="fg" style="--i:5" cx="660" cy="62" r="6" fill="var(--d-good)"/>
-        <text class="fg lbl" style="--i:5" x="690" y="58" fill="var(--d-good-text)" font-size="13">Goal</text>
-        <text class="fg" style="--i:2" x="320" y="50" fill="var(--cool-gray)" font-size="11.5">Mentor A's route</text>
-        <text class="fg" style="--i:3" x="395" y="103" fill="var(--silver-blue)" font-size="11.5">Mentor B's route</text>
-        <text class="fg" style="--i:4" x="335" y="188" fill="var(--cool-gray)" font-size="11.5">Mentor C's route</text>
-        <text class="fg" style="--i:5" x="560" y="112" fill="var(--d-grow)" font-size="12" font-weight="700">where they converge →</text>
-        <text class="fg" style="--i:5" x="560" y="129" fill="var(--d-grow)" font-size="12" font-weight="700">your direction</text>
+        <text class="fg lbl" style="--i:5" x="690" y="58" fill="var(--d-good-text)" font-size="13">Hedef</text>
+        <text class="fg" style="--i:2" x="320" y="50" fill="var(--cool-gray)" font-size="11.5">Mentor A'nın rotası</text>
+        <text class="fg" style="--i:3" x="395" y="103" fill="var(--silver-blue)" font-size="11.5">Mentor B'nin rotası</text>
+        <text class="fg" style="--i:4" x="335" y="188" fill="var(--cool-gray)" font-size="11.5">Mentor C'nin rotası</text>
+        <text class="fg" style="--i:5" x="560" y="112" fill="var(--d-grow)" font-size="12" font-weight="700">kesiştikleri yer →</text>
+        <text class="fg" style="--i:5" x="560" y="129" fill="var(--d-grow)" font-size="12" font-weight="700">senin yönün</text>
       </svg>
     </div>
     <div class="callouts">
-      <div class="takeaway"><b>Takeaway:</b> Collect direction from many sources, then chart your own route. No single mentor's map fits your terrain.</div>
+      <div class="takeaway"><b>Çıkarım:</b> Birçok kaynaktan yön topla, sonra kendi rotanı çiz. Hiçbir tek mentorun haritası senin arazine tam uymaz.</div>
     </div>
   </article>
 </section>
@@ -1178,20 +1178,20 @@
 <section class="part" id="part4">
   <div class="part-head reveal anchor">
     <div class="part-ghost">04</div>
-    <div class="part-label">Part III — Systems of Opportunity</div>
-    <h2>Designing for everyone's potential</h2>
-    <p class="lead">Individual effort isn't enough if the system hides talent. Grant's examples: the Golden Thirteen (the Navy's first Black officers, who taught each other to master the curriculum), Finland's schools, and teams that switch collective intelligence on.</p>
+    <div class="part-label">Bölüm III — Fırsat Sistemleri</div>
+    <h2>Herkesin potansiyeli için tasarlamak</h2>
+    <p class="lead">Sistem yeteneği gizliyorsa bireysel çaba yetmez. Grant'in örnekleri: Golden Thirteen (Donanma'nın ilk Siyah subayları; müfredatta ustalaşmak için birbirlerine öğrettiler), Finlandiya okulları ve kolektif zekayı devreye sokan ekipler.</p>
   </div>
 
   <!-- C10 -->
   <article class="card-c reveal anchor" id="c10">
-    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-book"/></svg></span><span class="ctag">Concept 10</span><span class="ckicker">Systems of Opportunity</span></div>
-    <h3>The tutor effect — teach to master</h3>
-    <p class="desc">The Golden Thirteen each took ownership of one subject and taught it to the others — and outscored every expectation. <b>Explaining a skill forces you to truly understand it,</b> and coaching others builds your own confidence.</p>
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-book"/></svg></span><span class="ctag">Kavram 10</span><span class="ckicker">Fırsat Sistemleri</span></div>
+    <h3>Öğretmen etkisi — ustalaşmak için öğret</h3>
+    <p class="desc">Golden Thirteen'in her üyesi bir konunun sorumluluğunu üstlenip diğerlerine öğretti — ve tüm beklentileri aştı. <b>Bir beceriyi açıklamak, onu gerçekten anlamanı zorunlu kılar,</b> ve başkalarına koçluk yapmak kendi özgüvenini inşa eder.</p>
     <div class="story">
       <div class="frame">
         <img class="photo" src="golden-thirteen.png" alt="The Golden Thirteen, the U.S. Navy's first Black officers, 1944">
-        <div class="cap"><use href="#ic-star" width="14" height="14" style="color:#fff"/>The Golden Thirteen · they taught each other to the top</div>
+        <div class="cap"><use href="#ic-star" width="14" height="14" style="color:#fff"/>Golden Thirteen · zirveye birbirlerini öğreterek çıktılar</div>
       </div>
     </div>
     <div class="fig">
@@ -1205,45 +1205,45 @@
         <rect class="fg" style="--i:0" x="62" y="80" width="170" height="74" rx="12" fill="var(--d-box)" stroke="var(--border-gray)"/>
         <circle class="fg" style="--i:0" cx="96" cy="117" r="17" fill="#fff" stroke="var(--d-dull)" stroke-width="1.5"/>
         <use class="fg" style="--i:0; color:var(--cool-gray)" href="#ic-book" x="86" y="107" width="20" height="20"/>
-        <text class="fg lbl" style="--i:0" x="124" y="112" fill="var(--near-black)" font-size="14">Learn it</text>
-        <text class="fg" style="--i:0" x="124" y="132" fill="var(--cool-gray)" font-size="11">absorb the knowledge</text>
+        <text class="fg lbl" style="--i:0" x="124" y="112" fill="var(--near-black)" font-size="14">Öğren</text>
+        <text class="fg" style="--i:0" x="124" y="132" fill="var(--cool-gray)" font-size="11">bilgiyi özümse</text>
         <rect class="fg" style="--i:1" x="296" y="80" width="170" height="74" rx="12" fill="var(--d-box)" stroke="var(--border-gray)"/>
         <circle class="fg" style="--i:1" cx="330" cy="117" r="17" fill="#fff" stroke="var(--d-grow)" stroke-width="1.5"/>
         <use class="fg" style="--i:1; color:var(--d-grow)" href="#ic-message" x="320" y="107" width="20" height="20"/>
-        <text class="fg lbl" style="--i:1" x="358" y="112" fill="var(--near-black)" font-size="14">Teach it</text>
-        <text class="fg" style="--i:1" x="358" y="132" fill="var(--cool-gray)" font-size="11">explain to someone</text>
+        <text class="fg lbl" style="--i:1" x="358" y="112" fill="var(--near-black)" font-size="14">Öğret</text>
+        <text class="fg" style="--i:1" x="358" y="132" fill="var(--cool-gray)" font-size="11">birine açıkla</text>
         <rect class="fg" style="--i:2" x="530" y="80" width="170" height="74" rx="12" fill="var(--d-grow-soft)" stroke="var(--d-grow)" stroke-width="2"/>
         <circle class="fg" style="--i:2" cx="564" cy="117" r="17" fill="#fff" stroke="var(--d-grow)" stroke-width="1.5"/>
         <use class="fg" style="--i:2; color:var(--d-grow)" href="#ic-trophy" x="554" y="107" width="20" height="20"/>
-        <text class="fg lbl" style="--i:2" x="592" y="112" fill="var(--d-grow-deep)" font-size="14">Master it</text>
-        <text class="fg" style="--i:2" x="592" y="132" fill="var(--near-black)" font-size="11">gaps exposed &amp; filled</text>
+        <text class="fg lbl" style="--i:2" x="592" y="112" fill="var(--d-grow-deep)" font-size="14">Ustalaş</text>
+        <text class="fg" style="--i:2" x="592" y="132" fill="var(--near-black)" font-size="11">açıklar ortaya çıkar &amp; kapanır</text>
         <path class="fg" style="--i:3" d="M615,158 C615,196 380,196 380,160" fill="none" stroke="var(--d-mute)" stroke-width="1.5" stroke-dasharray="5 4"/>
-        <text class="fg" style="--i:3" x="498" y="214" fill="var(--silver-blue)" font-size="11" text-anchor="middle">confidence loop: coaching others convinces you that you know it</text>
+        <text class="fg" style="--i:3" x="498" y="214" fill="var(--silver-blue)" font-size="11" text-anchor="middle">özgüven döngüsü: başkalarına koçluk yapmak, bildiğine seni ikna eder</text>
       </svg>
     </div>
     <div class="callouts">
-      <div class="takeaway"><b>Takeaway:</b> The best way to learn something is to prepare to teach it. Assign every team member one topic to own and present.</div>
-      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Let Zeynep teach contract negotiation, Sena teach showroom conversion — each top performer owns and teaches one craft monthly.</div></div>
+      <div class="takeaway"><b>Çıkarım:</b> Bir şeyi öğrenmenin en iyi yolu, onu öğretmeye hazırlanmaktır. Her ekip üyesine sahiplenip sunacağı bir konu ver.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik'te:</b> Zeynep sözleşme müzakeresini, Sena showroom dönüşümünü öğretsin — her üst düzey performanslı, aylık olarak bir ustalığı sahiplenip öğretsin.</div></div>
     </div>
   </article>
 
   <!-- C11 -->
   <article class="card-c reveal anchor" id="c11">
-    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></span><span class="ctag">Concept 11</span><span class="ckicker">Systems of Opportunity</span></div>
-    <h3>Collective intelligence — teams that surface every idea</h3>
-    <p class="desc">A team's smarts depend less on its smartest member and more on prosocial process: <b>who gets heard.</b> Loud brainstorming rewards confidence; "brainwriting" — silent idea generation first, evaluation after — rewards quality and unlocks quieter voices.</p>
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></span><span class="ctag">Kavram 11</span><span class="ckicker">Fırsat Sistemleri</span></div>
+    <h3>Kolektif zeka — her fikri gün yüzüne çıkaran ekipler</h3>
+    <p class="desc">Bir ekibin zekası, en zeki üyesinden çok toplum yanlısı sürece bağlıdır: <b>kimin sesi duyuluyor.</b> Yüksek sesli beyin fırtınası özgüveni ödüllendirir; "beyin yazımı" — önce sessizce fikir üretimi, sonra değerlendirme — kaliteyi ödüllendirir ve daha sessiz sesleri açığa çıkarır.</p>
     <div class="fig">
       <svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg">
-        <text class="fg lbl" style="--i:0" x="210" y="34" fill="var(--d-bad-text)" font-size="14" text-anchor="middle">Group brainstorm</text>
+        <text class="fg lbl" style="--i:0" x="210" y="34" fill="var(--d-bad-text)" font-size="14" text-anchor="middle">Grup beyin fırtınası</text>
         <circle class="fg" style="--i:1" cx="120" cy="80" r="15" fill="var(--d-box)" stroke="var(--border-gray)"/>
         <circle class="fg" style="--i:1" cx="300" cy="78" r="15" fill="var(--d-box)" stroke="var(--border-gray)"/>
         <circle class="fg" style="--i:1" cx="128" cy="158" r="13" fill="var(--d-box)" stroke="var(--border-gray)"/>
         <circle class="fg" style="--i:1" cx="296" cy="156" r="13" fill="var(--d-box)" stroke="var(--border-gray)"/>
         <circle class="fg" style="--i:0" cx="210" cy="116" r="44" fill="var(--d-bad-soft)" stroke="var(--d-bad)" stroke-width="2"/>
         <use class="fg" style="--i:0; color:var(--d-bad)" href="#ic-message" x="184" y="90" width="52" height="52"/>
-        <text class="fg" style="--i:1" x="210" y="220" fill="var(--silver-blue)" font-size="11.5" text-anchor="middle">a few voices dominate; ideas anchor early</text>
+        <text class="fg" style="--i:1" x="210" y="220" fill="var(--silver-blue)" font-size="11.5" text-anchor="middle">birkaç ses baskın çıkar; fikirler erken sabitlenir</text>
         <line class="fg" style="--i:2" x1="380" y1="30" x2="380" y2="198" stroke="var(--border-gray)" stroke-dasharray="4 6"/>
-        <text class="fg lbl" style="--i:2" x="558" y="34" fill="var(--d-grow-deep)" font-size="14" text-anchor="middle">Brainwriting</text>
+        <text class="fg lbl" style="--i:2" x="558" y="34" fill="var(--d-grow-deep)" font-size="14" text-anchor="middle">Beyin yazımı</text>
         <g class="fg" style="--i:3">
           <circle cx="475" cy="92" r="24" fill="var(--d-grow-soft)" stroke="var(--d-grow)" stroke-width="1.5"/>
           <circle cx="558" cy="78" r="24" fill="var(--d-grow-soft)" stroke="var(--d-grow)" stroke-width="1.5"/>
@@ -1256,31 +1256,31 @@
         <use class="fg" style="--i:4; color:var(--d-grow)" href="#ic-message" x="629" y="80" width="24" height="24"/>
         <use class="fg" style="--i:4; color:var(--d-grow)" href="#ic-message" x="504" y="146" width="24" height="24"/>
         <use class="fg" style="--i:4; color:var(--d-grow)" href="#ic-message" x="587" y="146" width="24" height="24"/>
-        <text class="fg" style="--i:4" x="558" y="220" fill="var(--silver-blue)" font-size="11.5" text-anchor="middle">everyone writes first → best ideas win, not loudest</text>
+        <text class="fg" style="--i:4" x="558" y="220" fill="var(--silver-blue)" font-size="11.5" text-anchor="middle">önce herkes yazar → en iyi fikirler kazanır, en gürültülü değil</text>
       </svg>
     </div>
     <div class="callouts">
-      <div class="takeaway"><b>Takeaway:</b> In meetings, ideas in writing first, discussion second. Psychological safety + individual generation = the team's real ceiling.</div>
+      <div class="takeaway"><b>Çıkarım:</b> Toplantılarda önce fikirler yazılı, sonra tartışma. Psikolojik güven + bireysel üretim = ekibin gerçek tavanı.</div>
     </div>
   </article>
 
   <!-- C12 -->
   <article class="card-c reveal anchor" id="c12">
-    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-scale"/></svg></span><span class="ctag">Concept 12</span><span class="ckicker">Systems of Opportunity</span></div>
-    <h3>Judging potential — degree of difficulty matters</h3>
-    <p class="desc">Like diving judges, evaluators should score performance relative to difficulty. <b>A 7/10 result achieved against headwinds</b> — no resources, no network, a second language — shows more potential than a 9/10 with every advantage. Interviews and promotions should ask: how steep was the climb?</p>
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-scale"/></svg></span><span class="ctag">Kavram 12</span><span class="ckicker">Fırsat Sistemleri</span></div>
+    <h3>Potansiyeli değerlendirmek — zorluk derecesi önemlidir</h3>
+    <p class="desc">Dalış hakemleri gibi, değerlendiriciler de performansı zorluğa göre puanlamalı. <b>Ters rüzgarlara karşı elde edilen 7/10'luk bir sonuç</b> — kaynak yok, ağ yok, ikinci bir dil — her avantaja sahip 9/10'dan daha fazla potansiyel gösterir. Mülakatlar ve terfiler şunu sormalı: tırmanış ne kadar dikti?</p>
     <div class="fig">
       <svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg">
-        <text class="fg lbl" style="--i:0" x="220" y="34" fill="var(--cool-gray)" font-size="14" text-anchor="middle">Candidate A — scores 9</text>
+        <text class="fg lbl" style="--i:0" x="220" y="34" fill="var(--cool-gray)" font-size="14" text-anchor="middle">Aday A — 9 puan</text>
         <rect class="fg" style="--i:0" x="120" y="54" width="200" height="26" rx="6" fill="var(--d-box)" stroke="var(--d-dull)"/>
-        <text class="fg" style="--i:0" x="220" y="72" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">gentle slope, full support</text>
+        <text class="fg" style="--i:0" x="220" y="72" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">hafif eğim, tam destek</text>
         <rect class="fg" style="--i:1" x="120" y="96" width="200" height="128" rx="10" fill="none" stroke="var(--border-gray)"/>
         <path class="fg" style="--i:1" d="M134,210 L306,135 L306,212 L134,212 Z" fill="var(--neutral-subtle)"/>
         <path class="draw" pathLength="1" d="M134,210 L306,135" stroke="var(--d-dull)" stroke-width="3" fill="none"/>
         <use class="fg" style="--i:1; color:var(--d-dull)" href="#ic-flag" x="296" y="112" width="22" height="22"/>
-        <text class="fg lbl" style="--i:3" x="540" y="34" fill="var(--d-grow-deep)" font-size="14" text-anchor="middle">Candidate B — scores 7</text>
+        <text class="fg lbl" style="--i:3" x="540" y="34" fill="var(--d-grow-deep)" font-size="14" text-anchor="middle">Aday B — 7 puan</text>
         <rect class="fg" style="--i:3" x="440" y="54" width="200" height="26" rx="6" fill="var(--d-grow-soft)" stroke="var(--d-grow)"/>
-        <text class="fg" style="--i:3" x="540" y="72" fill="var(--near-black)" font-size="11.5" text-anchor="middle">steep wall, no support</text>
+        <text class="fg" style="--i:3" x="540" y="72" fill="var(--near-black)" font-size="11.5" text-anchor="middle">dik duvar, destek yok</text>
         <rect class="fg" style="--i:3" x="440" y="96" width="200" height="128" rx="10" fill="none" stroke="var(--border-gray)"/>
         <path class="fg" style="--i:4" d="M455,212 L520,200 L535,150 L600,138 L618,112 L618,212 Z" fill="var(--d-grow-soft)"/>
         <path class="draw" pathLength="1" d="M455,212 L520,200 L535,150 L600,138 L618,112" stroke="var(--d-grow)" stroke-width="3" fill="none"/>
@@ -1288,12 +1288,12 @@
         <use id="climbA" class="fg" style="--i:1; color:var(--d-dull)" href="#ic-person" x="120" y="184" width="24" height="24"/>
         <use id="climbB" class="fg" style="--i:4; color:var(--d-grow)" href="#ic-person" x="440" y="190" width="24" height="24"/>
         <use class="fg" style="--i:5; color:var(--d-grow)" href="#ic-scale" x="212" y="232" width="22" height="22"/>
-        <text class="fg lbl" style="--i:5" x="244" y="248" fill="var(--d-grow)" font-size="12.5">Adjusted for difficulty, B shows more potential</text>
+        <text class="fg lbl" style="--i:5" x="244" y="248" fill="var(--d-grow)" font-size="12.5">Zorluğa göre düzeltildiğinde B daha fazla potansiyel gösterir</text>
       </svg>
     </div>
     <div class="callouts">
-      <div class="takeaway"><b>Takeaway:</b> In hiring and promotion, score the climb, not just the altitude. Ask candidates about obstacles overcome, and weigh trajectory over pedigree.</div>
-      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> When hiring reps, read the résumé for slope — what did they overcome to get here? — not just the brand names on it.</div></div>
+      <div class="takeaway"><b>Çıkarım:</b> İşe alım ve terfide sadece ulaşılan yüksekliği değil, tırmanışı puanla. Adaylara aştıkları engelleri sor ve geçmiş unvanlar yerine yörüngeye ağırlık ver.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik'te:</b> Temsilci işe alırken özgeçmişi eğim için oku — buraya gelmek için neyi aştılar? — üzerindeki marka adları için değil.</div></div>
     </div>
   </article>
 </section>
@@ -1303,14 +1303,14 @@
 <section class="cta">
   <div class="inner">
     <div class="reveal">
-      <span class="micro" style="color:rgba(255,255,255,0.7)">The one thing to remember</span>
-      <h2 style="margin-top:14px;">Hire for slope. Train for character. Build the scaffolding.</h2>
-      <p>Talent sets the starting line — but character skills, smart structures, and systems that surface every voice decide how far the whole team travels. That's the work of Mozaik Academy.</p>
+      <span class="micro" style="color:rgba(255,255,255,0.7)">Hatırlanması gereken tek şey</span>
+      <h2 style="margin-top:14px;">Eğime göre işe al. Karakter için eğit. İskeleyi kur.</h2>
+      <p>Yetenek başlangıç çizgisini belirler — ama tüm ekibin ne kadar yol alacağına karakter becerileri, akıllı yapılar ve her sesi açığa çıkaran sistemler karar verir. Mozaik Academy'nin işi budur.</p>
     </div>
     <div class="principles reveal">
-      <div class="p"><div class="n">01 — Character</div><div class="t">Seek discomfort, absorb like a sponge, ship at excellent.</div></div>
-      <div class="p"><div class="n">02 — Scaffolding</div><div class="t">Play over grind, harmony over obsession, detours over dead-ends.</div></div>
-      <div class="p"><div class="n">03 — Systems</div><div class="t">Teach to master, write before you talk, score the climb.</div></div>
+      <div class="p"><div class="n">01 — Karakter</div><div class="t">Rahatsızlığı ara, sünger gibi özümse, mükemmelde teslim et.</div></div>
+      <div class="p"><div class="n">02 — İskele</div><div class="t">Didinme yerine oyun, takıntı yerine uyum, çıkmaz yerine dolambaç.</div></div>
+      <div class="p"><div class="n">03 — Sistemler</div><div class="t">Ustalaşmak için öğret, konuşmadan önce yaz, tırmanışı puanla.</div></div>
     </div>
   </div>
 </section>
@@ -1321,7 +1321,7 @@
       <div class="chip">M</div>
       <div class="wm">Mozaik <span>Academy</span></div>
     </div>
-    <div class="src">Concepts adapted from <b>Adam Grant, Hidden Potential: The Science of Achieving Greater Things (2023).</b> Diagrams are original, redrawn for internal team training. Styled in the Kraken Design System.</div>
+    <div class="src">Kavramlar <b>Adam Grant, Hidden Potential: The Science of Achieving Greater Things (2023)</b> kitabından uyarlanmıştır. Diyagramlar özgündür, iç ekip eğitimi için yeniden çizilmiştir. Kraken Tasarım Sistemi ile biçimlendirilmiştir.</div>
   </div>
 </footer>
 
