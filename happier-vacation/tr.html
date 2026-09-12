@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daha Mutlu Bir Tatil — Mozaik Academy</title>
+<meta name="description" content="Mutluluk araştırmalarından dokuz kural: gerçekten dinlendiren bir mola nasıl olur.">
+<script>
+(function(){
+  try{
+    var CUR='tr';
+    var saved=localStorage.getItem('mozaik_lang');
+    if(saved && saved!==CUR && location.search.indexOf('l=1')<0){
+      location.replace((CUR==='en'?'tr.html':'index.html')+'?l=1');
+    }
+  }catch(e){}
+})();
+</script>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../shared/course.css">
+<link rel="stylesheet" href="../shared/academy.css">
+<script>window.MOZAIK = {"lang": "tr", "page": "course", "id": "happier-vacation", "tour": [{"n": "Daha Mutlu Bir Tatil", "t": "Hoş geldin, {name} 👋", "b": "Gerçekten dinlendiren bir mola için dokuz kural — gitmeden önce, oradayken ve dönüş yolunda."}, {"n": "Adım 1 / 2", "t": "Dokuz kısa kural", "b": "Aralarında gezinmek için üstteki menüyü kullan. Her kural: bir fikir, bir görsel ve deneyebileceğin bir şey."}, {"n": "Adım 2 / 2", "t": "Bitirince tamamlandı olarak işaretle", "b": "Sayfanın altındaki “Tamamlandı olarak işaretle” düğmesiyle Academy ana sayfan neyi bitirdiğini gösterir."}]};</script>
+<script src="../shared/academy.js" defer></script>
+</head>
+<body>
+<div id="gate"><div class="card" id="gateCard"></div></div>
+<div class="progress" id="progress"></div>
+
+<svg class="iconsheet" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="_ic" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></g>
+    <linearGradient id="fireGrad" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#dc2626"/><stop offset="0.55" stop-color="#f97316"/><stop offset="1" stop-color="#fbbf24"/></linearGradient>
+  </defs>
+  <symbol id="ic-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></symbol>
+  <symbol id="ic-mountain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19l6-11 3.5 6 2.5-4 6 9z"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2.4 5.6L8 16l2.4-5.6z"/></symbol>
+  <symbol id="ic-sponge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.4" y="6.6" width="17.2" height="11.8" rx="4.6"/><circle cx="8" cy="11" r="1.05" fill="currentColor" stroke="none"/><circle cx="13" cy="10.2" r="1.05" fill="currentColor" stroke="none"/><circle cx="16.6" cy="13.4" r="1.05" fill="currentColor" stroke="none"/><circle cx="9.6" cy="15" r="1.05" fill="currentColor" stroke="none"/><circle cx="13.9" cy="14.6" r="1.05" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="ic-droplet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 10.5a6 6 0 0 1-12 0C6 9.5 12 3 12 3z"/></symbol>
+  <symbol id="ic-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8.5V20l-4-2.5v-4z"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 17l-5.4 2.7 1.2-6.1L3.3 9.4l6.1-.8z"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M19 18v3H6.5A2.5 2.5 0 0 1 4 18.5"/></symbol>
+  <symbol id="ic-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-5 4z"/></symbol>
+  <symbol id="ic-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.7-9.2-9.1A4.7 4.7 0 0 1 12 6.3a4.7 4.7 0 0 1 9.2 4.6C19 15.3 12 20 12 20z"/></symbol>
+  <symbol id="ic-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1.2 3.8 5 5.2 5 9.2a5 5 0 0 1-10 0c0-1.8.8-3 1.8-4 .2 1.8 1.2 2.6 2.2 2.6-.4-2.8-1.2-5-1.2-7.8z"/></symbol>
+  <symbol id="ic-dumbbell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 7v10M3.5 9.5v5M17.5 7v10M20.5 9.5v5M6.5 12h11"/></symbol>
+  <symbol id="ic-dice" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.1"/><circle cx="15" cy="9" r="1.1"/><circle cx="9" cy="15" r="1.1"/><circle cx="15" cy="15" r="1.1"/></symbol>
+  <symbol id="ic-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M7 21h10M6 7l-3 6h6zM18 7l-3 6h6zM4.5 7h15"/><circle cx="12" cy="5" r="1.3"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M18 20a6 6 0 0 0-3.5-5.5"/></symbol>
+  <symbol id="ic-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H14a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5.5"/></symbol>
+  <symbol id="ic-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-11"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="ic-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1.5A3.5 3.5 0 0 0 7 11M17 6h3v1.5A3.5 3.5 0 0 1 17 11M9.5 19h5M10 14.5l-.5 4.5h5l-.5-4.5"/></symbol>
+  <symbol id="ic-person" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="6.5" r="3.3"/><path d="M5.8 21.5c0-5.4 2.3-9 6.2-9s6.2 3.6 6.2 9z"/></symbol>
+  <symbol id="ic-cheer" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="7" r="3"/><path d="M7 21.5c0-4.5 1.8-7.5 5-7.5s5 3 5 7.5z"/><path d="M8.6 14.3 5.2 9.4 7 8.2l3.2 4.7z"/><path d="M15.4 14.3 18.8 9.4 17 8.2l-3.2 4.7z"/></symbol>
+  <symbol id="ic-fire" viewBox="0 0 24 24" stroke="none"><path d="M12 2.5c1.3 4 5.2 5.4 5.2 9.7A5.2 5.2 0 0 1 6.8 12.2c0-1.9.9-3.2 1.9-4.2.2 1.9 1.2 2.7 2.2 2.7-.4-2.9-1.1-5.2-.9-8.2z" fill="url(#fireGrad)"/><path d="M12 9c.7 1.9 2.5 2.6 2.5 4.7a2.5 2.5 0 0 1-5 0c0-.9.5-1.6 1-2.1.1.9.6 1.3 1.1 1.3-.2-1.4-.2-2.5.4-3.9z" fill="#fde047"/></symbol>
+  <symbol id="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></symbol>
+  <symbol id="ic-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7h2.2l1.4-2h7.8l1.4 2h2.2A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.4"/></symbol>
+  <symbol id="ic-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.7 15.7 6.3M8.3 13.3l7.4 4.4"/></symbol>
+  <symbol id="ic-laptop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1.6"/><path d="M2.5 19h19"/></symbol>
+  <symbol id="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6 12 4l8 6.6V20H4z"/><path d="M9.5 20v-5.4h5V20"/></symbol>
+  <symbol id="ic-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M8 3v3.4c0 2 4 3.6 4 5.6s-4 3.6-4 5.6V21"/><path d="M16 3v3.4c0 2-4 3.6-4 5.6s4 3.6 4 5.6V21"/></symbol>
+</svg>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="../tr.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <a class="backlink" href="../tr.html">← Academy</a>
+    <a class="langswitch navlang" href="index.html" data-setlang="en">English</a>
+    <div class="spacer"></div>
+    <div class="toc" id="toc">
+      <a href="#v1">Motivasyon</a>
+      <a href="#v2">Bekleyiş</a>
+      <a href="#v3">Beklentiler</a>
+      <a href="#v4">Küçük tatiller</a>
+      <a href="#v5">Fotoğraf</a>
+      <a href="#v6">Paylaşım</a>
+      <a href="#v7">İş</a>
+      <a href="#v8">Erken dönüş</a>
+      <a href="#v9">Yeniden giriş</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#v1">Motivasyon</a>
+  <a href="#v2">Bekleyiş</a>
+  <a href="#v3">Beklentiler</a>
+  <a href="#v4">Küçük tatiller</a>
+  <a href="#v5">Fotoğraf</a>
+  <a href="#v6">Paylaşım</a>
+  <a href="#v7">İş</a>
+  <a href="#v8">Erken dönüş</a>
+  <a href="#v9">Yeniden giriş</a>
+</div>
+
+<header class="hero compact">
+  <span class="eyebrow"><span class="dot"></span><span class="micro" style="color:var(--kraken-purple)">Ekip Eğitimi · İyi Oluş</span></span>
+  <h1>Daha mutlu bir <em>tatilin bilimi.</em></h1>
+  <p class="sub">Mutluluk araştırmalarından dokuz kural: doğru türde bir mola seçmek, tatildeyken ana kalmak ve dönüşte çakılmamak. Dinlenmek performansın zıddı değildir — iskelenin bir parçasıdır.</p>
+  <div class="hero-meta">
+    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">9</div><div class="l">Kural</div></div>
+    <div class="stat"><div class="v count">3</div><div class="l">Aşama: Öncesi · Sırası · Sonrası</div></div>
+    <div class="stat"><div class="v">~15</div><div class="l">Dakikalık okuma</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+<section class="part" id="part1">
+  <!-- V1 -->
+  <article class="card-c reveal anchor" id="v1">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-compass"/></svg></span><span class="ctag">Kural 01</span><span class="ckicker">Gitmeden Önce</span></div>
+    <h3>Rezervasyondan önce motivasyonunu bil</h3>
+    <p class="desc">Araştırmalarda altı motivasyon tekrar tekrar karşımıza çıkıyor: <b>keşif, kaçış, sevdiklerinle vakit, doğa, tarih ve prestij.</b> Hayal kırıklığı yaratan tatillerin çoğu aslında bir uyumsuzluktur — kaçmak isteyip kendini yorucu bir programın içinde bulmak ya da doğa isteyip otel lobisinde oturmak. Önce ilk iki-üç motivasyonunu adlandır, tatili onların üzerine kur. Prestij, güvenilir biçimde geri tepen tek motivasyon: keyif aldığın bir şeye değil, sosyal karşılaştırmaya dayanır.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg"><rect class="fg" style="--i:0" x="14" y="8" width="228" height="60" rx="12" fill="var(--d-box)" stroke="var(--border-gray)"/><circle class="fg" style="--i:0" cx="48" cy="38" r="15" fill="#fff" stroke="var(--d-grow)" stroke-width="1.5"/><use class="fg" style="--i:0; color:var(--d-grow)" href="#ic-compass" x="38" y="28" width="20" height="20"/><text class="fg lbl" style="--i:0" x="74" y="44" fill="var(--near-black)" font-size="13.5">Keşif</text><rect class="fg" style="--i:0" x="266" y="8" width="228" height="60" rx="12" fill="var(--d-box)" stroke="var(--border-gray)"/><circle class="fg" style="--i:0" cx="300" cy="38" r="15" fill="#fff" stroke="var(--d-grow)" stroke-width="1.5"/><use class="fg" style="--i:0; color:var(--d-grow)" href="#ic-route" x="290" y="28" width="20" height="20"/><text class="fg lbl" style="--i:0" x="326" y="44" fill="var(--near-black)" font-size="13.5">Kaçış</text><rect class="fg" style="--i:1" x="518" y="8" width="228" height="60" rx="12" fill="var(--d-box)" stroke="var(--border-gray)"/><circle class="fg" style="--i:1" cx="552" cy="38" r="15" fill="#fff" stroke="var(--d-grow)" stroke-width="1.5"/><use class="fg" style="--i:1; color:var(--d-grow)" href="#ic-users" x="542" y="28" width="20" height="20"/><text class="fg lbl" style="--i:1" x="578" y="44" fill="var(--near-black)" font-size="13.5">Sevdiklerin</text><rect class="fg" style="--i:1" x="14" y="76" width="228" height="60" rx="12" fill="var(--d-box)" stroke="var(--border-gray)"/><circle class="fg" style="--i:1" cx="48" cy="106" r="15" fill="#fff" stroke="var(--d-grow)" stroke-width="1.5"/><use class="fg" style="--i:1; color:var(--d-grow)" href="#ic-mountain" x="38" y="96" width="20" height="20"/><text class="fg lbl" style="--i:1" x="74" y="112" fill="var(--near-black)" font-size="13.5">Doğa</text><rect class="fg" style="--i:2" x="266" y="76" width="228" height="60" rx="12" fill="var(--d-box)" stroke="var(--border-gray)"/><circle class="fg" style="--i:2" cx="300" cy="106" r="15" fill="#fff" stroke="var(--d-grow)" stroke-width="1.5"/><use class="fg" style="--i:2; color:var(--d-grow)" href="#ic-book" x="290" y="96" width="20" height="20"/><text class="fg lbl" style="--i:2" x="326" y="112" fill="var(--near-black)" font-size="13.5">Tarih</text><rect class="fg" style="--i:2" x="518" y="76" width="228" height="60" rx="12" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><circle class="fg" style="--i:2" cx="552" cy="106" r="15" fill="#fff" stroke="var(--d-bad)" stroke-width="1.5"/><use class="fg" style="--i:2; color:var(--d-bad)" href="#ic-trophy" x="542" y="96" width="20" height="20"/><text class="fg lbl" style="--i:2" x="578" y="103" fill="var(--near-black)" font-size="13.5">Prestij</text><text class="fg" style="--i:2" x="578" y="121" fill="var(--d-bad-text)" font-size="11.5">karşılaştırmaya dayanır</text><rect class="fg" style="--i:4" x="14" y="152" width="732" height="46" rx="12" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg lbl" style="--i:4" x="380" y="180" fill="var(--kraken-purple-deep)" font-size="13.5" text-anchor="middle">İlk iki-üç motivasyonunu sırala — tatili onların üzerine kur</text><text class="fg" style="--i:5" x="380" y="226" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Motivasyon ile program arasındaki uyumsuzluk, tatil hayal kırıklıklarının en yaygın sebebi</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Fotoğrafta iyi duran tatili değil, motivasyonuna uyan tatili seç. Çoğu tatili bütçe değil, bu uyumsuzluk bozar. Ve motivasyonun ne olursa olsun, sevdiklerinle paylaşmak etkisini büyütür.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik'te:</b> Yaz izin çizelgesini kurmadan önce ekibe izinden gerçekte ne beklediklerini sor. Sessizlik isteyenle şehir turu isteyenin aynı iki haftaya ihtiyacı yok.</div></div>
+    </div>
+  </article>
+
+  <!-- V2 -->
+  <article class="card-c reveal anchor" id="v2">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-zap"/></svg></span><span class="ctag">Kural 02</span><span class="ckicker">Gitmeden Önce</span></div>
+    <h3>Beklemenin tadını çıkar — o da tatilin parçası</h3>
+    <p class="desc">Hollandalı ve Çinli tatilciler üzerine çalışmalar, yaklaşan bir tatili olan insanların olmayanlardan daha mutlu olduğunu gösteriyor — <b>henüz hiçbir yere gitmemişken.</b> Bu, dopaminin gerçekte yaptığı iş: haz değil, ödülün beklentisi; ödül henüz yoldayken çalışan isteme-öğrenme-hoşlanma döngüsü. Erken rezervasyon yapmak ve gideceğin yeri okumak, tatili haftalarca geriye doğru uzatır.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg">
+        <path class="fg" style="--i:0" d="M80,196 C200,190 300,140 430,64 L430,206 L80,206 Z" fill="url(#growFill)"/>
+        <line x1="60" y1="206" x2="716" y2="206" stroke="var(--d-axis)" stroke-width="2"/>
+        <rect class="fg" style="--i:2" x="430" y="34" width="132" height="172" fill="var(--kraken-purple-subtle)"/>
+        <path class="draw" pathLength="1" d="M80,196 C200,190 300,140 430,64 L562,58 C610,58 650,140 700,192"
+          fill="none" stroke="var(--kraken-purple)" stroke-width="4.5" stroke-linecap="round"/>
+        <circle class="fg" style="--i:1" cx="80" cy="196" r="7" fill="#fff" stroke="var(--kraken-purple)" stroke-width="2.5"/>
+        <use class="fg" style="--i:2; color:var(--kraken-purple)" href="#ic-zap" x="196" y="132" width="20" height="20"/>
+        <use class="fg" style="--i:3; color:var(--kraken-purple)" href="#ic-zap" x="286" y="104" width="20" height="20"/>
+        <use class="fg" style="--i:4; color:var(--kraken-purple)" href="#ic-zap" x="368" y="62" width="20" height="20"/>
+        <use class="fg" style="--i:4; color:var(--kraken-purple-deep)" href="#ic-sun" x="478" y="20" width="28" height="28"/>
+        <text class="fg lbl" style="--i:1" x="64" y="44" fill="var(--cool-gray)" font-size="12.5">Mutluluk</text>
+        <text class="fg lbl" style="--i:3" x="150" y="100" fill="var(--kraken-purple)" font-size="13.5">haftalarca beklenti</text>
+        <text class="fg lbl" style="--i:4" x="496" y="16" fill="var(--kraken-purple-deep)" font-size="13" text-anchor="middle">tatil</text>
+        <text class="fg" style="--i:1" x="80" y="230" fill="var(--silver-blue)" font-size="12.5">rezervasyon</text>
+        <text class="fg" style="--i:3" x="270" y="230" fill="var(--silver-blue)" font-size="12.5" text-anchor="middle">beklemenin keyfi</text>
+        <text class="fg" style="--i:5" x="700" y="230" fill="var(--silver-blue)" font-size="12.5" text-anchor="end">normale dönüş</text>
+      </svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Programı önceden kur ve üzerine okumaktan keyif al. Haftalarca dört gözle beklemek, tatilin getirisinin gerçek bir parçasıdır — son dakika rezervasyonu bunu çöpe atar.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik'te:</b> İzin tarihlerini yılın başında netleştir. Ekip aylarca süren beklenti keyfini bedava kazanır, Operasyon ise sürpriz yerine bir yedekleme planı.</div></div>
+    </div>
+  </article>
+
+  <!-- V3 -->
+  <article class="card-c reveal anchor" id="v3">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-hourglass"/></svg></span><span class="ctag">Kural 03</span><span class="ckicker">Gitmeden Önce</span></div>
+    <h3>O parlaklığa dair beklentini yönet</h3>
+    <p class="desc">2010 tarihli bir Hollanda çalışması, tatildeki insanların daha sağlıklı, daha az stresli, daha enerjik ve daha keyifli olduğunu buldu — ve <b>bu etkinin büyük kısmının işe dönüşün ilk haftası biterken kaybolduğunu.</b> Bu başarısız bir tatil değil, limbik sistemin çalışma şekli. Kalıcı biçimde yüksek bir ruh hali, tehdit ve fırsatları fark etmeni engellerdi; bu yüzden beynin böyle bir şey vermiyor.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg">
+        <rect class="fg" style="--i:1" x="250" y="40" width="140" height="176" fill="var(--kraken-purple-subtle)"/>
+        <line x1="60" y1="216" x2="716" y2="216" stroke="var(--d-axis)" stroke-width="2"/>
+        <line class="fg" style="--i:0" x1="80" y1="162" x2="710" y2="162" stroke="var(--d-mute)" stroke-width="1.5" stroke-dasharray="5 5"/>
+        <text class="fg" style="--i:0" x="82" y="184" fill="var(--silver-blue)" font-size="12">normal ruh halin</text>
+        <path class="draw" pathLength="1" d="M80,162 L210,162 L250,72 L390,68 L470,118 L524,153 L700,157"
+          fill="none" stroke="var(--kraken-purple)" stroke-width="4.5" stroke-linecap="round"/>
+        <path class="draw" pathLength="1" d="M390,68 L700,62" fill="none" stroke="var(--d-bad)" stroke-width="3"
+          stroke-dasharray="7 6" stroke-linecap="round"/>
+        <text class="fg lbl" style="--i:5" x="700" y="50" fill="var(--d-bad-text)" font-size="13" text-anchor="end">beklentimiz: hep böyle kalır</text>
+        <use class="fg" style="--i:3; color:var(--kraken-purple-deep)" href="#ic-sun" x="306" y="30" width="26" height="26"/>
+        <text class="fg lbl" style="--i:3" x="320" y="26" fill="var(--kraken-purple-deep)" font-size="13" text-anchor="middle">tatil</text>
+        <line class="fg" style="--i:5" x1="524" y1="88" x2="524" y2="216" stroke="var(--cool-gray)" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <text class="fg lbl" style="--i:5" x="534" y="102" fill="var(--cool-gray)" font-size="12.5">dönüşün ilk haftasının sonu</text>
+        <text class="fg lbl" style="--i:4" x="600" y="184" fill="var(--kraken-purple)" font-size="13">gerçekte olan</text>
+        <text class="fg" style="--i:1" x="80" y="240" fill="var(--silver-blue)" font-size="12.5">öncesi</text>
+        <text class="fg" style="--i:5" x="700" y="240" fill="var(--silver-blue)" font-size="12.5" text-anchor="end">haftalar sonrası</text>
+      </svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> İyi bir tatil gerçek bir toparlanma, güzel anılar ve kısa bir parlaklık satın alır. Döndüğün işi düzeltmez — bunu beklemek, gayet iyi bir tatilden bile aldatılmış çıkmanın sebebi.</div>
+    </div>
+  </article>
+
+  <!-- V4 -->
+  <article class="card-c reveal anchor" id="v4">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-sun"/></svg></span><span class="ctag">Kural 04</span><span class="ckicker">Gitmeden Önce</span></div>
+    <h3>Bir destan yerine küçük tatiller yap</h3>
+    <p class="desc">Parlaklık bir hafta içinde soluyorsa <b>sıklık, süreden daha önemlidir.</b> Yakında geçirilen on beş uzun hafta sonu sana on beş beklenti ve on beş parlaklık verir; uzaklarda geçen bir ay her birinden yalnızca bir tane. Mesafenin kendisi amaç değilse, izninin çoğunu kısa ve tekrarlanabilir molalara böl.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg">
+        <text class="fg lbl" style="--i:0" x="14" y="52" fill="var(--cool-gray)" font-size="13.5">Bir uzun tatil</text>
+        <rect class="fg" style="--i:1" x="150" y="40" width="392" height="24" rx="12" fill="var(--d-dull)" opacity="0.45"/>
+        <use class="fg" style="--i:2; color:var(--d-dull)" href="#ic-sun" x="526" y="6" width="24" height="24"/>
+        <text class="fg" style="--i:2" x="566" y="58" fill="var(--cool-gray)" font-size="13">1 parlaklık</text>
+        <line x1="14" y1="98" x2="746" y2="98" stroke="var(--d-axis)" stroke-width="1"/>
+        <text class="fg lbl" style="--i:2" x="14" y="158" fill="var(--kraken-purple)" font-size="13.5">Dört kısa mola</text>
+        <rect class="fg" style="--i:3" x="150" y="146" width="88" height="24" rx="12" fill="var(--kraken-purple)"/><use class="fg" style="--i:4; color:var(--kraken-purple-deep)" href="#ic-sun" x="222" y="112" width="24" height="24"/><rect class="fg" style="--i:4" x="254" y="146" width="88" height="24" rx="12" fill="var(--kraken-purple)"/><use class="fg" style="--i:5; color:var(--kraken-purple-deep)" href="#ic-sun" x="326" y="112" width="24" height="24"/><rect class="fg" style="--i:5" x="358" y="146" width="88" height="24" rx="12" fill="var(--kraken-purple)"/><use class="fg" style="--i:6; color:var(--kraken-purple-deep)" href="#ic-sun" x="430" y="112" width="24" height="24"/><rect class="fg" style="--i:6" x="462" y="146" width="88" height="24" rx="12" fill="var(--kraken-purple)"/><use class="fg" style="--i:7; color:var(--kraken-purple-deep)" href="#ic-sun" x="534" y="112" width="24" height="24"/>
+        <text class="fg" style="--i:7" x="566" y="164" fill="var(--kraken-purple-deep)" font-size="13">4 parlaklık</text>
+        <text class="fg lbl" style="--i:8" x="380" y="222" fill="var(--cool-gray)" font-size="13" text-anchor="middle">Aynı izin günleri — daha çok beklenti, daha çok parlaklık</text>
+      </svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Aynı izin günleri, daha çok doz. Uzağa gitmek istiyorsan bir uzun tatili koru — kalanını küçük ve sık parçalara ayır.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik'te:</b> Kısa molaların yedeklenmesi de çok daha kolay. Cuma-Pazartesi izni, üç haftalık bir yokluk gibi mağazayı açıkta ya da bir Kurumsal projeyi sahipsiz bırakmaz.</div></div>
+    </div>
+  </article>
+
+  <!-- V5 -->
+  <article class="card-c reveal anchor" id="v5">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-camera"/></svg></span><span class="ctag">Kural 05</span><span class="ckicker">Oradayken</span></div>
+    <h3>Daha az fotoğraf çek</h3>
+    <p class="desc">Prefrontal korteks bize aynı anda üç zaman diliminde yaşama imkânı verir — ve geçmişte ve gelecekte, şimdide olduğumuzdan çok daha iyiyiz. Fotoğraf küçük bir zaman yolculuğudur: <b>anı, ona sonra geri dönüp bakacak bir benlik için saklamak üzere o andan çıkarsın.</b> Birkaç fotoğraf sorun değil. Ekran üzerinden yaşanan bir tatil, büyük ölçüde katılmadığın bir tatildir.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg"><rect class="fg" style="--i:0" x="20" y="40" width="220" height="126" rx="14" fill="var(--d-box)" stroke="var(--border-gray)"/><use class="fg" style="--i:0; color:var(--silver-blue)" href="#ic-book" x="118" y="60" width="24" height="24"/><text class="fg lbl" style="--i:0" x="130" y="112" fill="var(--silver-blue)" font-size="14" text-anchor="middle" letter-spacing="0.08em">GEÇMİŞ</text><text class="fg" style="--i:0" x="130" y="136" fill="var(--cool-gray)" font-size="12" text-anchor="middle">anı</text><rect class="fg" style="--i:1" x="270" y="40" width="220" height="126" rx="14" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><use class="fg" style="--i:1; color:var(--kraken-purple)" href="#ic-person" x="368" y="60" width="24" height="24"/><text class="fg lbl" style="--i:1" x="380" y="112" fill="var(--kraken-purple)" font-size="14" text-anchor="middle" letter-spacing="0.08em">ŞİMDİ</text><text class="fg" style="--i:1" x="380" y="136" fill="var(--cool-gray)" font-size="12" text-anchor="middle">hayatın gerçekten olduğu yer</text><rect class="fg" style="--i:2" x="520" y="40" width="220" height="126" rx="14" fill="var(--d-box)" stroke="var(--border-gray)"/><use class="fg" style="--i:2; color:var(--silver-blue)" href="#ic-hourglass" x="618" y="60" width="24" height="24"/><text class="fg lbl" style="--i:2" x="630" y="112" fill="var(--silver-blue)" font-size="14" text-anchor="middle" letter-spacing="0.08em">GELECEK</text><text class="fg" style="--i:2" x="630" y="136" fill="var(--cool-gray)" font-size="12" text-anchor="middle">geri dönüp bakan benlik</text><path class="draw" pathLength="1" d="M380,182 C420,214 470,206 560,190" fill="none" stroke="var(--d-bad)" stroke-width="2.5" stroke-dasharray="6 5"/><polygon class="fg" style="--i:4" points="560,184 574,190 558,196" fill="var(--d-bad)"/><use class="fg" style="--i:3; color:var(--d-bad)" href="#ic-camera" x="352" y="186" width="24" height="24"/><text class="fg lbl" style="--i:4" x="418" y="222" fill="var(--d-bad-text)" font-size="13">fotoğraf seni şimdiden çıkarır</text><text class="fg lbl" style="--i:5" x="20" y="26" fill="var(--cool-gray)" font-size="13">Üç zaman diliminde yaşıyoruz — yalnızca biri gerçekten oluyor</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Birkaç kare çek, sonra telefonu bırak. Amaç tatili belgelemek değil — tatilde olmak.</div>
+    </div>
+  </article>
+
+  <!-- V6 -->
+  <article class="card-c reveal anchor" id="v6">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-share"/></svg></span><span class="ctag">Kural 06</span><span class="ckicker">Oradayken</span></div>
+    <h3>Paylaşma</h3>
+    <p class="desc">Paylaşmak genelde kılık değiştirmiş prestij motivasyonudur: amaç imrenilmektir ve imrenme sosyal karşılaştırmaya dayanır. Evrim seni mutluluk için değil, statü için programladı — dürtünün bu kadar doğal gelmesinin ve ona uymanın <b>tatilini bir başkasının eline vermesinin</b> sebebi bu. Sonunda tatili, orada olmayan bir seyirci için yaşıyorsun.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg">
+        <rect class="fg" style="--i:0" x="34" y="52" width="86" height="148" rx="14" fill="var(--d-box)" stroke="var(--border-gray)"/>
+        <rect class="fg" style="--i:0" x="46" y="70" width="62" height="46" rx="8" fill="var(--kraken-purple-subtle)"/>
+        <use class="fg" style="--i:1; color:var(--kraken-purple)" href="#ic-sun" x="65" y="80" width="24" height="24"/>
+        <rect class="fg" style="--i:1" x="46" y="126" width="62" height="8" rx="4" fill="var(--border-gray)"/>
+        <rect class="fg" style="--i:1" x="46" y="142" width="40" height="8" rx="4" fill="var(--border-gray)"/>
+        <use class="fg" style="--i:2; color:var(--kraken-purple)" href="#ic-share" x="63" y="160" width="26" height="26"/>
+        <text class="fg lbl" style="--i:2" x="77" y="222" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">paylaşım</text>
+        <path class="draw" pathLength="1" d="M126,110 C180,110 190,78 236,78" fill="none" stroke="var(--d-mute)" stroke-width="2.5"/>
+        <polygon class="fg" style="--i:3" points="236,72 250,78 236,84" fill="var(--d-mute)"/>
+        <path class="draw" pathLength="1" d="M126,140 C180,140 190,172 236,172" fill="none" stroke="var(--d-bad)" stroke-width="2.5"/>
+        <polygon class="fg" style="--i:3" points="236,166 250,172 236,178" fill="var(--d-bad)"/>
+        <rect class="fg" style="--i:4" x="256" y="50" width="470" height="56" rx="13" fill="var(--d-box)" stroke="var(--border-gray)"/>
+        <use class="fg" style="--i:4; color:var(--d-mute)" href="#ic-users" x="278" y="66" width="24" height="24"/>
+        <text class="fg lbl" style="--i:4" x="316" y="74" fill="var(--near-black)" font-size="13.5">Onların imrenmesi — yukarı</text>
+        <text class="fg" style="--i:4" x="316" y="92" fill="var(--cool-gray)" font-size="12">kısa bir statü kıvılcımı, sonrası yok</text>
+        <rect class="fg" style="--i:5" x="256" y="144" width="470" height="56" rx="13" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/>
+        <use class="fg" style="--i:5; color:var(--d-bad)" href="#ic-heart" x="278" y="160" width="24" height="24"/>
+        <text class="fg lbl" style="--i:5" x="316" y="168" fill="var(--near-black)" font-size="13.5">Kendi keyfin — aşağı</text>
+        <text class="fg" style="--i:5" x="316" y="186" fill="var(--d-bad-text)" font-size="12">o anı bir seyirciye harcadın</text>
+        <text class="fg lbl" style="--i:6" x="490" y="128" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">gerçekte yaptığın takas</text>
+      </svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Tatili izleyiciler için kurguluyorsan dinlenmiyorsun, çalışıyorsun. Fotoğrafları yanındaki insanlara sakla.</div>
+    </div>
+  </article>
+
+  <!-- V7 -->
+  <article class="card-c reveal anchor" id="v7">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-laptop"/></svg></span><span class="ctag">Kural 07</span><span class="ckicker">Oradayken</span></div>
+    <h3>İşi yanında götürme</h3>
+    <p class="desc"><i>Stress and Health</i> dergisindeki araştırma, tatilde işle ilgili bir şey yapmanın <b>tatilin olumlu etkisini dönüşten 1, 3 ve 10 gün sonra düşürdüğünü</b> gösteriyor. İşkolikler gelen kutusu birikmesin diye yanına biraz iş alır; gerçekte yaptıkları şey, uğruna gittikleri toparlanmayı silmek. Çocuklar yattıktan sonra bir uğraşa ihtiyacın varsa, kimsenin sana para ödemediği bir şeyi öğrenmek için oku.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg"><line x1="60" y1="204" x2="716" y2="204" stroke="var(--d-axis)" stroke-width="2"/><rect class="fg" style="--i:0" x="124" y="74" width="48" height="130" rx="7" fill="var(--kraken-purple)"/><rect class="fg" style="--i:1" x="188" y="142" width="48" height="62" rx="7" fill="var(--d-dull)" opacity="0.55"/><text class="fg" style="--i:1" x="180" y="226" fill="var(--cool-gray)" font-size="13" text-anchor="middle">1 gün sonra</text><rect class="fg" style="--i:1" x="314" y="98" width="48" height="106" rx="7" fill="var(--kraken-purple)"/><rect class="fg" style="--i:2" x="378" y="162" width="48" height="42" rx="7" fill="var(--d-dull)" opacity="0.55"/><text class="fg" style="--i:2" x="370" y="226" fill="var(--cool-gray)" font-size="13" text-anchor="middle">3 gün sonra</text><rect class="fg" style="--i:2" x="504" y="130" width="48" height="74" rx="7" fill="var(--kraken-purple)"/><rect class="fg" style="--i:3" x="568" y="186" width="48" height="18" rx="7" fill="var(--d-dull)" opacity="0.55"/><text class="fg" style="--i:3" x="560" y="226" fill="var(--cool-gray)" font-size="13" text-anchor="middle">10 gün sonra</text><text class="fg lbl" style="--i:0" x="60" y="26" fill="var(--cool-gray)" font-size="12.5">Dönüşten sonra tatilin olumlu etkisi</text><rect class="fg" style="--i:4" x="470" y="14" width="12" height="12" rx="3" fill="var(--kraken-purple)"/><text class="fg" style="--i:4" x="490" y="25" fill="var(--near-black)" font-size="12.5">işe hiç dokunmadı</text><rect class="fg" style="--i:5" x="470" y="36" width="12" height="12" rx="3" fill="var(--d-dull)" opacity="0.55"/><text class="fg" style="--i:5" x="490" y="47" fill="var(--cool-gray)" font-size="12.5">biraz iş yaptı</text><text class="fg" style="--i:6" x="716" y="246" fill="var(--silver-blue)" font-size="11.5" text-anchor="end">temsilî — etkinin yönünü gösterir, kesin değerleri değil</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> E-posta yok, “sadece bir telefon” yok. Tatilde çalışmak, tatilin tüm faydasını kaybetmenin en hızlı yolu — ve yanında götürdüğün herkesi kızdırmanın en garantili yolu.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik'te:</b> Gitmeden önce devri düzgün yap: adı belli bir yedek, açık işlerin listesi, otomatik yanıt açık. Yokluğunda karar verme yetkisi olan bir meslektaş, plajdaki dizüstü bilgisayarından değerlidir.</div></div>
+    </div>
+  </article>
+
+  <!-- V8 -->
+  <article class="card-c reveal anchor" id="v8">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-home"/></svg></span><span class="ctag">Kural 08</span><span class="ckicker">Dönüşte</span></div>
+    <h3>Eve erken dön</h3>
+    <p class="desc">Yavaş yavaş dönmek, son saate kadar yolda olmaktan iyidir. Araştırmalar, kendine bir tampon bırakanların molanın tamamından daha çok keyif aldığını gösteriyor. <b>Pazar gecesi değil, Cuma gün eve varırsan</b> ikinci bir küçük tatil gibi çalışan iki gün kazanırsın — üstüne, ilk tatilin sonunda beklenecek bir şey.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg"><rect class="fg" style="--i:0" x="210" y="38" width="66" height="40" rx="10" fill="var(--kraken-purple-subtle)" stroke="var(--kraken-purple)"/><text class="fg lbl" style="--i:0" x="243" y="63" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle">Pzt</text><rect class="fg" style="--i:0" x="284" y="38" width="66" height="40" rx="10" fill="var(--kraken-purple-subtle)" stroke="var(--kraken-purple)"/><text class="fg lbl" style="--i:0" x="317" y="63" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle">Sal</text><rect class="fg" style="--i:1" x="358" y="38" width="66" height="40" rx="10" fill="var(--kraken-purple-subtle)" stroke="var(--kraken-purple)"/><text class="fg lbl" style="--i:1" x="391" y="63" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle">Çar</text><rect class="fg" style="--i:1" x="432" y="38" width="66" height="40" rx="10" fill="var(--kraken-purple-subtle)" stroke="var(--kraken-purple)"/><text class="fg lbl" style="--i:1" x="465" y="63" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle">Per</text><rect class="fg" style="--i:2" x="506" y="38" width="66" height="40" rx="10" fill="var(--kraken-purple-subtle)" stroke="var(--kraken-purple)"/><text class="fg lbl" style="--i:2" x="539" y="63" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle">Cum</text><rect class="fg" style="--i:2" x="580" y="38" width="66" height="40" rx="10" fill="var(--kraken-purple-subtle)" stroke="var(--kraken-purple)"/><text class="fg lbl" style="--i:2" x="613" y="63" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle">Cmt</text><rect class="fg" style="--i:3" x="654" y="38" width="66" height="40" rx="10" fill="var(--kraken-purple-subtle)" stroke="var(--kraken-purple)"/><text class="fg lbl" style="--i:3" x="687" y="63" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle">Paz</text><rect class="fg" style="--i:0" x="210" y="146" width="66" height="40" rx="10" fill="var(--kraken-purple-subtle)" stroke="var(--kraken-purple)"/><text class="fg lbl" style="--i:0" x="243" y="171" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle">Pzt</text><rect class="fg" style="--i:0" x="284" y="146" width="66" height="40" rx="10" fill="var(--kraken-purple-subtle)" stroke="var(--kraken-purple)"/><text class="fg lbl" style="--i:0" x="317" y="171" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle">Sal</text><rect class="fg" style="--i:1" x="358" y="146" width="66" height="40" rx="10" fill="var(--kraken-purple-subtle)" stroke="var(--kraken-purple)"/><text class="fg lbl" style="--i:1" x="391" y="171" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle">Çar</text><rect class="fg" style="--i:1" x="432" y="146" width="66" height="40" rx="10" fill="var(--kraken-purple-subtle)" stroke="var(--kraken-purple)"/><text class="fg lbl" style="--i:1" x="465" y="171" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle">Per</text><rect class="fg" style="--i:2" x="506" y="146" width="66" height="40" rx="10" fill="var(--d-good-soft)" stroke="var(--d-good)"/><text class="fg lbl" style="--i:2" x="539" y="171" fill="var(--d-good-text)" font-size="12.5" text-anchor="middle">Cum</text><rect class="fg" style="--i:2" x="580" y="146" width="66" height="40" rx="10" fill="var(--d-good-soft)" stroke="var(--d-good)"/><text class="fg lbl" style="--i:2" x="613" y="171" fill="var(--d-good-text)" font-size="12.5" text-anchor="middle">Cmt</text><rect class="fg" style="--i:3" x="654" y="146" width="66" height="40" rx="10" fill="var(--d-good-soft)" stroke="var(--d-good)"/><text class="fg lbl" style="--i:3" x="687" y="171" fill="var(--d-good-text)" font-size="12.5" text-anchor="middle">Paz</text><text class="fg lbl" style="--i:0" x="14" y="52" fill="var(--cool-gray)" font-size="13.5">Son saate kadar yolda</text><text class="fg" style="--i:1" x="14" y="72" fill="var(--silver-blue)" font-size="12">Pazar gecesine kadar dışarıda</text><text class="fg lbl" style="--i:3" x="14" y="160" fill="var(--d-good-text)" font-size="13.5">Eve erken dön</text><text class="fg" style="--i:4" x="14" y="180" fill="var(--silver-blue)" font-size="12">Perşembe son gün, Cuma evde</text><text class="fg lbl" style="--i:2" x="210" y="106" fill="var(--d-bad-text)" font-size="13">Pazartesi: havalimanından doğrudan haftanın içine</text><text class="fg lbl" style="--i:5" x="210" y="214" fill="var(--d-good-text)" font-size="13">evde iki tampon gün — ikinci bir küçük tatil</text><text class="fg" style="--i:1" x="480" y="26" fill="var(--silver-blue)" font-size="12" text-anchor="middle">izninin son haftası</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> İşe dönüşten önce bir-iki tampon gün bırak. Pazar gece yarısı bavul boşaltmak, iyi bir tatili kötü bir Pazartesiye çevirmenin yoludur.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik'te:</b> Tampon günü izin talebinin dışına değil, içine koy. Pazartesi dinlenmiş gelen bir temsilci, bir gün fazla izinden değerlidir.</div></div>
+    </div>
+  </article>
+
+  <!-- V9 -->
+  <article class="card-c reveal anchor" id="v9">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg></span><span class="ctag">Kural 09</span><span class="ckicker">Dönüşte</span></div>
+    <h3>Dönüşe hazırlan</h3>
+    <p class="desc">Tatili harika kılan zıtlık, dönüş yolunda tersine çalışır: harika bir haftanın ardından sıradan hayat, <b>şekerden sonra yenen havuç gibidir.</b> Bu düşüşü sürpriz olarak yaşamak yerine bekle; onu işine, şehrine ya da hayatına dair bir hüküm gibi okuma. İşe yarar bir kural: dönüşün ilk haftasında önemli karar verme.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg">
+        <rect class="fg" style="--i:2" x="330" y="40" width="150" height="176" fill="var(--kraken-purple-subtle)"/>
+        <line x1="60" y1="216" x2="716" y2="216" stroke="var(--d-axis)" stroke-width="2"/>
+        <path class="draw" pathLength="1" d="M90,74 L330,74 L330,168 L700,168" fill="none"
+          stroke="var(--kraken-purple)" stroke-width="4.5" stroke-linecap="round"/>
+        <use class="fg" style="--i:0; color:var(--kraken-purple-deep)" href="#ic-sun" x="98" y="38" width="26" height="26"/>
+        <text class="fg lbl" style="--i:1" x="140" y="58" fill="var(--kraken-purple-deep)" font-size="13.5">tatilde</text>
+        <text class="fg lbl" style="--i:4" x="560" y="156" fill="var(--cool-gray)" font-size="13.5">sıradan hayat — hiç değişmedi</text>
+        <path class="fg" style="--i:3" d="M300 74 L288 74 M300 168 L288 168" stroke="var(--silver-blue)" stroke-width="1.5"/>
+        <path class="fg" style="--i:3" d="M294 78 L294 164" stroke="var(--silver-blue)" stroke-width="1.5"/>
+        <polygon class="fg" style="--i:3" points="294,74 289,84 299,84" fill="var(--silver-blue)"/>
+        <polygon class="fg" style="--i:3" points="294,168 289,158 299,158" fill="var(--silver-blue)"/>
+        <text class="fg lbl" style="--i:3" x="280" y="126" fill="var(--cool-gray)" font-size="13" text-anchor="end">acıtan şey seviye değil, zıtlık</text>
+        <text class="fg lbl" style="--i:5" x="405" y="30" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle">dönüşün ilk haftası</text>
+        <text class="fg" style="--i:5" x="405" y="240" fill="var(--kraken-purple)" font-size="12.5" text-anchor="middle">bu hafta önemli karar yok</text>
+        <text class="fg" style="--i:1" x="90" y="240" fill="var(--silver-blue)" font-size="12.5">tatil</text>
+      </svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> O hissi gerçek değil, zıtlık olarak adlandır. Ne olduğunu bilmek, duygularını yönetmekle onlar tarafından yönetilmek arasındaki farktır.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik'te:</b> Aynı toleransı başkalarına da göster. Dönüşün ilk haftası toparlanmak içindir — yeni bir girişim başlatmak ya da birinin performansını değerlendirmek için değil.</div></div>
+    </div>
+  </article>
+</section>
+</div>
+
+<!-- ===================== CLOSING CTA ===================== -->
+<section class="cta">
+  <div class="inner">
+    <div class="reveal">
+      <span class="micro" style="color:rgba(255,255,255,0.7)">Hatırlanması gereken tek şey</span>
+      <h2 style="margin-top:14px;">Dinlenmek işten kopuş değil, işin bir parçasıdır.</h2>
+      <p>Doğru motivasyonla seçilmiş, araya ekran girmeden yaşanmış ve bir gün erken bitirilmiş bir tatil; yarısı ofiste geçen iki katı uzunluktaki bir tatilden daha değerlidir. Onu bir teslim tarihi gibi koru.</p>
+    </div>
+    <div class="principles reveal">
+      <div class="p"><div class="n">01 — Öncesi</div><div class="t">Motivasyonu adlandır, bekleyişin tadını çıkar, beklentiyi dürüst tut.</div></div>
+      <div class="p"><div class="n">02 — Sırası</div><div class="t">Daha az fotoğraf, paylaşım yok, işi evde bırak.</div></div>
+      <div class="p"><div class="n">03 — Sonrası</div><div class="t">Eve erken dön ve dönüşe hazırlan.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="complete" id="completeBox"></div>
+
+<footer class="foot">
+  <div class="inner">
+    <a class="brand" href="../tr.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <div class="src"><b>Arthur C. Brooks, “The Science of a Happier Vacation”</b> çalışmasından uyarlanmıştır. Diyagramlar özgündür, iç ekip eğitimi için yeniden çizilmiştir. Kraken Tasarım Sistemi ile biçimlendirilmiştir.</div>
+  </div>
+</footer>
+<script src="../shared/course.js" defer></script>
+</body>
+</html>
