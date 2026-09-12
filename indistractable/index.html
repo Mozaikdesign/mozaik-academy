@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indistractable — Mozaik Academy</title>
+<meta name="description" content="Fourteen ideas on focus from Nir Eyal's Indistractable, redrawn for the Mozaik team.">
+<script>
+(function(){
+  try{
+    var CUR='en';
+    var saved=localStorage.getItem('mozaik_lang');
+    if(saved && saved!==CUR && location.search.indexOf('l=1')<0){
+      location.replace((CUR==='en'?'tr.html':'index.html')+'?l=1');
+    }
+  }catch(e){}
+})();
+</script>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../shared/course.css">
+<link rel="stylesheet" href="../shared/academy.css">
+<script>window.MOZAIK = {"lang": "en", "page": "course", "id": "indistractable", "tour": [{"n": "Indistractable", "t": "Welcome, {name} 👋", "b": "Fourteen ideas on focus, adapted from Nir Eyal's Indistractable for the way we actually work. About 35 minutes, and it works in pieces — one part at a time is fine."}, {"n": "Step 1 of 2", "t": "Four parts, in order", "b": "Inside (why we get pulled away), time (planning a week that holds), outside (the pings), pacts (the last line). Use the menu at the top to jump between them."}, {"n": "Step 2 of 2", "t": "Mark it complete when you finish", "b": "There's a “Mark as complete” button at the bottom, so your Academy home shows what you've finished."}]};</script>
+<script src="../shared/academy.js" defer></script>
+</head>
+<body>
+<div id="gate"><div class="card" id="gateCard"></div></div>
+<div class="progress" id="progress"></div>
+
+<svg class="iconsheet" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="_ic" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></g>
+    <linearGradient id="fireGrad" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#dc2626"/><stop offset="0.55" stop-color="#f97316"/><stop offset="1" stop-color="#fbbf24"/></linearGradient>
+  </defs>
+  <symbol id="ic-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></symbol>
+  <symbol id="ic-mountain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19l6-11 3.5 6 2.5-4 6 9z"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2.4 5.6L8 16l2.4-5.6z"/></symbol>
+  <symbol id="ic-sponge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.4" y="6.6" width="17.2" height="11.8" rx="4.6"/><circle cx="8" cy="11" r="1.05" fill="currentColor" stroke="none"/><circle cx="13" cy="10.2" r="1.05" fill="currentColor" stroke="none"/><circle cx="16.6" cy="13.4" r="1.05" fill="currentColor" stroke="none"/><circle cx="9.6" cy="15" r="1.05" fill="currentColor" stroke="none"/><circle cx="13.9" cy="14.6" r="1.05" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="ic-droplet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 10.5a6 6 0 0 1-12 0C6 9.5 12 3 12 3z"/></symbol>
+  <symbol id="ic-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8.5V20l-4-2.5v-4z"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 17l-5.4 2.7 1.2-6.1L3.3 9.4l6.1-.8z"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M19 18v3H6.5A2.5 2.5 0 0 1 4 18.5"/></symbol>
+  <symbol id="ic-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-5 4z"/></symbol>
+  <symbol id="ic-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.7-9.2-9.1A4.7 4.7 0 0 1 12 6.3a4.7 4.7 0 0 1 9.2 4.6C19 15.3 12 20 12 20z"/></symbol>
+  <symbol id="ic-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1.2 3.8 5 5.2 5 9.2a5 5 0 0 1-10 0c0-1.8.8-3 1.8-4 .2 1.8 1.2 2.6 2.2 2.6-.4-2.8-1.2-5-1.2-7.8z"/></symbol>
+  <symbol id="ic-dumbbell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 7v10M3.5 9.5v5M17.5 7v10M20.5 9.5v5M6.5 12h11"/></symbol>
+  <symbol id="ic-dice" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.1"/><circle cx="15" cy="9" r="1.1"/><circle cx="9" cy="15" r="1.1"/><circle cx="15" cy="15" r="1.1"/></symbol>
+  <symbol id="ic-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M7 21h10M6 7l-3 6h6zM18 7l-3 6h6zM4.5 7h15"/><circle cx="12" cy="5" r="1.3"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M18 20a6 6 0 0 0-3.5-5.5"/></symbol>
+  <symbol id="ic-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H14a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5.5"/></symbol>
+  <symbol id="ic-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-11"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="ic-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1.5A3.5 3.5 0 0 0 7 11M17 6h3v1.5A3.5 3.5 0 0 1 17 11M9.5 19h5M10 14.5l-.5 4.5h5l-.5-4.5"/></symbol>
+  <symbol id="ic-person" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="6.5" r="3.3"/><path d="M5.8 21.5c0-5.4 2.3-9 6.2-9s6.2 3.6 6.2 9z"/></symbol>
+  <symbol id="ic-cheer" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="7" r="3"/><path d="M7 21.5c0-4.5 1.8-7.5 5-7.5s5 3 5 7.5z"/><path d="M8.6 14.3 5.2 9.4 7 8.2l3.2 4.7z"/><path d="M15.4 14.3 18.8 9.4 17 8.2l-3.2 4.7z"/></symbol>
+  <symbol id="ic-fire" viewBox="0 0 24 24" stroke="none"><path d="M12 2.5c1.3 4 5.2 5.4 5.2 9.7A5.2 5.2 0 0 1 6.8 12.2c0-1.9.9-3.2 1.9-4.2.2 1.9 1.2 2.7 2.2 2.7-.4-2.9-1.1-5.2-.9-8.2z" fill="url(#fireGrad)"/><path d="M12 9c.7 1.9 2.5 2.6 2.5 4.7a2.5 2.5 0 0 1-5 0c0-.9.5-1.6 1-2.1.1.9.6 1.3 1.1 1.3-.2-1.4-.2-2.5.4-3.9z" fill="#fde047"/></symbol>
+  <symbol id="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></symbol>
+  <symbol id="ic-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7h2.2l1.4-2h7.8l1.4 2h2.2A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.4"/></symbol>
+  <symbol id="ic-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.7 15.7 6.3M8.3 13.3l7.4 4.4"/></symbol>
+  <symbol id="ic-laptop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1.6"/><path d="M2.5 19h19"/></symbol>
+  <symbol id="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6 12 4l8 6.6V20H4z"/><path d="M9.5 20v-5.4h5V20"/></symbol>
+  <symbol id="ic-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M8 3v3.4c0 2 4 3.6 4 5.6s-4 3.6-4 5.6V21"/><path d="M16 3v3.4c0 2-4 3.6-4 5.6s4 3.6 4 5.6V21"/></symbol>
+</svg>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="../index.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <a class="backlink" href="../index.html">← Academy</a>
+    <a class="langswitch navlang" href="tr.html" data-setlang="tr">Türkçe</a>
+    <div class="spacer"></div>
+    <div class="toc" id="toc">
+      <a href="#c1">Traction</a>
+      <a href="#c2">Discomfort</a>
+      <a href="#c3">The urge</a>
+      <a href="#c4">Reframe</a>
+      <a href="#c5">Values</a>
+      <a href="#c6">Timebox</a>
+      <a href="#c7">Sync</a>
+      <a href="#c8">Triggers</a>
+      <a href="#c9">Inbox</a>
+      <a href="#c10">Meetings</a>
+      <a href="#c11">Pacts</a>
+      <a href="#c12">Identity</a>
+      <a href="#c13">Culture</a>
+      <a href="#c14">Counterpoint</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#c1">Traction</a>
+  <a href="#c2">Discomfort</a>
+  <a href="#c3">The urge</a>
+  <a href="#c4">Reframe</a>
+  <a href="#c5">Values</a>
+  <a href="#c6">Timebox</a>
+  <a href="#c7">Sync</a>
+  <a href="#c8">Triggers</a>
+  <a href="#c9">Inbox</a>
+  <a href="#c10">Meetings</a>
+  <a href="#c11">Pacts</a>
+  <a href="#c12">Identity</a>
+  <a href="#c13">Culture</a>
+  <a href="#c14">Counterpoint</a>
+</div>
+
+<header class="hero compact">
+  <span class="eyebrow"><span class="dot"></span><span class="micro" style="color:var(--kraken-purple)">Team Training · Focus</span></span>
+  <h1>Distraction isn't a technology problem. <em>It's a discomfort problem.</em></h1>
+  <p class="sub">Fourteen ideas from Nir Eyal's <em>Indistractable</em>, redrawn for the Mozaik team — why we really reach for the phone, how to plan a week nobody can steal, and how to make the inbox, the group chat and the meeting room work for us instead of the other way round.</p>
+  <div class="hero-meta">
+    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">14</div><div class="l">Ideas</div></div>
+    <div class="stat"><div class="v count">4</div><div class="l">Steps: inside · time · outside · pacts</div></div>
+    <div class="stat"><div class="v">~35</div><div class="l">Minutes to read</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+<section class="part" id="part01">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">01</div>
+    <div class="part-label">Part I — Master Internal Triggers</div>
+    <h2>Why we really reach for the phone</h2>
+    <p class="lead">Distraction doesn't start on the screen. It starts a second earlier, inside, with a feeling we'd rather not sit in. Everything else in this training depends on getting that order right.</p>
+  </div>
+
+  <!-- C1 -->
+  <article class="card-c reveal anchor" id="c1">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg></span><span class="ctag">Concept 01</span><span class="ckicker">The Model</span></div>
+    <h3>The opposite of distraction isn't focus — it's traction</h3>
+    <p class="desc">Both words come from the same Latin root, <b>trahere</b>, to pull. Traction pulls you toward what you planned; distraction pulls you away from it. Which one an action is has nothing to do with how it looks from outside and everything to do with whether you meant to do it. And every action starts with a trigger — either <b>external</b> (a ping, a colleague at your desk, a screen) or <b>internal</b> (a feeling).</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg"><defs><marker id="mBad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-bad)"/></marker><marker id="mGood" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-grow)"/></marker></defs><line class="fg" style="--i:0" x1="60" y1="150" x2="700" y2="150" stroke="var(--d-axis)" stroke-width="2"/><circle class="fg" style="--i:0" cx="380" cy="150" r="26" fill="#fff" stroke="var(--kraken-purple)" stroke-width="2"/><use class="fg" style="--i:0; color:var(--kraken-purple)" href="#ic-person" x="370" y="140" width="20" height="20"/><text class="fg" style="--i:0" x="380" y="202" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">you, right now</text><path class="fg" style="--i:1" d="M330 150 L120 150" stroke="var(--d-bad)" stroke-width="3" marker-end="url(#mBad)"/><rect class="fg" style="--i:1" x="60" y="108" width="190" height="34" rx="10" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:1" x="155" y="130" fill="var(--d-bad-text)" font-size="13.5" text-anchor="middle" font-weight="600">DISTRACTION</text><text class="fg" style="--i:2" x="155" y="172" fill="var(--cool-gray)" font-size="12" text-anchor="middle">away from what you planned</text><path class="fg" style="--i:1" d="M430 150 L640 150" stroke="var(--d-grow)" stroke-width="3" marker-end="url(#mGood)"/><rect class="fg" style="--i:1" x="510" y="108" width="190" height="34" rx="10" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:1" x="605" y="130" fill="var(--kraken-purple-deep)" font-size="13.5" text-anchor="middle" font-weight="600">TRACTION</text><text class="fg" style="--i:2" x="605" y="172" fill="var(--cool-gray)" font-size="12" text-anchor="middle">toward what you planned</text><rect class="fg" style="--i:3" x="190" y="24" width="380" height="32" rx="10" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:3" x="380" y="45" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">external trigger — a ping, a person, a screen</text><path class="fg" style="--i:3" d="M380 56 L380 120" stroke="var(--silver-blue)" stroke-width="1.5" stroke-dasharray="4 4"/><rect class="fg" style="--i:4" x="190" y="224" width="380" height="32" rx="10" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:4" x="380" y="245" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">internal trigger — boredom, anxiety, fatigue, FOMO</text><path class="fg" style="--i:4" d="M380 224 L380 180" stroke="var(--silver-blue)" stroke-width="1.5" stroke-dasharray="4 4"/><text class="fg" style="--i:5" x="380" y="285" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Same root: Latin trahere, “to pull”. Only your intention decides which one it is.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> Stop asking “was I busy today?” Ask “did I do what I said I'd do?” Everything else was distraction, however useful it looked.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Answering a customer's WhatsApp is traction if that hour was for customers, and distraction if that hour was for building the Kurumsal quote. Same act — the calendar decides which.</div></div>
+    </div>
+  </article>
+
+  <!-- C2 -->
+  <article class="card-c reveal anchor" id="c2">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-flame"/></svg></span><span class="ctag">Concept 02</span><span class="ckicker">The Cause</span></div>
+    <h3>Time management is pain management</h3>
+    <p class="desc">We don't check the phone because the phone is interesting. We check it because something inside is uncomfortable — boredom, uncertainty, fatigue, loneliness, anxiety, the fear of missing something. <b>The phone is the exit, not the cause.</b> Which is why taking it away rarely works: the discomfort simply finds another door — the fridge, the news, a sudden and urgent need to tidy the desk.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 265" xmlns="http://www.w3.org/2000/svg"><defs><marker id="mBad2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-bad)"/></marker><marker id="mMute" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--silver-blue)"/></marker></defs><rect class="fg" style="--i:0" x="22" y="44" width="256" height="52" rx="12" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><circle class="fg" style="--i:0" cx="52" cy="70" r="15" fill="#fff" stroke="var(--d-bad)" stroke-width="1.5"/><use class="fg" style="--i:0; color:var(--d-bad)" href="#ic-flame" x="42" y="60" width="20" height="20"/><text class="fg" style="--i:0" x="78" y="75" fill="var(--near-black)" font-size="12.5" text-anchor="start">an uncomfortable feeling</text><rect class="fg" style="--i:1" x="482" y="44" width="256" height="52" rx="12" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><circle class="fg" style="--i:1" cx="512" cy="70" r="15" fill="#fff" stroke="var(--d-bad)" stroke-width="1.5"/><use class="fg" style="--i:1; color:var(--d-bad)" href="#ic-zap" x="502" y="60" width="20" height="20"/><text class="fg" style="--i:1" x="538" y="75" fill="var(--near-black)" font-size="12.5" text-anchor="start">the urge to escape it</text><rect class="fg" style="--i:2" x="482" y="164" width="256" height="52" rx="12" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><circle class="fg" style="--i:2" cx="512" cy="190" r="15" fill="#fff" stroke="var(--d-bad)" stroke-width="1.5"/><use class="fg" style="--i:2; color:var(--d-bad)" href="#ic-laptop" x="502" y="180" width="20" height="20"/><text class="fg" style="--i:2" x="538" y="195" fill="var(--near-black)" font-size="12.5" text-anchor="start">the phone, the inbox, the fridge</text><rect class="fg" style="--i:3" x="22" y="164" width="256" height="52" rx="12" fill="var(--d-box)" stroke="var(--border-gray)"/><circle class="fg" style="--i:3" cx="52" cy="190" r="15" fill="#fff" stroke="var(--cool-gray)" stroke-width="1.5"/><use class="fg" style="--i:3; color:var(--cool-gray)" href="#ic-hourglass" x="42" y="180" width="20" height="20"/><text class="fg" style="--i:3" x="78" y="195" fill="var(--near-black)" font-size="12.5" text-anchor="start">relief — for a few minutes</text><path class="fg draw" style="--i:2" pathLength="1" d="M284 70 L472 70" stroke="var(--d-bad)" stroke-width="2" marker-end="url(#mBad2)" fill="none"/><path class="fg draw" style="--i:3" pathLength="1" d="M610 98 L610 160" stroke="var(--d-bad)" stroke-width="2" marker-end="url(#mBad2)" fill="none"/><path class="fg draw" style="--i:4" pathLength="1" d="M472 190 L284 190" stroke="var(--d-bad)" stroke-width="2" marker-end="url(#mBad2)" fill="none"/><path class="fg draw" style="--i:5" pathLength="1" d="M150 164 L150 100" stroke="var(--silver-blue)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#mMute)" fill="none"/><text class="fg" style="--i:3" x="378" y="58" fill="var(--d-bad-text)" font-size="12" text-anchor="middle">seconds</text><text class="fg" style="--i:5" x="70" y="132" fill="var(--cool-gray)" font-size="12" text-anchor="start">then it's back</text><text class="fg" style="--i:6" x="380" y="250" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Remove the phone and the loop finds another exit. The loop is the target, not the exit.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> When you catch yourself drifting, don't ask what distracted you. Ask what you were trying to get away from — the answer is usually one word long.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> The hour before a difficult price conversation is the hour the inbox looks most interesting. That's not coincidence. That's the tell.</div></div>
+    </div>
+  </article>
+
+  <!-- C3 -->
+  <article class="card-c reveal anchor" id="c3">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-droplet"/></svg></span><span class="ctag">Concept 03</span><span class="ckicker">The Technique</span></div>
+    <h3>You can't stop the urge. You can outlast it.</h3>
+    <p class="desc">Urges behave like waves: they rise, crest and fall, usually inside a couple of minutes. Fighting one makes it louder; watching it makes it quieter. Two moves. First, <b>write the feeling down</b> the moment it arrives — “restless, 15:40, halfway through the quote”. Second, the <b>ten-minute rule</b>: you may have the distraction, in ten minutes. Most of the time the wave has broken before the ten minutes are up. In clinical trials, teaching smokers to notice and ride out a craving rather than suppress it roughly doubled quit rates.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="waveFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7132f5" stop-opacity="0.16"/><stop offset="1" stop-color="#7132f5" stop-opacity="0"/></linearGradient></defs><line class="fg" style="--i:0" x1="70" y1="200" x2="700" y2="200" stroke="var(--d-axis)" stroke-width="2"/><line class="fg" style="--i:0" x1="70" y1="40" x2="70" y2="200" stroke="var(--d-axis)" stroke-width="2"/><text class="fg" style="--i:0" x="70" y="26" fill="var(--silver-blue)" font-size="12" text-anchor="start">urge</text><text class="fg" style="--i:0" x="700" y="222" fill="var(--silver-blue)" font-size="12" text-anchor="end">time</text><path class="fg draw" style="--i:1" pathLength="1" d="M70 200 C 170 200, 190 60, 300 60 C 400 60, 430 190, 560 196 L700 198" stroke="var(--kraken-purple)" stroke-width="3" fill="none" stroke-linecap="round"/><path class="fg" style="--i:2" d="M70 200 C 170 200, 190 60, 300 60 C 400 60, 430 190, 560 196 L700 198 L700 200 L70 200 Z" fill="url(#waveFill)" stroke="none"/><path class="fg draw" style="--i:3" pathLength="1" d="M300 60 C 380 45, 470 40, 690 36" stroke="var(--d-bad)" stroke-width="2.5" stroke-dasharray="6 5" fill="none"/><text class="fg" style="--i:3" x="690" y="28" fill="var(--d-bad-text)" font-size="12.5" text-anchor="end">fight it — it stays</text><text class="fg" style="--i:4" x="560" y="178" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle">ride it — it passes</text><line class="fg" style="--i:5" x1="470" y1="40" x2="470" y2="200" stroke="var(--d-grow)" stroke-width="1.5" stroke-dasharray="4 4"/><rect class="fg" style="--i:5" x="392" y="208" width="156" height="30" rx="9" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:5" x="470" y="228" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle" font-weight="600">10-minute rule</text><text class="fg" style="--i:2" x="150" y="92" fill="var(--cool-gray)" font-size="12" text-anchor="middle">the trigger lands</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> Watch the <b>liminal moments</b> — the seconds between finishing one thing and starting the next. That gap is where “just a quick look” lives. Say the next task out loud before you pick anything up.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Between two showroom appointments, the ten minutes belong to the next customer's file, not to the feed. Name it in the doorway and it usually holds.</div></div>
+    </div>
+  </article>
+
+  <!-- C4 -->
+  <article class="card-c reveal anchor" id="c4">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-dice"/></svg></span><span class="ctag">Concept 04</span><span class="ckicker">The Reframe</span></div>
+    <h3>Make the boring part a game — and stop calling yourself distractible</h3>
+    <p class="desc">Two reframes do most of the work. <b>The task:</b> the cure for boredom isn't an easier job, it's a harder one — hunt for the novelty inside the thing you're avoiding. How fast can this be done cleanly? How few revisions? What pattern is hiding in this list you've read forty times? <b>Yourself:</b> people who believe willpower is a tank that empties run out sooner than people who don't. Willpower behaves far more like an emotion — it comes and goes — than like fuel. And self-talk is a prediction, not a diagnosis: “I'm rubbish at concentrating” is a sentence that makes itself true.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 258" xmlns="http://www.w3.org/2000/svg"><rect class="fg" style="--i:0" x="30" y="30" width="340" height="190" rx="14" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:0" x="200" y="60" fill="var(--d-bad-text)" font-size="13.5" text-anchor="middle" font-weight="600">Willpower is a fuel tank</text><text class="fg" style="--i:1" x="200" y="86" fill="var(--cool-gray)" font-size="12" text-anchor="middle">“I've used mine up today”</text><rect class="fg" style="--i:2" x="70" y="112" width="52" height="58" rx="8" fill="var(--d-bad)" opacity="1.0"/><rect class="fg" style="--i:3" x="140" y="112" width="52" height="58" rx="8" fill="var(--neutral-chip)" opacity="0.78"/><rect class="fg" style="--i:4" x="210" y="112" width="52" height="58" rx="8" fill="var(--neutral-chip)" opacity="0.56"/><rect class="fg" style="--i:5" x="280" y="112" width="52" height="58" rx="8" fill="var(--neutral-chip)" opacity="0.33999999999999997"/><text class="fg" style="--i:5" x="200" y="196" fill="var(--d-bad-text)" font-size="12" text-anchor="middle">believe it, and you run out sooner</text><rect class="fg" style="--i:1" x="390" y="30" width="340" height="190" rx="14" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:1" x="560" y="60" fill="var(--kraken-purple-deep)" font-size="13.5" text-anchor="middle" font-weight="600">Willpower is an emotion</text><text class="fg" style="--i:2" x="560" y="86" fill="var(--cool-gray)" font-size="12" text-anchor="middle">“it comes, it goes, it comes back”</text><path class="fg draw" style="--i:3" pathLength="1" d="M420 150 C 460 105, 500 175, 540 130 C 580 88, 620 168, 660 128 C 685 102, 700 130, 705 140" stroke="var(--kraken-purple)" stroke-width="3" fill="none" stroke-linecap="round"/><text class="fg" style="--i:5" x="560" y="196" fill="var(--kraken-purple-deep)" font-size="12" text-anchor="middle">believe it, and it returns</text><text class="fg" style="--i:6" x="380" y="244" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Same person, same afternoon. The story you tell changes what the afternoon can hold.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> Talk to yourself the way you'd talk to a colleague who just lost an hour: kindly first, practically second. Self-criticism makes the next hour worse, not better.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Stock reconciliation and data entry are the obvious candidates: set a time to beat, or a zero-error streak to keep. The work doesn't get shorter — it gets playable.</div></div>
+    </div>
+  </article>
+
+</section>
+</div>
+
+<div class="wrap">
+<section class="part" id="part02">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">02</div>
+    <div class="part-label">Part II — Make Time for Traction</div>
+    <h2>A week you decided on in advance</h2>
+    <p class="lead">You cannot defend a plan you never made. This part turns what you say matters into blocks in a calendar — including the blocks for doing nothing.</p>
+  </div>
+
+  <!-- C5 -->
+  <article class="card-c reveal anchor" id="c5">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-compass"/></svg></span><span class="ctag">Concept 05</span><span class="ckicker">Values into Time</span></div>
+    <h3>You can't call it a distraction unless you know what it pulled you away from</h3>
+    <p class="desc">A to-do list is a wish list; a calendar is a decision. Eyal's rule is to schedule <b>inputs, not outcomes</b> — you can't promise that the deal closes, you can promise the two hours. And a week has to cover three domains, not one: <b>you</b>, <b>your relationships</b>, and <b>your work</b>. Values aren't goals you finish and tick off — they're attributes of the person you want to be, and they only exist where they show up in the week.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 268" xmlns="http://www.w3.org/2000/svg"><rect class="fg" style="--i:0" x="30" y="20" width="220" height="210" rx="14" fill="#fff" stroke="var(--border-gray)"/><circle class="fg" style="--i:0" cx="140" cy="58" r="17" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="1.5"/><use class="fg" style="--i:0; color:var(--kraken-purple)" href="#ic-person" x="130" y="48" width="20" height="20"/><text class="fg" style="--i:0" x="140" y="100" fill="var(--near-black)" font-size="14" text-anchor="middle" font-weight="600">You</text><rect class="fg" style="--i:1" x="48" y="116" width="184" height="26" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:1" x="140" y="134" fill="var(--cool-gray)" font-size="12" text-anchor="middle">sleep, exercise</text><rect class="fg" style="--i:2" x="48" y="150" width="184" height="26" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:2" x="140" y="168" fill="var(--cool-gray)" font-size="12" text-anchor="middle">reading, quiet</text><rect class="fg" style="--i:1" x="270" y="20" width="220" height="210" rx="14" fill="#fff" stroke="var(--border-gray)"/><circle class="fg" style="--i:1" cx="380" cy="58" r="17" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="1.5"/><use class="fg" style="--i:1; color:var(--kraken-purple)" href="#ic-heart" x="370" y="48" width="20" height="20"/><text class="fg" style="--i:1" x="380" y="100" fill="var(--near-black)" font-size="14" text-anchor="middle" font-weight="600">Relationships</text><rect class="fg" style="--i:2" x="288" y="116" width="184" height="26" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:2" x="380" y="134" fill="var(--cool-gray)" font-size="12" text-anchor="middle">family, friends</text><rect class="fg" style="--i:3" x="288" y="150" width="184" height="26" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:3" x="380" y="168" fill="var(--cool-gray)" font-size="12" text-anchor="middle">the household</text><rect class="fg" style="--i:2" x="510" y="20" width="220" height="210" rx="14" fill="#fff" stroke="var(--border-gray)"/><circle class="fg" style="--i:2" cx="620" cy="58" r="17" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="1.5"/><use class="fg" style="--i:2; color:var(--kraken-purple)" href="#ic-flag" x="610" y="48" width="20" height="20"/><text class="fg" style="--i:2" x="620" y="100" fill="var(--near-black)" font-size="14" text-anchor="middle" font-weight="600">Work</text><rect class="fg" style="--i:3" x="528" y="116" width="184" height="26" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:3" x="620" y="134" fill="var(--cool-gray)" font-size="12" text-anchor="middle">deep work</text><rect class="fg" style="--i:4" x="528" y="150" width="184" height="26" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:4" x="620" y="168" fill="var(--cool-gray)" font-size="12" text-anchor="middle">colleagues, customers</text><text class="fg" style="--i:6" x="380" y="256" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">A week that only fills the third column isn't a full week — it's an unbalanced one you'll pay for later.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> An empty calendar isn't freedom. It's an open invitation for someone else to decide what your day was for.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> If “I want to be present at home” is a value, it is a block — not a hope you get to after the last email. Same for the hour of pipeline work that never survives a busy showroom day.</div></div>
+    </div>
+  </article>
+
+  <!-- C6 -->
+  <article class="card-c reveal anchor" id="c6">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-hourglass"/></svg></span><span class="ctag">Concept 06</span><span class="ckicker">The Method</span></div>
+    <h3>Timebox the week, then fix it every Friday</h3>
+    <p class="desc">Timeboxing is an <b>implementation intention</b>: deciding in advance what you'll do and when. A timeboxed week isn't a promise to be productive every minute — it's a decision, made while you're calm, about what each hour is for. Including the empty ones: <b>time you planned to waste is not wasted time.</b> Then the part everyone skips — fifteen minutes at the end of the week with two questions: <i>when did I do something other than what I planned?</i> and <i>what one change will I make next week?</i> The schedule is a hypothesis you're testing, not a contract you're failing.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 272" xmlns="http://www.w3.org/2000/svg"><text class="fg" style="--i:0" x="106.0" y="40" fill="var(--silver-blue)" font-size="12" text-anchor="middle">Mon</text><text class="fg" style="--i:0" x="198.0" y="40" fill="var(--silver-blue)" font-size="12" text-anchor="middle">Tue</text><text class="fg" style="--i:0" x="290.0" y="40" fill="var(--silver-blue)" font-size="12" text-anchor="middle">Wed</text><text class="fg" style="--i:0" x="382.0" y="40" fill="var(--silver-blue)" font-size="12" text-anchor="middle">Thu</text><text class="fg" style="--i:0" x="474.0" y="40" fill="var(--silver-blue)" font-size="12" text-anchor="middle">Fri</text><rect class="fg" style="--i:0" x="64" y="52" width="84" height="26" rx="7" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><rect class="fg" style="--i:1" x="64" y="84" width="84" height="26" rx="7" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><rect class="fg" style="--i:3" x="64" y="148" width="84" height="26" rx="7" fill="var(--bg-3)" stroke="var(--border-gray)"/><rect class="fg" style="--i:4" x="64" y="180" width="84" height="26" rx="7" fill="var(--d-good-soft)" stroke="var(--d-good)"/><rect class="fg" style="--i:0" x="156" y="52" width="84" height="26" rx="7" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><rect class="fg" style="--i:2" x="156" y="116" width="84" height="26" rx="7" fill="var(--neutral-chip)" stroke="var(--border-gray)"/><rect class="fg" style="--i:4" x="156" y="180" width="84" height="26" rx="7" fill="var(--d-good-soft)" stroke="var(--d-good)"/><rect class="fg" style="--i:0" x="248" y="52" width="84" height="26" rx="7" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><rect class="fg" style="--i:1" x="248" y="84" width="84" height="26" rx="7" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><rect class="fg" style="--i:3" x="248" y="148" width="84" height="26" rx="7" fill="var(--neutral-chip)" stroke="var(--border-gray)"/><rect class="fg" style="--i:1" x="340" y="84" width="84" height="26" rx="7" fill="var(--bg-3)" stroke="var(--border-gray)"/><rect class="fg" style="--i:2" x="340" y="116" width="84" height="26" rx="7" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><rect class="fg" style="--i:4" x="340" y="180" width="84" height="26" rx="7" fill="var(--warning-subtle)" stroke="var(--warning)"/><rect class="fg" style="--i:0" x="432" y="52" width="84" height="26" rx="7" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><rect class="fg" style="--i:3" x="432" y="148" width="84" height="26" rx="7" fill="var(--kraken-purple)" stroke="var(--kraken-purple-deep)"/><rect class="fg" style="--i:4" x="432" y="180" width="84" height="26" rx="7" fill="var(--d-good-soft)" stroke="var(--d-good)"/><text class="fg" style="--i:5" x="382.0" y="197" fill="#8a6100" font-size="11" text-anchor="middle">nothing</text><text class="fg" style="--i:5" x="474.0" y="165" fill="#fff" font-size="11" text-anchor="middle" font-weight="600">review</text><rect class="fg" style="--i:6" x="60" y="216" width="14" height="14" rx="4" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:6" x="82" y="228" fill="var(--cool-gray)" font-size="12" text-anchor="start">deep work</text><rect class="fg" style="--i:6" x="235" y="216" width="14" height="14" rx="4" fill="var(--d-good-soft)" stroke="var(--d-good)"/><text class="fg" style="--i:6" x="257" y="228" fill="var(--cool-gray)" font-size="12" text-anchor="start">you & family</text><rect class="fg" style="--i:6" x="410" y="216" width="14" height="14" rx="4" fill="var(--neutral-chip)" stroke="var(--border-gray)"/><text class="fg" style="--i:6" x="432" y="228" fill="var(--cool-gray)" font-size="12" text-anchor="start">meetings</text><rect class="fg" style="--i:6" x="585" y="216" width="14" height="14" rx="4" fill="var(--warning-subtle)" stroke="var(--warning)"/><text class="fg" style="--i:6" x="607" y="228" fill="var(--cool-gray)" font-size="12" text-anchor="start">planned nothing</text><text class="fg" style="--i:7" x="380" y="258" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Fifteen minutes on Friday: what pulled me off, and what one change do I make next week?</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> Judge the week on whether you did what the box said, not on how much you got done. Output is a hope; input is a promise you can actually keep.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Friday, fifteen minutes, before you leave. Two questions, one change. It is the cheapest process improvement available to any of us.</div></div>
+    </div>
+  </article>
+
+  <!-- C7 -->
+  <article class="card-c reveal anchor" id="c7">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></span><span class="ctag">Concept 07</span><span class="ckicker">Schedule Syncing</span></div>
+    <h3>Show your calendar to the people who can wreck it</h3>
+    <p class="desc">Most “always-on” pressure is assumed rather than stated. Nobody said the quote had to be answered at 22:40; we inferred it, and then resented it. The fix is a conversation with the calendar open, not a complaint: <i>here's how I've planned the week; if this new thing comes first, tell me what comes out.</i> That turns an argument about effort — which nobody wins — into a conversation about priorities, which is a manager's actual job. The same sentence works at home, where the unspoken expectations are usually louder.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 292" xmlns="http://www.w3.org/2000/svg"><defs><marker id="mSync" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--kraken-purple)"/></marker></defs><rect class="fg" style="--i:0" x="40" y="30" width="260" height="170" rx="14" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:0" x="170" y="56" fill="var(--near-black)" font-size="13" text-anchor="middle" font-weight="600">The week you planned</text><rect class="fg" style="--i:1" x="66" y="74" width="208" height="22" rx="6" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><rect class="fg" style="--i:2" x="66" y="104" width="208" height="22" rx="6" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><rect class="fg" style="--i:3" x="66" y="134" width="208" height="22" rx="6" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><rect class="fg" style="--i:4" x="66" y="164" width="208" height="22" rx="6" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:4" x="170" y="218" fill="var(--d-bad-text)" font-size="12" text-anchor="middle">one block is now in question</text><rect class="fg" style="--i:1" x="460" y="30" width="260" height="170" rx="14" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:1" x="590" y="56" fill="var(--near-black)" font-size="13" text-anchor="middle" font-weight="600">The thing that just came in</text><rect class="fg" style="--i:2" x="486" y="94" width="208" height="56" rx="10" fill="var(--warning-subtle)" stroke="var(--warning)"/><text class="fg" style="--i:2" x="590" y="128" fill="#8a6100" font-size="13" text-anchor="middle" font-weight="600">“can you do this today?”</text><path class="fg draw" style="--i:4" pathLength="1" d="M460 115 L312 115" stroke="var(--kraken-purple)" stroke-width="2.5" marker-end="url(#mSync)" fill="none"/><rect class="fg" style="--i:5" x="300" y="228" width="160" height="0" rx="12" fill="var(--d-box)" stroke="var(--border-gray)"/><rect class="fg" style="--i:5" x="190" y="240" width="380" height="40" rx="11" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:5" x="380" y="265" fill="var(--kraken-purple-deep)" font-size="13" text-anchor="middle" font-weight="600">“Yes — tell me which block comes out.”</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> The sentence that changes everything: “This is what I planned. If something new comes first, tell me what comes out.”</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Worth doing between showroom and operations especially — the rota and the deadline are usually planned by different people who've never seen each other's week.</div></div>
+    </div>
+  </article>
+
+</section>
+</div>
+
+<div class="wrap">
+<section class="part" id="part03">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">03</div>
+    <div class="part-label">Part III — Hack Back External Triggers</div>
+    <h2>Pings, inboxes and the meeting that could have been a message</h2>
+    <p class="lead">Now — and only now — the settings screen. Not to go off-grid, but to make sure every interruption that reaches you is one you'd have chosen.</p>
+  </div>
+
+  <!-- C8 -->
+  <article class="card-c reveal anchor" id="c8">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-filter"/></svg></span><span class="ctag">Concept 08</span><span class="ckicker">The Audit</span></div>
+    <h3>Every trigger gets one question: does this serve me, or do I serve it?</h3>
+    <p class="desc">External triggers aren't the enemy — the wrong ones are. A customer calling back is a trigger that serves you. A red badge you never asked for, on an app you opened twice, is one you serve. Four moves, once, properly: <b>remove</b> what you don't need, <b>replace</b> what you do need with a better time and place for it, <b>rearrange</b> so the first screen holds only tools you chose deliberately, and <b>reclaim</b> the notification settings — most people have never opened that screen in their life.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 262" xmlns="http://www.w3.org/2000/svg"><defs><marker id="mKeep" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-good)"/></marker><marker id="mCut" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-bad)"/></marker></defs><rect class="fg" style="--i:0" x="24" y="26" width="200" height="30" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:0" x="124" y="46" fill="var(--near-black)" font-size="12" text-anchor="middle">customer calls back</text><path class="fg" style="--i:0" d="M228 41 L300 41" stroke="var(--silver-blue)" stroke-width="1.5" stroke-dasharray="4 4"/><rect class="fg" style="--i:1" x="24" y="68" width="200" height="30" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:1" x="124" y="88" fill="var(--near-black)" font-size="12" text-anchor="middle">app badge, unasked</text><path class="fg" style="--i:1" d="M228 83 L300 83" stroke="var(--silver-blue)" stroke-width="1.5" stroke-dasharray="4 4"/><rect class="fg" style="--i:2" x="24" y="110" width="200" height="30" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:2" x="124" y="130" fill="var(--near-black)" font-size="12" text-anchor="middle">colleague at your desk</text><path class="fg" style="--i:2" d="M228 125 L300 125" stroke="var(--silver-blue)" stroke-width="1.5" stroke-dasharray="4 4"/><rect class="fg" style="--i:3" x="24" y="152" width="200" height="30" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:3" x="124" y="172" fill="var(--near-black)" font-size="12" text-anchor="middle">newsletter you never read</text><path class="fg" style="--i:3" d="M228 167 L300 167" stroke="var(--silver-blue)" stroke-width="1.5" stroke-dasharray="4 4"/><rect class="fg" style="--i:4" x="24" y="194" width="200" height="30" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:4" x="124" y="214" fill="var(--near-black)" font-size="12" text-anchor="middle">group chat, 40 messages</text><path class="fg" style="--i:4" d="M228 209 L300 209" stroke="var(--silver-blue)" stroke-width="1.5" stroke-dasharray="4 4"/><rect class="fg" style="--i:2" x="300" y="46" width="200" height="148" rx="14" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><use class="fg" style="--i:2; color:var(--kraken-purple)" href="#ic-filter" x="390" y="74" width="20" height="20"/><text class="fg" style="--i:3" x="400" y="124" fill="var(--kraken-purple-deep)" font-size="12" text-anchor="middle" font-weight="600">does this serve me,</text><text class="fg" style="--i:3" x="400" y="144" fill="var(--kraken-purple-deep)" font-size="12" text-anchor="middle" font-weight="600">or do I serve it?</text><rect class="fg" style="--i:4" x="542" y="40" width="196" height="72" rx="12" fill="var(--d-good-soft)" stroke="var(--d-good)"/><use class="fg" style="--i:4; color:var(--d-good)" href="#ic-check" x="562" y="66" width="20" height="20"/><text class="fg" style="--i:4" x="592" y="70" fill="var(--d-good-text)" font-size="13" text-anchor="start" font-weight="600">Keep it</text><text class="fg" style="--i:4" x="562" y="94" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">and give it a time</text><rect class="fg" style="--i:5" x="542" y="128" width="196" height="72" rx="12" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><use class="fg" style="--i:5; color:var(--d-bad)" href="#ic-x" x="562" y="154" width="20" height="20"/><text class="fg" style="--i:5" x="592" y="158" fill="var(--d-bad-text)" font-size="13" text-anchor="start" font-weight="600">Cut it</text><text class="fg" style="--i:5" x="562" y="182" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">remove · replace · rearrange</text><path class="fg" style="--i:4" d="M500 104 L540 78" stroke="var(--d-good)" stroke-width="2" marker-end="url(#mKeep)"/><path class="fg" style="--i:5" d="M500 136 L540 162" stroke="var(--d-bad)" stroke-width="2" marker-end="url(#mCut)"/><text class="fg" style="--i:6" x="380" y="248" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Remove · Replace · Rearrange · Reclaim the notification settings. Twenty minutes, once.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> Do the audit once, with the phone in your hand and the settings screen open. Twenty minutes, and it buys back months.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> One rule worth agreeing as a team: nothing that isn't a person expecting an answer gets to make a sound during showroom hours.</div></div>
+    </div>
+  </article>
+
+  <!-- C9 -->
+  <article class="card-c reveal anchor" id="c9">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg></span><span class="ctag">Concept 09</span><span class="ckicker">Inbox & Chat</span></div>
+    <h3>To get fewer emails, send fewer emails</h3>
+    <p class="desc">Every message you send is a request for a reply, so the volume you receive is partly a bill you wrote yourself. Then two habits. <b>Delay and batch:</b> decide when you answer, not whether — and say so, because a line at the top of a message (“no rush, Thursday is fine”) costs you five seconds and gives the other person their afternoon back. <b>Group chat is a sauna, not a shower:</b> short, scheduled, everyone in at once, then out. It is a terrible place to think out loud, because your thinking becomes everyone else's interruption.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 226" xmlns="http://www.w3.org/2000/svg"><defs><marker id="mLoop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-bad)"/></marker></defs><rect class="fg" style="--i:0" x="286" y="20" width="188" height="44" rx="11" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:0" x="380" y="47" fill="var(--d-bad-text)" font-size="12.5" text-anchor="middle" font-weight="600">you send a message</text><rect class="fg" style="--i:1" x="286" y="140" width="188" height="44" rx="11" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:1" x="380" y="167" fill="var(--d-bad-text)" font-size="12.5" text-anchor="middle" font-weight="600">they reply — to you</text><path class="fg draw" style="--i:2" pathLength="1" d="M474 42 C 520 60, 520 144, 480 160" stroke="var(--d-bad)" stroke-width="2" fill="none" marker-end="url(#mLoop)"/><path class="fg draw" style="--i:3" pathLength="1" d="M286 160 C 240 144, 240 60, 280 44" stroke="var(--d-bad)" stroke-width="2" fill="none" marker-end="url(#mLoop)"/><text class="fg" style="--i:2" x="380" y="108" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">the volume you receive is partly a bill you wrote</text><rect class="fg" style="--i:3" x="24" y="46" width="196" height="112" rx="12" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><use class="fg" style="--i:3; color:var(--kraken-purple)" href="#ic-filter" x="112" y="66" width="20" height="20"/><text class="fg" style="--i:3" x="122" y="114" fill="var(--kraken-purple-deep)" font-size="13" text-anchor="middle" font-weight="600">Send fewer</text><text class="fg" style="--i:3" x="122" y="136" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">does this need to be sent at all?</text><rect class="fg" style="--i:4" x="540" y="46" width="196" height="112" rx="12" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><use class="fg" style="--i:4; color:var(--kraken-purple)" href="#ic-hourglass" x="628" y="66" width="20" height="20"/><text class="fg" style="--i:4" x="638" y="114" fill="var(--kraken-purple-deep)" font-size="13" text-anchor="middle" font-weight="600">Answer in windows</text><text class="fg" style="--i:4" x="638" y="136" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">and say when, in the message</text><text class="fg" style="--i:5" x="380" y="212" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Group chat is a sauna, not a shower: short, scheduled, everyone in at once.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> Nobody is entitled to your attention the second they type. A reply window is a courtesy you announce, not a failure you apologise for.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Worth naming out loud: which of our WhatsApp groups are “answer today” and which are “answer now”. Right now every group is treated as the second, which is why none of them work.</div></div>
+    </div>
+  </article>
+
+  <!-- C10 -->
+  <article class="card-c reveal anchor" id="c10">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span class="ctag">Concept 10</span><span class="ckicker">Meetings</span></div>
+    <h3>No agenda, no meeting</h3>
+    <p class="desc">A meeting that exists to work out what we think is the most expensive way to think. Six people for an hour is a working day, spent. So: an agenda and a short written brief, circulated first — and notice how often writing the brief dissolves the need for the meeting altogether. Meetings are for <b>building consensus around a proposal</b>, not for generating one. Devices stay outside; one laptop for notes, on the screen where everyone can see it.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 222" xmlns="http://www.w3.org/2000/svg"><circle class="fg" style="--i:0" cx="80" cy="60" r="19" fill="var(--d-box)" stroke="var(--border-gray)"/><use class="fg" style="--i:0; color:var(--cool-gray)" href="#ic-person" x="70" y="50" width="20" height="20"/><circle class="fg" style="--i:1" cx="144" cy="60" r="19" fill="var(--d-box)" stroke="var(--border-gray)"/><use class="fg" style="--i:1; color:var(--cool-gray)" href="#ic-person" x="134" y="50" width="20" height="20"/><circle class="fg" style="--i:2" cx="208" cy="60" r="19" fill="var(--d-box)" stroke="var(--border-gray)"/><use class="fg" style="--i:2; color:var(--cool-gray)" href="#ic-person" x="198" y="50" width="20" height="20"/><circle class="fg" style="--i:3" cx="272" cy="60" r="19" fill="var(--d-box)" stroke="var(--border-gray)"/><use class="fg" style="--i:3; color:var(--cool-gray)" href="#ic-person" x="262" y="50" width="20" height="20"/><circle class="fg" style="--i:4" cx="336" cy="60" r="19" fill="var(--d-box)" stroke="var(--border-gray)"/><use class="fg" style="--i:4; color:var(--cool-gray)" href="#ic-person" x="326" y="50" width="20" height="20"/><circle class="fg" style="--i:5" cx="400" cy="60" r="19" fill="var(--d-box)" stroke="var(--border-gray)"/><use class="fg" style="--i:5; color:var(--cool-gray)" href="#ic-person" x="390" y="50" width="20" height="20"/><text class="fg" style="--i:2" x="272" y="108" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">six people, one hour</text><rect class="fg" style="--i:3" x="60" y="126" width="424" height="44" rx="11" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:3" x="272" y="154" fill="var(--d-bad-text)" font-size="14" text-anchor="middle" font-weight="600">= one working day, spent</text><rect class="fg" style="--i:4" x="536" y="34" width="194" height="64" rx="12" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:4" x="633" y="60" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle" font-weight="600">No agenda,</text><text class="fg" style="--i:4" x="633" y="80" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle" font-weight="600">no meeting.</text><rect class="fg" style="--i:5" x="536" y="114" width="194" height="64" rx="12" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:5" x="633" y="140" fill="var(--cool-gray)" font-size="12" text-anchor="middle">a brief, circulated first</text><text class="fg" style="--i:5" x="633" y="160" fill="var(--cool-gray)" font-size="12" text-anchor="middle">devices out, one laptop for notes</text><text class="fg" style="--i:6" x="380" y="208" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Meetings build consensus around a proposal. They are a terrible place to invent one.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> If you can't write down what the meeting decides, you don't have a meeting. You have a conversation that could have been a message.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Try it on the weekly: one page, sent the evening before, three decisions listed. The meeting usually gets shorter by half and better by more than that.</div></div>
+    </div>
+  </article>
+
+</section>
+</div>
+
+<div class="wrap">
+<section class="part" id="part04">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">04</div>
+    <div class="part-label">Part IV — Prevent Distraction with Pacts</div>
+    <h2>The last line of defence</h2>
+    <p class="lead">A pact is a decision made by today's you that tomorrow's you can't easily undo. It is the final step, not the first one.</p>
+  </div>
+
+  <!-- C11 -->
+  <article class="card-c reveal anchor" id="c11">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-lock"/></svg></span><span class="ctag">Concept 11</span><span class="ckicker">Precommitment</span></div>
+    <h3>Make the wrong thing harder than the right thing</h3>
+    <p class="desc">Pacts are the last step for a reason: lock the door before you've dealt with the other three and you've simply locked yourself in with the discomfort. Once the groundwork is done, two kinds work. <b>Effort pacts</b> add friction — the app off the phone, the phone in a drawer in another room, a site blocker that runs during the deep-work box. Five seconds of friction beats five minutes of willpower. <b>Price pacts</b> add a cost: money on the table if the thing doesn't happen. They work, and they are brutal if you picked the wrong goal — so use them on inputs you control, never on outcomes you don't.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 264" xmlns="http://www.w3.org/2000/svg"><defs><marker id="mUp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-axis)"/></marker></defs><rect class="fg" style="--i:0" x="60" y="190" width="390" height="34" rx="9" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:0" x="78" y="212" fill="var(--cool-gray)" font-size="12.5" text-anchor="start">phone face-up on the desk</text><rect class="fg" style="--i:1" x="60" y="146" width="424" height="34" rx="9" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:1" x="78" y="168" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="start">phone face-down, notifications off</text><rect class="fg" style="--i:2" x="60" y="102" width="458" height="34" rx="9" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:2" x="78" y="124" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="start">phone in a drawer</text><rect class="fg" style="--i:3" x="60" y="58" width="492" height="34" rx="9" fill="var(--kraken-purple)" stroke="var(--kraken-purple-deep)"/><text class="fg" style="--i:3" x="78" y="80" fill="#fff" font-size="12.5" text-anchor="start">phone in another room, app deleted</text><path class="fg" style="--i:4" d="M40 224 L40 40" stroke="var(--d-axis)" stroke-width="2" marker-end="url(#mUp)"/><text class="fg" style="--i:4" x="24" y="130" fill="var(--silver-blue)" font-size="11.5" text-anchor="middle" transform="rotate(-90 24 130)">more friction</text><rect class="fg" style="--i:5" x="560" y="40" width="170" height="60" rx="11" fill="var(--warning-subtle)" stroke="var(--warning)"/><text class="fg" style="--i:5" x="645" y="64" fill="#8a6100" font-size="12.5" text-anchor="middle" font-weight="600">Price pact</text><text class="fg" style="--i:5" x="645" y="84" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">money on the table</text><text class="fg" style="--i:6" x="380" y="250" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Five seconds of friction beats five minutes of willpower — design it while you're calm.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> Put a small cost between you and the thing you'll regret. Design the friction while you're calm; you will not invent it in the moment.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> The simplest version, and the one customers notice: the phone goes face-down in the drawer for the length of an appointment.</div></div>
+    </div>
+  </article>
+
+  <!-- C12 -->
+  <article class="card-c reveal anchor" id="c12">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-person"/></svg></span><span class="ctag">Concept 12</span><span class="ckicker">Identity</span></div>
+    <h3>The strongest pact is the one you make with who you are</h3>
+    <p class="desc">We keep promises that match our self-image far more reliably than promises that fight it. A vegetarian doesn't resist the steak — they don't consider it. So say it: <b>“I'm indistractable.”</b> Out loud, to colleagues, in the words you use about yourself. It sounds like a slogan and it is actually the mechanism: it moves the question from “why shouldn't I check?” to “that's not what I do.” Rituals help. Telling other people helps most, because now breaking it costs something.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 278" xmlns="http://www.w3.org/2000/svg"><defs><marker id="mId" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--kraken-purple)"/></marker></defs><rect class="fg" style="--i:0" x="272" y="20" width="216" height="52" rx="12" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><circle class="fg" style="--i:0" cx="302" cy="46" r="14" fill="#fff" stroke="var(--kraken-purple)" stroke-width="1.5"/><use class="fg" style="--i:0; color:var(--kraken-purple)" href="#ic-person" x="293" y="37" width="18" height="18"/><text class="fg" style="--i:0" x="326" y="51" fill="var(--near-black)" font-size="12.5" text-anchor="start">“I'm indistractable”</text><rect class="fg" style="--i:1" x="532" y="124" width="216" height="52" rx="12" fill="#fff" stroke="var(--border-gray)"/><circle class="fg" style="--i:1" cx="562" cy="150" r="14" fill="#fff" stroke="var(--kraken-purple)" stroke-width="1.5"/><use class="fg" style="--i:1; color:var(--kraken-purple)" href="#ic-check" x="553" y="141" width="18" height="18"/><text class="fg" style="--i:1" x="586" y="155" fill="var(--near-black)" font-size="12.5" text-anchor="start">you act like it once</text><rect class="fg" style="--i:2" x="272" y="210" width="216" height="52" rx="12" fill="#fff" stroke="var(--border-gray)"/><circle class="fg" style="--i:2" cx="302" cy="236" r="14" fill="#fff" stroke="var(--kraken-purple)" stroke-width="1.5"/><use class="fg" style="--i:2; color:var(--kraken-purple)" href="#ic-star" x="293" y="227" width="18" height="18"/><text class="fg" style="--i:2" x="326" y="241" fill="var(--near-black)" font-size="12.5" text-anchor="start">evidence you are</text><rect class="fg" style="--i:3" x="12" y="124" width="216" height="52" rx="12" fill="#fff" stroke="var(--border-gray)"/><circle class="fg" style="--i:3" cx="42" cy="150" r="14" fill="#fff" stroke="var(--kraken-purple)" stroke-width="1.5"/><use class="fg" style="--i:3; color:var(--kraken-purple)" href="#ic-message" x="33" y="141" width="18" height="18"/><text class="fg" style="--i:3" x="66" y="155" fill="var(--near-black)" font-size="12.5" text-anchor="start">you say it to someone</text><path class="fg draw" style="--i:2" pathLength="1" d="M488 62 C 580 78, 620 100, 636 118" stroke="var(--kraken-purple)" stroke-width="2" fill="none" marker-end="url(#mId)"/><path class="fg draw" style="--i:3" pathLength="1" d="M636 182 C 620 200, 580 222, 490 236" stroke="var(--kraken-purple)" stroke-width="2" fill="none" marker-end="url(#mId)"/><path class="fg draw" style="--i:4" pathLength="1" d="M270 236 C 180 222, 140 200, 124 182" stroke="var(--kraken-purple)" stroke-width="2" fill="none" marker-end="url(#mId)"/><path class="fg draw" style="--i:5" pathLength="1" d="M124 118 C 140 100, 180 78, 270 62" stroke="var(--kraken-purple)" stroke-width="2" fill="none" marker-end="url(#mId)"/><text class="fg" style="--i:6" x="380" y="156" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">the loop that makes it true</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> Stop saying “I'm trying to focus more.” Say “I don't check my phone in meetings.” Then be seen not doing it.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Identity spreads faster than instruction. One person who visibly doesn't reach for the phone mid-conversation changes a showroom faster than any policy.</div></div>
+    </div>
+  </article>
+
+</section>
+</div>
+
+<div class="wrap">
+<section class="part" id="part05">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">05</div>
+    <div class="part-label">Part V — Bigger Than You</div>
+    <h2>The team, and the honest counterargument</h2>
+    <p class="lead">Two things the model can't do on its own: fix a culture where nobody feels safe saying “this doesn't work”, and win an argument with an industry built to interrupt you.</p>
+  </div>
+
+  <!-- C13 -->
+  <article class="card-c reveal anchor" id="c13">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-home"/></svg></span><span class="ctag">Concept 13</span><span class="ckicker">The Workplace</span></div>
+    <h3>Constant interruption is a symptom of culture, not of software</h3>
+    <p class="desc">When a whole team is always on, the tools get blamed — but the cause is usually that nobody feels safe saying “this doesn't work”. Leslie Perlow's experiment at Boston Consulting Group gave consultants one predictable night off a week; the striking result wasn't the night off, it was that the weekly conversation about how to protect it was what actually changed the culture. That conversation needs <b>psychological safety</b> — Amy Edmondson's term for the shared belief that you won't be punished or humiliated for speaking up. Her three moves for whoever is leading: frame the work as a learning problem, admit your own fallibility, and model curiosity by asking far more questions than you answer.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 258" xmlns="http://www.w3.org/2000/svg"><defs><marker id="mCul" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--silver-blue)"/></marker><marker id="mCulG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--kraken-purple)"/></marker></defs><rect class="fg" style="--i:0" x="30" y="30" width="210" height="180" rx="14" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:0" x="135" y="58" fill="var(--d-bad-text)" font-size="13" text-anchor="middle" font-weight="600">What we see</text><text class="fg" style="--i:1" x="135" y="90" fill="var(--cool-gray)" font-size="12" text-anchor="middle">phones in meetings</text><text class="fg" style="--i:2" x="135" y="116" fill="var(--cool-gray)" font-size="12" text-anchor="middle">replies at 23:00</text><text class="fg" style="--i:3" x="135" y="142" fill="var(--cool-gray)" font-size="12" text-anchor="middle">nobody finishes anything</text><path class="fg" style="--i:2" d="M248 120 L296 120" stroke="var(--silver-blue)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#mCul)"/><rect class="fg" style="--i:1" x="304" y="30" width="210" height="180" rx="14" fill="var(--bg-3)" stroke="var(--border-gray)"/><text class="fg" style="--i:1" x="409" y="58" fill="var(--near-black)" font-size="13" text-anchor="middle" font-weight="600">What's underneath</text><text class="fg" style="--i:2" x="409" y="96" fill="var(--cool-gray)" font-size="12" text-anchor="middle">no safe way to say</text><text class="fg" style="--i:2" x="409" y="118" fill="var(--cool-gray)" font-size="12" text-anchor="middle">“this doesn't work”</text><text class="fg" style="--i:3" x="409" y="140" fill="var(--cool-gray)" font-size="12" text-anchor="middle">so the norm goes unchallenged</text><path class="fg" style="--i:3" d="M522 120 L570 120" stroke="var(--kraken-purple)" stroke-width="2" marker-end="url(#mCulG)"/><rect class="fg" style="--i:2" x="578" y="30" width="152" height="180" rx="14" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:2" x="654" y="58" fill="var(--kraken-purple-deep)" font-size="13" text-anchor="middle" font-weight="600">What fixes it</text><text class="fg" style="--i:3" x="654" y="92" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">a learning problem</text><text class="fg" style="--i:4" x="654" y="122" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">leaders admit fault</text><text class="fg" style="--i:5" x="654" y="152" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">questions > answers</text><text class="fg" style="--i:6" x="380" y="244" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Perlow at BCG: the night off mattered less than the weekly conversation about protecting it.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> If everyone's distracted, don't buy a tool. Book the conversation where people can say what's actually broken — and make sure the most senior person in the room speaks last.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Twenty minutes of the monthly meeting is enough to start: what interrupts you most, what you assume is expected of you after hours, and which of those assumptions is actually true.</div></div>
+    </div>
+  </article>
+
+  <!-- C14 -->
+  <article class="card-c reveal anchor" id="c14">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-scale"/></svg></span><span class="ctag">Concept 14</span><span class="ckicker">The Other Side</span></div>
+    <h3>The honest counterargument</h3>
+    <p class="desc">Take this book with a hand on the other side of the scale. Nir Eyal wrote <i>Hooked</i> — the manual on building habit-forming products — before he wrote this one, which is an unusual CV for an author arguing the design isn't the problem. Johann Hari's <i>Stolen Focus</i> makes the opposite case: attention is being taken at industrial scale by companies with more resources than any of us, and “try harder” is how you lose that fight. The numbers aren't flattering to either side of the argument, but they are real: Gloria Mark's research at UC Irvine found average time on a single screen fell from about 2½ minutes in 2004 to roughly 47 seconds, and that it takes over twenty minutes to properly return to a task after an interruption.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 302" xmlns="http://www.w3.org/2000/svg"><path class="fg" style="--i:0" d="M380 60 L380 120" stroke="var(--d-axis)" stroke-width="3"/><path class="fg" style="--i:0" d="M150 60 L610 60" stroke="var(--d-axis)" stroke-width="3" stroke-linecap="round"/><path class="fg" style="--i:0" d="M330 120 L430 120 L410 150 L350 150 Z" fill="var(--d-box)" stroke="var(--border-gray)"/><path class="fg" style="--i:0" d="M150 60 L150 96" stroke="var(--d-axis)" stroke-width="1.5"/><path class="fg" style="--i:0" d="M610 60 L610 96" stroke="var(--d-axis)" stroke-width="1.5"/><rect class="fg" style="--i:1" x="28" y="96" width="244" height="90" rx="12" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:1" x="150" y="122" fill="var(--kraken-purple-deep)" font-size="13" text-anchor="middle" font-weight="600">Eyal: start with yourself</text><text class="fg" style="--i:2" x="150" y="146" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">the trigger is usually internal</text><text class="fg" style="--i:2" x="150" y="166" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">and you can change your settings</text><rect class="fg" style="--i:1" x="488" y="96" width="244" height="90" rx="12" fill="var(--warning-subtle)" stroke="var(--warning)"/><text class="fg" style="--i:1" x="610" y="122" fill="#8a6100" font-size="13" text-anchor="middle" font-weight="600">Hari: start with the system</text><text class="fg" style="--i:2" x="610" y="146" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">attention is taken at scale</text><text class="fg" style="--i:2" x="610" y="166" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">“try harder” loses that fight</text><rect class="fg" style="--i:4" x="28" y="206" width="704" height="62" rx="12" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:4" x="150" y="234" fill="var(--kraken-purple)" font-size="17" text-anchor="middle" font-weight="700">2½ min → 47 sec</text><text class="fg" style="--i:4" x="150" y="254" fill="var(--cool-gray)" font-size="11" text-anchor="middle">average time on one screen, 2004 → today</text><text class="fg" style="--i:5" x="380" y="234" fill="var(--kraken-purple)" font-size="17" text-anchor="middle" font-weight="700">20+ min</text><text class="fg" style="--i:5" x="380" y="254" fill="var(--cool-gray)" font-size="11" text-anchor="middle">to properly return after an interruption</text><text class="fg" style="--i:6" x="610" y="234" fill="var(--kraken-purple)" font-size="17" text-anchor="middle" font-weight="700">both</text><text class="fg" style="--i:6" x="610" y="254" fill="var(--cool-gray)" font-size="11" text-anchor="middle">can be true at the same time</text><text class="fg" style="--i:7" x="380" y="290" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Research: Gloria Mark, UC Irvine. Use the model where you have power; name the system where you don't.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> Use the model on what you control — your hours, your settings, your team's norms. Don't let it talk you into blaming yourself for a system built to interrupt you.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Which means: if a tool genuinely makes the work impossible, saying so is a legitimate answer. Changing the tool is allowed. It just isn't the first thing to try.</div></div>
+    </div>
+  </article>
+
+</section>
+</div>
+
+<!-- ===================== CLOSING CTA ===================== -->
+<section class="cta">
+  <div class="inner">
+    <div class="reveal">
+      <span class="micro" style="color:rgba(255,255,255,0.7)">The one thing to remember</span>
+      <h2 style="margin-top:14px;">You can't call it a distraction until you've decided what you were doing instead.</h2>
+      <p>The model runs in order. Handle the feeling, plan the time, cut the triggers, then lock the door. Skip to step three and all you get is a quieter phone and the same restless hour.</p>
+    </div>
+    <div class="principles reveal">
+      <div class="p"><div class="n">01 — Inside</div><div class="t">Distraction is escape. Name the discomfort and ride it out.</div></div>
+      <div class="p"><div class="n">02 — Time</div><div class="t">Values become timeboxes. The week is the unit, not the to-do list.</div></div>
+      <div class="p"><div class="n">03 — Outside</div><div class="t">Every trigger earns its place, or it goes — then pacts hold the line.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="complete" id="completeBox"></div>
+
+<footer class="foot">
+  <div class="inner">
+    <a class="brand" href="../index.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <div class="src">Concepts adapted from <b>Nir Eyal, Indistractable: How to Control Your Attention and Choose Your Life (2019)</b>. Supporting research from Gloria Mark (UC Irvine), Amy Edmondson and Leslie Perlow (Harvard), and the urge-surfing trials of Sarah Bowen and Judson Brewer. Counterpoint from Johann Hari, <b>Stolen Focus</b> (2022). Diagrams are original, drawn for internal team training. Styled in the Kraken Design System.</div>
+  </div>
+</footer>
+<script src="../shared/course.js" defer></script>
+</body>
+</html>

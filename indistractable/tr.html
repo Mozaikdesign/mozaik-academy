@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indistractable — Mozaik Academy</title>
+<meta name="description" content="Nir Eyal’in Indistractable kitabından odak üzerine on dört fikir — Mozaik ekibi için yeniden çizildi.">
+<script>
+(function(){
+  try{
+    var CUR='tr';
+    var saved=localStorage.getItem('mozaik_lang');
+    if(saved && saved!==CUR && location.search.indexOf('l=1')<0){
+      location.replace((CUR==='en'?'tr.html':'index.html')+'?l=1');
+    }
+  }catch(e){}
+})();
+</script>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../shared/course.css">
+<link rel="stylesheet" href="../shared/academy.css">
+<script>window.MOZAIK = {"lang": "tr", "page": "course", "id": "indistractable", "tour": [{"n": "Indistractable", "t": "Hoş geldin, {name} 👋", "b": "Odak üzerine on dört fikir — Nir Eyal'in Indistractable kitabından, bizim çalışma şeklimize uyarlandı. Yaklaşık 35 dakika; parça parça da okunur."}, {"n": "Adım 1 / 2", "t": "Dört bölüm, sırayla", "b": "İçeri (bizi neden çeker), zaman (tutan bir hafta), dışarı (bildirimler), anlaşmalar (son hat). Aralarında gezinmek için üstteki menüyü kullan."}, {"n": "Adım 2 / 2", "t": "Bitirince tamamlandı olarak işaretle", "b": "Sayfanın altındaki “Tamamlandı olarak işaretle” düğmesiyle Academy ana sayfan neyi bitirdiğini gösterir."}]};</script>
+<script src="../shared/academy.js" defer></script>
+</head>
+<body>
+<div id="gate"><div class="card" id="gateCard"></div></div>
+<div class="progress" id="progress"></div>
+
+<svg class="iconsheet" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="_ic" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></g>
+    <linearGradient id="fireGrad" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#dc2626"/><stop offset="0.55" stop-color="#f97316"/><stop offset="1" stop-color="#fbbf24"/></linearGradient>
+  </defs>
+  <symbol id="ic-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></symbol>
+  <symbol id="ic-mountain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19l6-11 3.5 6 2.5-4 6 9z"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2.4 5.6L8 16l2.4-5.6z"/></symbol>
+  <symbol id="ic-sponge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.4" y="6.6" width="17.2" height="11.8" rx="4.6"/><circle cx="8" cy="11" r="1.05" fill="currentColor" stroke="none"/><circle cx="13" cy="10.2" r="1.05" fill="currentColor" stroke="none"/><circle cx="16.6" cy="13.4" r="1.05" fill="currentColor" stroke="none"/><circle cx="9.6" cy="15" r="1.05" fill="currentColor" stroke="none"/><circle cx="13.9" cy="14.6" r="1.05" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="ic-droplet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 10.5a6 6 0 0 1-12 0C6 9.5 12 3 12 3z"/></symbol>
+  <symbol id="ic-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8.5V20l-4-2.5v-4z"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 17l-5.4 2.7 1.2-6.1L3.3 9.4l6.1-.8z"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M19 18v3H6.5A2.5 2.5 0 0 1 4 18.5"/></symbol>
+  <symbol id="ic-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-5 4z"/></symbol>
+  <symbol id="ic-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.7-9.2-9.1A4.7 4.7 0 0 1 12 6.3a4.7 4.7 0 0 1 9.2 4.6C19 15.3 12 20 12 20z"/></symbol>
+  <symbol id="ic-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1.2 3.8 5 5.2 5 9.2a5 5 0 0 1-10 0c0-1.8.8-3 1.8-4 .2 1.8 1.2 2.6 2.2 2.6-.4-2.8-1.2-5-1.2-7.8z"/></symbol>
+  <symbol id="ic-dumbbell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 7v10M3.5 9.5v5M17.5 7v10M20.5 9.5v5M6.5 12h11"/></symbol>
+  <symbol id="ic-dice" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.1"/><circle cx="15" cy="9" r="1.1"/><circle cx="9" cy="15" r="1.1"/><circle cx="15" cy="15" r="1.1"/></symbol>
+  <symbol id="ic-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M7 21h10M6 7l-3 6h6zM18 7l-3 6h6zM4.5 7h15"/><circle cx="12" cy="5" r="1.3"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M18 20a6 6 0 0 0-3.5-5.5"/></symbol>
+  <symbol id="ic-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H14a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5.5"/></symbol>
+  <symbol id="ic-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-11"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="ic-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1.5A3.5 3.5 0 0 0 7 11M17 6h3v1.5A3.5 3.5 0 0 1 17 11M9.5 19h5M10 14.5l-.5 4.5h5l-.5-4.5"/></symbol>
+  <symbol id="ic-person" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="6.5" r="3.3"/><path d="M5.8 21.5c0-5.4 2.3-9 6.2-9s6.2 3.6 6.2 9z"/></symbol>
+  <symbol id="ic-cheer" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="7" r="3"/><path d="M7 21.5c0-4.5 1.8-7.5 5-7.5s5 3 5 7.5z"/><path d="M8.6 14.3 5.2 9.4 7 8.2l3.2 4.7z"/><path d="M15.4 14.3 18.8 9.4 17 8.2l-3.2 4.7z"/></symbol>
+  <symbol id="ic-fire" viewBox="0 0 24 24" stroke="none"><path d="M12 2.5c1.3 4 5.2 5.4 5.2 9.7A5.2 5.2 0 0 1 6.8 12.2c0-1.9.9-3.2 1.9-4.2.2 1.9 1.2 2.7 2.2 2.7-.4-2.9-1.1-5.2-.9-8.2z" fill="url(#fireGrad)"/><path d="M12 9c.7 1.9 2.5 2.6 2.5 4.7a2.5 2.5 0 0 1-5 0c0-.9.5-1.6 1-2.1.1.9.6 1.3 1.1 1.3-.2-1.4-.2-2.5.4-3.9z" fill="#fde047"/></symbol>
+  <symbol id="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></symbol>
+  <symbol id="ic-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7h2.2l1.4-2h7.8l1.4 2h2.2A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.4"/></symbol>
+  <symbol id="ic-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.7 15.7 6.3M8.3 13.3l7.4 4.4"/></symbol>
+  <symbol id="ic-laptop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1.6"/><path d="M2.5 19h19"/></symbol>
+  <symbol id="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6 12 4l8 6.6V20H4z"/><path d="M9.5 20v-5.4h5V20"/></symbol>
+  <symbol id="ic-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M8 3v3.4c0 2 4 3.6 4 5.6s-4 3.6-4 5.6V21"/><path d="M16 3v3.4c0 2-4 3.6-4 5.6s4 3.6 4 5.6V21"/></symbol>
+</svg>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="../tr.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <a class="backlink" href="../tr.html">← Academy</a>
+    <a class="langswitch navlang" href="index.html" data-setlang="en">English</a>
+    <div class="spacer"></div>
+    <div class="toc" id="toc">
+      <a href="#c1">Çekim</a>
+      <a href="#c2">Rahatsızlık</a>
+      <a href="#c3">Dürtü</a>
+      <a href="#c4">Yeniden kur</a>
+      <a href="#c5">Değerler</a>
+      <a href="#c6">Zaman kutusu</a>
+      <a href="#c7">Eşitle</a>
+      <a href="#c8">Tetikleyiciler</a>
+      <a href="#c9">Gelen kutusu</a>
+      <a href="#c10">Toplantılar</a>
+      <a href="#c11">Anlaşmalar</a>
+      <a href="#c12">Kimlik</a>
+      <a href="#c13">Kültür</a>
+      <a href="#c14">Karşı görüş</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#c1">Çekim</a>
+  <a href="#c2">Rahatsızlık</a>
+  <a href="#c3">Dürtü</a>
+  <a href="#c4">Yeniden kur</a>
+  <a href="#c5">Değerler</a>
+  <a href="#c6">Zaman kutusu</a>
+  <a href="#c7">Eşitle</a>
+  <a href="#c8">Tetikleyiciler</a>
+  <a href="#c9">Gelen kutusu</a>
+  <a href="#c10">Toplantılar</a>
+  <a href="#c11">Anlaşmalar</a>
+  <a href="#c12">Kimlik</a>
+  <a href="#c13">Kültür</a>
+  <a href="#c14">Karşı görüş</a>
+</div>
+
+<header class="hero compact">
+  <span class="eyebrow"><span class="dot"></span><span class="micro" style="color:var(--kraken-purple)">Ekip Eğitimi · Odak</span></span>
+  <h1>Sorun teknoloji değil. <em>Sorun kaçtığımız rahatsızlık.</em></h1>
+  <p class="sub">Nir Eyal'in <em>Indistractable</em> kitabından on dört fikir — Mozaik ekibi için yeniden çizildi: telefona aslında neden uzandığımız, kimsenin çalamayacağı bir hafta nasıl kurulur ve gelen kutusu, grup sohbeti ve toplantı odası bizim için nasıl çalışır.</p>
+  <div class="hero-meta">
+    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">14</div><div class="l">Fikir</div></div>
+    <div class="stat"><div class="v count">4</div><div class="l">Adım: içeri · zaman · dışarı · anlaşma</div></div>
+    <div class="stat"><div class="v">~35</div><div class="l">Dakikalık okuma</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+<section class="part" id="part01">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">01</div>
+    <div class="part-label">Bölüm I — İçsel Tetikleyicileri Yönet</div>
+    <h2>Telefona aslında neden uzanıyoruz</h2>
+    <p class="lead">Dağılma ekranda başlamaz. Bir saniye önce, içeride, oturmak istemediğimiz bir duyguyla başlar. Bu eğitimdeki her şey bu sıranın doğru kurulmasına bağlı.</p>
+  </div>
+
+  <!-- C1 -->
+  <article class="card-c reveal anchor" id="c1">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg></span><span class="ctag">Kavram 01</span><span class="ckicker">Model</span></div>
+    <h3>Dağılmanın zıddı odak değil, çekimdir</h3>
+    <p class="desc">İki kelime de aynı Latince kökten gelir: <b>trahere</b>, çekmek. Çekim seni planladığın şeye doğru çeker; dağılma ondan uzağa. Bir eylemin hangisi olduğu, dışarıdan nasıl göründüğüyle değil, onu yapmayı isteyip istemediğinle ilgilidir. Her eylem de bir tetikleyiciyle başlar — ya <b>dışsal</b> (bir bildirim, masana gelen bir arkadaş, bir ekran) ya da <b>içsel</b> (bir duygu).</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg"><defs><marker id="mBad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-bad)"/></marker><marker id="mGood" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-grow)"/></marker></defs><line class="fg" style="--i:0" x1="60" y1="150" x2="700" y2="150" stroke="var(--d-axis)" stroke-width="2"/><circle class="fg" style="--i:0" cx="380" cy="150" r="26" fill="#fff" stroke="var(--kraken-purple)" stroke-width="2"/><use class="fg" style="--i:0; color:var(--kraken-purple)" href="#ic-person" x="370" y="140" width="20" height="20"/><text class="fg" style="--i:0" x="380" y="202" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">şu anki sen</text><path class="fg" style="--i:1" d="M330 150 L120 150" stroke="var(--d-bad)" stroke-width="3" marker-end="url(#mBad)"/><rect class="fg" style="--i:1" x="60" y="108" width="190" height="34" rx="10" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:1" x="155" y="130" fill="var(--d-bad-text)" font-size="13.5" text-anchor="middle" font-weight="600">DAĞILMA</text><text class="fg" style="--i:2" x="155" y="172" fill="var(--cool-gray)" font-size="12" text-anchor="middle">planladığından uzağa</text><path class="fg" style="--i:1" d="M430 150 L640 150" stroke="var(--d-grow)" stroke-width="3" marker-end="url(#mGood)"/><rect class="fg" style="--i:1" x="510" y="108" width="190" height="34" rx="10" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:1" x="605" y="130" fill="var(--kraken-purple-deep)" font-size="13.5" text-anchor="middle" font-weight="600">ÇEKİM</text><text class="fg" style="--i:2" x="605" y="172" fill="var(--cool-gray)" font-size="12" text-anchor="middle">planladığına doğru</text><rect class="fg" style="--i:3" x="190" y="24" width="380" height="32" rx="10" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:3" x="380" y="45" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">dışsal tetikleyici — bildirim, kişi, ekran</text><path class="fg" style="--i:3" d="M380 56 L380 120" stroke="var(--silver-blue)" stroke-width="1.5" stroke-dasharray="4 4"/><rect class="fg" style="--i:4" x="190" y="224" width="380" height="32" rx="10" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:4" x="380" y="245" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">içsel tetikleyici — can sıkıntısı, kaygı, yorgunluk, kaçırma korkusu</text><path class="fg" style="--i:4" d="M380 224 L380 180" stroke="var(--silver-blue)" stroke-width="1.5" stroke-dasharray="4 4"/><text class="fg" style="--i:5" x="380" y="285" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Aynı kök: Latince trahere, “çekmek”. Hangisi olduğuna yalnızca niyetin karar verir.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> “Bugün yoğun muydum?” diye sormayı bırak. “Yapacağımı söylediğim şeyi yaptım mı?” diye sor. Gerisi, ne kadar faydalı görünürse görünsün, dağılmadır.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Bir müşterinin WhatsApp'ına cevap vermek, o saat müşterilere ayrılmışsa çekimdir; o saat Kurumsal teklifi hazırlamak içinse dağılmadır. Aynı eylem — hangisi olduğuna takvim karar verir.</div></div>
+    </div>
+  </article>
+
+  <!-- C2 -->
+  <article class="card-c reveal anchor" id="c2">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-flame"/></svg></span><span class="ctag">Kavram 02</span><span class="ckicker">Sebep</span></div>
+    <h3>Zaman yönetimi, rahatsızlık yönetimidir</h3>
+    <p class="desc">Telefona, telefon ilginç olduğu için bakmayız. İçeride bir şey rahatsız ettiği için bakarız — can sıkıntısı, belirsizlik, yorgunluk, yalnızlık, kaygı, bir şeyi kaçırma korkusu. <b>Telefon çıkış kapısıdır, sebep değil.</b> Bu yüzden onu ortadan kaldırmak çoğu zaman işe yaramaz: rahatsızlık başka bir kapı bulur — buzdolabı, haberler, masayı toplamak için aniden beliren acil ihtiyaç.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 265" xmlns="http://www.w3.org/2000/svg"><defs><marker id="mBad2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-bad)"/></marker><marker id="mMute" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--silver-blue)"/></marker></defs><rect class="fg" style="--i:0" x="22" y="44" width="256" height="52" rx="12" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><circle class="fg" style="--i:0" cx="52" cy="70" r="15" fill="#fff" stroke="var(--d-bad)" stroke-width="1.5"/><use class="fg" style="--i:0; color:var(--d-bad)" href="#ic-flame" x="42" y="60" width="20" height="20"/><text class="fg" style="--i:0" x="78" y="75" fill="var(--near-black)" font-size="12.5" text-anchor="start">rahatsız edici bir duygu</text><rect class="fg" style="--i:1" x="482" y="44" width="256" height="52" rx="12" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><circle class="fg" style="--i:1" cx="512" cy="70" r="15" fill="#fff" stroke="var(--d-bad)" stroke-width="1.5"/><use class="fg" style="--i:1; color:var(--d-bad)" href="#ic-zap" x="502" y="60" width="20" height="20"/><text class="fg" style="--i:1" x="538" y="75" fill="var(--near-black)" font-size="12.5" text-anchor="start">ondan kaçma dürtüsü</text><rect class="fg" style="--i:2" x="482" y="164" width="256" height="52" rx="12" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><circle class="fg" style="--i:2" cx="512" cy="190" r="15" fill="#fff" stroke="var(--d-bad)" stroke-width="1.5"/><use class="fg" style="--i:2; color:var(--d-bad)" href="#ic-laptop" x="502" y="180" width="20" height="20"/><text class="fg" style="--i:2" x="538" y="195" fill="var(--near-black)" font-size="12.5" text-anchor="start">telefon, gelen kutusu, buzdolabı</text><rect class="fg" style="--i:3" x="22" y="164" width="256" height="52" rx="12" fill="var(--d-box)" stroke="var(--border-gray)"/><circle class="fg" style="--i:3" cx="52" cy="190" r="15" fill="#fff" stroke="var(--cool-gray)" stroke-width="1.5"/><use class="fg" style="--i:3; color:var(--cool-gray)" href="#ic-hourglass" x="42" y="180" width="20" height="20"/><text class="fg" style="--i:3" x="78" y="195" fill="var(--near-black)" font-size="12.5" text-anchor="start">rahatlama — birkaç dakikalık</text><path class="fg draw" style="--i:2" pathLength="1" d="M284 70 L472 70" stroke="var(--d-bad)" stroke-width="2" marker-end="url(#mBad2)" fill="none"/><path class="fg draw" style="--i:3" pathLength="1" d="M610 98 L610 160" stroke="var(--d-bad)" stroke-width="2" marker-end="url(#mBad2)" fill="none"/><path class="fg draw" style="--i:4" pathLength="1" d="M472 190 L284 190" stroke="var(--d-bad)" stroke-width="2" marker-end="url(#mBad2)" fill="none"/><path class="fg draw" style="--i:5" pathLength="1" d="M150 164 L150 100" stroke="var(--silver-blue)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#mMute)" fill="none"/><text class="fg" style="--i:3" x="378" y="58" fill="var(--d-bad-text)" font-size="12" text-anchor="middle">saniyeler</text><text class="fg" style="--i:5" x="70" y="132" fill="var(--cool-gray)" font-size="12" text-anchor="start">sonra geri gelir</text><text class="fg" style="--i:6" x="380" y="250" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Telefonu kaldır, döngü başka bir çıkış bulur. Hedef çıkış değil, döngünün kendisi.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Dağıldığını fark ettiğinde “beni ne dağıttı?” diye sorma. “Neyden kaçıyordum?” diye sor — cevap genelde tek kelimedir.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Zor bir fiyat görüşmesinden önceki saat, gelen kutusunun en ilgi çekici göründüğü saattir. Bu tesadüf değil. Bu, işaretin ta kendisi.</div></div>
+    </div>
+  </article>
+
+  <!-- C3 -->
+  <article class="card-c reveal anchor" id="c3">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-droplet"/></svg></span><span class="ctag">Kavram 03</span><span class="ckicker">Teknik</span></div>
+    <h3>Dürtüyü durduramazsın. Ama ondan uzun dayanabilirsin.</h3>
+    <p class="desc">Dürtüler dalga gibi davranır: yükselir, tepe yapar ve düşer — genellikle birkaç dakika içinde. Onunla savaşmak sesini yükseltir; onu izlemek kısar. İki hamle. Birincisi, duyguyu geldiği anda <b>yaz</b>: “huzursuzum, 15:40, teklifin ortasında”. İkincisi, <b>on dakika kuralı</b>: dağılabilirsin — on dakika sonra. Çoğu zaman dalga on dakika dolmadan kırılır. Klinik çalışmalarda, sigara içenlere isteği bastırmak yerine fark edip sırtlamayı öğretmek, bırakma oranlarını yaklaşık iki katına çıkardı.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="waveFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7132f5" stop-opacity="0.16"/><stop offset="1" stop-color="#7132f5" stop-opacity="0"/></linearGradient></defs><line class="fg" style="--i:0" x1="70" y1="200" x2="700" y2="200" stroke="var(--d-axis)" stroke-width="2"/><line class="fg" style="--i:0" x1="70" y1="40" x2="70" y2="200" stroke="var(--d-axis)" stroke-width="2"/><text class="fg" style="--i:0" x="70" y="26" fill="var(--silver-blue)" font-size="12" text-anchor="start">dürtü</text><text class="fg" style="--i:0" x="700" y="222" fill="var(--silver-blue)" font-size="12" text-anchor="end">zaman</text><path class="fg draw" style="--i:1" pathLength="1" d="M70 200 C 170 200, 190 60, 300 60 C 400 60, 430 190, 560 196 L700 198" stroke="var(--kraken-purple)" stroke-width="3" fill="none" stroke-linecap="round"/><path class="fg" style="--i:2" d="M70 200 C 170 200, 190 60, 300 60 C 400 60, 430 190, 560 196 L700 198 L700 200 L70 200 Z" fill="url(#waveFill)" stroke="none"/><path class="fg draw" style="--i:3" pathLength="1" d="M300 60 C 380 45, 470 40, 690 36" stroke="var(--d-bad)" stroke-width="2.5" stroke-dasharray="6 5" fill="none"/><text class="fg" style="--i:3" x="690" y="28" fill="var(--d-bad-text)" font-size="12.5" text-anchor="end">savaş — geçmez</text><text class="fg" style="--i:4" x="560" y="178" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle">sırtla — geçer</text><line class="fg" style="--i:5" x1="470" y1="40" x2="470" y2="200" stroke="var(--d-grow)" stroke-width="1.5" stroke-dasharray="4 4"/><rect class="fg" style="--i:5" x="392" y="208" width="156" height="30" rx="9" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:5" x="470" y="228" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle" font-weight="600">10 dakika kuralı</text><text class="fg" style="--i:2" x="150" y="92" fill="var(--cool-gray)" font-size="12" text-anchor="middle">tetikleyici düşer</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> <b>Eşik anlarına</b> dikkat et — bir işi bitirip diğerine başlamadan önceki saniyeler. “Şöyle bir bakayım” tam o boşlukta yaşar. Eline bir şey almadan önce sıradaki işi yüksek sesle söyle.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> İki mağaza randevusu arasındaki on dakika, akışa değil, sıradaki müşterinin dosyasına aittir. Kapıda bunu adlandır; genelde tutar.</div></div>
+    </div>
+  </article>
+
+  <!-- C4 -->
+  <article class="card-c reveal anchor" id="c4">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-dice"/></svg></span><span class="ctag">Kavram 04</span><span class="ckicker">Yeniden Kurgu</span></div>
+    <h3>Sıkıcı kısmı oyuna çevir — ve kendine “dikkati dağınık” demeyi bırak</h3>
+    <p class="desc">İşin çoğunu iki yeniden kurgu yapar. <b>İş:</b> can sıkıntısının ilacı daha kolay bir iş değil, daha zor bir iştir — kaçındığın şeyin içindeki yeniliği ara. Bu ne kadar hızlı ve temiz bitebilir? Kaç revizyonla? Kırk kez okuduğun bu listede saklı hangi örüntü var? <b>Kendin:</b> irade gücünü boşalan bir depo sanan insanlar, sanmayanlardan daha erken tükenir. İrade yakıttan çok duyguya benzer — gelir ve gider. Kendine söylediğin cümle de bir teşhis değil, bir kehanettir: “Ben odaklanamam” kendini gerçekleştiren bir cümledir.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 258" xmlns="http://www.w3.org/2000/svg"><rect class="fg" style="--i:0" x="30" y="30" width="340" height="190" rx="14" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:0" x="200" y="60" fill="var(--d-bad-text)" font-size="13.5" text-anchor="middle" font-weight="600">İrade bir yakıt deposudur</text><text class="fg" style="--i:1" x="200" y="86" fill="var(--cool-gray)" font-size="12" text-anchor="middle">“bugünkü hakkımı bitirdim”</text><rect class="fg" style="--i:2" x="70" y="112" width="52" height="58" rx="8" fill="var(--d-bad)" opacity="1.0"/><rect class="fg" style="--i:3" x="140" y="112" width="52" height="58" rx="8" fill="var(--neutral-chip)" opacity="0.78"/><rect class="fg" style="--i:4" x="210" y="112" width="52" height="58" rx="8" fill="var(--neutral-chip)" opacity="0.56"/><rect class="fg" style="--i:5" x="280" y="112" width="52" height="58" rx="8" fill="var(--neutral-chip)" opacity="0.33999999999999997"/><text class="fg" style="--i:5" x="200" y="196" fill="var(--d-bad-text)" font-size="12" text-anchor="middle">buna inan, daha erken tükenirsin</text><rect class="fg" style="--i:1" x="390" y="30" width="340" height="190" rx="14" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:1" x="560" y="60" fill="var(--kraken-purple-deep)" font-size="13.5" text-anchor="middle" font-weight="600">İrade bir duygudur</text><text class="fg" style="--i:2" x="560" y="86" fill="var(--cool-gray)" font-size="12" text-anchor="middle">“gelir, gider, geri gelir”</text><path class="fg draw" style="--i:3" pathLength="1" d="M420 150 C 460 105, 500 175, 540 130 C 580 88, 620 168, 660 128 C 685 102, 700 130, 705 140" stroke="var(--kraken-purple)" stroke-width="3" fill="none" stroke-linecap="round"/><text class="fg" style="--i:5" x="560" y="196" fill="var(--kraken-purple-deep)" font-size="12" text-anchor="middle">buna inan, geri gelir</text><text class="fg" style="--i:6" x="380" y="244" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Aynı kişi, aynı öğleden sonra. Anlattığın hikâye, o öğleden sonranın ne taşıyabileceğini değiştirir.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Kendine, bir saatini kaybetmiş bir arkadaşınla konuşur gibi konuş: önce nazikçe, sonra pratik olarak. Kendini yerden yere vurmak sonraki saati iyileştirmez, kötüleştirir.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Stok mutabakatı ve veri girişi bunun en açık adayları: kırılacak bir süre ya da bozulmayacak bir “sıfır hata” serisi belirle. İş kısalmaz — oynanabilir hâle gelir.</div></div>
+    </div>
+  </article>
+
+</section>
+</div>
+
+<div class="wrap">
+<section class="part" id="part02">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">02</div>
+    <div class="part-label">Bölüm II — Çekime Zaman Aç</div>
+    <h2>Önceden karar verilmiş bir hafta</h2>
+    <p class="lead">Hiç kurmadığın bir planı savunamazsın. Bu bölüm, önemli dediğin şeyleri takvimdeki kutulara çevirir — hiçbir şey yapmama kutuları dahil.</p>
+  </div>
+
+  <!-- C5 -->
+  <article class="card-c reveal anchor" id="c5">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-compass"/></svg></span><span class="ctag">Kavram 05</span><span class="ckicker">Değerleri Zamana Çevir</span></div>
+    <h3>Seni neyden çektiğini bilmiyorsan, ona dağıtıcı diyemezsin</h3>
+    <p class="desc">Yapılacaklar listesi bir dilek listesidir; takvim bir karardır. Eyal'in kuralı <b>çıktıları değil girdileri</b> planlamaktır — anlaşmanın kapanacağına söz veremezsin, iki saate verebilirsin. Bir hafta da tek alanı değil üç alanı kapsamalı: <b>sen</b>, <b>ilişkilerin</b> ve <b>işin</b>. Değerler bitirip üstünü çizdiğin hedefler değildir — olmak istediğin kişinin nitelikleridir ve yalnızca haftanın içinde göründükleri yerde vardırlar.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 268" xmlns="http://www.w3.org/2000/svg"><rect class="fg" style="--i:0" x="30" y="20" width="220" height="210" rx="14" fill="#fff" stroke="var(--border-gray)"/><circle class="fg" style="--i:0" cx="140" cy="58" r="17" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="1.5"/><use class="fg" style="--i:0; color:var(--kraken-purple)" href="#ic-person" x="130" y="48" width="20" height="20"/><text class="fg" style="--i:0" x="140" y="100" fill="var(--near-black)" font-size="14" text-anchor="middle" font-weight="600">Sen</text><rect class="fg" style="--i:1" x="48" y="116" width="184" height="26" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:1" x="140" y="134" fill="var(--cool-gray)" font-size="12" text-anchor="middle">uyku, spor</text><rect class="fg" style="--i:2" x="48" y="150" width="184" height="26" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:2" x="140" y="168" fill="var(--cool-gray)" font-size="12" text-anchor="middle">okuma, sessizlik</text><rect class="fg" style="--i:1" x="270" y="20" width="220" height="210" rx="14" fill="#fff" stroke="var(--border-gray)"/><circle class="fg" style="--i:1" cx="380" cy="58" r="17" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="1.5"/><use class="fg" style="--i:1; color:var(--kraken-purple)" href="#ic-heart" x="370" y="48" width="20" height="20"/><text class="fg" style="--i:1" x="380" y="100" fill="var(--near-black)" font-size="14" text-anchor="middle" font-weight="600">İlişkiler</text><rect class="fg" style="--i:2" x="288" y="116" width="184" height="26" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:2" x="380" y="134" fill="var(--cool-gray)" font-size="12" text-anchor="middle">aile, arkadaşlar</text><rect class="fg" style="--i:3" x="288" y="150" width="184" height="26" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:3" x="380" y="168" fill="var(--cool-gray)" font-size="12" text-anchor="middle">ev düzeni</text><rect class="fg" style="--i:2" x="510" y="20" width="220" height="210" rx="14" fill="#fff" stroke="var(--border-gray)"/><circle class="fg" style="--i:2" cx="620" cy="58" r="17" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="1.5"/><use class="fg" style="--i:2; color:var(--kraken-purple)" href="#ic-flag" x="610" y="48" width="20" height="20"/><text class="fg" style="--i:2" x="620" y="100" fill="var(--near-black)" font-size="14" text-anchor="middle" font-weight="600">İş</text><rect class="fg" style="--i:3" x="528" y="116" width="184" height="26" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:3" x="620" y="134" fill="var(--cool-gray)" font-size="12" text-anchor="middle">derin çalışma</text><rect class="fg" style="--i:4" x="528" y="150" width="184" height="26" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:4" x="620" y="168" fill="var(--cool-gray)" font-size="12" text-anchor="middle">ekip, müşteriler</text><text class="fg" style="--i:6" x="380" y="256" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Yalnızca üçüncü sütunu dolduran bir hafta, tam bir hafta değildir — bedelini sonra ödeyeceğin dengesiz bir haftadır.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Boş takvim özgürlük değildir. Gününün ne için olduğuna başkasının karar vermesi için açık bir davetiyedir.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> “Evde gerçekten var olmak” bir değerse, o bir kutudur — son e-postadan sonra sıra gelirse yapılacak bir temenni değil. Yoğun bir mağaza gününde asla hayatta kalamayan o bir saatlik pipeline çalışması için de aynısı geçerli.</div></div>
+    </div>
+  </article>
+
+  <!-- C6 -->
+  <article class="card-c reveal anchor" id="c6">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-hourglass"/></svg></span><span class="ctag">Kavram 06</span><span class="ckicker">Yöntem</span></div>
+    <h3>Haftayı zaman kutularına böl, her cuma düzelt</h3>
+    <p class="desc">Zaman kutulama bir <b>uygulama niyetidir</b>: ne yapacağına ve ne zaman yapacağına önceden karar vermek. Kutulanmış bir hafta, her dakika üretken olma sözü değildir — sakin kafayla verilmiş, her saatin ne için olduğuna dair bir karardır. Boş saatler dahil: <b>boşa harcamayı planladığın zaman boşa gitmiş sayılmaz.</b> Sonra herkesin atladığı kısım: haftanın sonunda on beş dakika ve iki soru: <i>ne zaman planladığımdan başka bir şey yaptım?</i> ve <i>gelecek hafta hangi tek değişikliği yapacağım?</i> Takvim, sınıfta kaldığın bir sözleşme değil, test ettiğin bir hipotezdir.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 272" xmlns="http://www.w3.org/2000/svg"><text class="fg" style="--i:0" x="106.0" y="40" fill="var(--silver-blue)" font-size="12" text-anchor="middle">Pzt</text><text class="fg" style="--i:0" x="198.0" y="40" fill="var(--silver-blue)" font-size="12" text-anchor="middle">Sal</text><text class="fg" style="--i:0" x="290.0" y="40" fill="var(--silver-blue)" font-size="12" text-anchor="middle">Çar</text><text class="fg" style="--i:0" x="382.0" y="40" fill="var(--silver-blue)" font-size="12" text-anchor="middle">Per</text><text class="fg" style="--i:0" x="474.0" y="40" fill="var(--silver-blue)" font-size="12" text-anchor="middle">Cum</text><rect class="fg" style="--i:0" x="64" y="52" width="84" height="26" rx="7" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><rect class="fg" style="--i:1" x="64" y="84" width="84" height="26" rx="7" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><rect class="fg" style="--i:3" x="64" y="148" width="84" height="26" rx="7" fill="var(--bg-3)" stroke="var(--border-gray)"/><rect class="fg" style="--i:4" x="64" y="180" width="84" height="26" rx="7" fill="var(--d-good-soft)" stroke="var(--d-good)"/><rect class="fg" style="--i:0" x="156" y="52" width="84" height="26" rx="7" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><rect class="fg" style="--i:2" x="156" y="116" width="84" height="26" rx="7" fill="var(--neutral-chip)" stroke="var(--border-gray)"/><rect class="fg" style="--i:4" x="156" y="180" width="84" height="26" rx="7" fill="var(--d-good-soft)" stroke="var(--d-good)"/><rect class="fg" style="--i:0" x="248" y="52" width="84" height="26" rx="7" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><rect class="fg" style="--i:1" x="248" y="84" width="84" height="26" rx="7" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><rect class="fg" style="--i:3" x="248" y="148" width="84" height="26" rx="7" fill="var(--neutral-chip)" stroke="var(--border-gray)"/><rect class="fg" style="--i:1" x="340" y="84" width="84" height="26" rx="7" fill="var(--bg-3)" stroke="var(--border-gray)"/><rect class="fg" style="--i:2" x="340" y="116" width="84" height="26" rx="7" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><rect class="fg" style="--i:4" x="340" y="180" width="84" height="26" rx="7" fill="var(--warning-subtle)" stroke="var(--warning)"/><rect class="fg" style="--i:0" x="432" y="52" width="84" height="26" rx="7" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><rect class="fg" style="--i:3" x="432" y="148" width="84" height="26" rx="7" fill="var(--kraken-purple)" stroke="var(--kraken-purple-deep)"/><rect class="fg" style="--i:4" x="432" y="180" width="84" height="26" rx="7" fill="var(--d-good-soft)" stroke="var(--d-good)"/><text class="fg" style="--i:5" x="382.0" y="197" fill="#8a6100" font-size="11" text-anchor="middle">boş</text><text class="fg" style="--i:5" x="474.0" y="165" fill="#fff" font-size="11" text-anchor="middle" font-weight="600">gözden geçir</text><rect class="fg" style="--i:6" x="60" y="216" width="14" height="14" rx="4" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:6" x="82" y="228" fill="var(--cool-gray)" font-size="12" text-anchor="start">derin çalışma</text><rect class="fg" style="--i:6" x="235" y="216" width="14" height="14" rx="4" fill="var(--d-good-soft)" stroke="var(--d-good)"/><text class="fg" style="--i:6" x="257" y="228" fill="var(--cool-gray)" font-size="12" text-anchor="start">sen ve aile</text><rect class="fg" style="--i:6" x="410" y="216" width="14" height="14" rx="4" fill="var(--neutral-chip)" stroke="var(--border-gray)"/><text class="fg" style="--i:6" x="432" y="228" fill="var(--cool-gray)" font-size="12" text-anchor="start">toplantı</text><rect class="fg" style="--i:6" x="585" y="216" width="14" height="14" rx="4" fill="var(--warning-subtle)" stroke="var(--warning)"/><text class="fg" style="--i:6" x="607" y="228" fill="var(--cool-gray)" font-size="12" text-anchor="start">planlı boşluk</text><text class="fg" style="--i:7" x="380" y="258" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Cuma on beş dakika: beni ne saptırdı ve gelecek hafta hangi tek değişikliği yapıyorum?</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Haftayı ne kadar iş çıkardığına göre değil, kutuda yazana uyup uymadığına göre değerlendir. Çıktı bir temennidir; girdi gerçekten tutabileceğin bir sözdür.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Cuma, on beş dakika, çıkmadan önce. İki soru, bir değişiklik. Hepimiz için mevcut en ucuz süreç iyileştirmesi bu.</div></div>
+    </div>
+  </article>
+
+  <!-- C7 -->
+  <article class="card-c reveal anchor" id="c7">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></span><span class="ctag">Kavram 07</span><span class="ckicker">Takvim Eşitleme</span></div>
+    <h3>Takvimini, onu bozabilecek insanlara göster</h3>
+    <p class="desc">“Sürekli erişilebilir olma” baskısının çoğu söylenmiş değil, varsayılmıştır. Teklifin 22:40'ta yanıtlanması gerektiğini kimse söylemedi; biz öyle çıkardık ve sonra buna içerledik. Çözüm şikâyet değil, takvim açıkken yapılan bir konuşma: <i>haftayı böyle planladım; bu yeni iş öne geçecekse, hangisi çıkacak söyle.</i> Bu, kimsenin kazanamadığı bir “çaba” tartışmasını, bir yöneticinin asıl işi olan öncelik konuşmasına çevirir. Aynı cümle evde de işe yarar; orada söylenmemiş beklentiler genelde daha yüksek sesle konuşur.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 292" xmlns="http://www.w3.org/2000/svg"><defs><marker id="mSync" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--kraken-purple)"/></marker></defs><rect class="fg" style="--i:0" x="40" y="30" width="260" height="170" rx="14" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:0" x="170" y="56" fill="var(--near-black)" font-size="13" text-anchor="middle" font-weight="600">Planladığın hafta</text><rect class="fg" style="--i:1" x="66" y="74" width="208" height="22" rx="6" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><rect class="fg" style="--i:2" x="66" y="104" width="208" height="22" rx="6" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><rect class="fg" style="--i:3" x="66" y="134" width="208" height="22" rx="6" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><rect class="fg" style="--i:4" x="66" y="164" width="208" height="22" rx="6" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:4" x="170" y="218" fill="var(--d-bad-text)" font-size="12" text-anchor="middle">bir kutu şimdi tartışmalı</text><rect class="fg" style="--i:1" x="460" y="30" width="260" height="170" rx="14" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:1" x="590" y="56" fill="var(--near-black)" font-size="13" text-anchor="middle" font-weight="600">Az önce gelen iş</text><rect class="fg" style="--i:2" x="486" y="94" width="208" height="56" rx="10" fill="var(--warning-subtle)" stroke="var(--warning)"/><text class="fg" style="--i:2" x="590" y="128" fill="#8a6100" font-size="13" text-anchor="middle" font-weight="600">“bunu bugün yapabilir misin?”</text><path class="fg draw" style="--i:4" pathLength="1" d="M460 115 L312 115" stroke="var(--kraken-purple)" stroke-width="2.5" marker-end="url(#mSync)" fill="none"/><rect class="fg" style="--i:5" x="300" y="228" width="160" height="0" rx="12" fill="var(--d-box)" stroke="var(--border-gray)"/><rect class="fg" style="--i:5" x="190" y="240" width="380" height="40" rx="11" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:5" x="380" y="265" fill="var(--kraken-purple-deep)" font-size="13" text-anchor="middle" font-weight="600">“Olur — hangi kutunun çıkacağını söyle.”</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Her şeyi değiştiren cümle: “Planım bu. Yeni bir şey öne geçecekse, hangisinin çıkacağını söyle.”</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Özellikle mağaza ile operasyon arasında değerli — vardiya ve teslim tarihi genelde birbirinin haftasını hiç görmemiş iki ayrı kişi tarafından planlanıyor.</div></div>
+    </div>
+  </article>
+
+</section>
+</div>
+
+<div class="wrap">
+<section class="part" id="part03">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">03</div>
+    <div class="part-label">Bölüm III — Dışsal Tetikleyicileri Geri Al</div>
+    <h2>Bildirimler, gelen kutuları ve mesaj olabilecek toplantılar</h2>
+    <p class="lead">Şimdi — ve ancak şimdi — ayarlar ekranı. Amaç şebekeden çıkmak değil; sana ulaşan her kesintinin, senin seçeceğin bir kesinti olması.</p>
+  </div>
+
+  <!-- C8 -->
+  <article class="card-c reveal anchor" id="c8">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-filter"/></svg></span><span class="ctag">Kavram 08</span><span class="ckicker">Denetim</span></div>
+    <h3>Her tetikleyiciye tek soru: bu bana mı hizmet ediyor, ben mi ona?</h3>
+    <p class="desc">Düşman dışsal tetikleyiciler değil, yanlış olanlar. Geri dönen bir müşteri, sana hizmet eden bir tetikleyicidir. İki kez açtığın bir uygulamadaki, hiç istemediğin kırmızı rozet ise senin hizmet ettiğindir. Bir kez, düzgünce, dört hamle: ihtiyacın olmayanı <b>kaldır</b>, ihtiyacın olanı daha doğru bir zaman ve yere <b>taşı</b>, ilk ekranda yalnızca bilerek seçtiğin araçlar kalacak şekilde <b>yeniden diz</b> ve bildirim ayarlarını <b>geri al</b> — çoğu insan o ekranı hayatında hiç açmadı.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 262" xmlns="http://www.w3.org/2000/svg"><defs><marker id="mKeep" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-good)"/></marker><marker id="mCut" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-bad)"/></marker></defs><rect class="fg" style="--i:0" x="24" y="26" width="200" height="30" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:0" x="124" y="46" fill="var(--near-black)" font-size="12" text-anchor="middle">müşteri geri dönüyor</text><path class="fg" style="--i:0" d="M228 41 L300 41" stroke="var(--silver-blue)" stroke-width="1.5" stroke-dasharray="4 4"/><rect class="fg" style="--i:1" x="24" y="68" width="200" height="30" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:1" x="124" y="88" fill="var(--near-black)" font-size="12" text-anchor="middle">istemediğin uygulama rozeti</text><path class="fg" style="--i:1" d="M228 83 L300 83" stroke="var(--silver-blue)" stroke-width="1.5" stroke-dasharray="4 4"/><rect class="fg" style="--i:2" x="24" y="110" width="200" height="30" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:2" x="124" y="130" fill="var(--near-black)" font-size="12" text-anchor="middle">masana gelen arkadaş</text><path class="fg" style="--i:2" d="M228 125 L300 125" stroke="var(--silver-blue)" stroke-width="1.5" stroke-dasharray="4 4"/><rect class="fg" style="--i:3" x="24" y="152" width="200" height="30" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:3" x="124" y="172" fill="var(--near-black)" font-size="12" text-anchor="middle">hiç okumadığın bülten</text><path class="fg" style="--i:3" d="M228 167 L300 167" stroke="var(--silver-blue)" stroke-width="1.5" stroke-dasharray="4 4"/><rect class="fg" style="--i:4" x="24" y="194" width="200" height="30" rx="8" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:4" x="124" y="214" fill="var(--near-black)" font-size="12" text-anchor="middle">grup sohbeti, 40 mesaj</text><path class="fg" style="--i:4" d="M228 209 L300 209" stroke="var(--silver-blue)" stroke-width="1.5" stroke-dasharray="4 4"/><rect class="fg" style="--i:2" x="300" y="46" width="200" height="148" rx="14" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><use class="fg" style="--i:2; color:var(--kraken-purple)" href="#ic-filter" x="390" y="74" width="20" height="20"/><text class="fg" style="--i:3" x="400" y="124" fill="var(--kraken-purple-deep)" font-size="12" text-anchor="middle" font-weight="600">bu bana mı hizmet ediyor,</text><text class="fg" style="--i:3" x="400" y="144" fill="var(--kraken-purple-deep)" font-size="12" text-anchor="middle" font-weight="600">ben mi ona?</text><rect class="fg" style="--i:4" x="542" y="40" width="196" height="72" rx="12" fill="var(--d-good-soft)" stroke="var(--d-good)"/><use class="fg" style="--i:4; color:var(--d-good)" href="#ic-check" x="562" y="66" width="20" height="20"/><text class="fg" style="--i:4" x="592" y="70" fill="var(--d-good-text)" font-size="13" text-anchor="start" font-weight="600">Tut</text><text class="fg" style="--i:4" x="562" y="94" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">ve ona bir zaman ver</text><rect class="fg" style="--i:5" x="542" y="128" width="196" height="72" rx="12" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><use class="fg" style="--i:5; color:var(--d-bad)" href="#ic-x" x="562" y="154" width="20" height="20"/><text class="fg" style="--i:5" x="592" y="158" fill="var(--d-bad-text)" font-size="13" text-anchor="start" font-weight="600">Kes</text><text class="fg" style="--i:5" x="562" y="182" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">kaldır · taşı · yeniden diz</text><path class="fg" style="--i:4" d="M500 104 L540 78" stroke="var(--d-good)" stroke-width="2" marker-end="url(#mKeep)"/><path class="fg" style="--i:5" d="M500 136 L540 162" stroke="var(--d-bad)" stroke-width="2" marker-end="url(#mCut)"/><text class="fg" style="--i:6" x="380" y="248" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Kaldır · Taşı · Yeniden diz · Bildirim ayarlarını geri al. Bir kez, yirmi dakika.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Denetimi bir kez yap: telefon elinde, ayarlar ekranı açık. Yirmi dakika sürer, aylar kazandırır.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Ekipçe üzerinde anlaşmaya değer tek kural: mağaza saatlerinde, cevap bekleyen bir insan olmayan hiçbir şey ses çıkarmaz.</div></div>
+    </div>
+  </article>
+
+  <!-- C9 -->
+  <article class="card-c reveal anchor" id="c9">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg></span><span class="ctag">Kavram 09</span><span class="ckicker">Gelen Kutusu ve Sohbet</span></div>
+    <h3>Daha az e-posta almak için daha az e-posta gönder</h3>
+    <p class="desc">Gönderdiğin her mesaj bir cevap talebidir; dolayısıyla aldığın yığının bir kısmı, kendi yazdığın faturadır. Sonra iki alışkanlık. <b>Ertele ve topla:</b> cevap verip vermemeye değil, ne zaman vereceğine karar ver — ve bunu söyle, çünkü mesajın başına düşülen bir satır (“acelesi yok, perşembe olur”) sana beş saniyeye mal olur, karşındakine bir öğleden sonra kazandırır. <b>Grup sohbeti duş değil, saunadır:</b> kısa, planlı, herkes aynı anda girer ve çıkar. Yüksek sesle düşünmek için berbat bir yerdir; çünkü senin düşünmen herkesin kesintisi hâline gelir.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 226" xmlns="http://www.w3.org/2000/svg"><defs><marker id="mLoop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-bad)"/></marker></defs><rect class="fg" style="--i:0" x="286" y="20" width="188" height="44" rx="11" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:0" x="380" y="47" fill="var(--d-bad-text)" font-size="12.5" text-anchor="middle" font-weight="600">bir mesaj gönderirsin</text><rect class="fg" style="--i:1" x="286" y="140" width="188" height="44" rx="11" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:1" x="380" y="167" fill="var(--d-bad-text)" font-size="12.5" text-anchor="middle" font-weight="600">sana cevap gelir</text><path class="fg draw" style="--i:2" pathLength="1" d="M474 42 C 520 60, 520 144, 480 160" stroke="var(--d-bad)" stroke-width="2" fill="none" marker-end="url(#mLoop)"/><path class="fg draw" style="--i:3" pathLength="1" d="M286 160 C 240 144, 240 60, 280 44" stroke="var(--d-bad)" stroke-width="2" fill="none" marker-end="url(#mLoop)"/><text class="fg" style="--i:2" x="380" y="108" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">aldığın yığının bir kısmı, kendi yazdığın fatura</text><rect class="fg" style="--i:3" x="24" y="46" width="196" height="112" rx="12" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><use class="fg" style="--i:3; color:var(--kraken-purple)" href="#ic-filter" x="112" y="66" width="20" height="20"/><text class="fg" style="--i:3" x="122" y="114" fill="var(--kraken-purple-deep)" font-size="13" text-anchor="middle" font-weight="600">Daha az gönder</text><text class="fg" style="--i:3" x="122" y="136" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">bunun gönderilmesi gerekiyor mu?</text><rect class="fg" style="--i:4" x="540" y="46" width="196" height="112" rx="12" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><use class="fg" style="--i:4; color:var(--kraken-purple)" href="#ic-hourglass" x="628" y="66" width="20" height="20"/><text class="fg" style="--i:4" x="638" y="114" fill="var(--kraken-purple-deep)" font-size="13" text-anchor="middle" font-weight="600">Aralıklarla cevapla</text><text class="fg" style="--i:4" x="638" y="136" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">ve ne zaman olduğunu mesajda yaz</text><text class="fg" style="--i:5" x="380" y="212" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Grup sohbeti duş değil sauna: kısa, planlı, herkes aynı anda içeride.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Kimsenin, yazdığı saniyede dikkatini alma hakkı yok. Cevap aralığı, özür dilenecek bir kusur değil, ilan edilen bir nezakettir.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Açıkça adlandırmaya değer: WhatsApp gruplarımızdan hangileri “bugün cevapla”, hangileri “şimdi cevapla”? Şu an hepsi ikincisi gibi kullanılıyor; hiçbirinin işlememesinin sebebi bu.</div></div>
+    </div>
+  </article>
+
+  <!-- C10 -->
+  <article class="card-c reveal anchor" id="c10">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span class="ctag">Kavram 10</span><span class="ckicker">Toplantılar</span></div>
+    <h3>Gündem yoksa toplantı da yok</h3>
+    <p class="desc">Ne düşündüğümüzü bulmak için yapılan toplantı, düşünmenin en pahalı yoludur. Altı kişi bir saat, bir iş günü eder. O hâlde: önceden dağıtılmış bir gündem ve kısa bir yazılı brif — ve dikkat et, brifi yazmak çoğu zaman toplantı ihtiyacını tamamen ortadan kaldırır. Toplantılar bir öneri üretmek için değil, <b>bir önerinin etrafında uzlaşmak</b> içindir. Cihazlar dışarıda kalır; not için tek bir bilgisayar, herkesin görebileceği ekranda.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 222" xmlns="http://www.w3.org/2000/svg"><circle class="fg" style="--i:0" cx="80" cy="60" r="19" fill="var(--d-box)" stroke="var(--border-gray)"/><use class="fg" style="--i:0; color:var(--cool-gray)" href="#ic-person" x="70" y="50" width="20" height="20"/><circle class="fg" style="--i:1" cx="144" cy="60" r="19" fill="var(--d-box)" stroke="var(--border-gray)"/><use class="fg" style="--i:1; color:var(--cool-gray)" href="#ic-person" x="134" y="50" width="20" height="20"/><circle class="fg" style="--i:2" cx="208" cy="60" r="19" fill="var(--d-box)" stroke="var(--border-gray)"/><use class="fg" style="--i:2; color:var(--cool-gray)" href="#ic-person" x="198" y="50" width="20" height="20"/><circle class="fg" style="--i:3" cx="272" cy="60" r="19" fill="var(--d-box)" stroke="var(--border-gray)"/><use class="fg" style="--i:3; color:var(--cool-gray)" href="#ic-person" x="262" y="50" width="20" height="20"/><circle class="fg" style="--i:4" cx="336" cy="60" r="19" fill="var(--d-box)" stroke="var(--border-gray)"/><use class="fg" style="--i:4; color:var(--cool-gray)" href="#ic-person" x="326" y="50" width="20" height="20"/><circle class="fg" style="--i:5" cx="400" cy="60" r="19" fill="var(--d-box)" stroke="var(--border-gray)"/><use class="fg" style="--i:5; color:var(--cool-gray)" href="#ic-person" x="390" y="50" width="20" height="20"/><text class="fg" style="--i:2" x="272" y="108" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">altı kişi, bir saat</text><rect class="fg" style="--i:3" x="60" y="126" width="424" height="44" rx="11" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:3" x="272" y="154" fill="var(--d-bad-text)" font-size="14" text-anchor="middle" font-weight="600">= harcanmış bir iş günü</text><rect class="fg" style="--i:4" x="536" y="34" width="194" height="64" rx="12" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:4" x="633" y="60" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle" font-weight="600">Gündem yoksa</text><text class="fg" style="--i:4" x="633" y="80" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="middle" font-weight="600">toplantı da yok.</text><rect class="fg" style="--i:5" x="536" y="114" width="194" height="64" rx="12" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:5" x="633" y="140" fill="var(--cool-gray)" font-size="12" text-anchor="middle">önceden dağıtılmış bir brif</text><text class="fg" style="--i:5" x="633" y="160" fill="var(--cool-gray)" font-size="12" text-anchor="middle">cihazlar dışarıda, not için tek bilgisayar</text><text class="fg" style="--i:6" x="380" y="208" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Toplantı, bir önerinin etrafında uzlaşır. Öneri üretmek için berbat bir yerdir.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Toplantının neye karar vereceğini yazamıyorsan, elinde toplantı yok. Mesaj olabilecek bir sohbet var.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Haftalık toplantıda dene: bir sayfa, bir önceki akşam gönderilir, üç karar listelenir. Toplantı genelde yarı yarıya kısalır, ondan fazlası kadar da iyileşir.</div></div>
+    </div>
+  </article>
+
+</section>
+</div>
+
+<div class="wrap">
+<section class="part" id="part04">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">04</div>
+    <div class="part-label">Bölüm IV — Anlaşmalarla Önle</div>
+    <h2>Son savunma hattı</h2>
+    <p class="lead">Anlaşma, bugünkü senin verdiği ve yarınki senin kolayca bozamayacağı bir karardır. İlk adım değil, son adımdır.</p>
+  </div>
+
+  <!-- C11 -->
+  <article class="card-c reveal anchor" id="c11">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-lock"/></svg></span><span class="ctag">Kavram 11</span><span class="ckicker">Ön Taahhüt</span></div>
+    <h3>Yanlış olanı, doğru olandan daha zor hâle getir</h3>
+    <p class="desc">Anlaşmaların son adım olmasının bir sebebi var: diğer üç adımı halletmeden kapıyı kilitlersen, kendini rahatsızlıkla birlikte içeri kilitlemiş olursun. Zemin hazırsa iki tür işe yarar. <b>Çaba anlaşmaları</b> sürtünme ekler — uygulama telefondan kalkar, telefon başka odadaki çekmeceye girer, derin çalışma kutusu boyunca site engelleyici çalışır. Beş saniyelik sürtünme, beş dakikalık iradeyi yener. <b>Bedel anlaşmaları</b> maliyet ekler: iş olmazsa masada para kalır. İşe yararlar ve yanlış hedef seçtiysen acımasızdırlar — bu yüzden onları kontrol ettiğin girdilere uygula, kontrol etmediğin çıktılara asla.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 264" xmlns="http://www.w3.org/2000/svg"><defs><marker id="mUp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-axis)"/></marker></defs><rect class="fg" style="--i:0" x="60" y="190" width="390" height="34" rx="9" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:0" x="78" y="212" fill="var(--cool-gray)" font-size="12.5" text-anchor="start">telefon masada, yüzü açık</text><rect class="fg" style="--i:1" x="60" y="146" width="424" height="34" rx="9" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:1" x="78" y="168" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="start">telefon yüzü kapalı, bildirimler kapalı</text><rect class="fg" style="--i:2" x="60" y="102" width="458" height="34" rx="9" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:2" x="78" y="124" fill="var(--kraken-purple-deep)" font-size="12.5" text-anchor="start">telefon çekmecede</text><rect class="fg" style="--i:3" x="60" y="58" width="492" height="34" rx="9" fill="var(--kraken-purple)" stroke="var(--kraken-purple-deep)"/><text class="fg" style="--i:3" x="78" y="80" fill="#fff" font-size="12.5" text-anchor="start">telefon başka odada, uygulama silinmiş</text><path class="fg" style="--i:4" d="M40 224 L40 40" stroke="var(--d-axis)" stroke-width="2" marker-end="url(#mUp)"/><text class="fg" style="--i:4" x="24" y="130" fill="var(--silver-blue)" font-size="11.5" text-anchor="middle" transform="rotate(-90 24 130)">daha çok sürtünme</text><rect class="fg" style="--i:5" x="560" y="40" width="170" height="60" rx="11" fill="var(--warning-subtle)" stroke="var(--warning)"/><text class="fg" style="--i:5" x="645" y="64" fill="#8a6100" font-size="12.5" text-anchor="middle" font-weight="600">Bedel anlaşması</text><text class="fg" style="--i:5" x="645" y="84" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">masada para</text><text class="fg" style="--i:6" x="380" y="250" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Beş saniyelik sürtünme, beş dakikalık iradeyi yener — onu sakinken tasarla.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Pişman olacağın şeyle aranda küçük bir bedel bırak. Sürtünmeyi sakinken tasarla; o an aklına gelmeyecek.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> En basit hâli ve müşterilerin fark ettiği hâli: randevu boyunca telefon yüzü kapalı şekilde çekmecede kalır.</div></div>
+    </div>
+  </article>
+
+  <!-- C12 -->
+  <article class="card-c reveal anchor" id="c12">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-person"/></svg></span><span class="ctag">Kavram 12</span><span class="ckicker">Kimlik</span></div>
+    <h3>En güçlü anlaşma, kim olduğunla yaptığındır</h3>
+    <p class="desc">Kendi imgemize uyan sözleri, ona karşı çıkan sözlerden çok daha güvenilir şekilde tutarız. Bir vejetaryen bifteğe direnmez — onu hiç düşünmez. O yüzden söyle: <b>“Benim dikkatim dağıtılamaz.”</b> Yüksek sesle, iş arkadaşlarına, kendin hakkında kullandığın kelimelerle. Slogan gibi duruyor ama mekanizmanın kendisi bu: soruyu “neden bakmayayım ki?”den “ben öyle yapmam”a taşıyor. Ritüeller yardımcı olur. En çok da başkalarına söylemek: artık sözünü bozmanın bir bedeli var.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 278" xmlns="http://www.w3.org/2000/svg"><defs><marker id="mId" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--kraken-purple)"/></marker></defs><rect class="fg" style="--i:0" x="272" y="20" width="216" height="52" rx="12" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><circle class="fg" style="--i:0" cx="302" cy="46" r="14" fill="#fff" stroke="var(--kraken-purple)" stroke-width="1.5"/><use class="fg" style="--i:0; color:var(--kraken-purple)" href="#ic-person" x="293" y="37" width="18" height="18"/><text class="fg" style="--i:0" x="326" y="51" fill="var(--near-black)" font-size="12.5" text-anchor="start">“benim dikkatim dağıtılamaz”</text><rect class="fg" style="--i:1" x="532" y="124" width="216" height="52" rx="12" fill="#fff" stroke="var(--border-gray)"/><circle class="fg" style="--i:1" cx="562" cy="150" r="14" fill="#fff" stroke="var(--kraken-purple)" stroke-width="1.5"/><use class="fg" style="--i:1; color:var(--kraken-purple)" href="#ic-check" x="553" y="141" width="18" height="18"/><text class="fg" style="--i:1" x="586" y="155" fill="var(--near-black)" font-size="12.5" text-anchor="start">bir kez öyle davranırsın</text><rect class="fg" style="--i:2" x="272" y="210" width="216" height="52" rx="12" fill="#fff" stroke="var(--border-gray)"/><circle class="fg" style="--i:2" cx="302" cy="236" r="14" fill="#fff" stroke="var(--kraken-purple)" stroke-width="1.5"/><use class="fg" style="--i:2; color:var(--kraken-purple)" href="#ic-star" x="293" y="227" width="18" height="18"/><text class="fg" style="--i:2" x="326" y="241" fill="var(--near-black)" font-size="12.5" text-anchor="start">öyle olduğunun kanıtı</text><rect class="fg" style="--i:3" x="12" y="124" width="216" height="52" rx="12" fill="#fff" stroke="var(--border-gray)"/><circle class="fg" style="--i:3" cx="42" cy="150" r="14" fill="#fff" stroke="var(--kraken-purple)" stroke-width="1.5"/><use class="fg" style="--i:3; color:var(--kraken-purple)" href="#ic-message" x="33" y="141" width="18" height="18"/><text class="fg" style="--i:3" x="66" y="155" fill="var(--near-black)" font-size="12.5" text-anchor="start">birine söylersin</text><path class="fg draw" style="--i:2" pathLength="1" d="M488 62 C 580 78, 620 100, 636 118" stroke="var(--kraken-purple)" stroke-width="2" fill="none" marker-end="url(#mId)"/><path class="fg draw" style="--i:3" pathLength="1" d="M636 182 C 620 200, 580 222, 490 236" stroke="var(--kraken-purple)" stroke-width="2" fill="none" marker-end="url(#mId)"/><path class="fg draw" style="--i:4" pathLength="1" d="M270 236 C 180 222, 140 200, 124 182" stroke="var(--kraken-purple)" stroke-width="2" fill="none" marker-end="url(#mId)"/><path class="fg draw" style="--i:5" pathLength="1" d="M124 118 C 140 100, 180 78, 270 62" stroke="var(--kraken-purple)" stroke-width="2" fill="none" marker-end="url(#mId)"/><text class="fg" style="--i:6" x="380" y="156" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">onu gerçek kılan döngü</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> “Daha çok odaklanmaya çalışıyorum” demeyi bırak. “Toplantıda telefonuma bakmam” de. Sonra bakmadığın görülsün.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Kimlik, talimattan hızlı yayılır. Konuşmanın ortasında telefona uzanmadığı görülen bir kişi, mağazayı herhangi bir kuraldan daha hızlı değiştirir.</div></div>
+    </div>
+  </article>
+
+</section>
+</div>
+
+<div class="wrap">
+<section class="part" id="part05">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">05</div>
+    <div class="part-label">Bölüm V — Senden Büyüğü</div>
+    <h2>Ekip ve dürüst karşı argüman</h2>
+    <p class="lead">Modelin tek başına yapamayacağı iki şey: kimsenin “bu böyle olmuyor” diyemediği bir kültürü düzeltmek ve seni bölmek üzere kurulmuş bir sektörle tartışmayı kazanmak.</p>
+  </div>
+
+  <!-- C13 -->
+  <article class="card-c reveal anchor" id="c13">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-home"/></svg></span><span class="ctag">Kavram 13</span><span class="ckicker">İş Yeri</span></div>
+    <h3>Sürekli kesinti yazılımın değil, kültürün belirtisidir</h3>
+    <p class="desc">Bütün bir ekip sürekli açıksa suç araçlara atılır — oysa sebep genelde kimsenin “bu böyle olmuyor” diyecek kadar güvende hissetmemesidir. Leslie Perlow'un Boston Consulting Group'taki deneyi danışmanlara haftada bir öngörülebilir izin akşamı verdi; çarpıcı sonuç o akşamın kendisi değildi, onu korumak için yapılan haftalık konuşmanın kültürü asıl değiştiren şey olmasıydı. Bu konuşma <b>psikolojik güvenlik</b> ister — Amy Edmondson'ın deyimiyle, konuştuğun için cezalandırılmayacağına ya da küçük düşürülmeyeceğine dair ortak inanç. Edmondson'ın yönetenler için üç hamlesi: işi bir öğrenme problemi olarak çerçevele, kendi yanılabilirliğini kabul et ve cevapladığından çok daha fazla soru sorarak merakı örnekle.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 258" xmlns="http://www.w3.org/2000/svg"><defs><marker id="mCul" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--silver-blue)"/></marker><marker id="mCulG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--kraken-purple)"/></marker></defs><rect class="fg" style="--i:0" x="30" y="30" width="210" height="180" rx="14" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:0" x="135" y="58" fill="var(--d-bad-text)" font-size="13" text-anchor="middle" font-weight="600">Gördüğümüz</text><text class="fg" style="--i:1" x="135" y="90" fill="var(--cool-gray)" font-size="12" text-anchor="middle">toplantıda telefonlar</text><text class="fg" style="--i:2" x="135" y="116" fill="var(--cool-gray)" font-size="12" text-anchor="middle">23:00'te cevaplar</text><text class="fg" style="--i:3" x="135" y="142" fill="var(--cool-gray)" font-size="12" text-anchor="middle">kimse bir şeyi bitiremiyor</text><path class="fg" style="--i:2" d="M248 120 L296 120" stroke="var(--silver-blue)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#mCul)"/><rect class="fg" style="--i:1" x="304" y="30" width="210" height="180" rx="14" fill="var(--bg-3)" stroke="var(--border-gray)"/><text class="fg" style="--i:1" x="409" y="58" fill="var(--near-black)" font-size="13" text-anchor="middle" font-weight="600">Altında yatan</text><text class="fg" style="--i:2" x="409" y="96" fill="var(--cool-gray)" font-size="12" text-anchor="middle">şunu söylemenin güvenli yolu yok:</text><text class="fg" style="--i:2" x="409" y="118" fill="var(--cool-gray)" font-size="12" text-anchor="middle">“bu böyle olmuyor”</text><text class="fg" style="--i:3" x="409" y="140" fill="var(--cool-gray)" font-size="12" text-anchor="middle">norm da sorgulanmadan kalır</text><path class="fg" style="--i:3" d="M522 120 L570 120" stroke="var(--kraken-purple)" stroke-width="2" marker-end="url(#mCulG)"/><rect class="fg" style="--i:2" x="578" y="30" width="152" height="180" rx="14" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:2" x="654" y="58" fill="var(--kraken-purple-deep)" font-size="13" text-anchor="middle" font-weight="600">Düzelten</text><text class="fg" style="--i:3" x="654" y="92" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">öğrenme problemi</text><text class="fg" style="--i:4" x="654" y="122" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">yönetici hatasını kabul eder</text><text class="fg" style="--i:5" x="654" y="152" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">soru > cevap</text><text class="fg" style="--i:6" x="380" y="244" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Perlow, BCG'de: izin akşamı, onu korumaya dair haftalık konuşmadan daha az önemliydi.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Herkesin dikkati dağınıksa araç satın alma. İnsanların neyin gerçekten bozuk olduğunu söyleyebileceği konuşmayı ayarla — ve odadaki en kıdemli kişinin en son konuştuğundan emin ol.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Başlamak için aylık toplantının yirmi dakikası yeter: seni en çok ne bölüyor, mesai sonrası senden ne beklendiğini varsayıyorsun ve bu varsayımların hangisi gerçekten doğru?</div></div>
+    </div>
+  </article>
+
+  <!-- C14 -->
+  <article class="card-c reveal anchor" id="c14">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-scale"/></svg></span><span class="ctag">Kavram 14</span><span class="ckicker">Diğer Taraf</span></div>
+    <h3>Dürüst karşı argüman</h3>
+    <p class="desc">Bu kitabı, terazinin diğer kefesinde bir el varken oku. Nir Eyal, bundan önce <i>Hooked</i>'u yazdı — alışkanlık yaratan ürünlerin el kitabını. “Sorun tasarım değil” diyen bir yazar için alışılmadık bir özgeçmiş. Johann Hari'nin <i>Stolen Focus</i> kitabı tersini savunuyor: dikkat, hepimizden fazla kaynağı olan şirketler tarafından endüstriyel ölçekte alınıyor ve “daha çok çabala” bu kavgayı kaybetme biçimidir. Sayılar iki tarafı da rahatlatmıyor ama gerçek: Gloria Mark'ın UC Irvine'daki araştırması, tek bir ekranda geçen ortalama sürenin 2004'te yaklaşık 2,5 dakikadan bugün yaklaşık 47 saniyeye düştüğünü ve bir kesintiden sonra işe düzgünce dönmenin yirmi dakikadan fazla sürdüğünü buldu.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 302" xmlns="http://www.w3.org/2000/svg"><path class="fg" style="--i:0" d="M380 60 L380 120" stroke="var(--d-axis)" stroke-width="3"/><path class="fg" style="--i:0" d="M150 60 L610 60" stroke="var(--d-axis)" stroke-width="3" stroke-linecap="round"/><path class="fg" style="--i:0" d="M330 120 L430 120 L410 150 L350 150 Z" fill="var(--d-box)" stroke="var(--border-gray)"/><path class="fg" style="--i:0" d="M150 60 L150 96" stroke="var(--d-axis)" stroke-width="1.5"/><path class="fg" style="--i:0" d="M610 60 L610 96" stroke="var(--d-axis)" stroke-width="1.5"/><rect class="fg" style="--i:1" x="28" y="96" width="244" height="90" rx="12" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:1" x="150" y="122" fill="var(--kraken-purple-deep)" font-size="13" text-anchor="middle" font-weight="600">Eyal: kendinden başla</text><text class="fg" style="--i:2" x="150" y="146" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">tetikleyici genelde içseldir</text><text class="fg" style="--i:2" x="150" y="166" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">ve ayarlarını değiştirebilirsin</text><rect class="fg" style="--i:1" x="488" y="96" width="244" height="90" rx="12" fill="var(--warning-subtle)" stroke="var(--warning)"/><text class="fg" style="--i:1" x="610" y="122" fill="#8a6100" font-size="13" text-anchor="middle" font-weight="600">Hari: sistemden başla</text><text class="fg" style="--i:2" x="610" y="146" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">dikkat ölçekli biçimde alınıyor</text><text class="fg" style="--i:2" x="610" y="166" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">“daha çok çabala” bu kavgayı kaybettirir</text><rect class="fg" style="--i:4" x="28" y="206" width="704" height="62" rx="12" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:4" x="150" y="234" fill="var(--kraken-purple)" font-size="17" text-anchor="middle" font-weight="700">2½ dk → 47 sn</text><text class="fg" style="--i:4" x="150" y="254" fill="var(--cool-gray)" font-size="11" text-anchor="middle">tek ekranda ortalama süre, 2004 → bugün</text><text class="fg" style="--i:5" x="380" y="234" fill="var(--kraken-purple)" font-size="17" text-anchor="middle" font-weight="700">20+ dk</text><text class="fg" style="--i:5" x="380" y="254" fill="var(--cool-gray)" font-size="11" text-anchor="middle">kesintiden sonra işe düzgün dönmek için</text><text class="fg" style="--i:6" x="610" y="234" fill="var(--kraken-purple)" font-size="17" text-anchor="middle" font-weight="700">ikisi de</text><text class="fg" style="--i:6" x="610" y="254" fill="var(--cool-gray)" font-size="11" text-anchor="middle">aynı anda doğru olabilir</text><text class="fg" style="--i:7" x="380" y="290" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Araştırma: Gloria Mark, UC Irvine. Gücünün yettiği yerde modeli kullan; yetmediği yerde sistemi adlandır.</text></svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Modeli kontrol ettiğin şeylere uygula — saatlerine, ayarlarına, ekibinin kurallarına. Seni bölmek üzere kurulmuş bir sistem için kendini suçlamana izin verme.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Yani: bir araç işi gerçekten imkânsız kılıyorsa, bunu söylemek meşru bir cevaptır. Aracı değiştirmek serbest. Sadece ilk denenecek şey değil.</div></div>
+    </div>
+  </article>
+
+</section>
+</div>
+
+<!-- ===================== CLOSING CTA ===================== -->
+<section class="cta">
+  <div class="inner">
+    <div class="reveal">
+      <span class="micro" style="color:rgba(255,255,255,0.7)">Hatırlanması gereken tek şey</span>
+      <h2 style="margin-top:14px;">Ne yapmayı planladığını bilmeden hiçbir şeye “dikkat dağıtıcı” diyemezsin.</h2>
+      <p>Model sırayla işler. Önce duyguyu karşıla, sonra zamanı planla, sonra tetikleyicileri kes, en son kapıyı kilitle. Doğrudan üçüncü adıma atlarsan elinde yalnızca daha sessiz bir telefon ve aynı huzursuz saat kalır.</p>
+    </div>
+    <div class="principles reveal">
+      <div class="p"><div class="n">01 — İçeri</div><div class="t">Dağılma bir kaçıştır. Rahatsızlığı adlandır, dalgayı sırtla.</div></div>
+      <div class="p"><div class="n">02 — Zaman</div><div class="t">Değerler zaman kutusuna dönüşür. Birim yapılacaklar listesi değil, hafta.</div></div>
+      <div class="p"><div class="n">03 — Dışarı</div><div class="t">Her tetikleyici yerini hak eder ya da gider — sonra anlaşmalar hattı tutar.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="complete" id="completeBox"></div>
+
+<footer class="foot">
+  <div class="inner">
+    <a class="brand" href="../tr.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <div class="src">Kavramlar <b>Nir Eyal, Indistractable: How to Control Your Attention and Choose Your Life (2019)</b> kitabından uyarlanmıştır. Destekleyici araştırmalar: Gloria Mark (UC Irvine), Amy Edmondson ve Leslie Perlow (Harvard), Sarah Bowen ve Judson Brewer'ın dürtü sörfü çalışmaları. Karşı görüş: Johann Hari, <b>Stolen Focus</b> (2022). Diyagramlar özgündür, iç ekip eğitimi için çizilmiştir. Kraken Tasarım Sistemi ile biçimlendirilmiştir.</div>
+  </div>
+</footer>
+<script src="../shared/course.js" defer></script>
+</body>
+</html>
