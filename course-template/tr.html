@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ①  Change the title and description -->
+<title>Yeni Eğitim — Mozaik Academy</title>
+<meta name="description" content="Bu eğitimi bir cümleyle anlatan açıklama.">
+<script>
+(function(){
+  try{
+    var CUR='tr';
+    var saved=localStorage.getItem('mozaik_lang');
+    if(saved && saved!==CUR && location.search.indexOf('l=1')<0){
+      location.replace((CUR==='en'?'tr.html':'index.html')+'?l=1');
+    }
+  }catch(e){}
+})();
+</script>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../shared/course.css">
+<link rel="stylesheet" href="../shared/academy.css">
+<!-- ②  id must match the folder name and the data-course on the hub card -->
+<script>window.MOZAIK = {
+  "lang": "tr",
+  "page": "course",
+  "id": "course-template",
+  "tour": [
+    { "n": "Yeni Eğitim", "t": "Hoş geldin, {name} 👋",
+      "b": "Bu eğitimin ne olduğunu ve ne kadar sürdüğünü anlatan bir-iki cümle." },
+    { "n": "Adım 1 / 2", "t": "Herhangi bir bölüme atla",
+      "b": "Üstteki menüyü kullan. Telefonda tam liste için ☰ simgesine dokun." },
+    { "n": "Adım 2 / 2", "t": "Bitirince tamamlandı olarak işaretle",
+      "b": "Sayfanın altında “Tamamlandı olarak işaretle” düğmesi var." }
+  ]
+};</script>
+<script src="../shared/academy.js" defer></script>
+</head>
+<body>
+<div id="gate"><div class="card" id="gateCard"></div></div>
+<div class="progress" id="progress"></div>
+
+<!-- ③  Icon sheet: copy the <svg class="iconsheet"> block from any existing
+         course page so <use href="#ic-…"> works here too. -->
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="../tr.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <a class="backlink" href="../tr.html">← Academy</a>
+    <a class="langswitch navlang" href="index.html" data-setlang="en">English</a>
+    <div class="spacer"></div>
+    <!-- ④  One link per card below -->
+    <div class="toc" id="toc">
+      <a href="#c1">İlk fikir</a>
+      <a href="#c2">İkinci fikir</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#c1">İlk fikir</a>
+  <a href="#c2">İkinci fikir</a>
+</div>
+
+<!-- ⑤  Hero -->
+<header class="hero">
+  <span class="eyebrow"><span class="dot"></span><span class="micro" style="color:var(--kraken-purple)">Ekip Eğitimi · Konu</span></span>
+  <h1>Bu eğitimin ana vaadi, <em>vurucu kısmı italik.</em></h1>
+  <p class="sub">İki-üç cümle: eğitim neyi kapsıyor, kime yönelik ve neden yarım saati hak ediyor.</p>
+  <div class="hero-meta">
+    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">2</div><div class="l">Fikir</div></div>
+    <div class="stat"><div class="v count">1</div><div class="l">Bölüm</div></div>
+    <div class="stat"><div class="v">~10</div><div class="l">Dakikalık okuma</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+<section class="part" id="part1">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">01</div>
+    <div class="part-label">Bölüm I — Bölüm adı</div>
+    <h2>Bu bölüm neyle ilgili</h2>
+    <p class="lead">Bu bölümdeki fikirleri çerçeveleyen bir paragraf.</p>
+  </div>
+
+  <!-- ⑥  One <article> per idea. Keep the id in sync with the menu above. -->
+  <article class="card-c reveal anchor" id="c1">
+    <div class="card-top">
+      <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-flag"/></svg></span>
+      <span class="ctag">Fikir 01</span>
+      <span class="ckicker">Bölüm adı</span>
+    </div>
+    <h3>Fikir, bir iddia gibi yazılmış</h3>
+    <p class="desc">Açıklama. En önemli tek ifadeyi <b>kalın</b> yaz — kart başına bir tane, fazlası değil.</p>
+    <div class="fig">
+      <!-- Optional diagram. Inline SVG, viewBox="0 0 760 <height>".
+           Use the palette variables: var(--d-grow), var(--d-dull), var(--d-good),
+           var(--d-bad), var(--d-box), var(--d-axis). Add class="fg" and
+           style="--i:0" (0,1,2…) to stagger the reveal animation. -->
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Bu fikrin istediği tek davranış değişikliği.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Mağazalarımızda, pipeline’ımızda ya da atölyemizde bu neye benziyor.</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c2">
+    <div class="card-top">
+      <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg></span>
+      <span class="ctag">Fikir 02</span>
+      <span class="ckicker">Bölüm adı</span>
+    </div>
+    <h3>İkinci fikir</h3>
+    <p class="desc">Yukarıdakiyle aynı yapı.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> …</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> …</div></div>
+    </div>
+  </article>
+</section>
+</div>
+
+<!-- ⑦  Closing -->
+<section class="cta">
+  <div class="inner">
+    <div class="reveal">
+      <span class="micro" style="color:rgba(255,255,255,0.7)">Hatırlanması gereken tek şey</span>
+      <h2 style="margin-top:14px;">İnsanların birbirine tekrarlamasını istediğin cümle.</h2>
+      <p>Döngüyü kapatan kısa bir paragraf.</p>
+    </div>
+    <div class="principles reveal">
+      <div class="p"><div class="n">01 — Ad</div><div class="t">Kısa özet.</div></div>
+      <div class="p"><div class="n">02 — Ad</div><div class="t">Kısa özet.</div></div>
+      <div class="p"><div class="n">03 — Ad</div><div class="t">Kısa özet.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="complete" id="completeBox"></div>
+
+<footer class="foot">
+  <div class="inner">
+    <a class="brand" href="../tr.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <div class="src">Materyalin kaynağı. Diyagramlar özgündür, iç ekip eğitimi için çizilmiştir. Kraken Tasarım Sistemi ile biçimlendirilmiştir.</div>
+  </div>
+</footer>
+
+<script src="../shared/course.js" defer></script>
+</body>
+</html>
