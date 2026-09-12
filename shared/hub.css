@@ -39,6 +39,7 @@ a.ccard:hover{ transform:translateY(-3px); text-decoration:none;
   justify-content:center; overflow:hidden;
   background:linear-gradient(135deg,#7132f5 0%, #5b1ecf 100%); }
 .ccard .cover.alt{ background:linear-gradient(135deg,#14b07a 0%, #0c7d63 100%); }
+.ccard .cover.warm{ background:linear-gradient(135deg,#e0761c 0%, #b8410f 100%); }
 .ccard .cover.grey{ background:linear-gradient(135deg,#9497a9 0%, #686b82 100%); }
 .ccard .cover .ghost{ position:absolute; left:16px; bottom:-22px;
   font-family:var(--font-brand); font-weight:700; font-size:96px; line-height:1;
