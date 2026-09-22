@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>30 Cheat Codes — Mozaik Academy</title>
+<meta name="description" content="Daniel Pink’ten otuz pratik kural, beş seviyede — Mozaik ekibi için uyarlandı.">
+<script>
+(function(){
+  try{
+    var CUR='tr';
+    var saved=localStorage.getItem('mozaik_lang');
+    if(saved && saved!==CUR && location.search.indexOf('l=1')<0){
+      location.replace((CUR==='en'?'tr.html':'index.html')+'?l=1');
+    }
+  }catch(e){}
+})();
+</script>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../shared/course.css">
+<link rel="stylesheet" href="../shared/academy.css">
+<style>
+.codes{display:grid;grid-template-columns:1fr;gap:18px;margin-top:28px;}
+@media(min-width:960px){.codes{grid-template-columns:1fr 1fr;gap:20px;}}
+.code-c{background:var(--white);border:1px solid var(--border-gray);border-radius:18px;
+  padding:22px 22px 18px;display:flex;flex-direction:column;box-shadow:var(--shadow-micro);}
+.code-c .card-top{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;}
+.code-c .num{flex:0 0 auto;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+  background:var(--kraken-purple-subtle);color:var(--kraken-purple-deep);
+  font-family:var(--font-mono);font-size:13px;font-weight:700;letter-spacing:-0.02em;}
+.code-c .cicon{flex:0 0 auto;width:26px;height:26px;color:var(--kraken-purple);}
+.code-c .cicon svg{width:26px;height:26px;}
+.code-c .ckicker{font-size:var(--fs-micro);letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--cool-gray);font-weight:600;}
+.code-c h3{font-size:19px;line-height:1.3;margin:0 0 10px;letter-spacing:-0.01em;}
+.code-c .desc{font-size:14.5px;line-height:1.62;color:var(--secondary);margin:0 0 16px;}
+.code-c .callouts{margin-top:auto;display:flex;flex-direction:column;gap:10px;}
+.code-c .takeaway{background:var(--kraken-purple-subtle);border-left:3px solid var(--kraken-purple);
+  border-radius:0 10px 10px 0;padding:11px 14px;font-size:13.5px;line-height:1.55;}
+.code-c .mozaik{display:flex;gap:9px;font-size:13px;line-height:1.55;color:var(--cool-gray);}
+.code-c .mozaik .pin{color:var(--kraken-purple);flex:0 0 auto;}
+.level-fig{margin:26px 0 4px;}
+@media(max-width:600px){.code-c{padding:18px 18px 16px;}.code-c h3{font-size:17.5px;}}
+</style>
+<script>window.MOZAIK = {"lang": "tr", "page": "course", "id": "cheat-codes", "tour": [{"n": "Cheat Codes", "t": "Hoş geldin, {name} 👋", "b": "Daniel Pink'ten otuz pratik kural, beş seviyeye ayrıldı. Baştan sona yaklaşık 25 dakika — ama bu bir liste, dolayısıyla her seferinde bir seviye okumak da gayet iyi çalışır."}, {"n": "Adım 1 / 2", "t": "Beş seviye, istediğin sırayla", "b": "Kararlar, insanlar, işleri bitirmek, çalışmak ve yaşamak. Bugün ihtiyacın olan seviyeye gitmek için üstteki menüyü kullan."}, {"n": "Adım 2 / 2", "t": "Bitirince tamamlandı olarak işaretle", "b": "Sayfanın altındaki “Tamamlandı olarak işaretle” düğmesiyle Academy ana sayfan neyi bitirdiğini gösterir."}]};</script>
+<script src="../shared/academy.js" defer></script>
+</head>
+<body>
+<div id="gate"><div class="card" id="gateCard"></div></div>
+<div class="progress" id="progress"></div>
+
+<svg class="iconsheet" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="_ic" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></g>
+    <linearGradient id="fireGrad" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#dc2626"/><stop offset="0.55" stop-color="#f97316"/><stop offset="1" stop-color="#fbbf24"/></linearGradient>
+  </defs>
+  <symbol id="ic-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></symbol>
+  <symbol id="ic-mountain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19l6-11 3.5 6 2.5-4 6 9z"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2.4 5.6L8 16l2.4-5.6z"/></symbol>
+  <symbol id="ic-sponge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.4" y="6.6" width="17.2" height="11.8" rx="4.6"/><circle cx="8" cy="11" r="1.05" fill="currentColor" stroke="none"/><circle cx="13" cy="10.2" r="1.05" fill="currentColor" stroke="none"/><circle cx="16.6" cy="13.4" r="1.05" fill="currentColor" stroke="none"/><circle cx="9.6" cy="15" r="1.05" fill="currentColor" stroke="none"/><circle cx="13.9" cy="14.6" r="1.05" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="ic-droplet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 10.5a6 6 0 0 1-12 0C6 9.5 12 3 12 3z"/></symbol>
+  <symbol id="ic-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8.5V20l-4-2.5v-4z"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 17l-5.4 2.7 1.2-6.1L3.3 9.4l6.1-.8z"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M19 18v3H6.5A2.5 2.5 0 0 1 4 18.5"/></symbol>
+  <symbol id="ic-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-5 4z"/></symbol>
+  <symbol id="ic-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.7-9.2-9.1A4.7 4.7 0 0 1 12 6.3a4.7 4.7 0 0 1 9.2 4.6C19 15.3 12 20 12 20z"/></symbol>
+  <symbol id="ic-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1.2 3.8 5 5.2 5 9.2a5 5 0 0 1-10 0c0-1.8.8-3 1.8-4 .2 1.8 1.2 2.6 2.2 2.6-.4-2.8-1.2-5-1.2-7.8z"/></symbol>
+  <symbol id="ic-dumbbell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 7v10M3.5 9.5v5M17.5 7v10M20.5 9.5v5M6.5 12h11"/></symbol>
+  <symbol id="ic-dice" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.1"/><circle cx="15" cy="9" r="1.1"/><circle cx="9" cy="15" r="1.1"/><circle cx="15" cy="15" r="1.1"/></symbol>
+  <symbol id="ic-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M7 21h10M6 7l-3 6h6zM18 7l-3 6h6zM4.5 7h15"/><circle cx="12" cy="5" r="1.3"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M18 20a6 6 0 0 0-3.5-5.5"/></symbol>
+  <symbol id="ic-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H14a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5.5"/></symbol>
+  <symbol id="ic-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-11"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="ic-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1.5A3.5 3.5 0 0 0 7 11M17 6h3v1.5A3.5 3.5 0 0 1 17 11M9.5 19h5M10 14.5l-.5 4.5h5l-.5-4.5"/></symbol>
+  <symbol id="ic-person" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="6.5" r="3.3"/><path d="M5.8 21.5c0-5.4 2.3-9 6.2-9s6.2 3.6 6.2 9z"/></symbol>
+  <symbol id="ic-cheer" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="7" r="3"/><path d="M7 21.5c0-4.5 1.8-7.5 5-7.5s5 3 5 7.5z"/><path d="M8.6 14.3 5.2 9.4 7 8.2l3.2 4.7z"/><path d="M15.4 14.3 18.8 9.4 17 8.2l-3.2 4.7z"/></symbol>
+  <symbol id="ic-fire" viewBox="0 0 24 24" stroke="none"><path d="M12 2.5c1.3 4 5.2 5.4 5.2 9.7A5.2 5.2 0 0 1 6.8 12.2c0-1.9.9-3.2 1.9-4.2.2 1.9 1.2 2.7 2.2 2.7-.4-2.9-1.1-5.2-.9-8.2z" fill="url(#fireGrad)"/><path d="M12 9c.7 1.9 2.5 2.6 2.5 4.7a2.5 2.5 0 0 1-5 0c0-.9.5-1.6 1-2.1.1.9.6 1.3 1.1 1.3-.2-1.4-.2-2.5.4-3.9z" fill="#fde047"/></symbol>
+  <symbol id="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></symbol>
+  <symbol id="ic-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7h2.2l1.4-2h7.8l1.4 2h2.2A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.4"/></symbol>
+  <symbol id="ic-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.7 15.7 6.3M8.3 13.3l7.4 4.4"/></symbol>
+  <symbol id="ic-laptop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1.6"/><path d="M2.5 19h19"/></symbol>
+  <symbol id="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6 12 4l8 6.6V20H4z"/><path d="M9.5 20v-5.4h5V20"/></symbol>
+  <symbol id="ic-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M8 3v3.4c0 2 4 3.6 4 5.6s-4 3.6-4 5.6V21"/><path d="M16 3v3.4c0 2-4 3.6-4 5.6s4 3.6 4 5.6V21"/></symbol>
+</svg>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="../tr.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <a class="backlink" href="../tr.html">← Academy</a>
+    <a class="langswitch navlang" href="index.html" data-setlang="en">English</a>
+    <div class="spacer"></div>
+    <div class="toc" id="toc">
+      <a href="#lv1">Karar</a>
+      <a href="#lv2">İnsanlar</a>
+      <a href="#lv3">Bitir</a>
+      <a href="#lv4">İş</a>
+      <a href="#lv5">Yaşam</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#lv1">Karar</a>
+  <a href="#lv2">İnsanlar</a>
+  <a href="#lv3">Bitir</a>
+  <a href="#lv4">İş</a>
+  <a href="#lv5">Yaşam</a>
+</div>
+
+<header class="hero compact">
+  <span class="eyebrow"><span class="dot"></span><span class="micro" style="color:var(--kraken-purple)">Ekip Eğitimi · Muhakeme</span></span>
+  <h1>Bir kariyerin nasıl gideceğine <em>sessizce karar veren otuz küçük kural.</em></h1>
+  <p class="sub">Daniel Pink, kimsenin işe ilk gün eline tutuşturmadığı kısayolları altmış yıl boyunca topladı. Bunlardan otuzu, beş seviyede — nasıl karar verilir, insanlarla nasıl olunur, işler nasıl bitirilir, nasıl çalışılır, nasıl yaşanır. Hiçbiri öğrenmek için kurs istemiyor. Hepsi başlamak için bir hafta istiyor.</p>
+  <div class="hero-meta">
+    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">30</div><div class="l">Kod</div></div>
+    <div class="stat"><div class="v count">5</div><div class="l">Seviye</div></div>
+    <div class="stat"><div class="v">~25</div><div class="l">Dakikalık okuma</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+<section class="part" id="lv1">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">01</div>
+    <div class="part-label">Birinci Seviye — Kararlar</div>
+    <h2>Dramsız nasıl seçilir</h2>
+    <p class="lead">Bir işletmedeki kötü sonuçların çoğu kötü şanstan gelmez. Yanlış hızda verilmiş iyi kararlardan gelir — geri alınabilir bir şey için üç hafta, kalıcı bir şey için üç dakika. Bu altı kod, hızı düzeltir.</p>
+  </div>
+
+  <div class="fig level-fig reveal">
+    <svg viewBox="0 0 760 310" xmlns="http://www.w3.org/2000/svg"><defs><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-grow)"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-bad)"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--silver-blue)"/></marker></defs><rect class="fg" style="--i:1" x="196" y="46" width="218.0" height="103.0" rx="12" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:1" x="305.0" y="93.5" fill="var(--near-black)" font-size="14" text-anchor="middle" font-weight="600">Yavaşla</text><text class="fg" style="--i:1" x="305.0" y="115.5" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">büyük ve kalıcı — itiraz edeni</text><text class="fg" style="--i:1" x="305.0" y="131.5" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">bul, bir gece bekle</text><rect class="fg" style="--i:2" x="426.0" y="46" width="218.0" height="103.0" rx="12" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:2" x="535.0" y="93.5" fill="var(--near-black)" font-size="14" text-anchor="middle" font-weight="600">Karar ver</text><text class="fg" style="--i:2" x="535.0" y="115.5" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">büyük ama geri alınabilir —</text><text class="fg" style="--i:2" x="535.0" y="131.5" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">dene, çıkışı görünür tut</text><rect class="fg" style="--i:3" x="196" y="161.0" width="218.0" height="103.0" rx="12" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:3" x="305.0" y="208.5" fill="var(--near-black)" font-size="14" text-anchor="middle" font-weight="600">Bir kez karar ver</text><text class="fg" style="--i:3" x="305.0" y="230.5" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">küçük ama kalıcı — seç ve bir</text><text class="fg" style="--i:3" x="305.0" y="246.5" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">daha açma</text><rect class="fg" style="--i:4" x="426.0" y="161.0" width="218.0" height="103.0" rx="12" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:4" x="535.0" y="208.5" fill="var(--near-black)" font-size="14" text-anchor="middle" font-weight="600">Hemen karar ver</text><text class="fg" style="--i:4" x="535.0" y="230.5" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">küçük ve geri alınabilir —</text><text class="fg" style="--i:4" x="535.0" y="246.5" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">düşünmek hatadan pahalı</text><line class="fg" style="--i:0" x1="190" y1="284" x2="650" y2="284" stroke="var(--d-axis)" stroke-width="1.5" marker-end="url(#aN)"/><text class="fg" style="--i:5" x="305.0" y="304" fill="var(--cool-gray)" font-size="12" text-anchor="middle">tek yönlü kapı</text><text class="fg" style="--i:5" x="535.0" y="304" fill="var(--cool-gray)" font-size="12" text-anchor="middle">çift yönlü kapı</text><line class="fg" style="--i:0" x1="176" y1="270" x2="176" y2="40" stroke="var(--d-axis)" stroke-width="1.5" marker-end="url(#aN)"/><text class="fg" style="--i:5" x="100" y="80" fill="var(--cool-gray)" font-size="12" text-anchor="middle">yüksek bedel</text><text class="fg" style="--i:5" x="100" y="200" fill="var(--cool-gray)" font-size="12" text-anchor="middle">düşük bedel</text><text class="fg" style="--i:0" x="380" y="22" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Bir karar aslında ne kadar düşünmeyi hak ediyor</text></svg>
+  </div>
+
+  <div class="codes">
+    <article class="code-c reveal anchor" id="c1">
+      <div class="card-top">
+        <span class="num">01</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-compass"/></svg></span>
+        <span class="ckicker">Salı Testi</span>
+      </div>
+      <h3>Sıradan bir salıya göre karar ver, en iyi gününe göre değil</h3>
+      <p class="desc">Her seçenek kendini en parlak anıyla satar: açılış gecesindeki mağaza, yurt dışı konferansı olan iş, yılda dört kez kullanacağın teraslı daire. Ama sen o parlak anda yaşamıyorsun — ortanca günde yaşıyorsun. Normal bir salı günü saat 14:30'un neye benzediğini sor ve ağırlığın çoğunu o cevaba ver.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> 51 iyi salıyı tek bir görkemli cumartesiyle takas etmek neredeyse her zaman kötü bir takastır.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> İşe alımlar, tedarikçiler ve yazılımlar için geçerli. Fuarda göz kamaştıran ama bir e-postaya dokuz günde dönen tedarikçi, yılın her haftası kötü bir salıdır.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c2">
+      <div class="card-top">
+        <span class="num">02</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg></span>
+        <span class="ckicker">İki Kapı</span>
+      </div>
+      <h3>Geri alınabilir kararlar hız hak eder, müzakere değil</h3>
+      <p class="desc">Bazı kararlar tek yönlü kapıdır: bir üretim hattı, uzun süreli kira, üst düzey bir işe alım, marka konumlandırması. Geçtin mi kolay dönüş yok, o yüzden zamanını al. Kararların çoğu ise çift yönlü kapıdır — bir aracı dene, bir teşhiri test et, bir tedarikçiyi tek siparişle sına. Yanlışsa geri çıkarsın. Üç dakikada geri alınacak bir şeye üç hafta harcamak tedbir değil; kendine kestiğin bir vergidir.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Tartışmaya başlamadan önce tek soru sor: bunu geri alabilir miyim? Uzun düşünmeyi tek yöne açılan kapılara sakla.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Yeni bir kumaşı tek mağazada tek kanepede denemek çift yönlü kapıdır. Bir sezonun siparişini ona bağlamak tek yönlü kapıdır. Bunlar aynı karar değildir ve aynı süreyi almamalıdır.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c3">
+      <div class="card-top">
+        <span class="num">03</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-scale"/></svg></span>
+        <span class="ckicker">İtiraz Kontrolü</span>
+      </div>
+      <h3>Fikrini ne değiştirir diye sor — ve aynı fikirde olmayan birini bul</h3>
+      <p class="desc">Planından vazgeçmene yol açacak tek bir kanıt bile sayamıyorsan, onu analiz etmiyorsun; savunuyorsun. Çözüm rahatsız edici ama ucuz: büyük bir taahhütten önce bunun hata olduğunu düşünen zeki bir kişi bul ve gerekçesini düzgünce anlatmasına izin ver. Katılmak zorunda değilsin. Ama imzalamadan önce dinlemek zorundasın.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> “Hiçbir şey fikrimi değiştirmez” özgüven değildir. İncelenmesi durmuş bir kararın sesidir.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Şüpheciye toplantıda gerçek bir yer ver, sonrasında koridor sohbeti değil. Fiyat modeli Zeynep'in en sert itirazından sağ çıkıyorsa, bir müşterininkinden de çıkar.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c4">
+      <div class="card-top">
+        <span class="num">04</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-hourglass"/></svg></span>
+        <span class="ckicker">Sıfır Seçeneği</span>
+      </div>
+      <h3>Diğerlerini fiyatlamadan önce hiçbir şey yapmamayı fiyatla</h3>
+      <p class="desc">Hiçbir şey yapmamak kararın yokluğu değildir — kendi maliyeti ve kendi getirisi olan seçeneklerden biridir. Bazı sorunlar onlara verdiğimiz ilgiyle beslenir ve durduğumuz an küçülür. Bazı durumlar iki hafta içinde kendiliğinden netleşir. Faydalı alışkanlık, sadece beklersen ne olacağını yazmak ve bunu harekete geçmekle dürüstçe kıyaslamaktır.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Bazen talimat “öylece durma, bir şey yap” değildir — tam tersidir.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Bir ekibi yeniden düzenlemeden ya da bir süreci yeniden yazmadan önce, bir ay dokunmazsak ne olur sorusunun tek paragraflık cevabını yaz. Arada bir o paragraf kazanır.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c5">
+      <div class="card-top">
+        <span class="num">05</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-dice"/></svg></span>
+        <span class="ckicker">Küçük Bahisler</span>
+      </div>
+      <h3>Çok sayıda küçük bahis oyna: sınırlı kayıp, sınırsız kazanç</h3>
+      <p class="desc">İşe yarayan riskler, tuttuğunda çok şeyi değiştirebilen, tutmadığında ise sana çok az şeye mal olanlardır. Tek vitrinde tek ürün. Bir ay boyunca tek yeni kanal. Bir yazı, bir fuar, bir pilot müşteri. Sıçramalar tek bir kahramanca hamleyle nadiren gelir; ucuz deneylerden oluşan bir portföyün içinde bir yerde çıkarlar ve hangisi olacağını önceden neredeyse hiç bilemezsin.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> İşe yarayan şeylerin çoğu planlanmaz, bulunur. Daha çok deneme yap — yeter ki bir ıskanın bedeli bir yıl değil bir hafta olsun.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Pazarlama zaten böyle çalışıyor ve bu görülüyor — yeni müşteri oranı en yüksek departman orası. Aynı mantık Mağaza tarafına da uyar: bir teşhiri, bir paketi ya da bir takip senaryosunu her yere yaymadan önce tek mağazada test et.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c6">
+      <div class="card-top">
+        <span class="num">06</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-target"/></svg></span>
+        <span class="ckicker">Süreç ve Sonuç</span>
+      </div>
+      <h3>Sadece sonucu değil, kararı da not ver</h3>
+      <p class="desc">Dikkatli bir karar berbat bir sonuç doğurabilir, pervasız bir karar şansa denk gelebilir — çünkü sonuçlar kısmen beceri, kısmen şanstır. Yalnızca sonuçlara not verirsen, şans eseri tutmuş hataları sadakatle kopyalar, tesadüfen kaybetmiş sağlam yöntemleri terk edersin. Sonradan üç soru: elimdeki bilgiyi kullandım mı, gerçek alternatiflere baktım mı, neyin ters gidebileceğini anladım mı?</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Tek bir iyi çeyrek yöntemin doğru olduğunu kanıtlamaz, tek bir kötü çeyrek de yanlış olduğunu kanıtlamaz.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Bir iş kapandığında ya da kaçtığında, bugün bildiğimizi değil o an bildiğimizi gözden geçir. Aksi hâlde değerlendirme sadece şanslı olanı ödüllendirir.</div></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+</div>
+
+<div class="wrap">
+<section class="part" id="lv2">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">02</div>
+    <div class="part-label">İkinci Seviye — İnsanlar</div>
+    <h2>Kimsenin eğitimini vermediği kısım</h2>
+    <p class="lead">İşinde mükemmel olup bu seviyede yine de kaybedebilirsin. İnsanların senden aslında ne istediği, ilişkilerin neden sessizce söndüğü ve uzaklaşmanın zalimlik değil bilgelik olduğu tek durum üzerine altı kod.</p>
+  </div>
+
+  <div class="fig level-fig reveal">
+    <svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg"><defs><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-grow)"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-bad)"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--silver-blue)"/></marker></defs><text class="fg" style="--i:0" x="40" y="34" fill="var(--d-bad-text)" font-size="13.5" text-anchor="start" font-weight="600">“Bir ara buluşalım”</text><text class="fg" style="--i:0" x="40" y="54" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">Hiçbir şey planlanmadığı için o aralığa kimse talip olmaz — ve</text><text class="fg" style="--i:0" x="40" y="70" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">boşluklar sessizce açılır.</text><line class="fg" style="--i:1" x1="60" y1="108" x2="700" y2="108" stroke="var(--d-axis)" stroke-width="1.5" stroke-dasharray="5 5"/><circle class="fg" style="--i:2" cx="90" cy="108" r="13" fill="var(--d-bad)" opacity="1.00"/><text class="fg" style="--i:2" x="90" y="136" fill="var(--cool-gray)" font-size="11" text-anchor="middle">ay 1</text><circle class="fg" style="--i:3" cx="208" cy="108" r="11" fill="var(--d-bad)" opacity="0.82"/><text class="fg" style="--i:3" x="208" y="136" fill="var(--cool-gray)" font-size="11" text-anchor="middle">ay 2</text><circle class="fg" style="--i:4" cx="326" cy="108" r="9" fill="var(--d-bad)" opacity="0.64"/><text class="fg" style="--i:4" x="326" y="136" fill="var(--cool-gray)" font-size="11" text-anchor="middle">ay 3</text><circle class="fg" style="--i:5" cx="444" cy="108" r="7" fill="var(--d-bad)" opacity="0.46"/><text class="fg" style="--i:5" x="444" y="136" fill="var(--cool-gray)" font-size="11" text-anchor="middle">ay 4</text><circle class="fg" style="--i:6" cx="562" cy="108" r="5" fill="var(--d-bad)" opacity="0.28"/><text class="fg" style="--i:6" x="562" y="136" fill="var(--cool-gray)" font-size="11" text-anchor="middle">ay 5</text><circle class="fg" style="--i:7" cx="680" cy="108" r="3" fill="var(--d-bad)" opacity="0.15"/><text class="fg" style="--i:7" x="680" y="136" fill="var(--cool-gray)" font-size="11" text-anchor="middle">ay 6</text><text class="fg" style="--i:7" x="700" y="90" fill="var(--d-bad-text)" font-size="12" text-anchor="end">temas söner</text><line class="fg" style="--i:0" x1="40" y1="166" x2="720" y2="166" stroke="var(--border-gray)" stroke-width="1"/><text class="fg" style="--i:8" x="40" y="200" fill="var(--kraken-purple-deep)" font-size="13.5" text-anchor="start" font-weight="600">Takvimde sabit bir aralık</text><text class="fg" style="--i:8" x="40" y="220" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">Tarih zaten var. Gerçekleşmesi için kimsenin hevesli olması</text><text class="fg" style="--i:8" x="40" y="236" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">gerekmiyor.</text><line class="fg" style="--i:9" x1="60" y1="274" x2="700" y2="274" stroke="var(--kraken-purple)" stroke-width="2"/><circle class="fg" style="--i:10" cx="90" cy="274" r="11" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="2"/><use class="fg" style="--i:10; color:var(--kraken-purple)" href="#ic-pin" x="83" y="267" width="14" height="14"/><text class="fg" style="--i:10" x="90" y="302" fill="var(--cool-gray)" font-size="11" text-anchor="middle">ay 1</text><circle class="fg" style="--i:11" cx="208" cy="274" r="11" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="2"/><use class="fg" style="--i:11; color:var(--kraken-purple)" href="#ic-pin" x="201" y="267" width="14" height="14"/><text class="fg" style="--i:11" x="208" y="302" fill="var(--cool-gray)" font-size="11" text-anchor="middle">ay 2</text><circle class="fg" style="--i:12" cx="326" cy="274" r="11" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="2"/><use class="fg" style="--i:12; color:var(--kraken-purple)" href="#ic-pin" x="319" y="267" width="14" height="14"/><text class="fg" style="--i:12" x="326" y="302" fill="var(--cool-gray)" font-size="11" text-anchor="middle">ay 3</text><circle class="fg" style="--i:13" cx="444" cy="274" r="11" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="2"/><use class="fg" style="--i:13; color:var(--kraken-purple)" href="#ic-pin" x="437" y="267" width="14" height="14"/><text class="fg" style="--i:13" x="444" y="302" fill="var(--cool-gray)" font-size="11" text-anchor="middle">ay 4</text><circle class="fg" style="--i:14" cx="562" cy="274" r="11" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="2"/><use class="fg" style="--i:14; color:var(--kraken-purple)" href="#ic-pin" x="555" y="267" width="14" height="14"/><text class="fg" style="--i:14" x="562" y="302" fill="var(--cool-gray)" font-size="11" text-anchor="middle">ay 5</text><circle class="fg" style="--i:15" cx="680" cy="274" r="11" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="2"/><use class="fg" style="--i:15; color:var(--kraken-purple)" href="#ic-pin" x="673" y="267" width="14" height="14"/><text class="fg" style="--i:15" x="680" y="302" fill="var(--cool-gray)" font-size="11" text-anchor="middle">ay 6</text><text class="fg" style="--i:15" x="700" y="256" fill="var(--kraken-purple-deep)" font-size="12" text-anchor="end">temas sürer</text></svg>
+  </div>
+
+  <div class="codes">
+    <article class="code-c reveal anchor" id="c7">
+      <div class="card-top">
+        <span class="num">07</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg></span>
+        <span class="ckicker">Çözmeden Önce</span>
+      </div>
+      <h3>Ne istediğini sor: akıl mı, yardım mı, yoksa sadece eşlik mi</h3>
+      <p class="desc">Birinin anlattığı her sorun çözüm talebi değildir. Bazen cevabını ister, bazen elini ister, çoğu zaman da sadece onu bölmeyecek birine yüksek sesle söylemek ister. İhtiyaç dikkatken doğrudan problem çözme moduna geçmek, iyi niyetli insanların nasıl olup da umursamaz gibi hissettirdiğinin cevabıdır.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Çoğunu tek soru önler: “fikir mi istiyorsun, yoksa anlatmak mı?”</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Özellikle kaybedilen bir siparişten sonraki birebir görüşmede geçerli. İlk beş dakika neredeyse hiçbir zaman koçluk talebi değildir.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c8">
+      <div class="card-top">
+        <span class="num">08</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></span>
+        <span class="ckicker">Cömert Okuma</span>
+      </div>
+      <h3>Kötü niyeti varsaymadan önce yoğunluğu varsay</h3>
+      <p class="desc">Sert cevap, yanıtsız mesaj, sen yokken alınan karar — bunlar düşmanlık gibi okunur ama genelde çok daha sıradan bir şeydir: altmış okunmamış e-postası olan, kötü uyumuş ya da takvimin kontrolünü kaybetmiş biri. Gerçekten kötü niyetli insanlar vardır ama boğulmuş olanlardan daha azdır. Cömert açıklamadan başlamak hiçbir şeye mal olmaz ve kanıt biriktiğinde her zaman revize edebilirsin.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> İş yerinde kişisel gibi hissettiren şeylerin çoğu, aslında başkasının kötü haftasının sana yan taraftan değmesidir.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> En çok departmanlar arasında önemlidir. Aydınlatma'dan geç gelen bir teknik doküman genelde bir kuyruk sorunudur, teslim tarihine ne kadar saygı duyulduğuna dair bir mesaj değil.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c9">
+      <div class="card-top">
+        <span class="num">09</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-heart"/></svg></span>
+        <span class="ckicker">Merak Testi</span>
+      </div>
+      <h3>Sana kimin soru sorduğuna dikkat et</h3>
+      <p class="desc">Merak, bir ilişki hakkında sahip olduğun en güvenilir işaretlerden biridir ve okuması neredeyse bedavadır. Yolculuğun nasıl geçti, proje nasıl sonuçlandı, baban nasıl diye kim soruyor? Ve daha da öğreticisi: konuşma ne kadar uzarsa uzasın kim hiç sormuyor? Bu; arkadaşlıklarda, yeni iş arkadaşlarında, tedarikçilerde ve sana bir şey satan herkeste işler.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Seninle ilgilenen insanlar sorar. Dinleyiciyle ilgilenenler sormaz.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Bir mülakatta adayın işin kendisine dair sorularını say. CV'den daha çok şey öngörür.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c10">
+      <div class="card-top">
+        <span class="num">10</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-share"/></svg></span>
+        <span class="ckicker">Defter Yok</span>
+      </div>
+      <h3>Sürdürmek istediğin ilişkilerde puan tutma</h3>
+      <p class="desc">Geçen sefer ben aradım. Yemeğin parasını ben ödedim. Ağustosta onun yerine ben baktım. Cömertlik bir toplam tutmaya başladığı anda cömertlik olmaktan çıkar ve kesilmeyi bekleyen bir faturaya dönüşür. İyi ilişkiler haftalar içinde değil yıllar içinde dengelenir ve yeterince yakından ölçersen herhangi bir ay adaletsiz görünür.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Bir arkadaşlık için tablo yanlış bir araçtır. Zaten tutuyorsan, asıl bulgu budur.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Ekip içinde de aynı. Her iyiliği kaydeden kişi genelde kimsenin artık iyilik istemediği kişidir.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c11">
+      <div class="card-top">
+        <span class="num">11</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-pin"/></svg></span>
+        <span class="ckicker">Altyapı</span>
+      </div>
+      <h3>Arkadaşlığa bir altyapı kur</h3>
+      <p class="desc">“Bir ara buluşalım”, insanların kimse bir şeye karar vermeden hayatından çıkma biçimidir. Alternatif duygusal değil yapısaldır: sabit aylık bir yemek, cumartesi yürüyüşü, iki haftada bir pazar telefonu. Ve birini gerçekten görmek istediğinde gün ve saat içeren gerçek bir davet yap — belirli bir plan plandır, ucu açık olan ise yıllara yayılmış kibar bir vedadır.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Tekrar eden, kendiliğinden olanı yener. Takvim kaydı, iyi niyetin tek başına asla başaramadığı işi yapar.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> İş ilişkileri için de geçerli: başka bir departmandaki muhatabınla sabit on beş dakika, her türlü eskalasyon sürecinden daha çok sorunu önler.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c12">
+      <div class="card-top">
+        <span class="num">12</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-x"/></svg></span>
+        <span class="ckicker">Çıkarma</span>
+      </div>
+      <h3>Seni sürekli küçülten insanları çıkar</h3>
+      <p class="desc">Zor olan herkes zehirli değildir — zor insanlar çoğu zaman sadece dürüst, yorgun ya da baskı altındadır. Ayrım bir örüntüdür: bu kişi seni bulduğundan daha küçük bırakıyor mu, düzenli olarak? Öyleyse müdahale mesafedir ve bu kuralın aile istisnası yoktur. Ortak geçmiş ve ortak genler, sana kötü davranma hakkı vermez.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Mesafe her zaman zalimlik değildir. Bazen o yıl yaptığın en sorumlu şeydir.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> İş yerinde karşılığı nadiren işten çıkarmadır — kimin hangi projede olduğunu yeniden tasarlamaktır ve bunu iyi insanlar sessizce gitmeden önce yapmaktır.</div></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+</div>
+
+<div class="wrap">
+<section class="part" id="lv3">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">03</div>
+    <div class="part-label">Üçüncü Seviye — İşleri Bitirmek</div>
+    <h2>Bitirmek, başlamayı yener</h2>
+    <p class="lead">Buradaki hiçbir şey disiplinle ilgili değil. İlk adımı kaçınılamayacak kadar küçültmek, bitmişin neye benzediğine önceden karar vermek ve sürekli dolu bir takvimi kupa değil uyarı ışığı saymakla ilgili.</p>
+  </div>
+
+  <div class="fig level-fig reveal">
+    <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg"><defs><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-grow)"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-bad)"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--silver-blue)"/></marker></defs><line class="fg" style="--i:0" x1="110" y1="250" x2="700" y2="250" stroke="var(--d-axis)" stroke-width="1.5" marker-end="url(#aN)"/><line class="fg" style="--i:0" x1="110" y1="250" x2="110" y2="40" stroke="var(--d-axis)" stroke-width="1.5" marker-end="url(#aN)"/><text class="fg" style="--i:0" x="405" y="288" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">ilk adımın büyüklüğü →</text><text class="fg" style="--i:0" x="-145" y="66" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle" transform="rotate(-90)">gerçekten başlama ihtimali</text><path class="fg draw" pathLength="1" style="--i:1" d="M130 66 C 280 78, 340 196, 690 232" fill="none" stroke="var(--kraken-purple)" stroke-width="3" stroke-linecap="round"/><circle class="fg" style="--i:2" cx="152" cy="70" r="9" fill="var(--kraken-purple)"/><line class="fg" style="--i:2" x1="168" y1="70" x2="352" y2="70" stroke="var(--kraken-purple)" stroke-width="1.5" stroke-dasharray="4 4"/><rect class="fg" style="--i:2" x="356" y="40" width="364" height="62" rx="12" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:2" x="374" y="63" fill="var(--kraken-purple-deep)" font-size="13" text-anchor="start" font-weight="600">“Dosyayı aç, üç satır yaz”</text><text class="fg" style="--i:2" x="374" y="82" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">Reddetmesi saçma görünecek kadar küçük.</text><circle class="fg" style="--i:3" cx="664" cy="229" r="9" fill="var(--d-bad)"/><rect class="fg" style="--i:3" x="130" y="186" width="306" height="64" rx="12" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:3" x="148" y="209" fill="var(--d-bad-text)" font-size="13" text-anchor="start" font-weight="600">“Yıllık raporu yaz”</text><text class="fg" style="--i:3" x="148" y="228" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">Doğru, itiraz edilemez ve dokuz gündür</text><text class="fg" style="--i:3" x="148" y="244" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">el sürülmemiş.</text><line class="fg" style="--i:3" x1="440" y1="214" x2="648" y2="227" stroke="var(--d-bad)" stroke-width="1.5" stroke-dasharray="4 4"/><text class="fg" style="--i:0" x="405" y="20" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">İlk adımın büyüklüğü ile onu atma ihtimalin ters yönde hareket eder</text></svg>
+  </div>
+
+  <div class="codes">
+    <article class="code-c reveal anchor" id="c13">
+      <div class="card-top">
+        <span class="num">13</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-flag"/></svg></span>
+        <span class="ckicker">Bitmişi Tanımla</span>
+      </div>
+      <h3>Başlamadan önce bitmişin neye benzediğine karar ver</h3>
+      <p class="desc">Bitmiş tanımı olmayan her proje sessizce sonsuzlaşır, çünkü her zaman bir revizyon daha vardır. Bitiş çizgisini en başta, herkesin kontrol edebileceği tek bir cümleyle yaz. Sona yaklaştığında da şunu hatırla: yayına almak genelde işin mükemmelleştiğinin keşfi değil, saate dair bir karardır — çoğu şey hazır olduğu için değil, vakti geldiği için çıkar.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> “Bitti”, otuzuncu gün beklediğin bir his değil, birinci gün yazdığın bir cümledir.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Her brief'in başına koy: “bu iş, katalog PDF'i iki mağaza tarafından onaylanıp yüklendiğinde bitmiştir.” “Katalog iyi olduğunda” değil.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c14">
+      <div class="card-top">
+        <span class="num">14</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-droplet"/></svg></span>
+        <span class="ckicker">Minik İlk Adım</span>
+      </div>
+      <h3>İlk adımı utandıracak kadar küçült</h3>
+      <p class="desc">İlk adımın büyüklüğü ile onu atma ihtimalin ters yönde hareket eder. O yüzden raporu yazma — üç cümle yaz. Forma girme — ayakkabıları kapının yanına koy. Depoyu yeniden düzenleme — tek rafı boşalt. Amaç raf değil; başlamamıştan başlanmışa geçen çizgiyi aşmak. Beynin gerçekten yalnızca o kısma direniyor.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Bir iş listede sürekli aşağı kayıyorsa bu bir motivasyon sorunu değildir. İlk adım basitçe fazla büyüktür.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Kimsenin başlamadığı SOP dokümanları bir ilk adım sorunudur. “Süreci yaz” fazla büyük; “beş adımı olma sırasına göre listele” on dakika sürer.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c15">
+      <div class="card-top">
+        <span class="num">15</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-sponge"/></svg></span>
+        <span class="ckicker">İzin</span>
+      </div>
+      <h3>Kolay olmasına izin ver — zorluk erdemin kanıtı değildir</h3>
+      <p class="desc">Bir yerlerde, bir şey zor değilse gerçekten saymayacağı fikrini edindik ve o zamandan beri bunun bedelini ödüyoruz. Kurulu hâlini al. Şablonu kullan. Trafiksiz yolu seç. Yavaş olduğun kısmı devret. Kolayı da aynı işi görürken zor yolu seçmek disiplin değildir — iyi pazarlanmış, kendi kendine yüklenmiş bir maliyettir.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Uzun yoldan gittin diye kimse fazladan puan vermiyor. Çabayı gerçekten gerektiren kısımlara sakla.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Bir rapor elle dört saat, ERP'den yirmi dakika sürüyorsa dört saatlik versiyon titizlik değildir. Güncellemediğimiz bir alışkanlıktır.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c16">
+      <div class="card-top">
+        <span class="num">16</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-sun"/></svg></span>
+        <span class="ckicker">Bu Akşam, Yarın İçin</span>
+      </div>
+      <h3>Yarının ilk hamlesini bu akşam kur</h3>
+      <p class="desc">Sabahki sen güvenilir bir pazarlık ortağı değildir. Pazarlık fırsatlarını ortadan kaldır: dokümanı devam edeceğin paragrafta açık bırak, kıyafetleri hazırla ve tatsız işi belirsiz bir niyet olarak değil, gün-saat-yer içeren bir takvim kaydı olarak koy. Bir randevuya itiraz etmek bir plandan çok daha zordur, çünkü karar verecek bir şey kalmamıştır.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> İrade gücü güvenilmezdir. Randevular sıkıcı ve etkilidir — doğru öncelik sırası da budur.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Herkesin ertelediği iş için işe yarar: “üç gecikmiş Kurumsal tahsilatı ara” salı 09:30'a konduğunda yapılır. Yapılacaklar listesinde sonsuza dek haftaya kayar.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c17">
+      <div class="card-top">
+        <span class="num">17</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span>
+        <span class="ckicker">Bekleyenler</span>
+      </div>
+      <h3>Sadece yapılacaklar değil, “bekleyenler” listesi de tut</h3>
+      <p class="desc">Başkalarına ne borçlu olduğumuzu izlemekte fena değiliz; başkalarının bize ne borçlu olduğunu izlemekte gerçekten kötüyüz — birinin incelediği teklif, söz verilmiş çizim, arkasındaki her şeyi tıkayan onay. Hepsini tek ve görünür bir yere, isim ve sorduğun tarihle birlikte yaz. Aksi hâlde listeyi hafızan tutar ve onu sana gece üçte okumayı tercih eder. Bu yöntem David Allen'ın <i>Getting Things Done</i> kitabından gelir.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Bir projeyi tıkayan şeyin yarısı yapmadığın iş değildir. Kimsenin peşine düşmediği bir cevaptır.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Proje panosunda ortak tek bir “bekleyenler” sütunu — kimden ve ne zamandan beri — haftalık toplantıda sürpriz diye ortaya çıkan şeylerin çoğunu ortadan kaldırır.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c18">
+      <div class="card-top">
+        <span class="num">18</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-flame"/></svg></span>
+        <span class="ckicker">Uyarı Işığı</span>
+      </div>
+      <h3>Sürekli yoğunluğu madalya değil uyarı say</h3>
+      <p class="desc">Bazen “başımı kaşıyacak vaktim yok” dolu ve iyi bir hayat demektir. Çoğu zaman daha az gurur verici bir şey demektir: hiç konmamış öncelikler, hiç yapılmamış seçimler ya da kişinin kendini görme biçiminin parçası hâline geldiği için taşınan bir yük. Her şey acil hissettiriyorsa hamle daha hızlı çalışmak değildir. Çıkarmaktır — bir şeyi iptal et, bir şeyi reddet ve bir yürüyüşün, tuhaf bir fikrin ya da plansız bir sohbetin gerçekten olabileceği boşluk bırak.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Takvimdeki her kare bir şey üretmek zorunda değil. Boş olanlar da bir iş görüyor.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Bir departman sürekli kapasitesinin sınırındaysa bu bir performans değil planlama sinyalidir. Dolu bir sisteme çaba eklemek, kırılmayı yalnızca daha az görünür bir yere taşır.</div></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+</div>
+
+<div class="wrap">
+<section class="part" id="lv4">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">04</div>
+    <div class="part-label">Dördüncü Seviye — İş</div>
+    <h2>Projede istenen kişi nasıl olunur</h2>
+    <p class="lead">Birlikte çalışılması kolay biri olmanın gösterişsiz mekaniği üzerine altı kod — yazıya dökmek, teslim tarihleri hakkında daha iyi sorular sormak, sadece sorun değil çözüm de getirmek ve herkesin kaçındığı beceriyi sahiplenmek.</p>
+  </div>
+
+  <div class="fig level-fig reveal">
+    <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg"><defs><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-grow)"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-bad)"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--silver-blue)"/></marker></defs><rect class="fg" style="--i:0" x="40" y="46" width="320" height="244" rx="14" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:0" x="200" y="30" fill="var(--d-bad-text)" font-size="13" text-anchor="middle" font-weight="600">Göz gezdirilen e-posta</text><rect class="fg" style="--i:0" x="64" y="70" width="272" height="22" rx="6" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:0" x="78" y="85" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">arka plan, geçmiş, bağlam…</text><rect class="fg" style="--i:1" x="64" y="104" width="272" height="22" rx="6" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:1" x="78" y="119" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">arka plan, geçmiş, bağlam…</text><rect class="fg" style="--i:2" x="64" y="138" width="272" height="22" rx="6" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:2" x="78" y="153" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">arka plan, geçmiş, bağlam…</text><rect class="fg" style="--i:3" x="64" y="172" width="272" height="22" rx="6" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:3" x="78" y="187" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">arka plan, geçmiş, bağlam…</text><rect class="fg" style="--i:4" x="64" y="206" width="272" height="26" rx="6" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:4" x="78" y="223" fill="var(--d-bad-text)" font-size="11.5" text-anchor="start" font-weight="600">…yani, cumaya kadar onaylar mısın?</text><text class="fg" style="--i:5" x="200" y="258" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">Okuyucu talebe en sonda ulaşır —</text><text class="fg" style="--i:5" x="200" y="274" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">ulaşırsa.</text><path class="fg" style="--i:5" d="M374 168 L 396 168" stroke="var(--silver-blue)" stroke-width="2" marker-end="url(#aN)"/><rect class="fg" style="--i:6" x="410" y="46" width="320" height="244" rx="14" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:6" x="570" y="30" fill="var(--kraken-purple-deep)" font-size="13" text-anchor="middle" font-weight="600">Cevaplanan e-posta</text><rect class="fg" style="--i:6" x="434" y="74" width="272" height="30" rx="8" fill="#fff" stroke="var(--kraken-purple)"/><text class="fg" style="--i:6" x="450" y="94" fill="var(--kraken-purple-deep)" font-size="11.5" text-anchor="start" font-weight="600">Talep — neye, ne zamana kadar ihtiyacım var</text><rect class="fg" style="--i:7" x="434" y="116" width="272" height="30" rx="8" fill="#fff" stroke="var(--kraken-purple)"/><text class="fg" style="--i:7" x="450" y="136" fill="var(--kraken-purple-deep)" font-size="11.5" text-anchor="start" font-weight="600">Önerim — ve nedeni</text><rect class="fg" style="--i:8" x="434" y="158" width="272" height="30" rx="8" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:8" x="450" y="178" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">Arka plan, ihtiyacı olan için</text><rect class="fg" style="--i:9" x="434" y="200" width="272" height="30" rx="8" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:9" x="450" y="220" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">Detay ve ekler</text><text class="fg" style="--i:10" x="570" y="262" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">Karar ilk satırda. Gerisi isteğe bağlı</text><text class="fg" style="--i:10" x="570" y="278" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">okuma.</text></svg>
+  </div>
+
+  <div class="codes">
+    <article class="code-c reveal anchor" id="c19">
+      <div class="card-top">
+        <span class="num">19</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-book"/></svg></span>
+        <span class="ckicker">Yaz</span>
+      </div>
+      <h3>Toplantı özeti e-postasını gönder</h3>
+      <p class="desc">Önemli her toplantıdan sonra kısa bir not gönder: neye karar verdik, kim ne yapacak, ne zamana kadar. Bu herkese yarar ama asıl kazanan sensin — bir sohbeti üç satır yazıya çevirmek, gerçekten bir şeye karar verilip verilmediğini anlamanın yoludur ve boşlukları hâlâ ucuzken görünür kılar. Yapay zekâ ifadeyi düzeltebilir; kararı ona bırakma, çünkü asıl mesele düşünmenin kendisi.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Özeti beş satırda yazamıyorsan toplantı bir şeye karar vermemiştir. Bunu bugün öğrenmek daha iyidir.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Özellikle departmanlar arası her şey için. “Onu senin yaptığını sanıyordum” anlarımızın çoğu bir özet e-postasından sağ çıkmazdı.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c20">
+      <div class="card-top">
+        <span class="num">20</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-trend"/></svg></span>
+        <span class="ckicker">İki Kategori</span>
+      </div>
+      <h3>Yöneticinin işini kolaylaştır</h3>
+      <p class="desc">Her yönetici, farkında olarak ya da olmayarak ekibini iki gruba ayırır: yükü artıranlar ve yükün bir kısmını alanlar. İkinci grupta olmak yağcılık ya da politika değildir — yöneticinin gerçekte neye göre ölçüldüğünü anlamak ve o yığından bir şeyi istenmeden almaktır. Kariyerin başında bu, CV'ndeki hemen her şeyden daha önemlidir.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Vazgeçilmez olmak görevlerini iyi yapmakla olmaz. Başkasının görevlerinden birini üstlenmekle olur.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Çeyrekte bir sor: masandaki hangi işi tamamen devralabilirim? Cevap genelde nettir ve genelde müsaittir.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c21">
+      <div class="card-top">
+        <span class="num">21</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-hourglass"/></svg></span>
+        <span class="ckicker">Gerçek Tarih</span>
+      </div>
+      <h3>Teslim tarihini sor, sonra gerçek teslim tarihini sor</h3>
+      <p class="desc">“Bunu ne zaman istiyorsun?” ile “bu gerçekten ne zaman kullanılacak?” şaşırtıcı sıklıkta farklı cevaplar verir — cuma ile üç hafta sonraki yönetim toplantısı gibi. Uydurma teslim tarihleri gerçek panik, gerçek mesai ve gerçek hata üretir, hem de boşuna. İki soruyu da sor, gerçek olana göre planla ve aynı nezaketi dışarı da göster: kendi uydurduğun aciliyeti başkasına verme.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Sahte bir teslim tarihinin maliyeti gerçeğiyle aynıdır ama karşılığında hiçbir şey almazsın. Elindekinin hangisi olduğunu öğren.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Üretim ve Satış her ay bu yüzden gün kaybediyor. Devirde tek bir fazladan soru — müşteri bunu gerçekte ne zaman istiyor? — genelde o günleri geri kazandırır.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c22">
+      <div class="card-top">
+        <span class="num">22</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-zap"/></svg></span>
+        <span class="ckicker">Önce Talep</span>
+      </div>
+      <h3>Talebi başa koy ve bir öneriyle gel</h3>
+      <p class="desc">Bir e-postayı, okuyucu ne istediğini öğrenmeden altı paragraf bağlamla açma — talebi ilk satıra koy, arka planı ihtiyacı olana altta bırak. Ve bir sorun getirdiğinde yanında bir öneri de getir. Teşhis faydalıdır; işleri asıl hareket ettiren öneridir. “Bu böyle olmuyor” bir tartışma başlatır. “Bu böyle olmuyor, sebebi bence X, önerim Y” bir karar başlatır.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Sorunu herkes adlandırabilir. Bir sonraki sefer fikri sorulan kişi, adlandırıp çözümü de öneren kişidir.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Her şeyden çok eskalasyon e-postaları için geçerli. “Önerim şu, katılıyor musun?” diye gelmek çoğunu tek cevaba indirir.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c23">
+      <div class="card-top">
+        <span class="num">23</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-mountain"/></svg></span>
+        <span class="ckicker">Savunmasız Alan</span>
+      </div>
+      <h3>Herkesin kaçındığı değerli bir şeyde iyi ol</h3>
+      <p class="desc">Herkes görünür, gösterişli iş için yarışır; dolayısıyla oradaki rekabet acımasızdır. Bu sırada kimsenin sahiplenmek istemediği dağınık tablo, kimsenin gönüllü olmadığı sunum ve herkesin ertelediği konuşma tamamen sahipsiz durur. Bu beceriler tam da tatsız oldukları için değerlidir ve bunlardan birini güvenilir biçimde üstlenen kişi olmak, vazgeçilmez olmanın çok kısa yoludur.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Kalabalık alan kalabalıktır. Kimsenin durmadığı yere git.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Bizde bu, temiz veridir. ERP rakamlarını mağazaların bildirdikleriyle gerçekten uzlaştırabilen kişi kim olursa, binanın en çok fikri sorulan kişisi olur.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c24">
+      <div class="card-top">
+        <span class="num">24</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg></span>
+        <span class="ckicker">Yönetenler İçin</span>
+      </div>
+      <h3>Sahip olduğun yönetici değil, ihtiyacın olan yönetici ol</h3>
+      <p class="desc">İki liste, ikisi de kısa. Birincisi: en kötü yöneticilerinin yaptıkları — ortadan kaybolmak, emeği sahiplenmek, yılda bir kez ve yalnızca kötüyken gelen geri bildirim. Bunları yapma. İkincisi ve daha zoru: onlardan çok ihtiyaç duyup hiç alamadıkların — netlik, erken verilen dürüst eleştiri, tam vazgeçmek üzereyken gelen cesaret, gerçek bir hatadan sonra ikinci şans. Şimdi bunları başkasına sen ver.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Bir ekibi değiştiren ikinci listedir. Çoğu kişi bariz hataları yapmaz ama boşluğu yine de doldurmaz.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Harfiyen yapmaya değer: iki listeyi bir kez yaz, çekmecende tut ve bir sonraki değerlendirme döneminden önce oku.</div></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+</div>
+
+<div class="wrap">
+<section class="part" id="lv5">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">05</div>
+    <div class="part-label">Beşinci Seviye — Yaşam</div>
+    <h2>Ya bir hayata dönüşür ya dönüşmez</h2>
+    <p class="lead">Son altı kod ve en önemlisi en sonda. İrade gücüne güvenmek yerine çevreni tasarla, parayı gerçekten karşılık bulduğu yere harca, gelenekleri beklemek yerine kur — ve hangi zorluğun silineceğini, hangisinin kabul edileceğini öğren.</p>
+  </div>
+
+  <div class="fig level-fig reveal">
+    <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg"><defs><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-grow)"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-bad)"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--silver-blue)"/></marker></defs><text class="fg" style="--i:0" x="380" y="28" fill="var(--near-black)" font-size="13.5" text-anchor="middle" font-weight="600">Son kod: iki tür zorluk, ayrıştırılmış</text><rect class="fg" style="--i:0" x="250" y="48" width="260" height="44" rx="12" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:0" x="380" y="76" fill="var(--near-black)" font-size="13" text-anchor="middle" font-weight="600">Bir şey zor</text><text class="fg" style="--i:1" x="380" y="118" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Bu zorluk bana bir şey kazandırıyor mu?</text><path class="fg" style="--i:2" d="M340 130 L 190 168" stroke="var(--d-bad)" stroke-width="2" marker-end="url(#aB)"/><path class="fg" style="--i:2" d="M420 130 L 570 168" stroke="var(--d-grow)" stroke-width="2" marker-end="url(#aG)"/><rect class="fg" style="--i:3" x="40" y="180" width="300" height="140" rx="14" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><use class="fg" style="--i:3; color:var(--d-bad)" href="#ic-x" x="62" y="198" width="18" height="18"/><text class="fg" style="--i:3" x="88" y="212" fill="var(--d-bad-text)" font-size="13.5" text-anchor="start" font-weight="600">Kes — hiçbir şey kazandırmıyor</text><text class="fg" style="--i:4" x="62" y="240" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">· bir aracın yapabileceği elle süreç</text><text class="fg" style="--i:5" x="62" y="262" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">· tekrar tekrar girdiğin tartışma</text><text class="fg" style="--i:6" x="62" y="284" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">· bir şey kanıtlamak için seçilen uzun yol</text><text class="fg" style="--i:7" x="62" y="306" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">· artık fark etmez olduğun sürtünme</text><rect class="fg" style="--i:3" x="420" y="180" width="300" height="140" rx="14" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><use class="fg" style="--i:3; color:var(--kraken-purple)" href="#ic-check" x="442" y="198" width="18" height="18"/><text class="fg" style="--i:3" x="468" y="212" fill="var(--kraken-purple-deep)" font-size="13.5" text-anchor="start" font-weight="600">Öde — bu giriş bedeli</text><text class="fg" style="--i:4" x="442" y="240" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">· canını yakan ve haklı olan geri bildirim</text><text class="fg" style="--i:5" x="442" y="262" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">· hiçbir şeyin yürümediği ilk aylar</text><text class="fg" style="--i:6" x="442" y="284" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">· yapmaktan çekindiğin konuşma</text><text class="fg" style="--i:7" x="442" y="306" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">· kimsenin görmediği çalışma</text><text class="fg" style="--i:8" x="380" y="344" fill="var(--cool-gray)" font-size="12" text-anchor="middle">Zorluk tek başına hiçbir şey söylemez. Hangi tür olduğu her şeyi söyler.</text></svg>
+  </div>
+
+  <div class="codes">
+    <article class="code-c reveal anchor" id="c25">
+      <div class="card-top">
+        <span class="num">25</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-home"/></svg></span>
+        <span class="ckicker">Çevre</span>
+      </div>
+      <h3>Çevreni davranışına göre tasarla</h3>
+      <p class="desc">Eşyaları ait oldukları yerde değil, kullandığın yerde tut. Gece okumak istiyorsan kitap yastığın üstünde, kahvaltıyla alıyorsan vitaminler su ısıtıcısının yanında, yarının ilk işiyse dosya masanın üstünde. Ve bilinçli olarak çoğalt — iki şarj aleti, iki makas, üç odada gözlük. Yedeklilik hatırlamaktan ucuzdur ve hatırlamadığın günlerde de çalışır.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Yedeklilik öz disiplini yener, çünkü yedekliliğin kötü günü olmaz.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Mağaza katında da aynı ilke: metre, kumaş numuneleri ve sipariş bloğu arka ofiste değil, konuşmanın geçtiği yerde durmalı.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c26">
+      <div class="card-top">
+        <span class="num">26</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-scale"/></svg></span>
+        <span class="ckicker">Paranın Karşılığı</span>
+      </div>
+      <h3>Ara sıra gelen keyiften önce sürekli çileyi kaldırmaya harca</h3>
+      <p class="desc">Lüks bir hafta sonu yılda üç gündür. Belini ağrıtan bir yatak ise o yılın her gecesidir. Aynı aritmetik vuran ayakkabı, sırtını ağrıtan sandalye, açılması dört dakika süren bilgisayar ve hiç sorgulamadığın yol için de geçerli. Küçük ve günlük bir rahatsızlığı silmek için harcanan para yüzlerce iyileşmiş gün satın alır; nadir bir keyfe harcanan para birkaç gün. İkisi de olur — yeter ki sıra doğru olsun.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Pahalı olduğuna karar vermeden önce sıklıkla çarp. Günlük olan, yıllık olanı neredeyse her seferinde yener.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Bütçe mantığı olarak da geçerli. Yavaş ortak yazıcı ve on yıllık mağaza aydınlatması, uğruna ertelediğimiz şeyden bir yılda daha pahalıya geliyor.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c27">
+      <div class="card-top">
+        <span class="num">27</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-cheer"/></svg></span>
+        <span class="ckicker">Bilerek</span>
+      </div>
+      <h3>Gelenekleri bilerek kur</h3>
+      <p class="desc">Ritüeller, birbirinin aynı geçen zamanı sonradan gerçekten hatırlayabileceğin bir hayata çeviren şeydir. Pazar yemeği, doğum günü kahvaltısı, her yıl aynı yerde çekilen aynı biraz saçma fotoğraf. Neredeyse hiçbiri kendiliğinden oluşmaz — biri bir kez karar verir, iki kez tekrarlar ve üçüncü yılda tartışılmaz hâle gelir, herkes savunur. O biri pekâlâ sen olabilirsin.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Gelenekler keşfedilmez, başlatılır. İlki her zaman biraz saçma hissettirir.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Ekiplerin buna ailelerden az ihtiyacı yok. Sezon sonu yemeği, büyük bir sözleşme sevk edildiğinde çekilen fotoğraf — küçük, tekrarlanabilir ve primden çok daha uzun süre hatırlanan.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c28">
+      <div class="card-top">
+        <span class="num">28</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-fire"/></svg></span>
+        <span class="ckicker">Sıradanlaşma</span>
+      </div>
+      <h3>Normal olmaya çalışmayı bırak</h3>
+      <p class="desc">Normal, var olan en kalabalık yerdir ve oraya vardığı için kimse hatırlanmamıştır. İlginç insanlar tam olarak şu noktada ilginçtir: bir şeyin normal olup olmadığını sormayı bırakıp kendilerine uygun olup olmadığını sormaya başladıkları nokta. Sana tam oturmayan parçalar genelde kusur değildir — başkasınınkiyle değiştirilemeyen tek parçalardır.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Soruyu değiştir. “Bu normal mi?” değil, “bu bana uygun mu?”</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> İnsanlar kadar markalar için de doğru. Herkesinkine benzeyen ürünler yalnızca fiyatta yarışır ve bu, kazanmak istemediğimiz bir yarıştır.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c29">
+      <div class="card-top">
+        <span class="num">29</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-trophy"/></svg></span>
+        <span class="ckicker">Rakip Değiştir</span>
+      </div>
+      <h3>Kendi geçmiş hâlinle yarış</h3>
+      <p class="desc">Kendini başkalarıyla kıyaslamak hileli bir oyundur, çünkü kendi kurgusuz içini onların özenle seçilmiş dışıyla karşılaştırırsın. Bu hafta yaşadığın her tereddüdü biliyorsun; onlardan yalnızca duyuruları biliyorsun. Çözüm ilerlemeyi umursamayı bırakmak değil — rakibi değiştirmek. Bunda altı ay öncesinden daha iyi miyim? O konuşmayı geçen yıl olacağımdan daha akıllıca yönettim mi?</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Başkasının yarışında madalya değil, kendi rekorunu hedefle.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Satış tablosunu böyle oku. Kendi rakamları her çeyrek yükselen bir danışman, sıralamada hangi satırda olursa olsun iyi gidiyordur.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c30">
+      <div class="card-top">
+        <span class="num">30</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-compass"/></svg></span>
+        <span class="ckicker">Son Kod</span>
+      </div>
+      <h3>Gereksiz zorluğu sil. Gerekli zorluğu kabul et.</h3>
+      <p class="desc">İki tür zorluk var ve neredeyse her şey bunları ayırt edebilmene bağlı. Birincisi sana hiçbir şey kazandırmaz: anlamsız yol, elle yapılan süreç, tekrar tekrar girdiğin tartışma, yalnızca bir şey kanıtlamak için seçilen zor yol. Hepsini vicdan azabı duymadan kes. İkincisi ise giriş bedelidir — değerli olan her şey emek, eleştiri, belirsizlik ve fedakârlık ister. Bu bedelle karşılaştığında yanlış yola saptığını varsayma. Gerçek bir şeyin bedelini ödüyor olabilirsin.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Çıkarım:</b> Zorluk, yanlış yaptığının işareti değildir. Ancak hangi tür olduğunu kontrol ettikten sonra bir işarettir.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Diğer yirmi dokuz kodun altında duran kod budur. Yarısı birinci tür zorluğu kesmek için var — ki ikincisine enerji kalsın.</div></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+</div>
+
+<!-- ===================== CLOSING CTA ===================== -->
+<section class="cta">
+  <div class="inner">
+    <div class="reveal">
+      <span class="micro" style="color:rgba(255,255,255,0.7)">Bunu gerçekten nasıl kullanmalı</span>
+      <h2 style="margin-top:14px;">Otuzunu birden deneme. İki tane seç.</h2>
+      <p>Otuz iyi fikirden oluşan bir liste tek başına hiçbir şeyi değiştirmez — yalnızca okuduğun bir şey daha olur. O yüzden bu hafta tam olarak iki tane seç: biri uzun süredir katlandığın bir sürtünmeyi kaldıran, diğeri bir bedeli olduğu için sessizce kaçındığın. O iki kodu gir. Gerisi için sonra gel.</p>
+    </div>
+    <div class="principles reveal">
+      <div class="p"><div class="n">01 — Kolay olan</div><div class="t">Tekrar eden bir rahatsızlığı silen bir kod seç. Etkisini günler içinde hissedersin.</div></div>
+      <div class="p"><div class="n">02 — Zor olan</div><div class="t">Okurken içinin sıkıldığı kodu seç. O sıkılma, işaretin kendisi.</div></div>
+      <div class="p"><div class="n">03 — Bir hafta</div><div class="t">İki kod, yedi gün. Sonra iki tane daha. Aynı anda otuz, sıfır demektir.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="complete" id="completeBox"></div>
+
+<footer class="foot">
+  <div class="inner">
+    <a class="brand" href="../tr.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <div class="src">İlkeler <b>Daniel Pink, “30 Cheat Codes to Beat Every Level of Life” (2026)</b> içeriğinden uyarlanmıştır — danpink.com. Pink; <b>Drive</b>, <b>To Sell Is Human</b>, <b>When</b> ve <b>The Power of Regret</b> kitaplarının yazarı ve Beyaz Saray'ın eski baş metin yazarıdır. 17 numaralı kod <b>David Allen, Getting Things Done</b> kaynağına dayanır. Bu sayfadaki açıklamalar, örnekler ve diyagramlar özgündür; Mozaik iç ekip eğitimi için yazılmıştır. Kraken Tasarım Sistemi ile biçimlendirilmiştir.</div>
+  </div>
+</footer>
+<script src="../shared/course.js" defer></script>
+</body>
+</html>

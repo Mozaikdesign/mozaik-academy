@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>30 Cheat Codes — Mozaik Academy</title>
+<meta name="description" content="Thirty practical rules from Daniel Pink, in five levels, adapted for the Mozaik team.">
+<script>
+(function(){
+  try{
+    var CUR='en';
+    var saved=localStorage.getItem('mozaik_lang');
+    if(saved && saved!==CUR && location.search.indexOf('l=1')<0){
+      location.replace((CUR==='en'?'tr.html':'index.html')+'?l=1');
+    }
+  }catch(e){}
+})();
+</script>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../shared/course.css">
+<link rel="stylesheet" href="../shared/academy.css">
+<style>
+.codes{display:grid;grid-template-columns:1fr;gap:18px;margin-top:28px;}
+@media(min-width:960px){.codes{grid-template-columns:1fr 1fr;gap:20px;}}
+.code-c{background:var(--white);border:1px solid var(--border-gray);border-radius:18px;
+  padding:22px 22px 18px;display:flex;flex-direction:column;box-shadow:var(--shadow-micro);}
+.code-c .card-top{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;}
+.code-c .num{flex:0 0 auto;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+  background:var(--kraken-purple-subtle);color:var(--kraken-purple-deep);
+  font-family:var(--font-mono);font-size:13px;font-weight:700;letter-spacing:-0.02em;}
+.code-c .cicon{flex:0 0 auto;width:26px;height:26px;color:var(--kraken-purple);}
+.code-c .cicon svg{width:26px;height:26px;}
+.code-c .ckicker{font-size:var(--fs-micro);letter-spacing:0.08em;text-transform:uppercase;
+  color:var(--cool-gray);font-weight:600;}
+.code-c h3{font-size:19px;line-height:1.3;margin:0 0 10px;letter-spacing:-0.01em;}
+.code-c .desc{font-size:14.5px;line-height:1.62;color:var(--secondary);margin:0 0 16px;}
+.code-c .callouts{margin-top:auto;display:flex;flex-direction:column;gap:10px;}
+.code-c .takeaway{background:var(--kraken-purple-subtle);border-left:3px solid var(--kraken-purple);
+  border-radius:0 10px 10px 0;padding:11px 14px;font-size:13.5px;line-height:1.55;}
+.code-c .mozaik{display:flex;gap:9px;font-size:13px;line-height:1.55;color:var(--cool-gray);}
+.code-c .mozaik .pin{color:var(--kraken-purple);flex:0 0 auto;}
+.level-fig{margin:26px 0 4px;}
+@media(max-width:600px){.code-c{padding:18px 18px 16px;}.code-c h3{font-size:17.5px;}}
+</style>
+<script>window.MOZAIK = {"lang": "en", "page": "course", "id": "cheat-codes", "tour": [{"n": "Cheat Codes", "t": "Welcome, {name} 👋", "b": "Thirty practical rules from Daniel Pink, grouped into five levels. About 25 minutes end to end — but it's a list, so reading one level at a time works perfectly well."}, {"n": "Step 1 of 2", "t": "Five levels, in any order", "b": "Decisions, people, getting things done, work, and living. Use the menu at the top to jump straight to the level you need today."}, {"n": "Step 2 of 2", "t": "Mark it complete when you finish", "b": "There's a “Mark as complete” button at the bottom, so your Academy home shows what you've finished."}]};</script>
+<script src="../shared/academy.js" defer></script>
+</head>
+<body>
+<div id="gate"><div class="card" id="gateCard"></div></div>
+<div class="progress" id="progress"></div>
+
+<svg class="iconsheet" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="_ic" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></g>
+    <linearGradient id="fireGrad" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#dc2626"/><stop offset="0.55" stop-color="#f97316"/><stop offset="1" stop-color="#fbbf24"/></linearGradient>
+  </defs>
+  <symbol id="ic-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></symbol>
+  <symbol id="ic-mountain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19l6-11 3.5 6 2.5-4 6 9z"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2.4 5.6L8 16l2.4-5.6z"/></symbol>
+  <symbol id="ic-sponge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.4" y="6.6" width="17.2" height="11.8" rx="4.6"/><circle cx="8" cy="11" r="1.05" fill="currentColor" stroke="none"/><circle cx="13" cy="10.2" r="1.05" fill="currentColor" stroke="none"/><circle cx="16.6" cy="13.4" r="1.05" fill="currentColor" stroke="none"/><circle cx="9.6" cy="15" r="1.05" fill="currentColor" stroke="none"/><circle cx="13.9" cy="14.6" r="1.05" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="ic-droplet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 10.5a6 6 0 0 1-12 0C6 9.5 12 3 12 3z"/></symbol>
+  <symbol id="ic-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8.5V20l-4-2.5v-4z"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 17l-5.4 2.7 1.2-6.1L3.3 9.4l6.1-.8z"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M19 18v3H6.5A2.5 2.5 0 0 1 4 18.5"/></symbol>
+  <symbol id="ic-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-5 4z"/></symbol>
+  <symbol id="ic-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.7-9.2-9.1A4.7 4.7 0 0 1 12 6.3a4.7 4.7 0 0 1 9.2 4.6C19 15.3 12 20 12 20z"/></symbol>
+  <symbol id="ic-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1.2 3.8 5 5.2 5 9.2a5 5 0 0 1-10 0c0-1.8.8-3 1.8-4 .2 1.8 1.2 2.6 2.2 2.6-.4-2.8-1.2-5-1.2-7.8z"/></symbol>
+  <symbol id="ic-dumbbell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 7v10M3.5 9.5v5M17.5 7v10M20.5 9.5v5M6.5 12h11"/></symbol>
+  <symbol id="ic-dice" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.1"/><circle cx="15" cy="9" r="1.1"/><circle cx="9" cy="15" r="1.1"/><circle cx="15" cy="15" r="1.1"/></symbol>
+  <symbol id="ic-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M7 21h10M6 7l-3 6h6zM18 7l-3 6h6zM4.5 7h15"/><circle cx="12" cy="5" r="1.3"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M18 20a6 6 0 0 0-3.5-5.5"/></symbol>
+  <symbol id="ic-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H14a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5.5"/></symbol>
+  <symbol id="ic-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-11"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="ic-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1.5A3.5 3.5 0 0 0 7 11M17 6h3v1.5A3.5 3.5 0 0 1 17 11M9.5 19h5M10 14.5l-.5 4.5h5l-.5-4.5"/></symbol>
+  <symbol id="ic-person" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="6.5" r="3.3"/><path d="M5.8 21.5c0-5.4 2.3-9 6.2-9s6.2 3.6 6.2 9z"/></symbol>
+  <symbol id="ic-cheer" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="7" r="3"/><path d="M7 21.5c0-4.5 1.8-7.5 5-7.5s5 3 5 7.5z"/><path d="M8.6 14.3 5.2 9.4 7 8.2l3.2 4.7z"/><path d="M15.4 14.3 18.8 9.4 17 8.2l-3.2 4.7z"/></symbol>
+  <symbol id="ic-fire" viewBox="0 0 24 24" stroke="none"><path d="M12 2.5c1.3 4 5.2 5.4 5.2 9.7A5.2 5.2 0 0 1 6.8 12.2c0-1.9.9-3.2 1.9-4.2.2 1.9 1.2 2.7 2.2 2.7-.4-2.9-1.1-5.2-.9-8.2z" fill="url(#fireGrad)"/><path d="M12 9c.7 1.9 2.5 2.6 2.5 4.7a2.5 2.5 0 0 1-5 0c0-.9.5-1.6 1-2.1.1.9.6 1.3 1.1 1.3-.2-1.4-.2-2.5.4-3.9z" fill="#fde047"/></symbol>
+  <symbol id="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></symbol>
+  <symbol id="ic-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5A1.5 1.5 0 0 1 4.5 7h2.2l1.4-2h7.8l1.4 2h2.2A1.5 1.5 0 0 1 21 8.5v9A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5z"/><circle cx="12" cy="13" r="3.4"/></symbol>
+  <symbol id="ic-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.7 15.7 6.3M8.3 13.3l7.4 4.4"/></symbol>
+  <symbol id="ic-laptop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1.6"/><path d="M2.5 19h19"/></symbol>
+  <symbol id="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6 12 4l8 6.6V20H4z"/><path d="M9.5 20v-5.4h5V20"/></symbol>
+  <symbol id="ic-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M8 3v3.4c0 2 4 3.6 4 5.6s-4 3.6-4 5.6V21"/><path d="M16 3v3.4c0 2-4 3.6-4 5.6s4 3.6 4 5.6V21"/></symbol>
+</svg>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="../index.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <a class="backlink" href="../index.html">← Academy</a>
+    <a class="langswitch navlang" href="tr.html" data-setlang="tr">Türkçe</a>
+    <div class="spacer"></div>
+    <div class="toc" id="toc">
+      <a href="#lv1">Decide</a>
+      <a href="#lv2">People</a>
+      <a href="#lv3">Finish</a>
+      <a href="#lv4">Work</a>
+      <a href="#lv5">Live</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#lv1">Decide</a>
+  <a href="#lv2">People</a>
+  <a href="#lv3">Finish</a>
+  <a href="#lv4">Work</a>
+  <a href="#lv5">Live</a>
+</div>
+
+<header class="hero compact">
+  <span class="eyebrow"><span class="dot"></span><span class="micro" style="color:var(--kraken-purple)">Team Training · Judgement</span></span>
+  <h1>Thirty small rules that <em>quietly decide how a career goes.</em></h1>
+  <p class="sub">Daniel Pink spent six decades collecting the shortcuts nobody hands you on your first day. Thirty of them, in five levels — how to decide, how to be with people, how to finish things, how to work, how to live. None of them take a course to learn. All of them take a week to start.</p>
+  <div class="hero-meta">
+    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">30</div><div class="l">Codes</div></div>
+    <div class="stat"><div class="v count">5</div><div class="l">Levels</div></div>
+    <div class="stat"><div class="v">~25</div><div class="l">Minutes to read</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+<section class="part" id="lv1">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">01</div>
+    <div class="part-label">Level One — Decisions</div>
+    <h2>How to choose without the drama</h2>
+    <p class="lead">Most bad outcomes in a business aren't caused by bad luck. They're caused by good decisions made at the wrong speed — three weeks of agonising over something reversible, and three minutes on something permanent. These six codes fix the speed.</p>
+  </div>
+
+  <div class="fig level-fig reveal">
+    <svg viewBox="0 0 760 310" xmlns="http://www.w3.org/2000/svg"><defs><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-grow)"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-bad)"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--silver-blue)"/></marker></defs><rect class="fg" style="--i:1" x="196" y="46" width="218.0" height="103.0" rx="12" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:1" x="305.0" y="93.5" fill="var(--near-black)" font-size="14" text-anchor="middle" font-weight="600">Slow down</text><text class="fg" style="--i:1" x="305.0" y="115.5" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">big and permanent — find the</text><text class="fg" style="--i:1" x="305.0" y="131.5" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">dissenter, sleep on it</text><rect class="fg" style="--i:2" x="426.0" y="46" width="218.0" height="103.0" rx="12" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:2" x="535.0" y="93.5" fill="var(--near-black)" font-size="14" text-anchor="middle" font-weight="600">Just decide</text><text class="fg" style="--i:2" x="535.0" y="115.5" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">big but undoable — try it,</text><text class="fg" style="--i:2" x="535.0" y="131.5" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">keep the exit visible</text><rect class="fg" style="--i:3" x="196" y="161.0" width="218.0" height="103.0" rx="12" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:3" x="305.0" y="208.5" fill="var(--near-black)" font-size="14" text-anchor="middle" font-weight="600">Decide once</text><text class="fg" style="--i:3" x="305.0" y="230.5" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">small but permanent — choose,</text><text class="fg" style="--i:3" x="305.0" y="246.5" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">then stop revisiting</text><rect class="fg" style="--i:4" x="426.0" y="161.0" width="218.0" height="103.0" rx="12" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:4" x="535.0" y="208.5" fill="var(--near-black)" font-size="14" text-anchor="middle" font-weight="600">Decide now</text><text class="fg" style="--i:4" x="535.0" y="230.5" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">small and reversible — the</text><text class="fg" style="--i:4" x="535.0" y="246.5" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">deliberation costs more than</text><text class="fg" style="--i:4" x="535.0" y="262.5" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">the mistake</text><line class="fg" style="--i:0" x1="190" y1="284" x2="650" y2="284" stroke="var(--d-axis)" stroke-width="1.5" marker-end="url(#aN)"/><text class="fg" style="--i:5" x="305.0" y="304" fill="var(--cool-gray)" font-size="12" text-anchor="middle">one-way door</text><text class="fg" style="--i:5" x="535.0" y="304" fill="var(--cool-gray)" font-size="12" text-anchor="middle">two-way door</text><line class="fg" style="--i:0" x1="176" y1="270" x2="176" y2="40" stroke="var(--d-axis)" stroke-width="1.5" marker-end="url(#aN)"/><text class="fg" style="--i:5" x="100" y="80" fill="var(--cool-gray)" font-size="12" text-anchor="middle">high stakes</text><text class="fg" style="--i:5" x="100" y="200" fill="var(--cool-gray)" font-size="12" text-anchor="middle">low stakes</text><text class="fg" style="--i:0" x="380" y="22" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">How much deliberation a decision has actually earned</text></svg>
+  </div>
+
+  <div class="codes">
+    <article class="code-c reveal anchor" id="c1">
+      <div class="card-top">
+        <span class="num">01</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-compass"/></svg></span>
+        <span class="ckicker">The Tuesday Test</span>
+      </div>
+      <h3>Judge it by an ordinary Tuesday, not by its best day</h3>
+      <p class="desc">Every option sells itself on its highlight: the showroom on launch night, the job with the conference abroad, the apartment with the terrace you'd use four times a year. But you don't live in the highlight — you live in the median day. Ask what 2:30 on a normal Tuesday looks like, and let that answer carry most of the weight.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Trading 51 good Tuesdays for one spectacular Saturday is almost always a bad trade.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Applies to hires, suppliers and software. A supplier who dazzles at the fair but takes nine days to answer an email is a bad Tuesday every week of the year.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c2">
+      <div class="card-top">
+        <span class="num">02</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg></span>
+        <span class="ckicker">Two Doors</span>
+      </div>
+      <h3>Reversible decisions deserve speed, not deliberation</h3>
+      <p class="desc">Some decisions are one-way doors: a factory line, a long lease, a senior hire, a brand repositioning. Walk through and there's no easy way back, so take your time. Most decisions are two-way doors — trial a tool, test a display, try a supplier on one order. If it's wrong you walk back out. Spending three weeks on a three-minute reversal is not caution; it's a tax you're charging yourself.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Before deliberating, ask one question: can I undo this? Save the agonising for the doors that only open one way.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Trying a new fabric on one sofa in one showroom is a two-way door. Committing a season's order to it is a one-way door. They are not the same decision and shouldn't take the same amount of time.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c3">
+      <div class="card-top">
+        <span class="num">03</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-scale"/></svg></span>
+        <span class="ckicker">The Dissent Check</span>
+      </div>
+      <h3>Ask what would change your mind — and find someone who disagrees</h3>
+      <p class="desc">If you can't name a single piece of evidence that would make you abandon your plan, you're not analysing it, you're defending it. The fix is uncomfortable but cheap: before a big commitment, find one intelligent person who thinks it's a mistake and let them make their case properly. You don't have to agree. You do have to hear it before you sign.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> “Nothing would change my mind” is not confidence. It's the sound of a decision that stopped being examined.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Give the sceptic a real slot in the meeting, not a corridor conversation afterwards. If the pricing model survives Zeynep's hardest objection, it will survive a customer's.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c4">
+      <div class="card-top">
+        <span class="num">04</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-hourglass"/></svg></span>
+        <span class="ckicker">The Null Option</span>
+      </div>
+      <h3>Price the do-nothing option before you price the others</h3>
+      <p class="desc">Doing nothing is not the absence of a decision — it's one of the options, with its own cost and its own upside. Some problems are being fed by the attention we give them and shrink the moment we stop. Some situations get clearer on their own in a fortnight. The useful habit is to write down what happens if you simply wait, and compare it honestly against acting.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Sometimes the instruction isn't “don't just stand there, do something” — it's the reverse.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Before reorganising a team or rewriting a process, write the one-paragraph version of what happens if we leave it alone for a month. Occasionally that paragraph wins.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c5">
+      <div class="card-top">
+        <span class="num">05</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-dice"/></svg></span>
+        <span class="ckicker">Small Bets</span>
+      </div>
+      <h3>Make many small bets: capped downside, uncapped upside</h3>
+      <p class="desc">The useful risks are the ones that could change things if they work and cost you very little if they don't. One product in one window. One new channel for one month. One article, one conference, one pilot customer. Breakthroughs rarely arrive through a single heroic leap; they turn up somewhere in a portfolio of cheap experiments, and you almost never guess in advance which one.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Most of what works is found, not planned. Take more shots — just make sure a miss costs you a week, not a year.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Marketing already runs this way and it shows — it's our highest share of new customers. The same logic belongs in Retail: test a display, a bundle or a follow-up script in one store before rolling it everywhere.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c6">
+      <div class="card-top">
+        <span class="num">06</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-target"/></svg></span>
+        <span class="ckicker">Process vs Outcome</span>
+      </div>
+      <h3>Grade the decision, not only the result</h3>
+      <p class="desc">A careful decision can produce a terrible outcome and a reckless one can get lucky — because results are part skill and part chance. If you only ever grade outcomes, you will faithfully copy the lucky mistakes and abandon the sound methods that happened to lose. Three questions after the fact: did I use the information I actually had, did I look at real alternatives, and did I understand what could go wrong?</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> One good quarter doesn't prove the method was right, and one bad quarter doesn't prove it was wrong.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> When a deal lands or dies, review what we knew at the time rather than what we know now. Otherwise the post-mortem just rewards whoever got lucky.</div></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+</div>
+
+<div class="wrap">
+<section class="part" id="lv2">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">02</div>
+    <div class="part-label">Level Two — People</div>
+    <h2>The part nobody trains you on</h2>
+    <p class="lead">You can be excellent at the work and still lose on this level. Six codes about what people actually want from you, why relationships quietly fade, and the one case where walking away is the wise move rather than the cruel one.</p>
+  </div>
+
+  <div class="fig level-fig reveal">
+    <svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg"><defs><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-grow)"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-bad)"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--silver-blue)"/></marker></defs><text class="fg" style="--i:0" x="40" y="34" fill="var(--d-bad-text)" font-size="13.5" text-anchor="start" font-weight="600">“Let's get together sometime”</text><text class="fg" style="--i:0" x="40" y="54" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">Nothing is scheduled, so nothing competes for the slot — and</text><text class="fg" style="--i:0" x="40" y="70" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">the gaps quietly widen.</text><line class="fg" style="--i:1" x1="60" y1="108" x2="700" y2="108" stroke="var(--d-axis)" stroke-width="1.5" stroke-dasharray="5 5"/><circle class="fg" style="--i:2" cx="90" cy="108" r="13" fill="var(--d-bad)" opacity="1.00"/><text class="fg" style="--i:2" x="90" y="136" fill="var(--cool-gray)" font-size="11" text-anchor="middle">month 1</text><circle class="fg" style="--i:3" cx="208" cy="108" r="11" fill="var(--d-bad)" opacity="0.82"/><text class="fg" style="--i:3" x="208" y="136" fill="var(--cool-gray)" font-size="11" text-anchor="middle">month 2</text><circle class="fg" style="--i:4" cx="326" cy="108" r="9" fill="var(--d-bad)" opacity="0.64"/><text class="fg" style="--i:4" x="326" y="136" fill="var(--cool-gray)" font-size="11" text-anchor="middle">month 3</text><circle class="fg" style="--i:5" cx="444" cy="108" r="7" fill="var(--d-bad)" opacity="0.46"/><text class="fg" style="--i:5" x="444" y="136" fill="var(--cool-gray)" font-size="11" text-anchor="middle">month 4</text><circle class="fg" style="--i:6" cx="562" cy="108" r="5" fill="var(--d-bad)" opacity="0.28"/><text class="fg" style="--i:6" x="562" y="136" fill="var(--cool-gray)" font-size="11" text-anchor="middle">month 5</text><circle class="fg" style="--i:7" cx="680" cy="108" r="3" fill="var(--d-bad)" opacity="0.15"/><text class="fg" style="--i:7" x="680" y="136" fill="var(--cool-gray)" font-size="11" text-anchor="middle">month 6</text><text class="fg" style="--i:7" x="700" y="90" fill="var(--d-bad-text)" font-size="12" text-anchor="end">contact fades</text><line class="fg" style="--i:0" x1="40" y1="166" x2="720" y2="166" stroke="var(--border-gray)" stroke-width="1"/><text class="fg" style="--i:8" x="40" y="200" fill="var(--kraken-purple-deep)" font-size="13.5" text-anchor="start" font-weight="600">A standing slot in the calendar</text><text class="fg" style="--i:8" x="40" y="220" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">The date already exists. Nobody has to feel enthusiastic for</text><text class="fg" style="--i:8" x="40" y="236" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">it to happen.</text><line class="fg" style="--i:9" x1="60" y1="274" x2="700" y2="274" stroke="var(--kraken-purple)" stroke-width="2"/><circle class="fg" style="--i:10" cx="90" cy="274" r="11" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="2"/><use class="fg" style="--i:10; color:var(--kraken-purple)" href="#ic-pin" x="83" y="267" width="14" height="14"/><text class="fg" style="--i:10" x="90" y="302" fill="var(--cool-gray)" font-size="11" text-anchor="middle">month 1</text><circle class="fg" style="--i:11" cx="208" cy="274" r="11" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="2"/><use class="fg" style="--i:11; color:var(--kraken-purple)" href="#ic-pin" x="201" y="267" width="14" height="14"/><text class="fg" style="--i:11" x="208" y="302" fill="var(--cool-gray)" font-size="11" text-anchor="middle">month 2</text><circle class="fg" style="--i:12" cx="326" cy="274" r="11" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="2"/><use class="fg" style="--i:12; color:var(--kraken-purple)" href="#ic-pin" x="319" y="267" width="14" height="14"/><text class="fg" style="--i:12" x="326" y="302" fill="var(--cool-gray)" font-size="11" text-anchor="middle">month 3</text><circle class="fg" style="--i:13" cx="444" cy="274" r="11" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="2"/><use class="fg" style="--i:13; color:var(--kraken-purple)" href="#ic-pin" x="437" y="267" width="14" height="14"/><text class="fg" style="--i:13" x="444" y="302" fill="var(--cool-gray)" font-size="11" text-anchor="middle">month 4</text><circle class="fg" style="--i:14" cx="562" cy="274" r="11" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="2"/><use class="fg" style="--i:14; color:var(--kraken-purple)" href="#ic-pin" x="555" y="267" width="14" height="14"/><text class="fg" style="--i:14" x="562" y="302" fill="var(--cool-gray)" font-size="11" text-anchor="middle">month 5</text><circle class="fg" style="--i:15" cx="680" cy="274" r="11" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="2"/><use class="fg" style="--i:15; color:var(--kraken-purple)" href="#ic-pin" x="673" y="267" width="14" height="14"/><text class="fg" style="--i:15" x="680" y="302" fill="var(--cool-gray)" font-size="11" text-anchor="middle">month 6</text><text class="fg" style="--i:15" x="700" y="256" fill="var(--kraken-purple-deep)" font-size="12" text-anchor="end">contact holds</text></svg>
+  </div>
+
+  <div class="codes">
+    <article class="code-c reveal anchor" id="c7">
+      <div class="card-top">
+        <span class="num">07</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg></span>
+        <span class="ckicker">Before You Fix It</span>
+      </div>
+      <h3>Ask what they want: advice, help, or just company</h3>
+      <p class="desc">Not every problem someone describes is a request for a solution. Sometimes they want your answer, sometimes they want your hands, and very often they just want to say it out loud to someone who won't interrupt. Jumping straight to problem-solving mode when what was needed was attention is how well-meaning people end up being experienced as dismissive.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Seven words prevent most of it: “do you want ideas or just to talk?”</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Especially true in a one-to-one after a lost order. The first five minutes are almost never a request for coaching.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c8">
+      <div class="card-top">
+        <span class="num">08</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></span>
+        <span class="ckicker">Generous Reading</span>
+      </div>
+      <h3>Assume overload before you assume malice</h3>
+      <p class="desc">The blunt reply, the ignored message, the decision made without you — these read like hostility and are usually something far duller: someone with sixty unread emails, a bad night's sleep, or a calendar they've lost control of. Genuinely hostile people exist, but they are rarer than overwhelmed ones. Starting from the generous explanation costs nothing and you can always revise it when the evidence piles up.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Most of what feels personal at work is simply someone else's bad week reaching you sideways.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Between departments this matters most. A late spec from Aydınlatma is usually a queue problem, not a message about how much they respect your deadline.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c9">
+      <div class="card-top">
+        <span class="num">09</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-heart"/></svg></span>
+        <span class="ckicker">The Curiosity Test</span>
+      </div>
+      <h3>Notice who asks you questions</h3>
+      <p class="desc">Curiosity is one of the most reliable signals you have about a relationship, and it's almost free to read. Who asks how the trip went, how the project landed, how your father is doing? And — more informative — who never does, no matter how long the conversation runs? This works on friendships, on new colleagues, on suppliers and on anyone selling you something.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> People who are interested in you ask. People who are interested in an audience don't.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> In an interview, count the candidate's questions about the work itself. It predicts more than the CV does.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c10">
+      <div class="card-top">
+        <span class="num">10</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-share"/></svg></span>
+        <span class="ckicker">No Ledger</span>
+      </div>
+      <h3>Don't keep score in relationships you want to keep</h3>
+      <p class="desc">I called last time. I paid for dinner. I covered for him in August. The moment generosity gets a running total it stops being generosity and becomes an invoice waiting to be issued. Good relationships even out over years, not over weeks, and any particular month will look unfair if you measure it closely enough.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> A spreadsheet is the wrong instrument for a friendship. If you're already keeping one, that's the finding.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Same inside a team. The colleague who tracks every favour is usually the one everyone stops asking for favours.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c11">
+      <div class="card-top">
+        <span class="num">11</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-pin"/></svg></span>
+        <span class="ckicker">Infrastructure</span>
+      </div>
+      <h3>Give friendship an infrastructure</h3>
+      <p class="desc">“Let's get together sometime” is how people leave your life without anyone deciding anything. The alternative is structural, not emotional: a standing monthly dinner, a Saturday walk, a call every second Sunday. And when you do want to see someone, issue a real invitation with a day and a time — a specific plan is a plan, while an open-ended one is a polite goodbye spread over several years.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Recurring beats spontaneous. The calendar entry is doing the work that goodwill alone never manages.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Works for working relationships too: a standing fifteen minutes with a counterpart in another department prevents more problems than any escalation process.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c12">
+      <div class="card-top">
+        <span class="num">12</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-x"/></svg></span>
+        <span class="ckicker">Subtraction</span>
+      </div>
+      <h3>Remove the people who consistently diminish you</h3>
+      <p class="desc">Not everyone who is difficult is toxic — difficult people are often just honest, or tired, or under pressure. The distinction is a pattern: does this person reliably leave you smaller than they found you? If so, distance is the intervention, and the rule doesn't come with a family exemption. Shared history and shared DNA are not entitlements to treat you badly.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Distance isn't always cruelty. Sometimes it's the most responsible thing you do all year.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> At work the equivalent is rarely dismissal — it's redesigning who sits on which project, and doing it before the good people quietly leave instead.</div></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+</div>
+
+<div class="wrap">
+<section class="part" id="lv3">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">03</div>
+    <div class="part-label">Level Three — Getting Things Done</div>
+    <h2>Finishing beats starting</h2>
+    <p class="lead">Nothing here is about discipline. It's about shrinking the first step until it's too small to avoid, deciding in advance what finished looks like, and treating a permanently full calendar as a warning light rather than a trophy.</p>
+  </div>
+
+  <div class="fig level-fig reveal">
+    <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg"><defs><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-grow)"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-bad)"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--silver-blue)"/></marker></defs><line class="fg" style="--i:0" x1="110" y1="250" x2="700" y2="250" stroke="var(--d-axis)" stroke-width="1.5" marker-end="url(#aN)"/><line class="fg" style="--i:0" x1="110" y1="250" x2="110" y2="40" stroke="var(--d-axis)" stroke-width="1.5" marker-end="url(#aN)"/><text class="fg" style="--i:0" x="405" y="288" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">size of the first step →</text><text class="fg" style="--i:0" x="-145" y="66" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle" transform="rotate(-90)">odds you actually start</text><path class="fg draw" pathLength="1" style="--i:1" d="M130 66 C 280 78, 340 196, 690 232" fill="none" stroke="var(--kraken-purple)" stroke-width="3" stroke-linecap="round"/><circle class="fg" style="--i:2" cx="152" cy="70" r="9" fill="var(--kraken-purple)"/><line class="fg" style="--i:2" x1="168" y1="70" x2="352" y2="70" stroke="var(--kraken-purple)" stroke-width="1.5" stroke-dasharray="4 4"/><rect class="fg" style="--i:2" x="356" y="40" width="364" height="62" rx="12" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:2" x="374" y="63" fill="var(--kraken-purple-deep)" font-size="13" text-anchor="start" font-weight="600">“Open the file, write three lines”</text><text class="fg" style="--i:2" x="374" y="82" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">Small enough that refusing it feels absurd.</text><circle class="fg" style="--i:3" cx="664" cy="229" r="9" fill="var(--d-bad)"/><rect class="fg" style="--i:3" x="130" y="186" width="306" height="64" rx="12" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:3" x="148" y="209" fill="var(--d-bad-text)" font-size="13" text-anchor="start" font-weight="600">“Write the annual report”</text><text class="fg" style="--i:3" x="148" y="228" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">Correct, unarguable, and untouched for</text><text class="fg" style="--i:3" x="148" y="244" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">nine days.</text><line class="fg" style="--i:3" x1="440" y1="214" x2="648" y2="227" stroke="var(--d-bad)" stroke-width="1.5" stroke-dasharray="4 4"/><text class="fg" style="--i:0" x="405" y="20" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">The first step and the odds of taking it move in opposite directions</text></svg>
+  </div>
+
+  <div class="codes">
+    <article class="code-c reveal anchor" id="c13">
+      <div class="card-top">
+        <span class="num">13</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-flag"/></svg></span>
+        <span class="ckicker">Define Done</span>
+      </div>
+      <h3>Decide what finished looks like before you start</h3>
+      <p class="desc">Any project without a definition of done quietly becomes infinite, because there is always one more revision available. Write the finish line first, in a sentence anyone could check. And when you're near it, remember that shipping is usually a decision about the clock rather than a discovery that the work has become perfect — most things go out because it's time, not because they're ready.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> “Done” is a sentence you write on day one, not a feeling you wait for on day thirty.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Put it at the top of every brief: “this is finished when the catalogue PDF is approved by both showrooms and uploaded.” Not “when the catalogue is good.”</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c14">
+      <div class="card-top">
+        <span class="num">14</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-droplet"/></svg></span>
+        <span class="ckicker">Tiny First Step</span>
+      </div>
+      <h3>Make the first step embarrassingly small</h3>
+      <p class="desc">The size of the first step and the odds of taking it move in opposite directions. So don't write the report — write three sentences. Don't get fit — put the shoes by the door. Don't reorganise the stockroom — clear one shelf. The goal isn't the shelf; it's crossing the line from not-started to started, which is the only part your brain actually resists.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> If a task keeps sliding down the list, it isn't a motivation problem. The first step is simply too big.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> The SOP documents nobody starts are a first-step problem. “Write the process” is too big; “list the five steps in the order they happen” takes ten minutes.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c15">
+      <div class="card-top">
+        <span class="num">15</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-sponge"/></svg></span>
+        <span class="ckicker">Permission</span>
+      </div>
+      <h3>Let it be easy — difficulty is not evidence of virtue</h3>
+      <p class="desc">Somewhere we picked up the idea that if a thing wasn't hard it didn't really count, and we've been paying for it ever since. Buy the version that's already assembled. Use the template. Take the route with no traffic. Delegate the part you're slow at. Choosing the harder path when the easier one works just as well isn't discipline — it's self-imposed cost with good PR.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Nobody hands out extra credit for the scenic route. Save the effort for the parts that genuinely require it.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> If a report takes four hours by hand and twenty minutes from the ERP, the four-hour version isn't thoroughness. It's a habit we haven't updated.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c16">
+      <div class="card-top">
+        <span class="num">16</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-sun"/></svg></span>
+        <span class="ckicker">Tonight, For Tomorrow</span>
+      </div>
+      <h3>Set up tomorrow's first move tonight</h3>
+      <p class="desc">Your morning self is not a reliable negotiating partner. Remove its opportunities to negotiate: leave the document open at the paragraph you'll continue, lay the clothes out, and put the unpleasant task in the calendar with a specific day, time and place rather than a vague intention. An appointment is much harder to argue with than a plan, because there's nothing left to decide.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Willpower is unreliable. Appointments are boring and effective, which is the correct order of priorities.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Works on the task everyone postpones: “chase the three overdue Kurumsal payments” with a slot on Tuesday at 09:30 gets done. On a to-do list it moves to next week forever.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c17">
+      <div class="card-top">
+        <span class="num">17</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span>
+        <span class="ckicker">Waiting For</span>
+      </div>
+      <h3>Keep a “waiting for” list, not just a to-do list</h3>
+      <p class="desc">We're reasonably good at tracking what we owe other people and genuinely bad at tracking what other people owe us — the quote someone is reviewing, the drawing that was promised, the approval blocking everything behind it. Put all of it in one visible place, with the name and the date you asked. Otherwise your memory keeps the list instead, and it prefers to read it back to you at three in the morning. The practice comes from David Allen's <i>Getting Things Done</i>.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Half of what stalls a project isn't work you haven't done. It's an answer nobody is chasing.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> One shared “waiting for” column in the project board — with who and since when — would remove most of what currently surfaces as a surprise in the weekly meeting.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c18">
+      <div class="card-top">
+        <span class="num">18</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-flame"/></svg></span>
+        <span class="ckicker">Warning Light</span>
+      </div>
+      <h3>Treat constant busyness as a warning, not a badge</h3>
+      <p class="desc">Sometimes “I'm swamped” means a full and good life. Often it means something less flattering: priorities never set, choices never made, or a workload being carried because it's become part of how someone sees themselves. When everything feels urgent, the move is not to work faster. It's to subtract — cancel one thing, decline one thing, and leave some empty space where a walk, an odd idea or an unplanned conversation can actually happen.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Not every square on the calendar has to produce something. The empty ones are doing work too.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> If a department is permanently at capacity, that's a planning signal, not a performance one. Adding effort to a full system just moves the breakage somewhere less visible.</div></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+</div>
+
+<div class="wrap">
+<section class="part" id="lv4">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">04</div>
+    <div class="part-label">Level Four — Work</div>
+    <h2>How to be the person people want on the project</h2>
+    <p class="lead">Six codes about the unglamorous mechanics of being good to work with — writing things down, asking better questions about deadlines, bringing solutions instead of only problems, and owning the skill everyone else is avoiding.</p>
+  </div>
+
+  <div class="fig level-fig reveal">
+    <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg"><defs><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-grow)"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-bad)"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--silver-blue)"/></marker></defs><rect class="fg" style="--i:0" x="40" y="46" width="320" height="244" rx="14" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:0" x="200" y="30" fill="var(--d-bad-text)" font-size="13" text-anchor="middle" font-weight="600">The email that gets skimmed</text><rect class="fg" style="--i:0" x="64" y="70" width="272" height="22" rx="6" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:0" x="78" y="85" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">background, history, context…</text><rect class="fg" style="--i:1" x="64" y="104" width="272" height="22" rx="6" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:1" x="78" y="119" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">background, history, context…</text><rect class="fg" style="--i:2" x="64" y="138" width="272" height="22" rx="6" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:2" x="78" y="153" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">background, history, context…</text><rect class="fg" style="--i:3" x="64" y="172" width="272" height="22" rx="6" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:3" x="78" y="187" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">background, history, context…</text><rect class="fg" style="--i:4" x="64" y="206" width="272" height="26" rx="6" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><text class="fg" style="--i:4" x="78" y="223" fill="var(--d-bad-text)" font-size="11.5" text-anchor="start" font-weight="600">…so, could you approve this by Friday?</text><text class="fg" style="--i:5" x="200" y="258" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">The reader reaches the ask last, if at</text><text class="fg" style="--i:5" x="200" y="274" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">all.</text><path class="fg" style="--i:5" d="M374 168 L 396 168" stroke="var(--silver-blue)" stroke-width="2" marker-end="url(#aN)"/><rect class="fg" style="--i:6" x="410" y="46" width="320" height="244" rx="14" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><text class="fg" style="--i:6" x="570" y="30" fill="var(--kraken-purple-deep)" font-size="13" text-anchor="middle" font-weight="600">The email that gets answered</text><rect class="fg" style="--i:6" x="434" y="74" width="272" height="30" rx="8" fill="#fff" stroke="var(--kraken-purple)"/><text class="fg" style="--i:6" x="450" y="94" fill="var(--kraken-purple-deep)" font-size="11.5" text-anchor="start" font-weight="600">The ask — what I need, and by when</text><rect class="fg" style="--i:7" x="434" y="116" width="272" height="30" rx="8" fill="#fff" stroke="var(--kraken-purple)"/><text class="fg" style="--i:7" x="450" y="136" fill="var(--kraken-purple-deep)" font-size="11.5" text-anchor="start" font-weight="600">My recommendation — and why</text><rect class="fg" style="--i:8" x="434" y="158" width="272" height="30" rx="8" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:8" x="450" y="178" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">Background, for whoever needs it</text><rect class="fg" style="--i:9" x="434" y="200" width="272" height="30" rx="8" fill="#fff" stroke="var(--border-gray)"/><text class="fg" style="--i:9" x="450" y="220" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">Detail and attachments</text><text class="fg" style="--i:10" x="570" y="262" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">Decision in line one. Everything else is</text><text class="fg" style="--i:10" x="570" y="278" fill="var(--cool-gray)" font-size="11.5" text-anchor="middle">optional reading.</text></svg>
+  </div>
+
+  <div class="codes">
+    <article class="code-c reveal anchor" id="c19">
+      <div class="card-top">
+        <span class="num">19</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-book"/></svg></span>
+        <span class="ckicker">Write It Down</span>
+      </div>
+      <h3>Send the recap email</h3>
+      <p class="desc">After any meeting that matters, send a short note: what we decided, who is doing what, and by when. It helps everyone else, but the real beneficiary is you — turning a conversation into three lines of writing is how you find out whether anything was actually agreed, and it surfaces the gaps while they're still cheap to fix. AI can tidy the wording; don't let it do the deciding, because the thinking is the point.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> If you can't write the recap in five lines, the meeting didn't decide anything. Better to learn that today.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Especially for anything crossing departments. Most of our “I thought you were doing that” moments would not survive a recap email.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c20">
+      <div class="card-top">
+        <span class="num">20</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-trend"/></svg></span>
+        <span class="ckicker">Two Categories</span>
+      </div>
+      <h3>Make your manager's job easier</h3>
+      <p class="desc">Every manager, consciously or not, sorts their team into two groups: people who add to the load and people who take some of it off. Being in the second group isn't flattery or politics — it's understanding what your manager is actually being measured on, and removing one thing from that pile without being asked. Early in a career this matters more than almost anything else on your CV.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> You don't become indispensable by doing your tasks well. You become indispensable by removing someone else's.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Ask once a quarter: what's the thing on your plate I could take over completely? The answer is usually specific and usually available.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c21">
+      <div class="card-top">
+        <span class="num">21</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-hourglass"/></svg></span>
+        <span class="ckicker">The Real Deadline</span>
+      </div>
+      <h3>Ask for the deadline, then ask for the real deadline</h3>
+      <p class="desc">“When do you need this?” and “when will someone actually use this?” produce different answers surprisingly often — Friday versus the board meeting three weeks away. Invented deadlines generate real panic, real overtime and real mistakes, all for nothing. Ask both questions, plan against the true one, and extend the same courtesy outward: don't hand other people an urgency you made up.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> A fake deadline costs the same as a real one and buys nothing. Find out which one you're holding.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Production and Sales lose days to this every month. One extra question at handover — when does the customer actually need it? — usually recovers them.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c22">
+      <div class="card-top">
+        <span class="num">22</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-zap"/></svg></span>
+        <span class="ckicker">Ask First</span>
+      </div>
+      <h3>Lead with the request, and bring a recommendation</h3>
+      <p class="desc">Don't open an email with six paragraphs of context before the reader learns what you want — say the ask in the first line and put the background underneath for whoever needs it. And when you bring a problem, bring a proposed answer with it. Diagnosis is useful; a recommendation is what actually moves things. “This isn't working” starts a discussion. “This isn't working, I think it's because of X, and I'd suggest Y” starts a decision.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Anyone can name the problem. The person who names it and proposes the fix is the one who gets asked next time.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Applies to escalation emails above all. Arriving with “here's what I recommend, do you agree?” shortens most of them to a single reply.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c23">
+      <div class="card-top">
+        <span class="num">23</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-mountain"/></svg></span>
+        <span class="ckicker">Undefended Ground</span>
+      </div>
+      <h3>Get good at something valuable that everyone avoids</h3>
+      <p class="desc">Everyone competes for the visible, glamorous work, which means the competition there is brutal. Meanwhile the messy spreadsheet nobody wants to own, the presentation nobody volunteers for, and the conversation everyone keeps postponing are sitting completely unclaimed. Those skills are valuable precisely because they're unpleasant, and being the person who reliably handles one of them is a very short path to being indispensable.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> The crowded territory is crowded. Go where nobody is standing.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> In our case that's clean data. Whoever becomes the person who can actually reconcile ERP figures with what the showrooms report will be the most consulted person in the building.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c24">
+      <div class="card-top">
+        <span class="num">24</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-star"/></svg></span>
+        <span class="ckicker">For Anyone Who Leads</span>
+      </div>
+      <h3>Be the manager you needed, not the one you had</h3>
+      <p class="desc">Two lists, both short. First: what your worst managers did — the vanishing, the credit-taking, the feedback that arrived only once a year and only when it was bad. Don't do those. Second, and harder: what you badly needed from them and never got — clarity, honest criticism delivered early, encouragement at the exact moment you were about to give up, a second chance after a real mistake. Provide those to someone else now.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> The second list is the one that changes a team. Most people can avoid the obvious sins and still leave the gap unfilled.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Worth doing literally: write both lists once, keep them in a drawer, and read them before the next review cycle.</div></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+</div>
+
+<div class="wrap">
+<section class="part" id="lv5">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">05</div>
+    <div class="part-label">Level Five — Living</div>
+    <h2>Where it either adds up to a life, or doesn't</h2>
+    <p class="lead">The last six, and the most important one is at the end. Design your surroundings instead of relying on willpower, spend money where it actually lands, build the traditions you want rather than waiting for them — and learn which kinds of difficulty to delete and which to accept.</p>
+  </div>
+
+  <div class="fig level-fig reveal">
+    <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg"><defs><marker id="aG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-grow)"/></marker><marker id="aB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--d-bad)"/></marker><marker id="aN" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--silver-blue)"/></marker></defs><text class="fg" style="--i:0" x="380" y="28" fill="var(--near-black)" font-size="13.5" text-anchor="middle" font-weight="600">The last code: two kinds of difficulty, sorted</text><rect class="fg" style="--i:0" x="250" y="48" width="260" height="44" rx="12" fill="var(--d-box)" stroke="var(--border-gray)"/><text class="fg" style="--i:0" x="380" y="76" fill="var(--near-black)" font-size="13" text-anchor="middle" font-weight="600">Something is hard</text><text class="fg" style="--i:1" x="380" y="118" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">Does this difficulty buy me anything?</text><path class="fg" style="--i:2" d="M340 130 L 190 168" stroke="var(--d-bad)" stroke-width="2" marker-end="url(#aB)"/><path class="fg" style="--i:2" d="M420 130 L 570 168" stroke="var(--d-grow)" stroke-width="2" marker-end="url(#aG)"/><rect class="fg" style="--i:3" x="40" y="180" width="300" height="140" rx="14" fill="var(--d-bad-soft)" stroke="var(--d-bad)"/><use class="fg" style="--i:3; color:var(--d-bad)" href="#ic-x" x="62" y="198" width="18" height="18"/><text class="fg" style="--i:3" x="88" y="212" fill="var(--d-bad-text)" font-size="13.5" text-anchor="start" font-weight="600">Cut it — it buys nothing</text><text class="fg" style="--i:4" x="62" y="240" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">· the manual process a tool could do</text><text class="fg" style="--i:5" x="62" y="262" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">· the argument you keep re-entering</text><text class="fg" style="--i:6" x="62" y="284" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">· the long route chosen to prove something</text><text class="fg" style="--i:7" x="62" y="306" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">· friction you've simply stopped noticing</text><rect class="fg" style="--i:3" x="420" y="180" width="300" height="140" rx="14" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)"/><use class="fg" style="--i:3; color:var(--kraken-purple)" href="#ic-check" x="442" y="198" width="18" height="18"/><text class="fg" style="--i:3" x="468" y="212" fill="var(--kraken-purple-deep)" font-size="13.5" text-anchor="start" font-weight="600">Pay it — it's the price of admission</text><text class="fg" style="--i:4" x="442" y="240" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">· the feedback that stings and is right</text><text class="fg" style="--i:5" x="442" y="262" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">· the months before anything works</text><text class="fg" style="--i:6" x="442" y="284" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">· the conversation you're dreading</text><text class="fg" style="--i:7" x="442" y="306" fill="var(--cool-gray)" font-size="11.5" text-anchor="start">· the practice nobody sees</text><text class="fg" style="--i:8" x="380" y="344" fill="var(--cool-gray)" font-size="12" text-anchor="middle">Difficulty on its own tells you nothing. Which kind it is tells you everything.</text></svg>
+  </div>
+
+  <div class="codes">
+    <article class="code-c reveal anchor" id="c25">
+      <div class="card-top">
+        <span class="num">25</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-home"/></svg></span>
+        <span class="ckicker">Environment</span>
+      </div>
+      <h3>Design your surroundings around your behaviour</h3>
+      <p class="desc">Keep things where you use them rather than where they're supposed to live. The book on the pillow if you want to read at night, the vitamins next to the kettle if you take them with breakfast, the folder on the desk if it's tomorrow's first job. And duplicate deliberately — two chargers, two pairs of scissors, reading glasses in three rooms. Redundancy is cheaper than remembering, and it works on days when you don't.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Redundancy beats self-discipline, because redundancy doesn't have bad days.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Same principle on a showroom floor: the tape measure, the fabric samples and the order pad belong where the conversation happens, not in the back office.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c26">
+      <div class="card-top">
+        <span class="num">26</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-scale"/></svg></span>
+        <span class="ckicker">Where Money Lands</span>
+      </div>
+      <h3>Spend on removing recurring misery before occasional pleasure</h3>
+      <p class="desc">A luxury weekend is three days a year. A mattress that hurts your back is every single night of it. The same arithmetic covers the shoes that pinch, the chair that aches, the laptop that takes four minutes to wake up and the commute you've never questioned. Money spent deleting a small daily irritation buys hundreds of improved days; money spent on a rare treat buys a few. Both are fine — just get the order right.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Multiply by frequency before you decide it's expensive. Daily beats annual almost every time.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Budget logic too. The slow shared printer and the ten-year-old showroom lighting cost more in a year than the thing we keep postponing them for.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c27">
+      <div class="card-top">
+        <span class="num">27</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-cheer"/></svg></span>
+        <span class="ckicker">On Purpose</span>
+      </div>
+      <h3>Build traditions deliberately</h3>
+      <p class="desc">Rituals are what turn undifferentiated time into a life you can actually remember afterwards. The Sunday meal, the birthday breakfast, the same slightly ridiculous photo every year in the same spot. Almost none of them form by themselves — somebody decides once, repeats it twice, and by the third year it has become non-negotiable and everyone defends it. That somebody may as well be you.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Traditions aren't discovered, they're started. The first one always feels slightly silly.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Teams need this as much as families. The end-of-season dinner, the photo when a big contract ships — small, repeatable, and remembered far longer than the bonus.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c28">
+      <div class="card-top">
+        <span class="num">28</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-fire"/></svg></span>
+        <span class="ckicker">Stop Blending In</span>
+      </div>
+      <h3>Stop trying to be normal</h3>
+      <p class="desc">Normal is the most crowded place there is, and nobody has ever been remembered for arriving at it. The interesting people are interesting at exactly the points where they stopped asking whether something was normal and started asking whether it was right for them. The parts of you that don't quite fit are usually not the defects — they're the only parts that aren't interchangeable with anyone else's.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Swap the question. Not “is this normal?” but “is this right for me?”</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> True of brands as well as people. The pieces that look like everyone else's compete only on price, which is a competition we don't want to win.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c29">
+      <div class="card-top">
+        <span class="num">29</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-trophy"/></svg></span>
+        <span class="ckicker">Change Opponent</span>
+      </div>
+      <h3>Compete with your own past self</h3>
+      <p class="desc">Comparing yourself to other people is a rigged game, because you're setting your unedited interior against their carefully selected exterior. You know every doubt you've had this week; you know only their announcements. The fix isn't to stop caring about progress — it's to change the opponent. Am I better at this than six months ago? Did I handle that conversation more wisely than I would have last year?</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Aim for a personal best, not a medal in someone else's event.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Read the sales board this way. A rep whose own numbers have climbed every quarter is doing well, whatever row they occupy on the leaderboard.</div></div>
+      </div>
+    </article>
+
+    <article class="code-c reveal anchor" id="c30">
+      <div class="card-top">
+        <span class="num">30</span>
+        <span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-compass"/></svg></span>
+        <span class="ckicker">The Final Code</span>
+      </div>
+      <h3>Delete unnecessary suffering. Accept necessary suffering.</h3>
+      <p class="desc">Two kinds of difficulty, and almost everything depends on telling them apart. The first kind buys you nothing: the pointless commute, the manual process, the argument you keep re-entering, the harder route chosen only to prove something. Cut all of it without guilt. The second kind is the price of admission — anything worth having demands effort, criticism, uncertainty and sacrifice. When you meet that cost, don't assume you've taken a wrong turn. You may simply be paying for something real.</p>
+      <div class="callouts">
+        <div class="takeaway"><b>Takeaway:</b> Difficulty is not a signal that you're doing it wrong. It's only a signal once you've checked which kind it is.</div>
+        <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> This is the code the other twenty-nine sit underneath. Half of them exist to cut the first kind of difficulty — so that there's energy left for the second.</div></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+</div>
+
+<!-- ===================== CLOSING CTA ===================== -->
+<section class="cta">
+  <div class="inner">
+    <div class="reveal">
+      <span class="micro" style="color:rgba(255,255,255,0.7)">How to actually use this</span>
+      <h2 style="margin-top:14px;">Don't try all thirty. Pick two.</h2>
+      <p>A list of thirty good ideas changes nothing on its own — it just becomes another thing you've read. So choose exactly two this week: one that removes friction you've been tolerating, and one you've been quietly avoiding because it costs something. Enter those two codes. Come back for the rest later.</p>
+    </div>
+    <div class="principles reveal">
+      <div class="p"><div class="n">01 — The easy one</div><div class="t">Pick a code that deletes a recurring annoyance. You'll feel it within days.</div></div>
+      <div class="p"><div class="n">02 — The hard one</div><div class="t">Pick the code you flinched at while reading. That flinch is the signal.</div></div>
+      <div class="p"><div class="n">03 — One week</div><div class="t">Two codes, seven days. Then choose two more. Thirty at once is zero.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="complete" id="completeBox"></div>
+
+<footer class="foot">
+  <div class="inner">
+    <a class="brand" href="../index.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <div class="src">Principles adapted from <b>Daniel Pink, “30 Cheat Codes to Beat Every Level of Life” (2026)</b> — danpink.com. Pink is the author of <b>Drive</b>, <b>To Sell Is Human</b>, <b>When</b> and <b>The Power of Regret</b>, and a former chief speechwriter in the US White House. Code 17 credits <b>David Allen, Getting Things Done</b>. Explanations, examples and diagrams on this page are original, written for internal Mozaik team training. Styled in the Kraken Design System.</div>
+  </div>
+</footer>
+<script src="../shared/course.js" defer></script>
+</body>
+</html>
