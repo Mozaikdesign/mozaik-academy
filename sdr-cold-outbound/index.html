@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cold Outbound that Books Meetings — Mozaik Academy</title>
+<meta name="description" content="SDR training: what actually books meetings in cold outbound, from 85M+ analyzed emails, adapted for Mozaik contract sales.">
+<script>
+(function(){
+  try{
+    var CUR='en';
+    var saved=localStorage.getItem('mozaik_lang');
+    if(saved && saved!==CUR && location.search.indexOf('l=1')<0){
+      location.replace((CUR==='en'?'tr.html':'index.html')+'?l=1');
+    }
+  }catch(e){}
+})();
+</script>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../shared/course.css">
+<link rel="stylesheet" href="../shared/academy.css">
+<script>window.MOZAIK = {
+  "lang": "en",
+  "page": "course",
+  "id": "sdr-cold-outbound",
+  "tour": [
+    { "n": "SDR Training", "t": "Welcome, {name} 👋",
+      "b": "This is the cold-outbound playbook for our contract and enterprise outreach — what actually books meetings, from 85M+ analyzed cold emails. About 25 minutes." },
+    { "n": "Step 1 of 2", "t": "Jump to any section",
+      "b": "Use the menu along the top. On a phone, tap ☰ for the full list. The two SDR toolkits are linked at the bottom." },
+    { "n": "Step 2 of 2", "t": "Mark it complete when you finish",
+      "b": "There is a “Mark as complete” button at the bottom of the page." }
+  ]
+};</script>
+<style>
+  .dl-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:4px; }
+  .dl{ display:flex; gap:14px; align-items:flex-start; text-decoration:none; background:#fff; color:inherit;
+    border:1px solid var(--border-gray); border-radius:14px; padding:18px 20px;
+    transition:border-color .15s, box-shadow .15s, transform .05s; }
+  .dl:hover{ border-color:var(--kraken-purple); box-shadow:0 10px 30px rgba(40,30,90,.10); text-decoration:none; }
+  .dl .ic{ flex:0 0 auto; width:40px; height:40px; border-radius:10px; background:var(--kraken-purple-subtle);
+    color:var(--kraken-purple); display:flex; align-items:center; justify-content:center; }
+  .dl .ic svg{ width:22px; height:22px; }
+  .dl .t, .dl .d, .dl .ext{ display:block; }
+  .dl .t{ font-weight:600; color:#101114; font-size:15px; }
+  .dl .d{ font-size:13px; color:var(--cool-gray); margin-top:3px; line-height:1.45; }
+  .dl .ext{ font-size:11.5px; font-weight:700; letter-spacing:.4px; color:var(--kraken-purple); margin-top:7px; }
+  @media(max-width:720px){ .dl-grid{ grid-template-columns:1fr; } }
+  .stat-row{ display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 2px; }
+  .stat-chip{ background:var(--d-good-soft,#e7f6ee); color:var(--d-good-text,#0f7a45); border-radius:9999px;
+    font-size:13px; font-weight:600; padding:6px 13px; }
+</style>
+<script src="../shared/academy.js" defer></script>
+</head>
+<body>
+<div id="gate"><div class="card" id="gateCard"></div></div>
+<div class="progress" id="progress"></div>
+
+<svg class="iconsheet" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="_ic" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></g>
+  </defs>
+  <symbol id="ic-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></symbol>
+  <symbol id="ic-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-5 4z"/></symbol>
+  <symbol id="ic-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8.5V20l-4-2.5v-4z"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 17l-5.4 2.7 1.2-6.1L3.3 9.4l6.1-.8z"/></symbol>
+  <symbol id="ic-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ic-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H14a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5.5"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M18 20a6 6 0 0 0-3.5-5.5"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-11"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2.4 5.6L8 16l2.4-5.6z"/></symbol>
+  <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l1.5 5-2 1.3a12 12 0 0 0 6.2 6.2l1.3-2 5 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></symbol>
+  <symbol id="ic-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M8 3v3.4c0 2 4 3.6 4 5.6s-4 3.6-4 5.6V21"/><path d="M16 3v3.4c0 2-4 3.6-4 5.6s4 3.6 4 5.6V21"/></symbol>
+  <symbol id="ic-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M19 18v3H6.5A2.5 2.5 0 0 1 4 18.5"/></symbol>
+  <symbol id="ic-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1.5A3.5 3.5 0 0 0 7 11M17 6h3v1.5A3.5 3.5 0 0 1 17 11M9.5 19h5M10 14.5l-.5 4.5h5l-.5-4.5"/></symbol>
+</svg>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="../index.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <a class="backlink" href="../index.html">← Academy</a>
+    <a class="langswitch navlang" href="tr.html" data-setlang="tr">Türkçe</a>
+    <div class="spacer"></div>
+    <div class="toc" id="toc">
+      <a href="#c1">Why</a>
+      <a href="#c2">Subject</a>
+      <a href="#c3">Length</a>
+      <a href="#c4">Language</a>
+      <a href="#c5">Personalize</a>
+      <a href="#c6">CTA</a>
+      <a href="#c7">Sequence</a>
+      <a href="#c8">One thing</a>
+      <a href="#c9">Bump</a>
+      <a href="#c10">Break-up</a>
+      <a href="#c11">LinkedIn</a>
+      <a href="#c12">Calls</a>
+      <a href="#resources">Resources</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#c1">Why outbound works</a>
+  <a href="#c2">Subject lines</a>
+  <a href="#c3">Email length</a>
+  <a href="#c4">Their language</a>
+  <a href="#c5">Personalization</a>
+  <a href="#c6">The CTA</a>
+  <a href="#c7">Run a sequence</a>
+  <a href="#c8">One thing at a time</a>
+  <a href="#c9">Bump emails</a>
+  <a href="#c10">The break-up</a>
+  <a href="#c11">LinkedIn</a>
+  <a href="#c12">Cold calls</a>
+  <a href="#resources">Resources</a>
+</div>
+
+<header class="hero">
+  <span class="eyebrow"><span class="dot"></span><span class="micro" style="color:var(--kraken-purple)">Team Training · SDR &amp; Outbound</span></span>
+  <h1>Most cold outreach gets ignored. Here's what <em>actually books meetings.</em></h1>
+  <p class="sub">A practical outbound playbook for the people who open new contract and enterprise accounts at Mozaik — reaching hotels, offices, restaurants, architects and interior designers. Built from a study of 85M+ cold emails by Gong and 30 Minutes to President's Club, then translated into how we sell furniture and lighting.</p>
+  <div class="hero-meta">
+    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">12</div><div class="l">Lessons</div></div>
+    <div class="stat"><div class="v count">3</div><div class="l">Parts: Email · Sequence · Channels</div></div>
+    <div class="stat"><div class="v">8x</div><div class="l">What top reps book vs. average</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ================= PART I — THE EMAIL ================= -->
+<section class="part" id="part1">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">01</div>
+    <div class="part-label">Part I — The email</div>
+    <h2>Write the email people actually reply to</h2>
+    <p class="lead">The same study found that the top 10% of reps book <b>8.1× more meetings</b> than the average rep — 23 meetings to the average rep's 3. They don't work 8× harder; they get 2.1× the opens and 4.2× the replies by writing differently. Here's what they do.</p>
+  </div>
+
+  <article class="card-c reveal anchor" id="c1">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-trend"/></svg></span><span class="ctag">Lesson 01</span><span class="ckicker">The email</span></div>
+    <h3>Outbound is a skill, not a volume game</h3>
+    <p class="desc">Two reps fail in opposite ways: one blasts 1,000 emails a week and books nothing, the other spends hours over-researching a single message and still gets ignored. The winners sit in the middle — <b>a repeatable message, sent to the right accounts, enough times.</b> Everything below is about that message and that rhythm.</p>
+    <div class="stat-row">
+      <span class="stat-chip">Top reps: 23 meetings</span>
+      <span class="stat-chip">Average rep: 3 meetings</span>
+      <span class="stat-chip">= 8.1× more</span>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> Don't choose between volume and quality — build one good message you can send at scale.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> A contract rep working a shortlist of 40 target hotels with a sharp message beats one spraying 400 random addresses.</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c2">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg></span><span class="ctag">Lesson 02</span><span class="ckicker">The email</span></div>
+    <h3>The subject line decides if you're even opened</h3>
+    <p class="desc">Across millions of emails the pattern was blunt: short, lowercase subject lines that read like an internal note win. <b>Keep it under four words, lowercase, about their world — not a marketing headline.</b> Buzzwords, numbers and name-dropping all lowered open rates, and an empty subject line reads as spam (it cut replies by about 12%).</p>
+    <div class="stat-row">
+      <span class="stat-chip">Under 4 words</span>
+      <span class="stat-chip">lowercase</span>
+      <span class="stat-chip">a priority, not a pitch</span>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> Write the subject like a colleague would — "lobby refit", "banquet seating", "showroom lighting".</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> "new restaurant fit-out" will beat "Premium Turkish Furniture — 20% Off for Hospitality Partners" every time.</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c3">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-filter"/></svg></span><span class="ctag">Lesson 03</span><span class="ckicker">The email</span></div>
+    <h3>Under 100 words, four sentences, no scrolling</h3>
+    <p class="desc">Reply rates climbed as emails got shorter — the sweet spot was <b>under 100 words and three to four sentences</b>, short enough to read on a phone without scrolling. The shape that works: one line of personalization → the problem → a one-sentence solution → the ask. Everything else is deleted before it's read.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> If your email needs a scroll on mobile, it's too long. Cut it to four sentences.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Save the full catalogue, lead times and finishes for the reply — the first email just earns the reply.</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c4">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></span><span class="ctag">Lesson 04</span><span class="ckicker">The email</span></div>
+    <h3>Speak their language, not ours</h3>
+    <p class="desc">Top reps used far more "you / your / your team" and far less "we / our / I". Pronoun-heavy, prospect-focused emails read as personal even when they're automated, while <b>pitch words and seller jargon measurably dropped reply rates.</b> The email should be about their problem, not our product.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> Count your "you"s versus your "we"s. If "we" wins, rewrite it.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> "your 120 rooms need to feel consistent on a tight opening date" beats "we are a leading manufacturer with 40 years of craftsmanship".</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c5">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-target"/></svg></span><span class="ctag">Lesson 05</span><span class="ckicker">The email</span></div>
+    <h3>Personalize on the problem, not a fun fact</h3>
+    <p class="desc">Personalization did lift replies and meetings — but not all personalization is equal. Referencing someone's university or a hobby barely moved the needle. <b>What worked was a high-intent signal or a real business problem</b> — a project they just announced, a location they're opening, a role they're hiring. Prioritise the high-intent accounts first, then speak to their problem.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> Open with something they're working on this quarter, not something from their LinkedIn "about" section.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> "saw the planning notice for your second branch in Nişantaşı" is a reason to reply; "fellow Galatasaray fan" is not.</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c6">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-zap"/></svg></span><span class="ctag">Lesson 06</span><span class="ckicker">The email</span></div>
+    <h3>Make an offer — don't beg for a meeting</h3>
+    <p class="desc">The weakest ending is "do you have 30 minutes next week?" Asking for a meeting puts all the cost on them and gives nothing back. The strongest CTAs <b>ask for interest ("open to seeing what this would look like?") or make an offer</b> — something useful they get even if they never buy: a quote, a sample, a moodboard, a showroom visit.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> End with "open to…?" or a low-friction offer, not a calendar demand.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> "want me to put together a quick furniture + lighting moodboard for the lobby?" gives value before the first call.</div></div>
+    </div>
+  </article>
+</section>
+
+<!-- ================= PART II — THE SEQUENCE ================= -->
+<section class="part" id="part2">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">02</div>
+    <div class="part-label">Part II — The sequence</div>
+    <h2>One email is not outreach — run a sequence</h2>
+    <p class="lead">A single email almost never breaks into a good account. The sequence template built on this data runs <b>10–14 touches over about 30 days</b>, across email, phone and LinkedIn, grouped into themes. Spreading touches across channels roughly doubles email reply rates by drawing attention back to the inbox.</p>
+  </div>
+
+  <article class="card-c reveal anchor" id="c7">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg></span><span class="ctag">Lesson 07</span><span class="ckicker">The sequence</span></div>
+    <h3>10–14 touches over 30 days, across channels</h3>
+    <p class="desc">Breaking into an account takes persistence and multiple angles. The reference sequence is roughly <b>7 emails, 4 calls and 3 LinkedIn touches over 30 days</b> — about six emails in the first 14–28 days is where replies peak, after which they fall below 0.5% and it's time to rest the account. Never send one email and give up.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 120" xmlns="http://www.w3.org/2000/svg">
+        <line x1="40" y1="70" x2="720" y2="70" stroke="var(--d-axis)" stroke-width="2"/>
+        <text class="fg" style="--i:0" x="40" y="98" fill="var(--silver-blue)" font-size="12">Day 1</text>
+        <text class="fg" style="--i:0" x="690" y="98" fill="var(--silver-blue)" font-size="12">Day 30</text>
+        <g>
+          <circle class="fg" style="--i:0; color:var(--d-grow)" cx="70"  cy="70" r="7" fill="var(--kraken-purple)"/>
+          <circle class="fg" style="--i:0; color:var(--d-grow)" cx="120" cy="70" r="6" fill="var(--silver-blue)"/>
+          <circle class="fg" style="--i:1; color:var(--d-grow)" cx="175" cy="70" r="6" fill="var(--kraken-purple)"/>
+          <circle class="fg" style="--i:1" cx="230" cy="70" r="6" fill="var(--silver-blue)"/>
+          <circle class="fg" style="--i:1" cx="290" cy="70" r="6" fill="var(--kraken-purple)"/>
+          <circle class="fg" style="--i:2" cx="350" cy="70" r="6" fill="var(--silver-blue)"/>
+          <circle class="fg" style="--i:2" cx="410" cy="70" r="6" fill="var(--kraken-purple)"/>
+          <circle class="fg" style="--i:2" cx="470" cy="70" r="6" fill="var(--kraken-purple)"/>
+          <circle class="fg" style="--i:3" cx="540" cy="70" r="6" fill="var(--kraken-purple)"/>
+          <circle class="fg" style="--i:3" cx="610" cy="70" r="6" fill="var(--kraken-purple)"/>
+          <circle class="fg" style="--i:3" cx="680" cy="70" r="6" fill="var(--kraken-purple)"/>
+        </g>
+        <text class="fg" style="--i:0" x="70"  y="46" fill="var(--kraken-purple)" font-size="12.5" text-anchor="middle">1st problem</text>
+        <text class="fg" style="--i:2" x="410" y="46" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">2nd problem</text>
+        <text class="fg" style="--i:3" x="610" y="46" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">get the truth</text>
+      </svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> Plan a 30-day sequence per account, not a one-off email.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> A €200k fit-out is worth a month of thoughtful touches across email, phone and LinkedIn.</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c8">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-filter"/></svg></span><span class="ctag">Lesson 08</span><span class="ckicker">The sequence</span></div>
+    <h3>Sell one thing at a time</h3>
+    <p class="desc">Don't cram every product and benefit into one email — long "everything" emails get deleted. Lead with the <b>single biggest problem</b> to draw the first replies, and if that doesn't land, change the subject line and move to the next biggest problem. Each theme is a fresh angle with a fresh subject line, not a repeat of the same pitch.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> One problem per theme. New theme, new subject line.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Theme 1: consistency across 120 rooms. Theme 2: hitting the opening date. Theme 3: one supplier for furniture + lighting.</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c9">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg></span><span class="ctag">Lesson 09</span><span class="ckicker">The sequence</span></div>
+    <h3>Bump emails: one sentence, reply in the thread</h3>
+    <p class="desc">A "bump" resurfaces your best email by replying to it in the same thread. Keep it to <b>one sentence</b> — a simple "any thoughts?" bump often gets as many replies as the original. The data was clear: short bumps beat long ones, and switching from more pitching to "thoughts?" / a rephrased ask (and eventually a break-up) nearly doubled reply rates.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> Bump with one line in the existing thread — never re-pitch the whole thing.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> "Just left you a voicemail — worth a quick look?" tied to the first email does the job.</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c10">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-x"/></svg></span><span class="ctag">Lesson 10</span><span class="ckicker">The sequence</span></div>
+    <h3>The break-up: ask for a yes or a no</h3>
+    <p class="desc">When nothing lands, stop pitching and <b>give them an easy way out</b> — a short note that asks for a straight yes or no, or offers to stop reaching out. Break-up language nearly doubled reply rates in the study, because it nudges the people on the fence who keep meaning to reply. Keep it professional: ask "still worth a conversation, or should I close this out?", not a gimmicky "1-2-3" message.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> End the sequence by asking permission to stop — it pulls out the last replies.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> "I'll assume the timing isn't right and close this off — unless you'd like a quote before you decide?"</div></div>
+    </div>
+  </article>
+</section>
+
+<!-- ================= PART III — THE OTHER CHANNELS ================= -->
+<section class="part" id="part3">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">03</div>
+    <div class="part-label">Part III — The other channels</div>
+    <h2>Use LinkedIn and the phone to lift your email</h2>
+    <p class="lead">LinkedIn and cold calls rarely close the deal on their own in outbound — their real job is to <b>drive attention back to your email</b>, where the conversation actually happens. Use them to put a face and a voice to your name, then point back to the inbox.</p>
+  </div>
+
+  <article class="card-c reveal anchor" id="c11">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></span><span class="ctag">Lesson 11</span><span class="ckicker">The other channels</span></div>
+    <h3>LinkedIn's job is to raise your email replies</h3>
+    <p class="desc">Don't pitch in the DM. The pattern that works: <b>a blank connection request</b> (personalised requests trigger "sales alarms" and get accepted less), then a short context-only message that points back to the email, then a one-line bump, and optionally a short video. Each LinkedIn touch mirrors an email touch and quietly lifts your reply rate.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> Connect blank, reference the email, don't sell in the DM.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> "sent you a note about the lobby project — did it reach you?" is enough; keep the catalogue in the email.</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c12">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-phone"/></svg></span><span class="ctag">Lesson 12</span><span class="ckicker">The other channels</span></div>
+    <h3>Cold calls and voicemails multiply email replies</h3>
+    <p class="desc">Adding calls to a sequence <b>doubled to tripled email reply rates</b> in the data. You don't need to close on the call — a short voicemail that says "I'm about to email you, no need to call back, just reply and tell me if it's even slightly interesting" sends people straight to the inbox. The phone makes the email feel real.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> Leave a short VM that points to the email, then send the email right after.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> A 20-second voicemail before your email turns a cold name into a warm reply far more often.</div></div>
+    </div>
+  </article>
+</section>
+
+<!-- ================= RESOURCES ================= -->
+<section class="part" id="resources">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">★</div>
+    <div class="part-label">Resources</div>
+    <h2>The two toolkits</h2>
+    <p class="lead">This training summarises and adapts two excellent free resources from <b>30 Minutes to President's Club, Gong and Jason Bay (Outbound Squad)</b>. Each one has its own Academy page — the full sequence with Mozaik example messages, and the numbers on one page — with the original file to download.</p>
+  </div>
+  <div class="dl-grid reveal anchor">
+    <a class="dl" href="../sdr-sequence/index.html">
+      <span class="ic"><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg></span>
+      <span>
+        <span class="t">The 30-Day Outbound Sequence</span>
+        <span class="d">All 14 touches across email, LinkedIn and phone, with a Mozaik example for every step. Original DOCX template inside.</span>
+        <span class="ext">SDR Toolkit · Template</span>
+      </span>
+    </a>
+    <a class="dl" href="../sdr-cold-email-data/index.html">
+      <span class="ic"><svg viewBox="0 0 24 24"><use href="#ic-book"/></svg></span>
+      <span>
+        <span class="t">Cold Email by the Numbers</span>
+        <span class="d">The twelve numbers worth remembering from the 85M+ email study, plus a pre-send checklist. Full PDF report inside.</span>
+        <span class="ext">SDR Toolkit · Cheat sheet</span>
+      </span>
+    </a>
+  </div>
+</section>
+
+</div>
+
+<!-- ================= CLOSING ================= -->
+<section class="cta">
+  <div class="inner">
+    <div class="reveal">
+      <span class="micro" style="color:rgba(255,255,255,0.7)">The one thing to remember</span>
+      <h2 style="margin-top:14px;">A short, human email about their problem — sent enough times, across enough channels.</h2>
+      <p>You don't need to be clever or work twice as hard. Write four sentences in their language about one real problem, make an easy offer, and give the account a month of thoughtful touches. That's how the top reps book 8× the meetings.</p>
+    </div>
+    <div class="principles reveal">
+      <div class="p"><div class="n">01 — The email</div><div class="t">Short lowercase subject, under 100 words, their language, offer not a meeting.</div></div>
+      <div class="p"><div class="n">02 — The sequence</div><div class="t">10–14 touches over 30 days, one problem per theme, bump then break up.</div></div>
+      <div class="p"><div class="n">03 — The channels</div><div class="t">LinkedIn and calls exist to drive replies back to the email.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="complete" id="completeBox"></div>
+
+<footer class="foot">
+  <div class="inner">
+    <a class="brand" href="../index.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <div class="src">Summarised and adapted from <b>"The Ultimate Cold Email Data Report" (Gong × 30 Minutes to President's Club × Jason Bay)</b> and <b>"The 30MPC Outbound Sequence Template."</b> All rights to the original reports belong to their authors; shared here for internal Mozaik training only. Diagrams are original. Styled in the Kraken Design System.</div>
+  </div>
+</footer>
+
+<script src="../shared/course.js" defer></script>
+</body>
+</html>

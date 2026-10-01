@@ -92,3 +92,27 @@ a.ccard:hover .cgo::after{ transform:translateX(3px); }
   display:flex; align-items:center; gap:18px; flex-wrap:wrap; }
 .hub-note h4{ font-family:var(--font-brand); font-size:17px; margin:0 0 4px; letter-spacing:-.3px; }
 .hub-note p{ font-size:14px; color:var(--cool-gray); margin:0; max-width:640px; }
+
+/* ---------------------------- division tabs ----------------------------- */
+.hub-tabs{ max-width:var(--maxw); margin:0 auto 34px; padding:0 24px; }
+.hub-tabs .in{ display:flex; gap:8px; overflow-x:auto; padding:4px 0 2px;
+  border-bottom:1px solid var(--border-gray); scrollbar-width:none; }
+.hub-tabs .in::-webkit-scrollbar{ display:none; }
+.hub-tabs button{ flex:0 0 auto; font:inherit; font-size:14.5px; font-weight:600; cursor:pointer;
+  color:var(--cool-gray); background:transparent; border:0; border-bottom:2px solid transparent;
+  padding:10px 14px 12px; margin-bottom:-1px; display:inline-flex; align-items:center; gap:8px;
+  transition:color var(--dur-fast) var(--ease-standard), border-color var(--dur-fast) var(--ease-standard); }
+.hub-tabs button:hover{ color:var(--near-black); }
+.hub-tabs button[aria-selected="true"]{ color:var(--kraken-purple); border-bottom-color:var(--kraken-purple); }
+.hub-tabs button .c{ font-size:11.5px; font-weight:700; border-radius:9999px; padding:2px 8px;
+  background:var(--neutral-chip); color:var(--neutral-chip-text); }
+.hub-tabs button[aria-selected="true"] .c{ background:var(--kraken-purple-subtle); color:var(--kraken-purple); }
+.hub-sec[hidden]{ display:none; }
+.hub-sec-head .d{ font-size:14px; color:var(--cool-gray); margin:6px 0 0; flex-basis:100%; }
+.hub-sec-head{ flex-wrap:wrap; }
+
+/* cover gradients: 05 SDR course (rose), SDR toolkits (plum, berry), 101 (teal) */
+.ccard .cover.rose{ background:linear-gradient(135deg,#e0457b 0%, #a3204f 100%); }
+.ccard .cover.plum{ background:linear-gradient(135deg,#9b4dd6 0%, #6a1fa3 100%); }
+.ccard .cover.berry{ background:linear-gradient(135deg,#c2418f 0%, #7d1d63 100%); }
+.ccard .cover.teal{ background:linear-gradient(135deg,#2a8f83 0%, #125e57 100%); }

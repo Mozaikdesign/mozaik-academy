@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pipeline 101 — Mozaik Academy</title>
+<meta name="description" content="Pipeline 101 — Mozaik satış ekibi referansı: pipeline nedir, TOFU · MOFU · BOFU hunisi, üç sağlık testi, kazanma ve kaybetme nedenleri ve üç kural.">
+<script>
+(function(){
+  try{
+    var CUR='tr';
+    var saved=localStorage.getItem('mozaik_lang');
+    if(saved && saved!==CUR && location.search.indexOf('l=1')<0){
+      location.replace((CUR==='en'?'tr.html':'index.html')+'?l=1');
+    }
+  }catch(e){}
+})();
+</script>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../shared/course.css">
+<link rel="stylesheet" href="../shared/academy.css">
+<script>window.MOZAIK = {
+  "lang": "tr",
+  "page": "course",
+  "id": "pipeline-101",
+  "tour": [
+    {
+      "n": "101",
+      "t": "Hoş geldin, {name} 👋",
+      "b": "Pipeline 101, satış ekibinin fırsatlar için ortak dili — tek sayfa, yaklaşık 10 dakika. Bir kez öğren, her pipeline toplantısında kullan."
+    },
+    {
+      "n": "Adım 1 / 2",
+      "t": "Altı kısa bölüm",
+      "b": "Üstteki menüyle istediğin bölüme geç. Yazdırılabilir iki sayfalık orijinal en altta."
+    },
+    {
+      "n": "Adım 2 / 2",
+      "t": "Bitirince tamamlandı olarak işaretle",
+      "b": "Sayfanın en altında “Tamamlandı olarak işaretle” düğmesi var."
+    }
+  ]
+};</script>
+<style>
+.grid2{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+.grid3{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;}
+@media(min-width:900px){.grid2{grid-template-columns:1fr 1fr;gap:20px;}.grid3{grid-template-columns:repeat(3,1fr);}.grid4{grid-template-columns:repeat(4,1fr);}}
+.code-c{background:var(--white);border:1px solid var(--border-gray);border-radius:18px;
+  padding:22px 22px 18px;display:flex;flex-direction:column;box-shadow:var(--shadow-micro);}
+.code-c .card-top{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;}
+.code-c .num{flex:0 0 auto;min-width:34px;height:34px;padding:0 8px;border-radius:10px;display:grid;place-items:center;
+  background:var(--kraken-purple-subtle);color:var(--kraken-purple-deep);
+  font-family:var(--font-mono);font-size:13px;font-weight:700;letter-spacing:-0.02em;}
+.code-c .cicon{flex:0 0 auto;width:26px;height:26px;color:var(--kraken-purple);}
+.code-c .cicon svg{width:26px;height:26px;}
+.code-c .ckicker{font-size:var(--fs-micro);letter-spacing:0.08em;text-transform:uppercase;color:var(--cool-gray);font-weight:600;}
+.code-c h3{font-size:19px;line-height:1.3;margin:0 0 10px;letter-spacing:-0.01em;}
+.code-c .desc{font-size:14.5px;line-height:1.62;color:var(--secondary);margin:0 0 16px;}
+.code-c .callouts{margin-top:auto;display:flex;flex-direction:column;gap:10px;}
+.code-c .takeaway{background:var(--kraken-purple-subtle);border-left:3px solid var(--kraken-purple);
+  border-radius:0 10px 10px 0;padding:11px 14px;font-size:13.5px;line-height:1.55;}
+.code-c .mozaik{display:flex;gap:9px;font-size:13px;line-height:1.55;color:var(--cool-gray);}
+.code-c .mozaik .pin{color:var(--kraken-purple);flex:0 0 auto;}
+.field{background:var(--white);border:1px solid var(--border-gray);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-micro);}
+.field .k{font-weight:700;font-size:15px;color:var(--near-black);}
+.field .v{font-size:13.5px;color:var(--cool-gray);margin-top:4px;line-height:1.45;}
+.field .ic{width:30px;height:30px;border-radius:9px;background:var(--kraken-purple-subtle);color:var(--kraken-purple);display:grid;place-items:center;margin-bottom:10px;}
+.field .ic svg{width:17px;height:17px;}
+.big{font-family:var(--font-brand);font-size:34px;font-weight:700;letter-spacing:-1px;color:var(--kraken-purple);line-height:1;margin:2px 0 10px;}
+.formula{font-family:var(--font-mono);font-size:13px;background:var(--d-box);border-radius:10px;padding:10px 12px;color:var(--near-black);margin:0 0 14px;line-height:1.5;}
+.rlist{list-style:none;margin:18px 0 0;padding:0;border-top:1px solid var(--border-gray);}
+.rlist li{display:flex;gap:14px;align-items:baseline;justify-content:space-between;padding:13px 2px;border-bottom:1px solid var(--border-gray);}
+.rlist .t{font-weight:600;font-size:15px;color:var(--near-black);}
+.rlist .s{font-size:13px;color:var(--cool-gray);text-align:right;}
+.lane-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding-bottom:10px;border-bottom:3px solid var(--kraken-purple);}
+.lane-h.alt{border-bottom-color:var(--warning,#d97706);}
+.lane-h b{font-size:12px;letter-spacing:.08em;text-transform:uppercase;}
+.lane-h span{font-size:12.5px;color:var(--cool-gray);}
+.note{margin-top:22px;background:var(--d-box);border-radius:14px;padding:16px 20px;font-size:14.5px;line-height:1.55;color:var(--near-black);}
+.rules{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+@media(min-width:900px){.rules{grid-template-columns:repeat(3,1fr);}}
+.rule{position:relative;background:linear-gradient(160deg,var(--kraken-purple) 0%,var(--kraken-purple-deep) 100%);color:#fff;border-radius:18px;padding:22px 22px 20px;display:flex;flex-direction:column;min-height:200px;}
+.rule .n{font-family:var(--font-brand);font-size:40px;font-weight:700;opacity:.35;line-height:1;letter-spacing:-1.5px;}
+.rule h3{color:#fff;font-size:18.5px;line-height:1.35;margin:12px 0 10px;}
+.rule ul{margin:0 0 12px;padding-left:18px;font-size:14px;line-height:1.6;color:rgba(255,255,255,.88);}
+.rule .scope{margin-top:auto;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.75);}
+.mail{background:var(--white);border:1px solid var(--border-gray);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-micro);display:flex;flex-direction:column;}
+.mail .mh{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--border-gray);background:#fcfcfd;flex-wrap:wrap;}
+.mail .step{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--kraken-purple-deep);background:var(--kraken-purple-subtle);border-radius:8px;padding:3px 8px;}
+.mail .ch{font-size:12px;font-weight:600;color:var(--cool-gray);}
+.mail .day{margin-left:auto;font-size:12px;color:var(--silver-blue);font-weight:600;}
+.mail .subj{padding:12px 16px 0;font-size:13px;color:var(--cool-gray);}
+.mail .subj b{color:var(--near-black);font-weight:600;}
+.mail .body{padding:10px 16px 14px;font-size:14.5px;line-height:1.6;color:var(--near-black);white-space:pre-line;}
+.mail .why{margin-top:auto;border-top:1px dashed var(--border-gray);padding:11px 16px 13px;font-size:13px;line-height:1.5;color:var(--cool-gray);}
+.mail .why b{color:var(--kraken-purple);}
+.seq{width:100%;border-collapse:collapse;margin-top:22px;font-size:14px;}
+.seq th{text-align:left;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--cool-gray);font-weight:600;padding:8px 10px;border-bottom:2px solid var(--border-gray);}
+.seq td{padding:10px;border-bottom:1px solid var(--border-gray);vertical-align:top;}
+.seq td.n{font-family:var(--font-mono);font-weight:700;color:var(--kraken-purple-deep);width:40px;}
+.seq td.d{color:var(--cool-gray);white-space:nowrap;width:70px;}
+.seq tr.th td{background:var(--kraken-purple-subtle);font-weight:600;color:var(--kraken-purple-deep);font-size:13px;}
+.tchip{display:inline-block;font-size:11.5px;font-weight:700;border-radius:9999px;padding:2px 9px;margin-right:6px;}
+.tchip.e{background:var(--kraken-purple-subtle);color:var(--kraken-purple-deep);}
+.tchip.l{background:#e6f0fd;color:#1f5fbf;}
+.tchip.c{background:var(--d-good-soft);color:var(--d-good-text);}
+.stat-row{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 2px;}
+.stat-chip{background:var(--d-good-soft);color:var(--d-good-text);border-radius:9999px;font-size:13px;font-weight:600;padding:6px 13px;}
+.check{list-style:none;padding:0;margin:22px 0 0;display:grid;grid-template-columns:1fr;gap:10px;}
+@media(min-width:900px){.check{grid-template-columns:1fr 1fr;}}
+.check li{display:flex;gap:12px;align-items:flex-start;background:var(--white);border:1px solid var(--border-gray);border-radius:12px;padding:13px 15px;font-size:14.5px;line-height:1.5;cursor:pointer;user-select:none;}
+.check li .bx{flex:0 0 auto;width:20px;height:20px;border-radius:6px;border:2px solid var(--silver-blue);display:grid;place-items:center;margin-top:1px;}
+.check li .bx svg{width:13px;height:13px;color:#fff;opacity:0;}
+.check li.on{border-color:var(--kraken-purple);background:var(--kraken-purple-subtle);}
+.check li.on .bx{background:var(--kraken-purple);border-color:var(--kraken-purple);}
+.check li.on .bx svg{opacity:1;}
+.dl-row{display:flex;flex-wrap:wrap;gap:16px;margin-top:22px;}
+.dl{flex:1 1 320px;display:flex;gap:14px;align-items:flex-start;text-decoration:none;background:#fff;
+  border:1px solid var(--border-gray);border-radius:14px;padding:18px 20px;transition:border-color .15s, box-shadow .15s;}
+.dl:hover{border-color:var(--kraken-purple);box-shadow:0 10px 30px rgba(40,30,90,.10);text-decoration:none;}
+.dl .ic{flex:0 0 auto;width:40px;height:40px;border-radius:10px;background:var(--kraken-purple-subtle);color:var(--kraken-purple);display:flex;align-items:center;justify-content:center;}
+.dl .ic svg{width:22px;height:22px;}
+.dl .t{display:block;font-weight:600;color:#101114;font-size:15px;}
+.dl .d{display:block;font-size:13px;color:var(--cool-gray);margin-top:3px;line-height:1.45;}
+.dl .ext{display:block;font-size:11.5px;font-weight:700;letter-spacing:.4px;color:var(--kraken-purple);margin-top:7px;}
+.fig-cap{font-size:12.5px;color:var(--cool-gray);margin-top:8px;}
+@media(max-width:600px){.code-c{padding:18px 18px 16px;}.code-c h3{font-size:17.5px;}.seq td.d{white-space:normal;}}
+</style>
+<script>
+document.addEventListener('click',function(e){var li=e.target.closest('.check li');if(li)li.classList.toggle('on');});
+</script>
+<script src="../shared/academy.js" defer></script>
+</head>
+<body>
+<div id="gate"><div class="card" id="gateCard"></div></div>
+<div class="progress" id="progress"></div>
+
+<svg class="iconsheet" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="_ic" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></g>
+  </defs>
+  <symbol id="ic-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></symbol>
+  <symbol id="ic-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-5 4z"/></symbol>
+  <symbol id="ic-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8.5V20l-4-2.5v-4z"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 17l-5.4 2.7 1.2-6.1L3.3 9.4l6.1-.8z"/></symbol>
+  <symbol id="ic-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ic-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H14a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5.5"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M18 20a6 6 0 0 0-3.5-5.5"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-11"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2.4 5.6L8 16l2.4-5.6z"/></symbol>
+  <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l1.5 5-2 1.3a12 12 0 0 0 6.2 6.2l1.3-2 5 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></symbol>
+  <symbol id="ic-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M8 3v3.4c0 2 4 3.6 4 5.6s-4 3.6-4 5.6V21"/><path d="M16 3v3.4c0 2-4 3.6-4 5.6s4 3.6 4 5.6V21"/></symbol>
+  <symbol id="ic-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M19 18v3H6.5A2.5 2.5 0 0 1 4 18.5"/></symbol>
+  <symbol id="ic-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1.5A3.5 3.5 0 0 0 7 11M17 6h3v1.5A3.5 3.5 0 0 1 17 11M9.5 19h5M10 14.5l-.5 4.5h5l-.5-4.5"/></symbol>
+  <symbol id="ic-funnel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-3 5H6z"/><path d="M6.5 11h11l-2.5 4.5h-6z"/><path d="M10 17.5h4L13 21h-2z"/></symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></symbol>
+  <symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="ic-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></symbol>
+  <symbol id="ic-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7.5" y="12" width="3" height="5"/><rect x="12.5" y="8" width="3" height="9"/><rect x="17.5" y="5" width="2.5" height="12"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+</svg>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="../tr.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <a class="backlink" href="../tr.html">← Academy</a>
+    <a class="langswitch navlang" href="index.html" data-setlang="en">English</a>
+    <div class="spacer"></div>
+    <div class="toc" id="toc">
+      <a href="#p1">Pipeline</a>
+      <a href="#p2">Huni</a>
+      <a href="#p3">Testler</a>
+      <a href="#p4">Kazanma</a>
+      <a href="#p5">Kaybetme</a>
+      <a href="#p6">Kurallar</a>
+      <a href="#resources">İndir</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#p1">Pipeline nedir</a>
+  <a href="#p2">TOFU · MOFU · BOFU</a>
+  <a href="#p3">Üç sağlık testi</a>
+  <a href="#p4">Kazanma nedenleri</a>
+  <a href="#p5">Kaybetme nedenleri</a>
+  <a href="#p6">Üç kural</a>
+  <a href="#resources">PDF’i indir</a>
+</div>
+
+<header class="hero">
+  <span class="eyebrow"><span class="dot"></span><span class="micro" style="color:var(--kraken-purple)">101 · Satışın Temelleri</span></span>
+  <h1>Her müşteri aynı huniden geçer. <em>Değişen, bizim o katmanda ne yaptığımızdır.</em></h1>
+  <p class="sub">Mozaik satış ekibinin fırsatlar için ortak dili: pipeline nedir, hunideki üç katman, sağlıklı bir pipeline’ı umut dolu bir listeden nasıl ayırırız ve neden kazanır, neden kaybederiz. Bir oturuşta öğrenilecek kadar kısa, pazartesi toplantısında kullanılacak kadar somut.</p>
+  <div class="hero-meta">
+    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">6</div><div class="l">Bölüm</div></div>
+    <div class="stat"><div class="v count">3</div><div class="l">Kural, istisnasız</div></div>
+    <div class="stat"><div class="v count">~10</div><div class="l">Dakika</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="part" id="p1">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">01</div>
+    <div class="part-label">Bölüm 01 — Temel</div>
+    <h2>Pipeline nedir?</h2>
+    <p class="lead">Henüz kapanmamış tüm satış fırsatlarının, hangi aşamada olduklarıyla birlikte tutulduğu canlı listedir. Geçmişi değil geleceği gösterir. Müşteri listesi değildir: liste durur, pipeline hareket eder.</p>
+  </div>
+  <div class="grid4">
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></div><div class="k">Kim</div><div class="v">müşteri ve karar verici</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-chart"/></svg></div><div class="k">Ne kadar</div><div class="v">tahmini değer (₺)</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-funnel"/></svg></div><div class="k">Hangi aşamada</div><div class="v">huninin neresinde</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-calendar"/></svg></div><div class="k">Ne zaman</div><div class="v">beklenen kapanış</div></div>
+  </div>
+  <div class="note reveal">Pipeline’daki her fırsat bu dört soruyu yanıtlar. Biri boşsa o henüz bir fırsat değil — sadece bir isim.</div>
+</section>
+
+<section class="part" id="p2">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">02</div>
+    <div class="part-label">Bölüm 02 — Huni</div>
+    <h2>TOFU · MOFU · BOFU: hunin üç katmanı</h2>
+    <p class="lead">Hunin üstü, ortası ve altı. Her katmanda müşterinin aklında başka bir soru vardır; bu yüzden her katman temsilciden başka bir şey ister.</p>
+  </div>
+  <div class="reveal" style="margin-top:22px"><div class="fig">
+    <svg viewBox="0 0 760 330" xmlns="http://www.w3.org/2000/svg"><polygon class="fg" style="--i:0" points="50.0,20 450.0,20 415.0,110 85.0,110" fill="var(--kraken-purple-subtle)" stroke="var(--kraken-purple)" stroke-width="1.5"/><text class="fg" style="--i:0" x="250" y="67.0" fill="var(--kraken-purple-deep)" font-size="24" font-weight="700" text-anchor="middle" font-family="var(--font-brand)">TOFU</text><text class="fg" style="--i:0" x="250" y="87.0" fill="var(--kraken-purple-deep)" font-size="11" font-weight="700" letter-spacing="1.4" text-anchor="middle" opacity=".8">FARKINDALIK</text><polygon class="fg" style="--i:1" points="91.0,118 409.0,118 374.0,208 126.0,208" fill="var(--kraken-purple)" stroke="var(--kraken-purple)" stroke-width="1.5"/><text class="fg" style="--i:1" x="250" y="165.0" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle" font-family="var(--font-brand)">MOFU</text><text class="fg" style="--i:1" x="250" y="185.0" fill="#ffffff" font-size="11" font-weight="700" letter-spacing="1.4" text-anchor="middle" opacity=".8">DEĞERLENDİRME</text><polygon class="fg" style="--i:2" points="132.0,216 368.0,216 325.0,306 175.0,306" fill="var(--kraken-purple-deep)" stroke="var(--kraken-purple-deep)" stroke-width="1.5"/><text class="fg" style="--i:2" x="250" y="263.0" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle" font-family="var(--font-brand)">BOFU</text><text class="fg" style="--i:2" x="250" y="283.0" fill="#ffffff" font-size="11" font-weight="700" letter-spacing="1.4" text-anchor="middle" opacity=".8">KARAR</text><path class="fg" style="--i:3" d="M470 28 v172" stroke="var(--kraken-purple)" stroke-width="2" fill="none"/><path class="fg" style="--i:3" d="M464 28 h12 M464 200 h12" stroke="var(--kraken-purple)" stroke-width="2"/><text class="fg" style="--i:3" x="490" y="104" fill="var(--near-black)" font-size="14" font-weight="600">İşin yapıldığı yer</text><text class="fg" style="--i:3" x="490" y="124" fill="var(--cool-gray)" font-size="12.5">TOFU ve MOFU: temsilcinin zamanının çoğu</text><path class="fg" style="--i:4" d="M470 222 v80" stroke="var(--d-bad)" stroke-width="2" fill="none"/><path class="fg" style="--i:4" d="M464 222 h12 M464 302 h12" stroke="var(--d-bad)" stroke-width="2"/><text class="fg" style="--i:4" x="490" y="258" fill="var(--d-bad-text)" font-size="14" font-weight="600">En pahalı kayıp</text><text class="fg" style="--i:4" x="490" y="278" fill="var(--cool-gray)" font-size="12.5">burada her şey zaten yatırılmış</text></svg>
+  </div><div class="fig-cap">Genişlikler şematiktir, Mozaik verisi değildir.</div></div>
+  <div class="grid3">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">TOFU</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-funnel"/></svg></span><span class="ckicker">Farkındalık</span></div>
+    <h3>“Mozaik nedir? Mozaik kimdir? Buna ihtiyacım var mı?”</h3>
+    <p class="desc"><b>Temsilci:</b> Dikkat çek, ilgi uyandır, iletişim bilgisi al.</p>
+    <div class="callouts">
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Instagram reklamı, fuar, mağazaya gelen ziyaretçi.</div></div>
+    </div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">MOFU</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-funnel"/></svg></span><span class="ckicker">Değerlendirme</span></div>
+    <h3>“Bana uygun mu? Alternatiflerden farkı ne?”</h3>
+    <p class="desc"><b>Temsilci:</b> İhtiyacı anla, projeyi çıkar, teklifi hazırla.</p>
+    <div class="callouts">
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Showroom randevusu, ölçü, moodboard, revize teklif.</div></div>
+    </div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">BOFU</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-funnel"/></svg></span><span class="ckicker">Karar</span></div>
+    <h3>“Fiyat, teslimat ve şartlar uygun mu?”</h3>
+    <p class="desc"><b>Temsilci:</b> İtirazı çöz, şartı netleştir, imzayı al.</p>
+    <div class="callouts">
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Sözleşme, depozito, üretim ve kurulum tarihi.</div></div>
+    </div>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="p3">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">03</div>
+    <div class="part-label">Bölüm 03 — Sağlık</div>
+    <h2>İyi bir pipeline üç testi geçer</h2>
+    <p class="lead">Büyük bir pipeline otomatik olarak iyi bir pipeline değildir. Rakama güvenmeden önce bu üçünü kontrol et.</p>
+  </div>
+  <div class="grid3">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-chart"/></svg></span><span class="ckicker">Coverage</span></div>
+    <h3>Yeterince büyük</h3>
+    <div class="formula">Açık pipeline ₺ ÷ kalan hedef ₺</div>
+    <p class="desc">Doğru çarpan = 1 ÷ kazanma oranı. Üç fırsattan birini kazanıyorsan 3 kat coverage gerekir.</p>
+    <div class="callouts">
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> %25 kazanma oranıyla bu çeyrek satılacak ₺2M için ₺2M değil, ₺8M açık pipeline gerekir.</div></div>
+    </div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-trend"/></svg></span><span class="ckicker">Velocity</span></div>
+    <h3>Hareketli</h3>
+    <div class="formula">30 gündür aşama değiştirmeyen fırsatlar</div>
+    <p class="desc">Bu sayı az olmalı. Bir aydır kıpırdamayan fırsat çürüktür.</p>
+    <div class="callouts">
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Bir otel teklifi geçen aydan beri “teklif gönderildi”de duruyorsa bu hafta ara — ya da kapat.</div></div>
+    </div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span class="ckicker">Hygiene</span></div>
+    <h3>Dürüst</h3>
+    <div class="formula">Kapanış tarihi geçmiş ama hâlâ açık kayıtlar</div>
+    <p class="desc">Bu kayıtlar tahmini sessizce şişirir. Tarihi gerekçesiyle güncelle ya da kapat.</p>
+    <div class="callouts">
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Cuma günü beş dakikalık bir tarih taraması pazartesi toplantısını dürüst tutar.</div></div>
+    </div>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="p4">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">04</div>
+    <div class="part-label">Bölüm 04 — Kazanmak</div>
+    <h2>Kazanma nedenleri</h2>
+    <p class="lead">Kapanan her fırsat tek bir birincil neden taşır. Doğru olan her nedeni değil, dengeyi değiştiren nedeni seç.</p>
+  </div>
+  <div class="grid4">
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-trophy"/></svg></div><div class="k">Tasarım ve ürün uyumu</div><div class="v">Aradığı ürünü bizde buldu</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-trophy"/></svg></div><div class="k">Showroom ve temsilci deneyimi</div><div class="v">Süreç ve güven kazandırdı</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-trophy"/></svg></div><div class="k">Özel üretim esnekliği</div><div class="v">Ölçü, kumaş, renk veya revizyon karşılandı</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-trophy"/></svg></div><div class="k">Mevcut müşteri veya referans</div><div class="v">Tekrar alım ya da tavsiye üzerine geldi</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-trophy"/></svg></div><div class="k">Teslim süresi</div><div class="v">Rakipten erken teslim verdik</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-trophy"/></svg></div><div class="k">Tek elden çözüm</div><div class="v">Mobilya, aydınlatma ve kurulum birlikte</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-trophy"/></svg></div><div class="k">Fiyat ve ödeme şartları</div><div class="v">Ticari teklif belirleyici oldu</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-trophy"/></svg></div><div class="k">Şartname uyumu · Kurumsal</div><div class="v">Teknik ve sertifika şartlarını karşıladık</div></div>
+  </div>
+</section>
+
+<section class="part" id="p5">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">05</div>
+    <div class="part-label">Bölüm 05 — Kaybetmek</div>
+    <h2>Kaybetme nedenleri</h2>
+    <p class="lead">Birbirinden çok farklı iki grup. Doğru olanı girmek, doğru şeyi düzeltmemizi sağlar.</p>
+  </div>
+  <div class="grid2">
+    <div class="reveal"><div class="lane-h"><b>Rakibe kaybedildi</b><span>Rakip adı zorunlu</span></div><ul class="rlist" style="border-top:0;margin-top:0"><li><span class="t">Fiyat</span><span class="s">Fiyatlama, değer anlatımı</span></li><li><span class="t">Teslim süresi</span><span class="s">Üretim ve planlama</span></li><li><span class="t">Ürün veya tasarım</span><span class="s">Koleksiyon ve stok</span></li><li><span class="t">Şartname yeterliliği</span><span class="s">Kurumsal ön hazırlık</span></li><li><span class="t">İlişki</span><span class="s">Hesap yönetimi</span></li></ul></div>
+    <div class="reveal"><div class="lane-h alt"><b>Karar çıkmadı</b><span>Rakibe kaybedilmedi</span></div><ul class="rlist" style="border-top:0;margin-top:0"><li><span class="t">Proje iptal veya ertelendi</span><span class="s">Pazar tarafı</span></li><li><span class="t">Bütçe onayı çıkmadı</span><span class="s">Niteleme</span></li><li><span class="t">Karar alınmadı, iletişim koptu</span><span class="s">Takip disiplini</span></li></ul></div>
+  </div>
+  <div class="note reveal">Bu iki grup kazanma oranında aynı görünür, ama zıt sorunlardır: biri ürün ve fiyat meselesidir, diğeri takip disiplini.</div>
+</section>
+
+<section class="part" id="p6">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">06</div>
+    <div class="part-label">Bölüm 06 — Kurallar</div>
+    <h2>Üç kural, istisnasız</h2>
+    <p class="lead">Pipeline ancak en zayıf kaydı kadar işe yarar. Bu üç kural her kaydı işe yarar tutar.</p>
+  </div>
+  <div class="rules">
+    <div class="rule reveal"><div class="n">01</div><h3>Her fırsatta her zaman tanımlı bir sonraki aktivite adımı bulunur</h3><div class="scope">Tüm fırsatlar</div></div>
+    <div class="rule reveal"><div class="n">02</div><h3>Tahmini kapanış tarihi girilmiş olmalı</h3><div class="scope">MOFU ve sonrası</div></div>
+    <div class="rule reveal"><div class="n">03</div><h3>Notlar bölümünde fırsatı özetleyen 3 madde bulunur</h3><ul><li>Kapsam ve tutar</li><li>Karar süreci ve itirazlar</li><li>Kapanış ve teslim planı</li></ul><div class="scope">BOFU</div></div>
+  </div>
+</section>
+
+<section class="part" id="resources">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">★</div>
+    <div class="part-label">Kaynak</div>
+    <h2>Yazdırılabilir orijinal</h2>
+    <p class="lead">İki sayfalık Pipeline 101 referansı — yazdır, masanın yanında dursun.</p>
+  </div>
+  <div class="dl-row reveal">
+  <a class="dl" href="Pipeline-101-Mozaik-Satis-Ekibi-Referansi.pdf" target="_blank" rel="noopener">
+    <span class="ic"><svg viewBox="0 0 24 24"><use href="#ic-download"/></svg></span>
+    <span><span class="t">Pipeline 101 — Mozaik Satış Ekibi Referansı</span><span class="d">İki sayfalık orijinal referans: huni, üç test, kazanma ve kaybetme nedenleri, üç kural.</span><span class="ext">PDF · Türkçe · 2 sayfa</span></span>
+  </a>
+  </div>
+</section>
+
+</div>
+
+<section class="cta">
+  <div class="inner">
+    <div class="reveal">
+      <span class="micro" style="color:rgba(255,255,255,0.7)">Akılda kalması gereken tek şey</span>
+      <h2 style="margin-top:14px;">Pipeline gelecekle ilgili bir sözdür — onu dürüst tut.</h2>
+      <p>Her fırsatın aşamasını, değerini, karar vericisini ve tarihini bil. Ya ilerlet ya kapat. Kapandığında da gerçek nedeni gir — gelecek çeyreği kolaylaştıran budur.</p>
+    </div>
+    <div class="principles reveal">
+      <div class="p"><div class="n">01 — Dört cevap</div><div class="t">Her fırsat için kim, ne kadar, hangi aşama, ne zaman.</div></div>
+      <div class="p"><div class="n">02 — Üç test</div><div class="t">Yeterince büyük, hareketli, dürüst.</div></div>
+      <div class="p"><div class="n">03 — Üç kural</div><div class="t">Sonraki aktivite, kapanış tarihi, üç maddelik not.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="complete" id="completeBox"></div>
+
+<footer class="foot">
+  <div class="inner">
+    <a class="brand" href="../tr.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <div class="src">Pipeline 101, Mozaik Design satış ekibi referansıdır (Ekim 2026). Huni genişlikleri şematiktir. Yalnızca Mozaik iç eğitimi içindir. Kraken Design System ile tasarlanmıştır.</div>
+  </div>
+</footer>
+
+<script src="../shared/course.js" defer></script>
+</body>
+</html>

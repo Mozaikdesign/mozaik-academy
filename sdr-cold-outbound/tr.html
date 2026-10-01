@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toplantı Getiren Soğuk Outbound — Mozaik Academy</title>
+<meta name="description" content="SDR eğitimi: 85 milyondan fazla e-postanın analizine göre soğuk outbound’da gerçekten toplantı getiren şeyler — Mozaik kurumsal satışı için uyarlandı.">
+<script>
+(function(){
+  try{
+    var CUR='tr';
+    var saved=localStorage.getItem('mozaik_lang');
+    if(saved && saved!==CUR && location.search.indexOf('l=1')<0){
+      location.replace((CUR==='en'?'tr.html':'index.html')+'?l=1');
+    }
+  }catch(e){}
+})();
+</script>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../shared/course.css">
+<link rel="stylesheet" href="../shared/academy.css">
+<script>window.MOZAIK = {
+  "lang": "tr",
+  "page": "course",
+  "id": "sdr-cold-outbound",
+  "tour": [
+    { "n": "SDR Eğitimi", "t": "Hoş geldin, {name} 👋",
+      "b": "Kurumsal ve proje müşterilerine ulaşırken kullandığımız soğuk outbound rehberi — 85 milyon+ soğuk e-postanın analizine göre gerçekten toplantı getiren şeyler. Yaklaşık 25 dakika." },
+    { "n": "Adım 1 / 2", "t": "İstediğin bölüme atla",
+      "b": "Üstteki menüyü kullan. Telefonda tam liste için ☰ simgesine dokun. İki SDR araç seti en altta." },
+    { "n": "Adım 2 / 2", "t": "Bitirince tamamlandı olarak işaretle",
+      "b": "Sayfanın en altında “Tamamlandı olarak işaretle” düğmesi var." }
+  ]
+};</script>
+<style>
+  .dl-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:4px; }
+  .dl{ display:flex; gap:14px; align-items:flex-start; text-decoration:none; background:#fff; color:inherit;
+    border:1px solid var(--border-gray); border-radius:14px; padding:18px 20px;
+    transition:border-color .15s, box-shadow .15s, transform .05s; }
+  .dl:hover{ border-color:var(--kraken-purple); box-shadow:0 10px 30px rgba(40,30,90,.10); text-decoration:none; }
+  .dl .ic{ flex:0 0 auto; width:40px; height:40px; border-radius:10px; background:var(--kraken-purple-subtle);
+    color:var(--kraken-purple); display:flex; align-items:center; justify-content:center; }
+  .dl .ic svg{ width:22px; height:22px; }
+  .dl .t, .dl .d, .dl .ext{ display:block; }
+  .dl .t{ font-weight:600; color:#101114; font-size:15px; }
+  .dl .d{ font-size:13px; color:var(--cool-gray); margin-top:3px; line-height:1.45; }
+  .dl .ext{ font-size:11.5px; font-weight:700; letter-spacing:.4px; color:var(--kraken-purple); margin-top:7px; }
+  @media(max-width:720px){ .dl-grid{ grid-template-columns:1fr; } }
+  .stat-row{ display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 2px; }
+  .stat-chip{ background:var(--d-good-soft,#e7f6ee); color:var(--d-good-text,#0f7a45); border-radius:9999px;
+    font-size:13px; font-weight:600; padding:6px 13px; }
+</style>
+<script src="../shared/academy.js" defer></script>
+</head>
+<body>
+<div id="gate"><div class="card" id="gateCard"></div></div>
+<div class="progress" id="progress"></div>
+
+<svg class="iconsheet" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="_ic" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></g>
+  </defs>
+  <symbol id="ic-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></symbol>
+  <symbol id="ic-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-5 4z"/></symbol>
+  <symbol id="ic-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8.5V20l-4-2.5v-4z"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 17l-5.4 2.7 1.2-6.1L3.3 9.4l6.1-.8z"/></symbol>
+  <symbol id="ic-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ic-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H14a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5.5"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M18 20a6 6 0 0 0-3.5-5.5"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-11"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2.4 5.6L8 16l2.4-5.6z"/></symbol>
+  <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l1.5 5-2 1.3a12 12 0 0 0 6.2 6.2l1.3-2 5 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></symbol>
+  <symbol id="ic-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M8 3v3.4c0 2 4 3.6 4 5.6s-4 3.6-4 5.6V21"/><path d="M16 3v3.4c0 2-4 3.6-4 5.6s4 3.6 4 5.6V21"/></symbol>
+  <symbol id="ic-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M19 18v3H6.5A2.5 2.5 0 0 1 4 18.5"/></symbol>
+  <symbol id="ic-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1.5A3.5 3.5 0 0 0 7 11M17 6h3v1.5A3.5 3.5 0 0 1 17 11M9.5 19h5M10 14.5l-.5 4.5h5l-.5-4.5"/></symbol>
+</svg>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="../tr.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <a class="backlink" href="../tr.html">← Academy</a>
+    <a class="langswitch navlang" href="index.html" data-setlang="en">English</a>
+    <div class="spacer"></div>
+    <div class="toc" id="toc">
+      <a href="#c1">Neden</a>
+      <a href="#c2">Konu</a>
+      <a href="#c3">Uzunluk</a>
+      <a href="#c4">Dil</a>
+      <a href="#c5">Kişisel</a>
+      <a href="#c6">CTA</a>
+      <a href="#c7">Sekans</a>
+      <a href="#c8">Tek konu</a>
+      <a href="#c9">Hatırlatma</a>
+      <a href="#c10">Kapanış</a>
+      <a href="#c11">LinkedIn</a>
+      <a href="#c12">Arama</a>
+      <a href="#resources">Kaynaklar</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#c1">Outbound neden işe yarar</a>
+  <a href="#c2">Konu satırları</a>
+  <a href="#c3">E-posta uzunluğu</a>
+  <a href="#c4">Onların dili</a>
+  <a href="#c5">Kişiselleştirme</a>
+  <a href="#c6">Kapanış cümlesi (CTA)</a>
+  <a href="#c7">Sekans kur</a>
+  <a href="#c8">Her seferinde tek konu</a>
+  <a href="#c9">Hatırlatma e-postaları</a>
+  <a href="#c10">Vedalaşma e-postası</a>
+  <a href="#c11">LinkedIn</a>
+  <a href="#c12">Soğuk aramalar</a>
+  <a href="#resources">Kaynaklar</a>
+</div>
+
+<header class="hero">
+  <span class="eyebrow"><span class="dot"></span><span class="micro" style="color:var(--kraken-purple)">Ekip Eğitimi · SDR ve Outbound</span></span>
+  <h1>Soğuk mesajların çoğu görmezden gelinir. İşte <em>gerçekten toplantı getiren şey.</em></h1>
+  <p class="sub">Mozaik’te yeni kurumsal ve proje müşterisi açan ekip için pratik bir outbound rehberi — oteller, ofisler, restoranlar, mimarlar ve iç mimarlar. Gong ve 30 Minutes to President's Club’ın 85 milyon+ soğuk e-posta üzerindeki çalışmasından derlendi, sonra bizim mobilya ve aydınlatma satışımıza uyarlandı.</p>
+  <div class="hero-meta">
+    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">12</div><div class="l">Ders</div></div>
+    <div class="stat"><div class="v count">3</div><div class="l">Bölüm: E-posta · Sekans · Kanallar</div></div>
+    <div class="stat"><div class="v">8 kat</div><div class="l">En iyi temsilcinin ortalamaya göre aldığı toplantı</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ================= PART I — THE EMAIL ================= -->
+<section class="part" id="part1">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">01</div>
+    <div class="part-label">Bölüm I — E-posta</div>
+    <h2>İnsanların gerçekten yanıtladığı e-postayı yaz</h2>
+    <p class="lead">Aynı çalışmaya göre en iyi %10’luk temsilciler ortalama bir temsilciden <b>8,1 kat daha fazla toplantı</b> alıyor — ortalamanın 3 toplantısına karşı 23. 8 kat fazla çalışmıyorlar; farklı yazdıkları için 2,1 kat daha fazla açılma ve 4,2 kat daha fazla yanıt alıyorlar. İşte yaptıkları.</p>
+  </div>
+
+  <article class="card-c reveal anchor" id="c1">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-trend"/></svg></span><span class="ctag">Ders 01</span><span class="ckicker">E-posta</span></div>
+    <h3>Outbound bir beceridir, sayı oyunu değil</h3>
+    <p class="desc">İki temsilci zıt yönlerden başarısız olur: biri haftada 1.000 e-posta atar ve hiç toplantı alamaz, diğeri tek bir mesaj için saatlerce araştırma yapar ve yine görmezden gelinir. Kazananlar ortadadır — <b>tekrar kullanılabilir bir mesaj, doğru firmalara, yeterince kez.</b> Aşağıdaki her şey o mesaj ve o ritimle ilgili.</p>
+    <div class="stat-row">
+      <span class="stat-chip">En iyi temsilci: 23 toplantı</span>
+      <span class="stat-chip">Ortalama temsilci: 3 toplantı</span>
+      <span class="stat-chip">= 8,1 kat fazla</span>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Hacim ile kalite arasında seçim yapma — ölçekli gönderebileceğin tek bir iyi mesaj kur.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> 40 hedef otelden oluşan kısa listeyi net bir mesajla çalışan proje temsilcisi, 400 rastgele adrese mesaj yağdırandan her zaman iyi sonuç alır.</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c2">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg></span><span class="ctag">Ders 02</span><span class="ckicker">E-posta</span></div>
+    <h3>Açılıp açılmayacağına konu satırı karar verir</h3>
+    <p class="desc">Milyonlarca e-postada desen çok netti: şirket içi bir not gibi okunan kısa, küçük harfli konu satırları kazanıyor. <b>Dört kelimenin altında, küçük harfle, onların dünyasıyla ilgili — pazarlama başlığı değil.</b> Moda kelimeler, rakamlar ve isim vermek açılma oranını düşürdü; boş konu satırı ise spam gibi okunuyor (yanıtları yaklaşık %12 azalttı).</p>
+    <div class="stat-row">
+      <span class="stat-chip">4 kelimenin altında</span>
+      <span class="stat-chip">küçük harf</span>
+      <span class="stat-chip">satış değil, öncelik</span>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Konuyu bir iş arkadaşı yazar gibi yaz — "lobi yenileme", "balo salonu oturma", "showroom aydınlatma".</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> "yeni restoran donatımı", "Premium Türk Mobilyası — Otel Partnerlerine %20 İndirim" başlığını her seferinde yener.</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c3">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-filter"/></svg></span><span class="ctag">Ders 03</span><span class="ckicker">E-posta</span></div>
+    <h3>100 kelimenin altında, dört cümle, kaydırma yok</h3>
+    <p class="desc">E-postalar kısaldıkça yanıt oranı yükseldi — ideal nokta <b>100 kelimenin altı ve üç-dört cümle</b>; telefonda kaydırmadan okunacak kadar kısa. İşe yarayan yapı: bir satır kişiselleştirme → sorun → tek cümlelik çözüm → talep. Gerisi okunmadan silinir.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> E-postan telefonda kaydırma gerektiriyorsa çok uzundur. Dört cümleye indir.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Kataloğu, teslim sürelerini ve kaplama seçeneklerini yanıta sakla — ilk e-postanın tek işi yanıtı kazanmak.</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c4">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></span><span class="ctag">Ders 04</span><span class="ckicker">E-posta</span></div>
+    <h3>Bizim değil, onların dilini konuş</h3>
+    <p class="desc">En iyi temsilciler çok daha fazla "siz / sizin / ekibiniz", çok daha az "biz / bizim / ben" kullandı. Karşı tarafa odaklanan e-postalar otomatik gönderilse bile kişisel okunur; <b>satış kelimeleri ve satıcı jargonu ise yanıt oranını ölçülebilir şekilde düşürdü.</b> E-posta bizim ürünümüzle değil, onların sorunuyla ilgili olmalı.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> "Siz"lerini ve "biz"lerini say. "Biz" kazanıyorsa yeniden yaz.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> "120 odanızın sıkışık bir açılış tarihinde tutarlı görünmesi gerekiyor", "40 yıllık zanaat geçmişine sahip lider bir üreticiyiz" cümlesini yener.</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c5">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-target"/></svg></span><span class="ctag">Ders 05</span><span class="ckicker">E-posta</span></div>
+    <h3>Eğlenceli bir bilgiyle değil, sorunla kişiselleştir</h3>
+    <p class="desc">Kişiselleştirme yanıtları ve toplantıları artırdı — ama her kişiselleştirme eşit değil. Birinin üniversitesine ya da hobisine değinmek neredeyse hiçbir şey değiştirmedi. <b>İşe yarayan, güçlü bir niyet sinyali ya da gerçek bir iş sorunuydu</b> — yeni duyurdukları bir proje, açacakları bir şube, işe aldıkları bir pozisyon. Önce niyeti yüksek firmalara öncelik ver, sonra onların sorunundan konuş.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> LinkedIn "hakkında" bölümündeki bir şeyle değil, bu çeyrek üzerinde çalıştıkları bir şeyle aç.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> "Nişantaşı’ndaki ikinci şubenizin duyurusunu gördüm" yanıt vermek için bir sebeptir; "ben de Galatasaraylıyım" değildir.</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c6">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-zap"/></svg></span><span class="ctag">Ders 06</span><span class="ckicker">E-posta</span></div>
+    <h3>Toplantı dilenme — bir teklif sun</h3>
+    <p class="desc">En zayıf kapanış "gelecek hafta 30 dakikanız var mı?" sorusudur. Toplantı istemek tüm yükü karşı tarafa bırakır ve karşılığında bir şey vermez. En güçlü CTA’lar <b>ilgi sorar ("nasıl görüneceğine bakmaya açık mısınız?") ya da bir teklif sunar</b> — hiç satın almasalar bile işlerine yarayacak bir şey: fiyat teklifi, numune, moodboard, showroom ziyareti.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Takvim talebiyle değil, "…açık mısınız?" ya da zahmetsiz bir teklifle bitir.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> "lobi için hızlıca bir mobilya + aydınlatma moodboard’u hazırlamamı ister misiniz?" ilk görüşmeden önce değer verir.</div></div>
+    </div>
+  </article>
+</section>
+
+<!-- ================= PART II — THE SEQUENCE ================= -->
+<section class="part" id="part2">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">02</div>
+    <div class="part-label">Bölüm II — Sekans</div>
+    <h2>Tek e-posta outbound değildir — sekans kur</h2>
+    <p class="lead">Tek bir e-posta iyi bir firmanın kapısını neredeyse hiç açmaz. Bu veriye dayanan sekans şablonu, e-posta, telefon ve LinkedIn üzerinden temalara ayrılmış <b>yaklaşık 30 günde 10–14 temas</b> öngörür. Temasları kanallara yaymak, dikkati gelen kutusuna geri çektiği için e-posta yanıt oranını kabaca ikiye katlar.</p>
+  </div>
+
+  <article class="card-c reveal anchor" id="c7">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg></span><span class="ctag">Ders 07</span><span class="ckicker">Sekans</span></div>
+    <h3>30 günde, farklı kanallardan 10–14 temas</h3>
+    <p class="desc">Bir firmaya girmek ısrar ve farklı açılar ister. Referans sekans kabaca <b>30 günde 7 e-posta, 4 arama ve 3 LinkedIn teması</b>dır — yanıtlar ilk 14–28 gün içindeki yaklaşık altı e-postada zirve yapar, sonrasında %0,5’in altına düşer ve firmayı dinlendirme zamanı gelir. Asla tek e-posta atıp vazgeçme.</p>
+    <div class="fig">
+      <svg viewBox="0 0 760 120" xmlns="http://www.w3.org/2000/svg">
+        <line x1="40" y1="70" x2="720" y2="70" stroke="var(--d-axis)" stroke-width="2"/>
+        <text class="fg" style="--i:0" x="40" y="98" fill="var(--silver-blue)" font-size="12">1. gün</text>
+        <text class="fg" style="--i:0" x="690" y="98" fill="var(--silver-blue)" font-size="12">30. gün</text>
+        <g>
+          <circle class="fg" style="--i:0; color:var(--d-grow)" cx="70"  cy="70" r="7" fill="var(--kraken-purple)"/>
+          <circle class="fg" style="--i:0; color:var(--d-grow)" cx="120" cy="70" r="6" fill="var(--silver-blue)"/>
+          <circle class="fg" style="--i:1; color:var(--d-grow)" cx="175" cy="70" r="6" fill="var(--kraken-purple)"/>
+          <circle class="fg" style="--i:1" cx="230" cy="70" r="6" fill="var(--silver-blue)"/>
+          <circle class="fg" style="--i:1" cx="290" cy="70" r="6" fill="var(--kraken-purple)"/>
+          <circle class="fg" style="--i:2" cx="350" cy="70" r="6" fill="var(--silver-blue)"/>
+          <circle class="fg" style="--i:2" cx="410" cy="70" r="6" fill="var(--kraken-purple)"/>
+          <circle class="fg" style="--i:2" cx="470" cy="70" r="6" fill="var(--kraken-purple)"/>
+          <circle class="fg" style="--i:3" cx="540" cy="70" r="6" fill="var(--kraken-purple)"/>
+          <circle class="fg" style="--i:3" cx="610" cy="70" r="6" fill="var(--kraken-purple)"/>
+          <circle class="fg" style="--i:3" cx="680" cy="70" r="6" fill="var(--kraken-purple)"/>
+        </g>
+        <text class="fg" style="--i:0" x="70"  y="46" fill="var(--kraken-purple)" font-size="12.5" text-anchor="middle">1. sorun</text>
+        <text class="fg" style="--i:2" x="410" y="46" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">2. sorun</text>
+        <text class="fg" style="--i:3" x="610" y="46" fill="var(--cool-gray)" font-size="12.5" text-anchor="middle">net cevap al</text>
+      </svg>
+    </div>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Tek seferlik e-posta değil, her firma için 30 günlük bir sekans planla.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> 200 bin €’luk bir donatım projesi, e-posta, telefon ve LinkedIn üzerinden bir aylık özenli temasa değer.</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c8">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-filter"/></svg></span><span class="ctag">Ders 08</span><span class="ckicker">Sekans</span></div>
+    <h3>Her seferinde tek bir şey sat</h3>
+    <p class="desc">Her ürünü ve faydayı tek bir e-postaya sıkıştırma — "her şey" anlatan uzun e-postalar silinir. İlk yanıtları almak için <b>en büyük tek sorunla</b> başla; tutmazsa konu satırını değiştir ve bir sonraki büyük soruna geç. Her tema yeni bir konu satırıyla yeni bir açıdır, aynı satış konuşmasının tekrarı değil.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Her temada tek sorun. Yeni tema, yeni konu satırı.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> Tema 1: 120 odada tutarlılık. Tema 2: açılış tarihine yetişmek. Tema 3: mobilya + aydınlatma için tek tedarikçi.</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c9">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg></span><span class="ctag">Ders 09</span><span class="ckicker">Sekans</span></div>
+    <h3>Hatırlatma e-postası: tek cümle, aynı yazışmada</h3>
+    <p class="desc">"Bump" (hatırlatma), en iyi e-postanı aynı yazışmada yanıtlayarak yeniden öne çıkarır. <b>Tek cümle</b> yeter — basit bir "ne düşünüyorsunuz?" çoğu zaman orijinal kadar yanıt alır. Veri netti: kısa hatırlatmalar uzunları yener; tekrar satış anlatmak yerine "ne dersiniz?" / yeniden ifade edilmiş bir talep (ve sonunda bir vedalaşma) yanıt oranını neredeyse ikiye katladı.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Mevcut yazışmada tek satırla hatırlat — asla tüm satışı baştan anlatma.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> İlk e-postaya bağlı "Az önce sesli mesaj bıraktım — kısaca bakmaya değer mi?" işi görür.</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c10">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-x"/></svg></span><span class="ctag">Ders 10</span><span class="ckicker">Sekans</span></div>
+    <h3>Vedalaşma: evet ya da hayır iste</h3>
+    <p class="desc">Hiçbir şey tutmadığında satışı bırak ve <b>karşı tarafa kolay bir çıkış ver</b> — net bir evet ya da hayır isteyen veya yazmayı bırakmayı öneren kısa bir not. Çalışmada vedalaşma dili yanıt oranını neredeyse ikiye katladı, çünkü "yazacağım" deyip yazmayan kararsızları harekete geçiriyor. Profesyonel kal: hileli bir "1-2-3" mesajı değil, "hâlâ konuşmaya değer mi, yoksa bu konuyu kapatayım mı?" diye sor.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Sekansı bırakmak için izin isteyerek bitir — son yanıtları o getirir.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> "Zamanlamanın uygun olmadığını varsayıp konuyu kapatıyorum — karar vermeden önce bir fiyat teklifi istemezseniz tabii?"</div></div>
+    </div>
+  </article>
+</section>
+
+<!-- ================= PART III — THE OTHER CHANNELS ================= -->
+<section class="part" id="part3">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">03</div>
+    <div class="part-label">Bölüm III — Diğer kanallar</div>
+    <h2>E-postanı güçlendirmek için LinkedIn’i ve telefonu kullan</h2>
+    <p class="lead">Outbound’da LinkedIn ve soğuk aramalar işi nadiren tek başına kapatır — asıl görevleri, konuşmanın gerçekten yaşandığı yere, <b>dikkati e-postana geri çekmektir</b>. Adına bir yüz ve ses kazandırmak için kullan, sonra gelen kutusunu işaret et.</p>
+  </div>
+
+  <article class="card-c reveal anchor" id="c11">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></span><span class="ctag">Ders 11</span><span class="ckicker">Diğer kanallar</span></div>
+    <h3>LinkedIn’in görevi e-posta yanıtlarını artırmak</h3>
+    <p class="desc">DM’den satış yapma. İşe yarayan desen: <b>notsuz bir bağlantı isteği</b> (kişiselleştirilmiş istekler "satış alarmı" çalıştırır ve daha az kabul edilir), ardından e-postayı işaret eden kısa, sadece bağlam veren bir mesaj, sonra tek satırlık bir hatırlatma ve istersen kısa bir video. Her LinkedIn teması bir e-posta temasını yansıtır ve yanıt oranını sessizce artırır.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Notsuz bağlan, e-postaya atıf yap, DM’den satış yapma.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> "lobi projesiyle ilgili bir not göndermiştim — ulaştı mı?" yeterli; kataloğu e-postada tut.</div></div>
+    </div>
+  </article>
+
+  <article class="card-c reveal anchor" id="c12">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-phone"/></svg></span><span class="ctag">Ders 12</span><span class="ckicker">Diğer kanallar</span></div>
+    <h3>Soğuk arama ve sesli mesaj, e-posta yanıtlarını katlar</h3>
+    <p class="desc">Veride sekansa arama eklemek <b>e-posta yanıt oranını iki-üç katına çıkardı</b>. Telefonda satışı kapatman gerekmiyor — "Size birazdan e-posta atacağım, geri aramanıza gerek yok, biraz bile ilginizi çekiyorsa yanıtlamanız yeterli" diyen kısa bir sesli mesaj insanları doğrudan gelen kutusuna gönderir. Telefon, e-postayı gerçek kılar.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> E-postayı işaret eden kısa bir sesli mesaj bırak, hemen ardından e-postayı gönder.</div>
+      <div class="mozaik"><span class="pin">★</span><div><b>Mozaik’te:</b> E-postadan önce bırakılan 20 saniyelik bir sesli mesaj, soğuk bir ismi çok daha sık sıcak bir yanıta dönüştürür.</div></div>
+    </div>
+  </article>
+</section>
+
+<!-- ================= RESOURCES ================= -->
+<section class="part" id="resources">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">★</div>
+    <div class="part-label">Kaynaklar</div>
+    <h2>İki araç seti</h2>
+    <p class="lead">Bu eğitim, <b>30 Minutes to President's Club, Gong ve Jason Bay (Outbound Squad)</b> tarafından hazırlanan iki ücretsiz kaynağı özetliyor ve uyarlıyor. Her birinin kendi Academy sayfası var — Mozaik örnek mesajlarıyla sekansın tamamı ve tek sayfada rakamlar — orijinal dosya da indirilebilir.</p>
+  </div>
+  <div class="dl-grid reveal anchor">
+    <a class="dl" href="../sdr-sequence/tr.html">
+      <span class="ic"><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg></span>
+      <span>
+        <span class="t">30 Günlük Outbound Sekansı</span>
+        <span class="d">E-posta, LinkedIn ve telefon üzerinden 14 temasın tamamı, her adım için bir Mozaik örneğiyle. Orijinal DOCX şablon içinde.</span>
+        <span class="ext">SDR Araç Seti · Şablon</span>
+      </span>
+    </a>
+    <a class="dl" href="../sdr-cold-email-data/tr.html">
+      <span class="ic"><svg viewBox="0 0 24 24"><use href="#ic-book"/></svg></span>
+      <span>
+        <span class="t">Rakamlarla Soğuk E-posta</span>
+        <span class="d">85 milyon+ e-posta çalışmasından akılda tutulmaya değer on iki rakam ve gönderim öncesi kontrol listesi. PDF raporun tamamı içinde.</span>
+        <span class="ext">SDR Araç Seti · Özet</span>
+      </span>
+    </a>
+  </div>
+</section>
+
+</div>
+
+<!-- ================= CLOSING ================= -->
+<section class="cta">
+  <div class="inner">
+    <div class="reveal">
+      <span class="micro" style="color:rgba(255,255,255,0.7)">Akılda kalması gereken tek şey</span>
+      <h2 style="margin-top:14px;">Onların sorunu hakkında kısa, insani bir e-posta — yeterince kez, yeterince kanaldan.</h2>
+      <p>Çok zeki olman ya da iki kat çalışman gerekmiyor. Onların dilinde, tek bir gerçek sorun hakkında dört cümle yaz, kolay bir teklif sun ve firmaya bir ay boyunca özenli temaslar ayır. En iyi temsilciler 8 kat toplantıyı böyle alıyor.</p>
+    </div>
+    <div class="principles reveal">
+      <div class="p"><div class="n">01 — E-posta</div><div class="t">Kısa, küçük harfli konu; 100 kelimenin altı; onların dili; toplantı değil teklif.</div></div>
+      <div class="p"><div class="n">02 — Sekans</div><div class="t">30 günde 10–14 temas, her temada tek sorun, önce hatırlat sonra vedalaş.</div></div>
+      <div class="p"><div class="n">03 — Kanallar</div><div class="t">LinkedIn ve aramalar yanıtları e-postaya geri çekmek için var.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="complete" id="completeBox"></div>
+
+<footer class="foot">
+  <div class="inner">
+    <a class="brand" href="../tr.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <div class="src"><b>"The Ultimate Cold Email Data Report" (Gong × 30 Minutes to President's Club × Jason Bay)</b> ve <b>"The 30MPC Outbound Sequence Template"</b> kaynaklarından özetlenip uyarlanmıştır. Orijinal raporların tüm hakları yazarlarına aittir; burada yalnızca Mozaik iç eğitimi için paylaşılmıştır. Diyagramlar özgündür. Kraken Design System ile tasarlanmıştır.</div>
+  </div>
+</footer>
+
+<script src="../shared/course.js" defer></script>
+</body>
+</html>

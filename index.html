@@ -64,6 +64,9 @@
   <symbol id="ic-share" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="M8.3 10.7 15.7 6.3M8.3 13.3l7.4 4.4"/></symbol>
   <symbol id="ic-laptop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="11" rx="1.6"/><path d="M2.5 19h19"/></symbol>
   <symbol id="ic-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.6 12 4l8 6.6V20H4z"/><path d="M9.5 20v-5.4h5V20"/></symbol>
+  <symbol id="ic-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></symbol>
+  <symbol id="ic-funnel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-3 5H6z"/><path d="M6.5 11h11l-2.5 4.5h-6z"/><path d="M10 17.5h4L13 21h-2z"/></symbol>
+  <symbol id="ic-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7.5" y="12" width="3" height="5"/><rect x="12.5" y="8" width="3" height="9"/><rect x="17.5" y="5" width="2.5" height="12"/></symbol>
   <symbol id="ic-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M8 3v3.4c0 2 4 3.6 4 5.6s-4 3.6-4 5.6V21"/><path d="M16 3v3.4c0 2-4 3.6-4 5.6s4 3.6 4 5.6V21"/></symbol>
 </svg>
 
@@ -83,8 +86,8 @@
   <h1>Everything we're learning, <em>in one place.</em></h1>
   <p class="sub">Short, self-contained trainings for the sales, marketing and operations team — each one a single page you can read at your own pace, in English or Turkish. Start anywhere, stop anytime, come back whenever.</p>
   <div class="hero-meta">
-    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">4</div><div class="l">Trainings live</div></div>
-    <div class="stat"><div class="v count">65</div><div class="l">Ideas inside them</div></div>
+    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">5</div><div class="l">Trainings live</div></div>
+    <div class="stat"><div class="v count">3</div><div class="l">Toolkits &amp; 101s</div></div>
     <div class="stat"><div class="v">2</div><div class="l">Languages: EN · TR</div></div>
   </div>
   <div class="hub-progress">
@@ -93,8 +96,10 @@
   </div>
 </header>
 
-<div class="hub-sec">
-  <div class="hub-sec-head"><h2>Trainings</h2><span class="n">3 available</span></div>
+<div class="hub-tabs"><div class="in" role="tablist" aria-label="Academy divisions"><button role="tab" data-tab="all" aria-selected="true">All<span class="c" data-count="all"></span></button><button role="tab" data-tab="trainings" aria-selected="false">Trainings<span class="c" data-count="trainings"></span></button><button role="tab" data-tab="sdr" aria-selected="false">SDR Training<span class="c" data-count="sdr"></span></button><button role="tab" data-tab="101" aria-selected="false">101<span class="c" data-count="101"></span></button></div></div>
+
+<div class="hub-sec" data-div="trainings">
+  <div class="hub-sec-head"><h2>Trainings</h2><span class="n">4 available</span><p class="d">Books and ideas for everyone on the team.</p></div>
   <div class="cgrid">
 <a class="ccard" data-course="hidden-potential" href="hidden-potential/index.html">
   <div class="cover"><span class="ghost">01</span><svg viewBox="0 0 24 24"><use href="#ic-trend"/></svg><span class="lang">EN · TR</span></div>
@@ -139,11 +144,63 @@
   </div>
 </div>
 
-<div class="hub-sec">
+<div class="hub-sec" data-div="sdr">
+  <div class="hub-sec-head"><h2>SDR Training</h2><span class="n">1 training · 2 toolkits</span><p class="d">Cold outbound for the people opening new contract and enterprise accounts.</p></div>
+  <div class="cgrid">
+<a class="ccard" data-course="sdr-cold-outbound" href="sdr-cold-outbound/index.html">
+  <div class="cover rose"><span class="ghost">05</span><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg><span class="lang">EN · TR</span></div>
+  <div class="cbody">
+    <div class="ckick">Gong × 30MPC · Outbound</div>
+    <h3>Cold Outbound that Books Meetings</h3>
+    <p>What actually gets replies, from 85M+ analysed cold emails — subject lines, length, the ask, and a 30-day sequence across email, phone and LinkedIn.</p>
+    <div class="meta"><span>12 lessons</span><span>~25 min</span><span>Contract · Enterprise</span></div>
+  </div>
+  <div class="cfoot"><span class="cstatus"></span><span class="spacer"></span><span class="cgo"></span></div>
+</a>
+<a class="ccard" data-course="sdr-sequence" href="sdr-sequence/index.html">
+  <div class="cover plum"><span class="ghost">S1</span><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg><span class="lang">EN · TR</span></div>
+  <div class="cbody">
+    <div class="ckick">SDR Toolkit · Template</div>
+    <h3>The 30-Day Outbound Sequence</h3>
+    <p>All 14 touches across email, LinkedIn and phone, with a Mozaik example message for every step and why each one works.</p>
+    <div class="meta"><span>14 steps</span><span>~15 min</span><span>+ DOCX template</span></div>
+  </div>
+  <div class="cfoot"><span class="cstatus"></span><span class="spacer"></span><span class="cgo"></span></div>
+</a>
+<a class="ccard" data-course="sdr-cold-email-data" href="sdr-cold-email-data/index.html">
+  <div class="cover berry"><span class="ghost">S2</span><svg viewBox="0 0 24 24"><use href="#ic-chart"/></svg><span class="lang">EN · TR</span></div>
+  <div class="cbody">
+    <div class="ckick">SDR Toolkit · Cheat sheet</div>
+    <h3>Cold Email by the Numbers</h3>
+    <p>The twelve numbers from the 85M-email study worth remembering — plus a pre-send checklist to run before every email.</p>
+    <div class="meta"><span>12 numbers</span><span>~8 min</span><span>+ PDF report</span></div>
+  </div>
+  <div class="cfoot"><span class="cstatus"></span><span class="spacer"></span><span class="cgo"></span></div>
+</a>
+  </div>
+</div>
+
+<div class="hub-sec" data-div="101">
+  <div class="hub-sec-head"><h2>101</h2><span class="n">1 reference</span><p class="d">Short fundamentals every salesperson should know cold.</p></div>
+  <div class="cgrid">
+<a class="ccard" data-course="pipeline-101" href="pipeline-101/index.html">
+  <div class="cover teal"><span class="ghost">101</span><svg viewBox="0 0 24 24"><use href="#ic-funnel"/></svg><span class="lang">EN · TR</span></div>
+  <div class="cbody">
+    <div class="ckick">101 · Sales fundamentals</div>
+    <h3>Pipeline 101</h3>
+    <p>What a pipeline is, the TOFU · MOFU · BOFU funnel at Mozaik, the three health tests, won and lost reasons, and the three rules every opportunity follows.</p>
+    <div class="meta"><span>6 sections</span><span>~10 min</span><span>+ PDF reference</span></div>
+  </div>
+  <div class="cfoot"><span class="cstatus"></span><span class="spacer"></span><span class="cgo"></span></div>
+</a>
+  </div>
+</div>
+
+<div class="hub-sec" data-div="pipeline">
   <div class="hub-sec-head"><h2>In the pipeline</h2><span class="n">planned</span></div>
   <div class="cgrid">
 <div class="ccard soon">
-  <div class="cover grey"><span class="ghost">05</span><svg viewBox="0 0 24 24"><use href="#ic-flag"/></svg></div>
+  <div class="cover grey"><span class="ghost">06</span><svg viewBox="0 0 24 24"><use href="#ic-flag"/></svg></div>
   <div class="cbody">
     <div class="ckick" style="color:var(--silver-blue)">Sales</div>
     <h3>The Mozaik Sales Playbook</h3>
@@ -152,7 +209,7 @@
   <div class="cfoot"><span class="cstatus"></span><span class="spacer"></span><span class="cgo"></span></div>
 </div>
 <div class="ccard soon">
-  <div class="cover grey"><span class="ghost">06</span><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg></div>
+  <div class="cover grey"><span class="ghost">07</span><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg></div>
   <div class="cbody">
     <div class="ckick" style="color:var(--silver-blue)">Customer</div>
     <h3>Customer Conversations</h3>
@@ -161,7 +218,7 @@
   <div class="cfoot"><span class="cstatus"></span><span class="spacer"></span><span class="cgo"></span></div>
 </div>
 <div class="ccard soon">
-  <div class="cover grey"><span class="ghost">07</span><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg></div>
+  <div class="cover grey"><span class="ghost">08</span><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg></div>
   <div class="cbody">
     <div class="ckick" style="color:var(--silver-blue)">Operations</div>
     <h3>Onboarding & SOP</h3>
@@ -183,6 +240,21 @@
     <div class="src">Mozaik Academy — internal training for the Mozaik Design team. Content is for colleagues only, please do not share the link outside the company. Styled in the Kraken Design System.</div>
   </div>
 </footer>
+<script>
+(function(){
+  var tabs=document.querySelectorAll('.hub-tabs [data-tab]'), secs=document.querySelectorAll('.hub-sec[data-div]');
+  function count(k){ var n=0; secs.forEach(function(x){ if(k==='all'? x.getAttribute('data-div')!=='pipeline' : x.getAttribute('data-div')===k) n+=x.querySelectorAll('.ccard:not(.soon)').length; }); return n; }
+  tabs.forEach(function(b){ var c=b.querySelector('[data-count]'); if(c) c.textContent=count(b.getAttribute('data-tab')); });
+  function show(k){
+    if(!document.querySelector('.hub-tabs [data-tab="'+k+'"]')) k='all';
+    tabs.forEach(function(b){ var on=b.getAttribute('data-tab')===k; b.setAttribute('aria-selected', on?'true':'false'); if(on) b.parentNode.scrollLeft=Math.max(0,b.offsetLeft-b.parentNode.offsetLeft-24); });
+    secs.forEach(function(x){ x.hidden = !(k==='all' || x.getAttribute('data-div')===k); });
+  }
+  tabs.forEach(function(b){ b.addEventListener('click', function(){ var k=b.getAttribute('data-tab'); show(k);
+    try{ history.replaceState(null,'', k==='all'? location.pathname+location.search : '#'+k); }catch(e){} }); });
+  show(decodeURIComponent((location.hash||'').slice(1))||'all');
+})();
+</script>
 <script src="shared/course.js" defer></script>
 </body>
 </html>

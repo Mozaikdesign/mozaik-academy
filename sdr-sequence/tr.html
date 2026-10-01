@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>30 Günlük Outbound Sekansı — Mozaik Academy</title>
+<meta name="description" content="30 günlük outbound sekansı: e-posta, LinkedIn ve telefon üzerinden 14 temas; her adım için Mozaik’e uyarlanmış şablonlar.">
+<script>
+(function(){
+  try{
+    var CUR='tr';
+    var saved=localStorage.getItem('mozaik_lang');
+    if(saved && saved!==CUR && location.search.indexOf('l=1')<0){
+      location.replace((CUR==='en'?'tr.html':'index.html')+'?l=1');
+    }
+  }catch(e){}
+})();
+</script>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../shared/course.css">
+<link rel="stylesheet" href="../shared/academy.css">
+<script>window.MOZAIK = {
+  "lang": "tr",
+  "page": "course",
+  "id": "sdr-sequence",
+  "tour": [
+    {
+      "n": "SDR Araç Seti",
+      "t": "Hoş geldin, {name} 👋",
+      "b": "Bu, Soğuk Outbound eğitiminin arkasındaki çalışma şablonu — 30 günlük sekansın tamamı, adım adım, uyarlayabileceğin Mozaik örnek mesajlarıyla. Yaklaşık 15 dakika."
+    },
+    {
+      "n": "Adım 1 / 2",
+      "t": "Kopyala, sonra kendine göre uyarla",
+      "b": "Her şablonun altında neden işe yaradığı yazıyor. Yapıyı koru, detayları kendi müşterine göre değiştir."
+    },
+    {
+      "n": "Adım 2 / 2",
+      "t": "Bitirince tamamlandı olarak işaretle",
+      "b": "Sayfanın en altında “Tamamlandı olarak işaretle” düğmesi var."
+    }
+  ]
+};</script>
+<style>
+.grid2{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+.grid3{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;}
+@media(min-width:900px){.grid2{grid-template-columns:1fr 1fr;gap:20px;}.grid3{grid-template-columns:repeat(3,1fr);}.grid4{grid-template-columns:repeat(4,1fr);}}
+.code-c{background:var(--white);border:1px solid var(--border-gray);border-radius:18px;
+  padding:22px 22px 18px;display:flex;flex-direction:column;box-shadow:var(--shadow-micro);}
+.code-c .card-top{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;}
+.code-c .num{flex:0 0 auto;min-width:34px;height:34px;padding:0 8px;border-radius:10px;display:grid;place-items:center;
+  background:var(--kraken-purple-subtle);color:var(--kraken-purple-deep);
+  font-family:var(--font-mono);font-size:13px;font-weight:700;letter-spacing:-0.02em;}
+.code-c .cicon{flex:0 0 auto;width:26px;height:26px;color:var(--kraken-purple);}
+.code-c .cicon svg{width:26px;height:26px;}
+.code-c .ckicker{font-size:var(--fs-micro);letter-spacing:0.08em;text-transform:uppercase;color:var(--cool-gray);font-weight:600;}
+.code-c h3{font-size:19px;line-height:1.3;margin:0 0 10px;letter-spacing:-0.01em;}
+.code-c .desc{font-size:14.5px;line-height:1.62;color:var(--secondary);margin:0 0 16px;}
+.code-c .callouts{margin-top:auto;display:flex;flex-direction:column;gap:10px;}
+.code-c .takeaway{background:var(--kraken-purple-subtle);border-left:3px solid var(--kraken-purple);
+  border-radius:0 10px 10px 0;padding:11px 14px;font-size:13.5px;line-height:1.55;}
+.code-c .mozaik{display:flex;gap:9px;font-size:13px;line-height:1.55;color:var(--cool-gray);}
+.code-c .mozaik .pin{color:var(--kraken-purple);flex:0 0 auto;}
+.field{background:var(--white);border:1px solid var(--border-gray);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-micro);}
+.field .k{font-weight:700;font-size:15px;color:var(--near-black);}
+.field .v{font-size:13.5px;color:var(--cool-gray);margin-top:4px;line-height:1.45;}
+.field .ic{width:30px;height:30px;border-radius:9px;background:var(--kraken-purple-subtle);color:var(--kraken-purple);display:grid;place-items:center;margin-bottom:10px;}
+.field .ic svg{width:17px;height:17px;}
+.big{font-family:var(--font-brand);font-size:34px;font-weight:700;letter-spacing:-1px;color:var(--kraken-purple);line-height:1;margin:2px 0 10px;}
+.formula{font-family:var(--font-mono);font-size:13px;background:var(--d-box);border-radius:10px;padding:10px 12px;color:var(--near-black);margin:0 0 14px;line-height:1.5;}
+.rlist{list-style:none;margin:18px 0 0;padding:0;border-top:1px solid var(--border-gray);}
+.rlist li{display:flex;gap:14px;align-items:baseline;justify-content:space-between;padding:13px 2px;border-bottom:1px solid var(--border-gray);}
+.rlist .t{font-weight:600;font-size:15px;color:var(--near-black);}
+.rlist .s{font-size:13px;color:var(--cool-gray);text-align:right;}
+.lane-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding-bottom:10px;border-bottom:3px solid var(--kraken-purple);}
+.lane-h.alt{border-bottom-color:var(--warning,#d97706);}
+.lane-h b{font-size:12px;letter-spacing:.08em;text-transform:uppercase;}
+.lane-h span{font-size:12.5px;color:var(--cool-gray);}
+.note{margin-top:22px;background:var(--d-box);border-radius:14px;padding:16px 20px;font-size:14.5px;line-height:1.55;color:var(--near-black);}
+.rules{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+@media(min-width:900px){.rules{grid-template-columns:repeat(3,1fr);}}
+.rule{position:relative;background:linear-gradient(160deg,var(--kraken-purple) 0%,var(--kraken-purple-deep) 100%);color:#fff;border-radius:18px;padding:22px 22px 20px;display:flex;flex-direction:column;min-height:200px;}
+.rule .n{font-family:var(--font-brand);font-size:40px;font-weight:700;opacity:.35;line-height:1;letter-spacing:-1.5px;}
+.rule h3{color:#fff;font-size:18.5px;line-height:1.35;margin:12px 0 10px;}
+.rule ul{margin:0 0 12px;padding-left:18px;font-size:14px;line-height:1.6;color:rgba(255,255,255,.88);}
+.rule .scope{margin-top:auto;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.75);}
+.mail{background:var(--white);border:1px solid var(--border-gray);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-micro);display:flex;flex-direction:column;}
+.mail .mh{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--border-gray);background:#fcfcfd;flex-wrap:wrap;}
+.mail .step{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--kraken-purple-deep);background:var(--kraken-purple-subtle);border-radius:8px;padding:3px 8px;}
+.mail .ch{font-size:12px;font-weight:600;color:var(--cool-gray);}
+.mail .day{margin-left:auto;font-size:12px;color:var(--silver-blue);font-weight:600;}
+.mail .subj{padding:12px 16px 0;font-size:13px;color:var(--cool-gray);}
+.mail .subj b{color:var(--near-black);font-weight:600;}
+.mail .body{padding:10px 16px 14px;font-size:14.5px;line-height:1.6;color:var(--near-black);white-space:pre-line;}
+.mail .why{margin-top:auto;border-top:1px dashed var(--border-gray);padding:11px 16px 13px;font-size:13px;line-height:1.5;color:var(--cool-gray);}
+.mail .why b{color:var(--kraken-purple);}
+.seq{width:100%;border-collapse:collapse;margin-top:22px;font-size:14px;}
+.seq th{text-align:left;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--cool-gray);font-weight:600;padding:8px 10px;border-bottom:2px solid var(--border-gray);}
+.seq td{padding:10px;border-bottom:1px solid var(--border-gray);vertical-align:top;}
+.seq td.n{font-family:var(--font-mono);font-weight:700;color:var(--kraken-purple-deep);width:40px;}
+.seq td.d{color:var(--cool-gray);white-space:nowrap;width:70px;}
+.seq tr.th td{background:var(--kraken-purple-subtle);font-weight:600;color:var(--kraken-purple-deep);font-size:13px;}
+.tchip{display:inline-block;font-size:11.5px;font-weight:700;border-radius:9999px;padding:2px 9px;margin-right:6px;}
+.tchip.e{background:var(--kraken-purple-subtle);color:var(--kraken-purple-deep);}
+.tchip.l{background:#e6f0fd;color:#1f5fbf;}
+.tchip.c{background:var(--d-good-soft);color:var(--d-good-text);}
+.stat-row{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 2px;}
+.stat-chip{background:var(--d-good-soft);color:var(--d-good-text);border-radius:9999px;font-size:13px;font-weight:600;padding:6px 13px;}
+.check{list-style:none;padding:0;margin:22px 0 0;display:grid;grid-template-columns:1fr;gap:10px;}
+@media(min-width:900px){.check{grid-template-columns:1fr 1fr;}}
+.check li{display:flex;gap:12px;align-items:flex-start;background:var(--white);border:1px solid var(--border-gray);border-radius:12px;padding:13px 15px;font-size:14.5px;line-height:1.5;cursor:pointer;user-select:none;}
+.check li .bx{flex:0 0 auto;width:20px;height:20px;border-radius:6px;border:2px solid var(--silver-blue);display:grid;place-items:center;margin-top:1px;}
+.check li .bx svg{width:13px;height:13px;color:#fff;opacity:0;}
+.check li.on{border-color:var(--kraken-purple);background:var(--kraken-purple-subtle);}
+.check li.on .bx{background:var(--kraken-purple);border-color:var(--kraken-purple);}
+.check li.on .bx svg{opacity:1;}
+.dl-row{display:flex;flex-wrap:wrap;gap:16px;margin-top:22px;}
+.dl{flex:1 1 320px;display:flex;gap:14px;align-items:flex-start;text-decoration:none;background:#fff;
+  border:1px solid var(--border-gray);border-radius:14px;padding:18px 20px;transition:border-color .15s, box-shadow .15s;}
+.dl:hover{border-color:var(--kraken-purple);box-shadow:0 10px 30px rgba(40,30,90,.10);text-decoration:none;}
+.dl .ic{flex:0 0 auto;width:40px;height:40px;border-radius:10px;background:var(--kraken-purple-subtle);color:var(--kraken-purple);display:flex;align-items:center;justify-content:center;}
+.dl .ic svg{width:22px;height:22px;}
+.dl .t{display:block;font-weight:600;color:#101114;font-size:15px;}
+.dl .d{display:block;font-size:13px;color:var(--cool-gray);margin-top:3px;line-height:1.45;}
+.dl .ext{display:block;font-size:11.5px;font-weight:700;letter-spacing:.4px;color:var(--kraken-purple);margin-top:7px;}
+.fig-cap{font-size:12.5px;color:var(--cool-gray);margin-top:8px;}
+@media(max-width:600px){.code-c{padding:18px 18px 16px;}.code-c h3{font-size:17.5px;}.seq td.d{white-space:normal;}}
+</style>
+<script>
+document.addEventListener('click',function(e){var li=e.target.closest('.check li');if(li)li.classList.toggle('on');});
+</script>
+<script src="../shared/academy.js" defer></script>
+</head>
+<body>
+<div id="gate"><div class="card" id="gateCard"></div></div>
+<div class="progress" id="progress"></div>
+
+<svg class="iconsheet" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="_ic" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></g>
+  </defs>
+  <symbol id="ic-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></symbol>
+  <symbol id="ic-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-5 4z"/></symbol>
+  <symbol id="ic-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8.5V20l-4-2.5v-4z"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 17l-5.4 2.7 1.2-6.1L3.3 9.4l6.1-.8z"/></symbol>
+  <symbol id="ic-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ic-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H14a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5.5"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M18 20a6 6 0 0 0-3.5-5.5"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-11"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2.4 5.6L8 16l2.4-5.6z"/></symbol>
+  <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l1.5 5-2 1.3a12 12 0 0 0 6.2 6.2l1.3-2 5 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></symbol>
+  <symbol id="ic-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M8 3v3.4c0 2 4 3.6 4 5.6s-4 3.6-4 5.6V21"/><path d="M16 3v3.4c0 2-4 3.6-4 5.6s4 3.6 4 5.6V21"/></symbol>
+  <symbol id="ic-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M19 18v3H6.5A2.5 2.5 0 0 1 4 18.5"/></symbol>
+  <symbol id="ic-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1.5A3.5 3.5 0 0 0 7 11M17 6h3v1.5A3.5 3.5 0 0 1 17 11M9.5 19h5M10 14.5l-.5 4.5h5l-.5-4.5"/></symbol>
+  <symbol id="ic-funnel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-3 5H6z"/><path d="M6.5 11h11l-2.5 4.5h-6z"/><path d="M10 17.5h4L13 21h-2z"/></symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></symbol>
+  <symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="ic-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></symbol>
+  <symbol id="ic-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7.5" y="12" width="3" height="5"/><rect x="12.5" y="8" width="3" height="9"/><rect x="17.5" y="5" width="2.5" height="12"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+</svg>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="../tr.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <a class="backlink" href="../tr.html">← Academy</a>
+    <a class="langswitch navlang" href="index.html" data-setlang="en">English</a>
+    <div class="spacer"></div>
+    <div class="toc" id="toc">
+      <a href="#s1">Yapı</a>
+      <a href="#s2">Adımlar</a>
+      <a href="#s3">Tema 1</a>
+      <a href="#s4">Tema 2</a>
+      <a href="#s5">Net cevap</a>
+      <a href="#s6">LinkedIn</a>
+      <a href="#resources">İndir</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#s1">Sekansın yapısı</a>
+  <a href="#s2">14 adımın tamamı</a>
+  <a href="#s3">Tema 1 — en büyük sorun</a>
+  <a href="#s4">Tema 2 — sıradaki sorun</a>
+  <a href="#s5">Tema 3 — net cevap al</a>
+  <a href="#s6">LinkedIn ve telefon</a>
+  <a href="#resources">Şablonu indir</a>
+</div>
+
+<header class="hero">
+  <span class="eyebrow"><span class="dot"></span><span class="micro" style="color:var(--kraken-purple)">SDR Araç Seti · Sekans Şablonu</span></span>
+  <h1>On dört temas, otuz gün. <em>Cevap almak için kuruldu — evet ya da hayır.</em></h1>
+  <p class="sub">Soğuk outbound eğitimimizin arkasındaki çalışma şablonu: bir firma, bir ay, üç tema, üç kanal. Her adım bir Mozaik örneğiyle yazıldı — yeni bir tesis açan bir otel grubu — böylece neyin, ne zaman ve neden gittiğini tam olarak görürsün.</p>
+  <div class="hero-meta">
+    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">14</div><div class="l">Temas</div></div>
+    <div class="stat"><div class="v count">30</div><div class="l">Gün</div></div>
+    <div class="stat"><div class="v">7·4·3</div><div class="l">E-posta · arama · LinkedIn</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="part" id="s1">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">01</div>
+    <div class="part-label">Bölüm 01 — Yapı</div>
+    <h2>Bir firma, bir ay, üç tema</h2>
+    <p class="lead">İyi bir firmanın kapısını açmak tek e-postadan fazlasını ister. Sekans 14 teması 30 güne yayar, üç temaya ayırır ve telefonla LinkedIn’i dikkati gelen kutusuna geri çekmek için kullanır.</p>
+  </div>
+  <div class="reveal" style="margin-top:22px"><div class="fig">
+    <svg viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg"><rect class="fg" style="--i:0" x="111.6" y="34" width="159.9" height="196" rx="10" fill="var(--d-grow-soft)"/><text class="fg" style="--i:0" x="191.5" y="24" fill="var(--near-black)" font-size="12.5" font-weight="600" text-anchor="middle">1. büyük sorun</text><rect class="fg" style="--i:1" x="315.6" y="34" width="124.1" height="196" rx="10" fill="rgba(133,91,251,0.08)"/><text class="fg" style="--i:1" x="377.7" y="24" fill="var(--near-black)" font-size="12.5" font-weight="600" text-anchor="middle">2. büyük sorun</text><rect class="fg" style="--i:2" x="483.9" y="34" width="124.1" height="196" rx="10" fill="var(--d-bad-soft)"/><text class="fg" style="--i:2" x="545.9" y="24" fill="var(--near-black)" font-size="12.5" font-weight="600" text-anchor="middle">net cevap al</text><line class="fg" style="--i:0" x1="112.0" y1="75" x2="734.0" y2="75" stroke="var(--d-axis)" stroke-width="1.5" stroke-dasharray="3 4"/><text class="fg" style="--i:0" x="104" y="79" fill="var(--kraken-purple)" font-size="12.5" font-weight="700" text-anchor="end">E-posta</text><line class="fg" style="--i:0" x1="112.0" y1="132" x2="734.0" y2="132" stroke="var(--d-axis)" stroke-width="1.5" stroke-dasharray="3 4"/><text class="fg" style="--i:0" x="104" y="136" fill="#1f7ae0" font-size="12.5" font-weight="700" text-anchor="end">LinkedIn</text><line class="fg" style="--i:0" x1="112.0" y1="189" x2="734.0" y2="189" stroke="var(--d-axis)" stroke-width="1.5" stroke-dasharray="3 4"/><text class="fg" style="--i:0" x="104" y="193" fill="var(--success)" font-size="12.5" font-weight="700" text-anchor="end">Arama</text><circle class="fg" style="--i:2" cx="120.0" cy="75" r="8" fill="var(--kraken-purple)"/><circle class="fg" style="--i:2" cx="162.1" cy="75" r="8" fill="var(--kraken-purple)"/><circle class="fg" style="--i:3" cx="246.2" cy="75" r="8" fill="var(--kraken-purple)"/><circle class="fg" style="--i:4" cx="330.3" cy="75" r="8" fill="var(--kraken-purple)"/><circle class="fg" style="--i:5" cx="414.5" cy="75" r="8" fill="var(--kraken-purple)"/><circle class="fg" style="--i:5" cx="498.6" cy="75" r="8" fill="var(--kraken-purple)"/><circle class="fg" style="--i:6" cx="582.8" cy="75" r="8" fill="var(--kraken-purple)"/><circle class="fg" style="--i:2" cx="120.0" cy="132" r="8" fill="#1f7ae0"/><circle class="fg" style="--i:2" cx="162.1" cy="132" r="8" fill="#1f7ae0"/><circle class="fg" style="--i:3" cx="246.2" cy="132" r="8" fill="#1f7ae0"/><circle class="fg" style="--i:2" cx="162.1" cy="189" r="8" fill="var(--success)"/><circle class="fg" style="--i:3" cx="246.2" cy="189" r="8" fill="var(--success)"/><circle class="fg" style="--i:4" cx="330.3" cy="189" r="8" fill="var(--success)"/><circle class="fg" style="--i:5" cx="414.5" cy="189" r="8" fill="var(--success)"/><text class="fg" style="--i:0" x="120.0" y="258" fill="var(--silver-blue)" font-size="11.5" text-anchor="middle">1. gün</text><text class="fg" style="--i:0" x="246.2" y="258" fill="var(--silver-blue)" font-size="11.5" text-anchor="middle">7. gün</text><text class="fg" style="--i:0" x="393.4" y="258" fill="var(--silver-blue)" font-size="11.5" text-anchor="middle">14. gün</text><text class="fg" style="--i:0" x="540.7" y="258" fill="var(--silver-blue)" font-size="11.5" text-anchor="middle">21. gün</text><text class="fg" style="--i:0" x="730.0" y="258" fill="var(--silver-blue)" font-size="11.5" text-anchor="middle">30. gün</text><text class="fg" style="--i:6" x="671.1" y="136" fill="var(--cool-gray)" font-size="12" text-anchor="middle">firmayı</text><text class="fg" style="--i:6" x="671.1" y="152" fill="var(--cool-gray)" font-size="12" text-anchor="middle">dinlendir</text></svg>
+  </div><div class="fig-cap">Güne ve kanala göre temaslar. LinkedIn 2. temada, aramalar 3. temada bırakılır.</div></div>
+  <div class="grid3">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-calendar"/></svg></span><span class="ckicker">10–14 temas</span></div>
+    <h3>Bir ay ver</h3>
+    <p class="desc">İyi bir firmaya girmek zaman alır. Bir aylık özenli temas, birden fazla sorunu gündeme getirmeni ve ciddi olduğunu göstermeni sağlar.</p>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg></span><span class="ckicker">Çok kanallı</span></div>
+    <h3>Kanallara yay</h3>
+    <p class="desc">Tek kanaldan 14 e-posta rahatsız edicidir. Aynı temaslar e-posta, telefon ve LinkedIn’e yayıldığında normal hissettirir — ve e-posta yanıtlarını kabaca ikiye katlar.</p>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-target"/></svg></span><span class="ckicker">Her seferinde tek konu</span></div>
+    <h3>Her temada tek sorun sat</h3>
+    <p class="desc">Her şeyi tek e-postaya sıkıştırma. En büyük sorunla başla; tutmazsa bir sonrakine geç.</p>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg></span><span class="ckicker">Yeni tema, yeni konu</span></div>
+    <h3>Konu satırını değiştir</h3>
+    <p class="desc">Hatırlatmalar aynı yazışmada gider. Tema her değiştiğinde konu satırını da değiştir ki yeni bir şey gibi okunsun.</p>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-hourglass"/></svg></span><span class="ckicker">Azalan getiri</span></div>
+    <h3>Kanalları azalt</h3>
+    <p class="desc">LinkedIn’i 2. temada, aramaları 3. temada bırak. O zamanı açma ihtimali daha yüksek yeni firmalara ayır.</p>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="s2">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">02</div>
+    <div class="part-label">Bölüm 02 — Adımlar</div>
+    <h2>14 adımın tamamı tek sayfada</h2>
+    <p class="lead">Bir firmaya başladığında bunu takvimine ya da CRM görev listene gir. Günler ilk e-postadan itibaren sayılır.</p>
+  </div>
+  <div class="reveal"><table class="seq"><thead><tr><th>#</th><th>Gün</th><th>Görev</th></tr></thead><tbody>
+    <tr class="th"><td colspan="3">1. büyük sorun — kişiselleştirilmiş ilk e-posta + konu satırı</td></tr>
+    <tr><td class="n">01</td><td class="d">1. gün</td><td><span class="tchip e">E-posta</span>en büyük sorun</td></tr>
+    <tr><td class="n">02</td><td class="d">1. gün</td><td><span class="tchip l">LinkedIn</span>notsuz bağlantı isteği</td></tr>
+    <tr><td class="n">03</td><td class="d">3. gün</td><td><span class="tchip c">Arama</span>1. sesli mesaj</td></tr>
+    <tr><td class="n">04</td><td class="d">3. gün</td><td><span class="tchip e">E-posta</span>hatırlatma</td></tr>
+    <tr><td class="n">05</td><td class="d">3. gün</td><td><span class="tchip l">LinkedIn</span>sadece bağlam mesajı</td></tr>
+    <tr><td class="n">06</td><td class="d">7. gün</td><td><span class="tchip c">Arama</span>2. sesli mesaj</td></tr>
+    <tr><td class="n">07</td><td class="d">7. gün</td><td><span class="tchip e">E-posta</span>somutlaştır</td></tr>
+    <tr><td class="n">08</td><td class="d">7. gün</td><td><span class="tchip l">LinkedIn</span>hatırlatma</td></tr>
+    <tr class="th"><td colspan="3">2. büyük sorun — yeni konu satırı, LinkedIn bırakılır</td></tr>
+    <tr><td class="n">09</td><td class="d">11. gün</td><td><span class="tchip c">Arama</span>sesli mesaj yok</td></tr>
+    <tr><td class="n">10</td><td class="d">11. gün</td><td><span class="tchip e">E-posta</span>2. büyük sorun</td></tr>
+    <tr><td class="n">11</td><td class="d">15. gün</td><td><span class="tchip c">Arama</span>sesli mesaj yok</td></tr>
+    <tr><td class="n">12</td><td class="d">15. gün</td><td><span class="tchip e">E-posta</span>doğru kişi mi?</td></tr>
+    <tr class="th"><td colspan="3">Net cevap al — yeni konu satırı, aramalar bırakılır</td></tr>
+    <tr><td class="n">13</td><td class="d">19. gün</td><td><span class="tchip e">E-posta</span>ilgilenmiyor musunuz?</td></tr>
+    <tr><td class="n">14</td><td class="d">23. gün</td><td><span class="tchip e">E-posta</span>konuyu kapat</td></tr>
+  </tbody></table>
+  <div class="stat-row"><span class="stat-chip">Sekans karması: 7 e-posta · 4 arama · 3 LinkedIn</span></div></div>
+</section>
+
+<section class="part" id="s3">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">03</div>
+    <div class="part-label">Bölüm 03 — Tema 1</div>
+    <h2>En iyi e-postan ve görülmesi için iki şans daha</h2>
+    <p class="lead">İlk e-posta en iyi, en kişisel e-postandır: bir soruna bağlanan bir tetikleyici → tek cümlelik çözüm → ilgi soran bir kapanış. Arkasından gelen iki hatırlatma satışı tekrar anlatmaz; sadece o e-postaya iki şans daha verir.</p>
+  </div>
+  <div class="grid3">
+  <div class="mail reveal">
+    <div class="mh"><span class="step">01</span><span class="ch">E-posta · yeni yazışma</span><span class="day">1. gün</span></div>
+    <div class="subj">Konu: <b>bodrum açılışı</b></div>
+    <div class="body">Merhaba Selin Hanım,
+
+Grubun Bodrum tesisini önümüzdeki bahar açacağını gördüm — sabit bir tarihte 80 oda, özel üretim mobilya için sıkışık bir takvim.
+
+Risk genelde tasarımda değil, üretimin soft opening’den önce yetişip yetişmemesinde. Mobilya ve aydınlatmayı kendi atölyelerimizde üretiyoruz; takvimin baştan sona tek sahibi oluyor.
+
+Odaları açılış tarihinize göre nasıl planlayacağımıza bakmaya açık mısınız?</div>
+    <div class="why"><b>Neden işe yarar:</b> Gerçek bir tetikleyici (yeni tesis), gerçek bir soruna bağlanıyor (açılış tarihi); tek cümle çözüm ve 30 dakika değil, ilgi isteyen bir kapanış. 80 kelimenin altında.</div>
+  </div>
+  <div class="mail reveal">
+    <div class="mh"><span class="step">04</span><span class="ch">E-posta · aynı yazışma</span><span class="day">3. gün</span></div>
+    <div class="subj">Konu: <b>Ynt: bodrum açılışı</b></div>
+    <div class="body">Merhaba Selin Hanım, az önce telefonla ulaşmaya çalıştım.
+
+Ne düşünürsünüz?</div>
+    <div class="why"><b>Neden işe yarar:</b> Aramadan bahseden tek satır (kanallar birbirine bağlansın) ve 1. e-postaya işaret. Kısa hatırlatmalar orijinal kadar yanıt alır.</div>
+  </div>
+  <div class="mail reveal">
+    <div class="mh"><span class="step">07</span><span class="ch">E-posta · aynı yazışma</span><span class="day">7. gün</span></div>
+    <div class="subj">Konu: <b>Ynt: bodrum açılışı</b></div>
+    <div class="body">Sesli mesaj bıraktım. Tek takvimle mobilyasını ve aydınlatmasını yaptığımız 60 odalı bir otelin 1 dakikalık turu burada — lobiden odalara.
+
+Bodrum için göz atmaya değer mi?</div>
+    <div class="why"><b>Neden işe yarar:</b> Yanıt vermeye çok yakın olanlar için “somutlaştır”: gözlerinde canlandırabilecekleri kısa bir örnek ya da video. Yine kısa, yine tek talep.</div>
+  </div>
+  </div>
+</section>
+
+<section class="part" id="s4">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">04</div>
+    <div class="part-label">Bölüm 04 — Tema 2</div>
+    <h2>İlk sorun tutmadıysa sıradakini dene</h2>
+    <p class="lead">Yeni konu satırı, yeni sorun. 1. e-postadaki kişiselleştirmeyi tekrar kullan ve ikinci büyük sorununa bağla. O da işe yaramazsa doğru kişiyle konuşup konuşmadığını sor.</p>
+  </div>
+  <div class="grid2">
+  <div class="mail reveal">
+    <div class="mh"><span class="step">10</span><span class="ch">E-posta · yeni yazışma</span><span class="day">11. gün</span></div>
+    <div class="subj">Konu: <b>aydınlatma ve mobilya</b></div>
+    <div class="body">Merhaba Selin Hanım,
+
+Bodrum gibi projelerde mobilya ve aydınlatma genelde iki tedarikçi, iki takvim ve sahada iki ayrı gecikme demek.
+
+İkisini de biz tasarlıyor ve üretiyoruz; birlikte gelip birlikte kuruluyor.
+
+Birleşik bir oda paketi görmek işinize yarar mı?</div>
+    <div class="why"><b>Neden işe yarar:</b> Aynı tetikleyici, farklı sorun. Yeni konu satırı bunu tekrar değil, yeni bir konuşma gibi okutur.</div>
+  </div>
+  <div class="mail reveal">
+    <div class="mh"><span class="step">12</span><span class="ch">E-posta · aynı yazışma</span><span class="day">15. gün</span></div>
+    <div class="subj">Konu: <b>Ynt: aydınlatma ve mobilya</b></div>
+    <div class="body">Merhaba Selin Hanım — sizin alanınız değilse yazmaya devam etmek istemem.
+
+Bodrum projesinde mobilya ve aydınlatmayı başka biri mi yürütüyor?</div>
+    <div class="why"><b>Neden işe yarar:</b> Kolay ve kibar bir yanıt imkânı verir. Doğru kişi çoğu zaman yanıtlar ve nerede durduğunu söyler; yanlış kişi seni doğru kişiye yönlendirir.</div>
+  </div>
+  </div>
+</section>
+
+<section class="part" id="s5">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">05</div>
+    <div class="part-label">Bölüm 05 — Tema 3</div>
+    <h2>Bu noktada tek istediğin bir cevap</h2>
+    <p class="lead">Vedalaşma e-postaları işe yarar, çünkü “yazacağım” deyip yazmayanlara ulaşır. Net bir evet ya da hayır iste, sonra konuyu kibarca kapat ve geride işe yarar bir şey bırak. Profesyonel kal — hile yok.</p>
+  </div>
+  <div class="grid2">
+  <div class="mail reveal">
+    <div class="mh"><span class="step">13</span><span class="ch">E-posta · yeni yazışma</span><span class="day">19. gün</span></div>
+    <div class="subj">Konu: <b>konuyu kapatayım mı?</b></div>
+    <div class="body">Merhaba Selin Hanım,
+
+Bodrum odaları için birkaç şekilde nasıl yardımcı olabileceğimizi paylaştım.
+
+Konuşmaya değer mi, yoksa konuyu kendi tarafımda kapatayım mı?</div>
+    <div class="why"><b>Neden işe yarar:</b> Daha önce gönderdiklerine atıf yapar ve “hayır”ı kolay, kabul edilebilir bir cevap yapar. Son yanıtları getiren budur.</div>
+  </div>
+  <div class="mail reveal">
+    <div class="mh"><span class="step">14</span><span class="ch">E-posta · aynı yazışma</span><span class="day">23. gün</span></div>
+    <div class="subj">Konu: <b>Ynt: konuyu kapatayım mı?</b></div>
+    <div class="body">Merhaba Selin Hanım, şimdilik zamanlamanın uygun olmadığını varsayıyorum.
+
+İleride işinize yararsa otel projelerimizin kitapçığı burada. Yazmayı bırakıyorum — uygun olduğunda buradan yanıtlamanız yeterli.</div>
+    <div class="why"><b>Neden işe yarar:</b> Vedalaşmayı kabul et, kısa tek bir kaynak bırak ve yazmayı bıraktığını söyle. Kapı açık kalır, itibarın da yerinde.</div>
+  </div>
+  </div>
+</section>
+
+<section class="part" id="s6">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">06</div>
+    <div class="part-label">Bölüm 06 — LinkedIn ve telefon</div>
+    <h2>Diğer kanallar e-posta yanıtlarını artırmak için var</h2>
+    <p class="lead">İnsanlar LinkedIn içinde ya da ilk soğuk aramada nadiren toplantıyı kabul eder. Bu kanalların görevi adına bir yüz ve ses kazandırmak ve insanları gelen kutusuna geri göndermek.</p>
+  </div>
+  <div class="grid2">
+  <div class="mail reveal">
+    <div class="mh"><span class="step">02</span><span class="ch">LinkedIn · bağlantı</span><span class="day">1. gün</span></div>
+    <div class="body"><i>(not yok)</i></div>
+    <div class="why"><b>Neden işe yarar:</b> Notsuz istekler daha sık kabul edilir. Kişisel not, e-postanı okumadan “satış alarmı”nı çalıştırır.</div>
+  </div>
+  <div class="mail reveal">
+    <div class="mh"><span class="step">05</span><span class="ch">LinkedIn · mesaj</span><span class="day">3. gün</span></div>
+    <div class="body">Merhaba Selin Hanım — Bodrum açılışı haberini gördüm ve size e-postayla kısa bir not gönderdim. Yeni tesisiniz hayırlı olsun.</div>
+    <div class="why"><b>Neden işe yarar:</b> Sadece bağlam. DM’den satış yok — o, az önce aldıkları e-postada.</div>
+  </div>
+  <div class="mail reveal">
+    <div class="mh"><span class="step">08</span><span class="ch">LinkedIn · mesaj</span><span class="day">7. gün</span></div>
+    <div class="body">Ne düşünürsünüz?</div>
+    <div class="why"><b>Neden işe yarar:</b> E-posta hatırlatmasının aynısı. İstersen bitmiş bir projeyi gösteren 60 saniyelik bir videoyla değiştir.</div>
+  </div>
+  <div class="mail reveal">
+    <div class="mh"><span class="step">03</span><span class="ch">Arama · sesli mesaj</span><span class="day">3. gün</span></div>
+    <div class="body">“Merhaba Selin Hanım, ben Mozaik Design’dan Deniz. Bodrum odalarıyla ilgili size birazdan bir e-posta göndereceğim — geri aramanıza gerek yok, biraz bile ilginizi çekerse oradan yanıtlamanız yeterli.”</div>
+    <div class="why"><b>Neden işe yarar:</b> Telefonda satışı kapatmıyorsun. E-postayı gerçek kılıyorsun. Sesli mesajın hemen ardından gönder.</div>
+  </div>
+  </div>
+</section>
+
+<section class="part" id="resources">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">★</div>
+    <div class="part-label">Kaynaklar</div>
+    <h2>Orijinal şablon</h2>
+    <p class="lead">Örnek sekansı, ilkeleri ve ek okumalarıyla kaynak şablonun tamamı (İngilizce). Yukarıdaki Mozaik örnekleri bizim uyarlamamız.</p>
+  </div>
+  <div class="dl-row reveal">
+  <a class="dl" href="../sdr-cold-outbound/The-30MPC-Outbound-Sequence-Template.docx" download>
+    <span class="ic"><svg viewBox="0 0 24 24"><use href="#ic-download"/></svg></span>
+    <span><span class="t">The 30MPC Outbound Sequence Template</span><span class="d">E-posta, LinkedIn ve telefon üzerinden 10–14 temaslı, 30 günlük orijinal sekans ve örnek mesajlar.</span><span class="ext">DOCX · İngilizce · 30 Minutes to President’s Club</span></span>
+  </a>
+  <a class="dl" href="../sdr-cold-outbound/tr.html">
+    <span class="ic"><svg viewBox="0 0 24 24"><use href="#ic-book"/></svg></span>
+    <span><span class="t">Eğitim: Toplantı Getiren Soğuk Outbound</span><span class="d">Bu şablonun ait olduğu 12 derslik eğitim — her adımın neden işe yaradığı.</span><span class="ext">Mozaik Academy · Eğitim 05</span></span>
+  </a>
+  </div>
+</section>
+
+</div>
+
+<section class="cta">
+  <div class="inner">
+    <div class="reveal">
+      <span class="micro" style="color:rgba(255,255,255,0.7)">Akılda kalması gereken tek şey</span>
+      <h2 style="margin-top:14px;">İlk e-postayı göndermeden önce ayı planla.</h2>
+      <p>Firmayı seç, iki sorun seç, ilk e-postayı iyi yaz — sonra işi sekansa bırak: hatırlat, somutlaştır, sorunu değiştir, net cevap iste.</p>
+    </div>
+    <div class="principles reveal">
+      <div class="p"><div class="n">01 — Yapı</div><div class="t">14 temas · 30 gün · 3 tema · 3 kanal.</div></div>
+      <div class="p"><div class="n">02 — E-postalar</div><div class="t">Önce en iyi e-posta, tek satırlık hatırlatmalar, her temada yeni konu.</div></div>
+      <div class="p"><div class="n">03 — Kanallar</div><div class="t">LinkedIn ve aramalar gelen kutusuna işaret eder.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="complete" id="completeBox"></div>
+
+<footer class="foot">
+  <div class="inner">
+    <a class="brand" href="../tr.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <div class="src"><b>“The 30MPC Outbound Sequence Template”</b> (30 Minutes to President’s Club) kaynağından uyarlanmıştır. Sekans yapısı onlara aittir; Mozaik örnekleri özgündür. Orijinalin tüm hakları yazarlarına aittir; burada yalnızca Mozaik iç eğitimi için paylaşılmıştır. Kraken Design System ile tasarlanmıştır.</div>
+  </div>
+</footer>
+
+<script src="../shared/course.js" defer></script>
+</body>
+</html>

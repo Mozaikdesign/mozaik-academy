@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rakamlarla Soğuk E-posta — Mozaik Academy</title>
+<meta name="description" content="85 milyon+ soğuk e-postanın konu satırı, uzunluk, kişiselleştirme, CTA ve takip hakkında söylediklerinin tek sayfalık özeti.">
+<script>
+(function(){
+  try{
+    var CUR='tr';
+    var saved=localStorage.getItem('mozaik_lang');
+    if(saved && saved!==CUR && location.search.indexOf('l=1')<0){
+      location.replace((CUR==='en'?'tr.html':'index.html')+'?l=1');
+    }
+  }catch(e){}
+})();
+</script>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../shared/course.css">
+<link rel="stylesheet" href="../shared/academy.css">
+<script>window.MOZAIK = {
+  "lang": "tr",
+  "page": "course",
+  "id": "sdr-cold-email-data",
+  "tour": [
+    {
+      "n": "SDR Araç Seti",
+      "t": "Hoş geldin, {name} 👋",
+      "b": "Soğuk Outbound eğitiminin arkasındaki rakamlar tek sayfada — bir sekans yazmadan önce göz at. Yaklaşık 8 dakika."
+    },
+    {
+      "n": "Adım 1 / 2",
+      "t": "Kontrol listesini kullan",
+      "b": "Bölüm 04 bir gönderim öncesi kontrol listesi. E-postanı kontrol ettikçe satırlara dokun."
+    },
+    {
+      "n": "Adım 2 / 2",
+      "t": "Bitirince tamamlandı olarak işaretle",
+      "b": "Sayfanın en altında “Tamamlandı olarak işaretle” düğmesi var."
+    }
+  ]
+};</script>
+<style>
+.grid2{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+.grid3{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;}
+@media(min-width:900px){.grid2{grid-template-columns:1fr 1fr;gap:20px;}.grid3{grid-template-columns:repeat(3,1fr);}.grid4{grid-template-columns:repeat(4,1fr);}}
+.code-c{background:var(--white);border:1px solid var(--border-gray);border-radius:18px;
+  padding:22px 22px 18px;display:flex;flex-direction:column;box-shadow:var(--shadow-micro);}
+.code-c .card-top{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;}
+.code-c .num{flex:0 0 auto;min-width:34px;height:34px;padding:0 8px;border-radius:10px;display:grid;place-items:center;
+  background:var(--kraken-purple-subtle);color:var(--kraken-purple-deep);
+  font-family:var(--font-mono);font-size:13px;font-weight:700;letter-spacing:-0.02em;}
+.code-c .cicon{flex:0 0 auto;width:26px;height:26px;color:var(--kraken-purple);}
+.code-c .cicon svg{width:26px;height:26px;}
+.code-c .ckicker{font-size:var(--fs-micro);letter-spacing:0.08em;text-transform:uppercase;color:var(--cool-gray);font-weight:600;}
+.code-c h3{font-size:19px;line-height:1.3;margin:0 0 10px;letter-spacing:-0.01em;}
+.code-c .desc{font-size:14.5px;line-height:1.62;color:var(--secondary);margin:0 0 16px;}
+.code-c .callouts{margin-top:auto;display:flex;flex-direction:column;gap:10px;}
+.code-c .takeaway{background:var(--kraken-purple-subtle);border-left:3px solid var(--kraken-purple);
+  border-radius:0 10px 10px 0;padding:11px 14px;font-size:13.5px;line-height:1.55;}
+.code-c .mozaik{display:flex;gap:9px;font-size:13px;line-height:1.55;color:var(--cool-gray);}
+.code-c .mozaik .pin{color:var(--kraken-purple);flex:0 0 auto;}
+.field{background:var(--white);border:1px solid var(--border-gray);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-micro);}
+.field .k{font-weight:700;font-size:15px;color:var(--near-black);}
+.field .v{font-size:13.5px;color:var(--cool-gray);margin-top:4px;line-height:1.45;}
+.field .ic{width:30px;height:30px;border-radius:9px;background:var(--kraken-purple-subtle);color:var(--kraken-purple);display:grid;place-items:center;margin-bottom:10px;}
+.field .ic svg{width:17px;height:17px;}
+.big{font-family:var(--font-brand);font-size:34px;font-weight:700;letter-spacing:-1px;color:var(--kraken-purple);line-height:1;margin:2px 0 10px;}
+.formula{font-family:var(--font-mono);font-size:13px;background:var(--d-box);border-radius:10px;padding:10px 12px;color:var(--near-black);margin:0 0 14px;line-height:1.5;}
+.rlist{list-style:none;margin:18px 0 0;padding:0;border-top:1px solid var(--border-gray);}
+.rlist li{display:flex;gap:14px;align-items:baseline;justify-content:space-between;padding:13px 2px;border-bottom:1px solid var(--border-gray);}
+.rlist .t{font-weight:600;font-size:15px;color:var(--near-black);}
+.rlist .s{font-size:13px;color:var(--cool-gray);text-align:right;}
+.lane-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding-bottom:10px;border-bottom:3px solid var(--kraken-purple);}
+.lane-h.alt{border-bottom-color:var(--warning,#d97706);}
+.lane-h b{font-size:12px;letter-spacing:.08em;text-transform:uppercase;}
+.lane-h span{font-size:12.5px;color:var(--cool-gray);}
+.note{margin-top:22px;background:var(--d-box);border-radius:14px;padding:16px 20px;font-size:14.5px;line-height:1.55;color:var(--near-black);}
+.rules{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+@media(min-width:900px){.rules{grid-template-columns:repeat(3,1fr);}}
+.rule{position:relative;background:linear-gradient(160deg,var(--kraken-purple) 0%,var(--kraken-purple-deep) 100%);color:#fff;border-radius:18px;padding:22px 22px 20px;display:flex;flex-direction:column;min-height:200px;}
+.rule .n{font-family:var(--font-brand);font-size:40px;font-weight:700;opacity:.35;line-height:1;letter-spacing:-1.5px;}
+.rule h3{color:#fff;font-size:18.5px;line-height:1.35;margin:12px 0 10px;}
+.rule ul{margin:0 0 12px;padding-left:18px;font-size:14px;line-height:1.6;color:rgba(255,255,255,.88);}
+.rule .scope{margin-top:auto;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.75);}
+.mail{background:var(--white);border:1px solid var(--border-gray);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-micro);display:flex;flex-direction:column;}
+.mail .mh{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--border-gray);background:#fcfcfd;flex-wrap:wrap;}
+.mail .step{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--kraken-purple-deep);background:var(--kraken-purple-subtle);border-radius:8px;padding:3px 8px;}
+.mail .ch{font-size:12px;font-weight:600;color:var(--cool-gray);}
+.mail .day{margin-left:auto;font-size:12px;color:var(--silver-blue);font-weight:600;}
+.mail .subj{padding:12px 16px 0;font-size:13px;color:var(--cool-gray);}
+.mail .subj b{color:var(--near-black);font-weight:600;}
+.mail .body{padding:10px 16px 14px;font-size:14.5px;line-height:1.6;color:var(--near-black);white-space:pre-line;}
+.mail .why{margin-top:auto;border-top:1px dashed var(--border-gray);padding:11px 16px 13px;font-size:13px;line-height:1.5;color:var(--cool-gray);}
+.mail .why b{color:var(--kraken-purple);}
+.seq{width:100%;border-collapse:collapse;margin-top:22px;font-size:14px;}
+.seq th{text-align:left;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--cool-gray);font-weight:600;padding:8px 10px;border-bottom:2px solid var(--border-gray);}
+.seq td{padding:10px;border-bottom:1px solid var(--border-gray);vertical-align:top;}
+.seq td.n{font-family:var(--font-mono);font-weight:700;color:var(--kraken-purple-deep);width:40px;}
+.seq td.d{color:var(--cool-gray);white-space:nowrap;width:70px;}
+.seq tr.th td{background:var(--kraken-purple-subtle);font-weight:600;color:var(--kraken-purple-deep);font-size:13px;}
+.tchip{display:inline-block;font-size:11.5px;font-weight:700;border-radius:9999px;padding:2px 9px;margin-right:6px;}
+.tchip.e{background:var(--kraken-purple-subtle);color:var(--kraken-purple-deep);}
+.tchip.l{background:#e6f0fd;color:#1f5fbf;}
+.tchip.c{background:var(--d-good-soft);color:var(--d-good-text);}
+.stat-row{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 2px;}
+.stat-chip{background:var(--d-good-soft);color:var(--d-good-text);border-radius:9999px;font-size:13px;font-weight:600;padding:6px 13px;}
+.check{list-style:none;padding:0;margin:22px 0 0;display:grid;grid-template-columns:1fr;gap:10px;}
+@media(min-width:900px){.check{grid-template-columns:1fr 1fr;}}
+.check li{display:flex;gap:12px;align-items:flex-start;background:var(--white);border:1px solid var(--border-gray);border-radius:12px;padding:13px 15px;font-size:14.5px;line-height:1.5;cursor:pointer;user-select:none;}
+.check li .bx{flex:0 0 auto;width:20px;height:20px;border-radius:6px;border:2px solid var(--silver-blue);display:grid;place-items:center;margin-top:1px;}
+.check li .bx svg{width:13px;height:13px;color:#fff;opacity:0;}
+.check li.on{border-color:var(--kraken-purple);background:var(--kraken-purple-subtle);}
+.check li.on .bx{background:var(--kraken-purple);border-color:var(--kraken-purple);}
+.check li.on .bx svg{opacity:1;}
+.dl-row{display:flex;flex-wrap:wrap;gap:16px;margin-top:22px;}
+.dl{flex:1 1 320px;display:flex;gap:14px;align-items:flex-start;text-decoration:none;background:#fff;
+  border:1px solid var(--border-gray);border-radius:14px;padding:18px 20px;transition:border-color .15s, box-shadow .15s;}
+.dl:hover{border-color:var(--kraken-purple);box-shadow:0 10px 30px rgba(40,30,90,.10);text-decoration:none;}
+.dl .ic{flex:0 0 auto;width:40px;height:40px;border-radius:10px;background:var(--kraken-purple-subtle);color:var(--kraken-purple);display:flex;align-items:center;justify-content:center;}
+.dl .ic svg{width:22px;height:22px;}
+.dl .t{display:block;font-weight:600;color:#101114;font-size:15px;}
+.dl .d{display:block;font-size:13px;color:var(--cool-gray);margin-top:3px;line-height:1.45;}
+.dl .ext{display:block;font-size:11.5px;font-weight:700;letter-spacing:.4px;color:var(--kraken-purple);margin-top:7px;}
+.fig-cap{font-size:12.5px;color:var(--cool-gray);margin-top:8px;}
+@media(max-width:600px){.code-c{padding:18px 18px 16px;}.code-c h3{font-size:17.5px;}.seq td.d{white-space:normal;}}
+</style>
+<script>
+document.addEventListener('click',function(e){var li=e.target.closest('.check li');if(li)li.classList.toggle('on');});
+</script>
+<script src="../shared/academy.js" defer></script>
+</head>
+<body>
+<div id="gate"><div class="card" id="gateCard"></div></div>
+<div class="progress" id="progress"></div>
+
+<svg class="iconsheet" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="_ic" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></g>
+  </defs>
+  <symbol id="ic-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></symbol>
+  <symbol id="ic-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-5 4z"/></symbol>
+  <symbol id="ic-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8.5V20l-4-2.5v-4z"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 17l-5.4 2.7 1.2-6.1L3.3 9.4l6.1-.8z"/></symbol>
+  <symbol id="ic-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ic-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H14a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5.5"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M18 20a6 6 0 0 0-3.5-5.5"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-11"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2.4 5.6L8 16l2.4-5.6z"/></symbol>
+  <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l1.5 5-2 1.3a12 12 0 0 0 6.2 6.2l1.3-2 5 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></symbol>
+  <symbol id="ic-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M8 3v3.4c0 2 4 3.6 4 5.6s-4 3.6-4 5.6V21"/><path d="M16 3v3.4c0 2-4 3.6-4 5.6s4 3.6 4 5.6V21"/></symbol>
+  <symbol id="ic-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M19 18v3H6.5A2.5 2.5 0 0 1 4 18.5"/></symbol>
+  <symbol id="ic-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1.5A3.5 3.5 0 0 0 7 11M17 6h3v1.5A3.5 3.5 0 0 1 17 11M9.5 19h5M10 14.5l-.5 4.5h5l-.5-4.5"/></symbol>
+  <symbol id="ic-funnel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-3 5H6z"/><path d="M6.5 11h11l-2.5 4.5h-6z"/><path d="M10 17.5h4L13 21h-2z"/></symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></symbol>
+  <symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="ic-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></symbol>
+  <symbol id="ic-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7.5" y="12" width="3" height="5"/><rect x="12.5" y="8" width="3" height="9"/><rect x="17.5" y="5" width="2.5" height="12"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+</svg>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="../tr.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <a class="backlink" href="../tr.html">← Academy</a>
+    <a class="langswitch navlang" href="index.html" data-setlang="en">English</a>
+    <div class="spacer"></div>
+    <div class="toc" id="toc">
+      <a href="#d1">Kıyas</a>
+      <a href="#d2">E-posta</a>
+      <a href="#d3">Takip</a>
+      <a href="#d4">Kontrol</a>
+      <a href="#resources">İndir</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#d1">En iyiler neyi farklı yapıyor</a>
+  <a href="#d2">Rakamlarla e-posta</a>
+  <a href="#d3">Rakamlarla takip</a>
+  <a href="#d4">Gönderim öncesi kontrol</a>
+  <a href="#resources">Raporu indir</a>
+</div>
+
+<header class="hero">
+  <span class="eyebrow"><span class="dot"></span><span class="micro" style="color:var(--kraken-purple)">SDR Araç Seti · Veri Özeti</span></span>
+  <h1>85 milyon soğuk e-posta, <em>tek sayfaya indirildi.</em></h1>
+  <p class="sub">Gong, 30 Minutes to President’s Club ve Jason Bay’in gerçekten toplantı getiren şeyler üzerine yaptığı çalışmanın ana rakamları — konu satırı, uzunluk, kişiselleştirme, talep ve takip. Gönderilenler klasörünün yanında açık dursun.</p>
+  <div class="hero-meta">
+    <div class="stat"><div class="v" style="color:var(--kraken-purple)">85M+</div><div class="l">Analiz edilen e-posta</div></div>
+    <div class="stat"><div class="v">8,1×</div><div class="l">Toplantı, en iyi vs. ortalama</div></div>
+    <div class="stat"><div class="v count">12</div><div class="l">Akılda tutulacak rakam</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="part" id="d1">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">01</div>
+    <div class="part-label">Bölüm 01 — Kıyas</div>
+    <h2>Fark her adımda katlanıyor</h2>
+    <p class="lead">En iyi temsilciler biraz daha fazla açılma, çok daha fazla yanıt alıyor — takvime geldiğinde ise 8 kat toplantı. 8 kat fazla çalışarak değil: farklı yazarak.</p>
+  </div>
+  <div class="reveal" style="margin-top:22px"><div class="fig">
+    <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg"><rect class="fg" style="--i:0" x="130" y="225.3" width="56" height="24.7" rx="6" fill="var(--d-axis)"/><rect class="fg" style="--i:1" x="196" y="198.1" width="56" height="51.9" rx="6" fill="var(--kraken-purple)"/><text class="fg" style="--i:1" x="224" y="188.1" fill="var(--kraken-purple-deep)" font-size="20" font-weight="700" text-anchor="middle">2,1×</text><text class="fg" style="--i:0" x="158" y="215.3" fill="var(--cool-gray)" font-size="13" text-anchor="middle">1×</text><text class="fg" style="--i:0" x="191" y="276" fill="var(--near-black)" font-size="13.5" font-weight="600" text-anchor="middle">Açılma</text><rect class="fg" style="--i:1" x="340" y="225.3" width="56" height="24.7" rx="6" fill="var(--d-axis)"/><rect class="fg" style="--i:2" x="406" y="146.3" width="56" height="103.7" rx="6" fill="var(--kraken-purple)"/><text class="fg" style="--i:2" x="434" y="136.3" fill="var(--kraken-purple-deep)" font-size="20" font-weight="700" text-anchor="middle">4,2×</text><text class="fg" style="--i:1" x="368" y="215.3" fill="var(--cool-gray)" font-size="13" text-anchor="middle">1×</text><text class="fg" style="--i:0" x="401" y="276" fill="var(--near-black)" font-size="13.5" font-weight="600" text-anchor="middle">Yanıt</text><rect class="fg" style="--i:2" x="550" y="225.3" width="56" height="24.7" rx="6" fill="var(--d-axis)"/><rect class="fg" style="--i:3" x="616" y="50.0" width="56" height="200.0" rx="6" fill="var(--kraken-purple)"/><text class="fg" style="--i:3" x="644" y="40.0" fill="var(--kraken-purple-deep)" font-size="20" font-weight="700" text-anchor="middle">8,1×</text><text class="fg" style="--i:2" x="578" y="215.3" fill="var(--cool-gray)" font-size="13" text-anchor="middle">1×</text><text class="fg" style="--i:0" x="611" y="276" fill="var(--near-black)" font-size="13.5" font-weight="600" text-anchor="middle">Alınan toplantı</text><line class="fg" style="--i:0" x1="100" y1="250" x2="700" y2="250" stroke="var(--d-axis)" stroke-width="1.5"/><rect class="fg" style="--i:4" x="110" y="16" width="12" height="12" rx="3" fill="var(--d-axis)"/><text class="fg" style="--i:4" x="128" y="27" fill="var(--cool-gray)" font-size="12.5">Ortalama temsilci</text><rect class="fg" style="--i:4" x="110" y="38" width="12" height="12" rx="3" fill="var(--kraken-purple)"/><text class="fg" style="--i:4" x="128" y="49" fill="var(--cool-gray)" font-size="12.5">En iyi %10</text></svg>
+  </div><div class="fig-cap">En iyi %10’luk temsilciler ve ortalama temsilci (ortalama = 1×). Toplantıda bu, 3’e karşı 23 demek.</div></div>
+  <div class="note reveal">Fark konu satırında başlar (açılma), metinle büyür (yanıt) ve takvimde biter. Aşağıdaki her bölüm bu üç rakamdan birini hareket ettirir.</div>
+</section>
+
+<section class="part" id="d2">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">02</div>
+    <div class="part-label">Bölüm 02 — E-posta</div>
+    <h2>Rakamlarla e-posta</h2>
+    <p class="lead">Mesajın kendisi için altı kural. Her biri doğrudan veriden geliyor.</p>
+  </div>
+  <div class="grid3">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg></span><span class="ckicker">Konu satırı</span></div>
+    <div class="big">&lt;4</div>
+    <h3>kelime, konu satırında</h3>
+    <p class="desc">Şirket içi not gibi görünen kısa ifadeler, tam cümleleri ve başlıkları yener.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> “lobi yenileme”, “balo salonu oturma”, “bodrum açılışı”.</div>
+    </div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-x"/></svg></span><span class="ckicker">Konu satırı</span></div>
+    <div class="big">−%12</div>
+    <h3>yanıt, boş konu satırında</h3>
+    <p class="desc">Konusuz e-posta tık tuzağı gibi görünür. Küçük harfli, önceliğe odaklı konular kazanır; moda kelimeler, rakamlar ve isim vermek kaybettirir.</p>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-filter"/></svg></span><span class="ckicker">Uzunluk</span></div>
+    <div class="big">&lt;100</div>
+    <h3>kelime, metinde</h3>
+    <p class="desc">Telefonda kaydırmadan okunacak kadar kısa.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Kaydırma gerekiyorsa kısalt.</div>
+    </div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-file"/></svg></span><span class="ckicker">Uzunluk</span></div>
+    <div class="big">3–4</div>
+    <h3>cümle, toplam</h3>
+    <p class="desc">Kişiselleştirme → sorun → çözüm → talep. E-postanın tamamı bu.</p>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></span><span class="ckicker">Dil</span></div>
+    <div class="big">siz &gt; biz</div>
+    <h3>müşteri odaklı dil</h3>
+    <p class="desc">En iyi temsilciler çok daha fazla “siz / ekibiniz”, çok daha az “biz / bizim” yazıyor. Satış kelimeleri yanıtları ölçülebilir şekilde düşürüyor.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> Göndermeden önce “siz”lerini ve “biz”lerini say.</div>
+    </div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-zap"/></svg></span><span class="ckicker">Talep</span></div>
+    <div class="big">teklif &gt; toplantı</div>
+    <h3>kapanış cümlesi için</h3>
+    <p class="desc">İlgi sor ya da hiç satın almasalar bile işlerine yarayacak bir şey sun — fiyat teklifi, numune, moodboard.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> “…bakmaya açık mısınız?”, “30 dakikanız var mı?”yı yener.</div>
+    </div>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="d3">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">03</div>
+    <div class="part-label">Bölüm 03 — Takip</div>
+    <h2>Rakamlarla takip</h2>
+    <p class="lead">Yanıtların çoğu ilk e-postadan gelmez. Gürültüye dönüşmeden takip etmek için altı rakam.</p>
+  </div>
+  <div class="grid3">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg></span><span class="ckicker">Çoklu temas</span></div>
+    <div class="big">~6</div>
+    <h3>e-posta, 14–28 günde</h3>
+    <p class="desc">Asla tek e-posta atıp durma. Yanıtlar altıncı e-postaya kadar gelmeye devam eder.</p>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-hourglass"/></svg></span><span class="ckicker">Çoklu temas</span></div>
+    <div class="big">&lt;%0,5</div>
+    <h3>yanıt oranı, sonrasında</h3>
+    <p class="desc">Dört haftadan sonra firmayı dinlendirme ve emeği yeni firmalara ayırma zamanı.</p>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg></span><span class="ckicker">Hatırlatma</span></div>
+    <div class="big">1</div>
+    <h3>cümle, her hatırlatmada</h3>
+    <p class="desc">Aynı yazışmada tek satırla yanıtla — “ne düşünürsünüz?” — satışı baştan anlatma.</p>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-x"/></svg></span><span class="ckicker">Vedalaşma</span></div>
+    <div class="big">~2×</div>
+    <h3>yanıt, vedalaşma diliyle</h3>
+    <p class="desc">Net bir evet ya da hayır istemek sonraki e-postalarda yanıt oranını neredeyse ikiye katlar.</p>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-phone"/></svg></span><span class="ckicker">Arama</span></div>
+    <div class="big">2–3×</div>
+    <h3>e-posta yanıtı, arama eklenince</h3>
+    <p class="desc">E-postayı işaret eden kısa bir sesli mesaj, soğuk bir ismi yanıta dönüştürür.</p>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-target"/></svg></span><span class="ckicker">Kişiselleştirme</span></div>
+    <div class="big">sorun &gt; ilginç bilgi</div>
+    <h3>neyle kişiselleştirmeli</h3>
+    <p class="desc">Önce niyeti yüksek firmalara öncelik ver, sonra bir iş sorununa değin — üniversitesine ya da hobisine değil.</p>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="d4">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">04</div>
+    <div class="part-label">Bölüm 04 — Göndermeden önce</div>
+    <h2>Gönderim öncesi kontrol listesi</h2>
+    <p class="lead">E-postanı kontrol ettikçe satırlara dokun. Sekiz “evet” ise gönderilmeye hazır.</p>
+  </div>
+  <ul class="check reveal">
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>Konu dört kelimenin altında, küçük harfle ve onların dünyasıyla ilgili</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>İlk satır bu çeyrek üzerinde çalıştıkları bir şeyle ilgili</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>E-posta tek bir sorundan bahsediyor — sadece bir</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>Çözüm tek cümleye sığıyor</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>100 kelimenin altında; telefonda kaydırma yok</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>“Biz”den çok “siz”; satıcı jargonu yok</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>Talep takvim değil, ilgi ya da bir teklif</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>Takip zaten planlandı — arama, hatırlatma, LinkedIn</span></li>
+  </ul>
+</section>
+
+<section class="part" id="resources">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">★</div>
+    <div class="part-label">Kaynaklar</div>
+    <h2>Raporun tamamı</h2>
+    <p class="lead">Tüm grafikleriyle çalışmanın tamamı. Ve bu rakamları alışkanlığa dönüştüren eğitim.</p>
+  </div>
+  <div class="dl-row reveal">
+  <a class="dl" href="../sdr-cold-outbound/The-Ultimate-Cold-Email-Data-Report.pdf" target="_blank" rel="noopener">
+    <span class="ic"><svg viewBox="0 0 24 24"><use href="#ic-download"/></svg></span>
+    <span><span class="t">The Ultimate Cold Email Data Report</span><span class="d">85 milyon+ soğuk e-posta çalışmasının tamamı: konu satırı, uzunluk, kişiselleştirme, değer cümleleri, CTA ve çoklu temas.</span><span class="ext">PDF · İngilizce · Gong × 30MPC × Jason Bay</span></span>
+  </a>
+  <a class="dl" href="../sdr-cold-outbound/tr.html">
+    <span class="ic"><svg viewBox="0 0 24 24"><use href="#ic-book"/></svg></span>
+    <span><span class="t">Eğitim: Toplantı Getiren Soğuk Outbound</span><span class="d">Bu rapor üzerine kurulu 12 derslik eğitim.</span><span class="ext">Mozaik Academy · Eğitim 05</span></span>
+  </a>
+  </div>
+</section>
+
+</div>
+
+<section class="cta">
+  <div class="inner">
+    <div class="reveal">
+      <span class="micro" style="color:rgba(255,255,255,0.7)">Akılda kalması gereken tek şey</span>
+      <h2 style="margin-top:14px;">Kısa, insani, onların sorunu hakkında — ve asla tek seferlik değil.</h2>
+      <p>Veri hep aynı yere çıkıyor: onların dilinde dört cümlelik bir e-posta, kolay bir talep ve kanallara yayılmış birkaç kısa takip.</p>
+    </div>
+    <div class="principles reveal">
+      <div class="p"><div class="n">01 — Açılma</div><div class="t">Dört kelimenin altında, küçük harf, bir öncelik hakkında.</div></div>
+      <div class="p"><div class="n">02 — Yanıt</div><div class="t">100 kelimenin altı, “siz” dili, bir teklif.</div></div>
+      <div class="p"><div class="n">03 — Toplantı</div><div class="t">~6 temas, tek satırlık hatırlatmalar, aramalar, kibar bir vedalaşma.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="complete" id="completeBox"></div>
+
+<footer class="foot">
+  <div class="inner">
+    <a class="brand" href="../tr.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <div class="src">Rakamlar <b>“The Ultimate Cold Email Data Report”</b> (Gong × 30 Minutes to President’s Club × Jason Bay, Outbound Squad) kaynağındandır. Özet ve Mozaik örnekleri özgündür; grafik yeniden çizilmiştir. Orijinal raporun tüm hakları yazarlarına aittir; burada yalnızca Mozaik iç eğitimi için paylaşılmıştır. Kraken Design System ile tasarlanmıştır.</div>
+  </div>
+</footer>
+
+<script src="../shared/course.js" defer></script>
+</body>
+</html>

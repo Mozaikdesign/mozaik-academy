@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pipeline 101 — Mozaik Academy</title>
+<meta name="description" content="Pipeline 101 — the Mozaik sales team reference: what a pipeline is, the TOFU · MOFU · BOFU funnel, the three health tests, won and lost reasons, and three rules.">
+<script>
+(function(){
+  try{
+    var CUR='en';
+    var saved=localStorage.getItem('mozaik_lang');
+    if(saved && saved!==CUR && location.search.indexOf('l=1')<0){
+      location.replace((CUR==='en'?'tr.html':'index.html')+'?l=1');
+    }
+  }catch(e){}
+})();
+</script>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../shared/course.css">
+<link rel="stylesheet" href="../shared/academy.css">
+<script>window.MOZAIK = {
+  "lang": "en",
+  "page": "course",
+  "id": "pipeline-101",
+  "tour": [
+    {
+      "n": "101",
+      "t": "Welcome, {name} 👋",
+      "b": "Pipeline 101 is the sales team's shared vocabulary for opportunities — one page, about 10 minutes. Learn it once, use it in every pipeline review."
+    },
+    {
+      "n": "Step 1 of 2",
+      "t": "Six short sections",
+      "b": "Use the menu along the top to jump around. The printable two-page original is at the bottom."
+    },
+    {
+      "n": "Step 2 of 2",
+      "t": "Mark it complete when you finish",
+      "b": "There is a “Mark as complete” button at the bottom of the page."
+    }
+  ]
+};</script>
+<style>
+.grid2{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+.grid3{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;}
+@media(min-width:900px){.grid2{grid-template-columns:1fr 1fr;gap:20px;}.grid3{grid-template-columns:repeat(3,1fr);}.grid4{grid-template-columns:repeat(4,1fr);}}
+.code-c{background:var(--white);border:1px solid var(--border-gray);border-radius:18px;
+  padding:22px 22px 18px;display:flex;flex-direction:column;box-shadow:var(--shadow-micro);}
+.code-c .card-top{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;}
+.code-c .num{flex:0 0 auto;min-width:34px;height:34px;padding:0 8px;border-radius:10px;display:grid;place-items:center;
+  background:var(--kraken-purple-subtle);color:var(--kraken-purple-deep);
+  font-family:var(--font-mono);font-size:13px;font-weight:700;letter-spacing:-0.02em;}
+.code-c .cicon{flex:0 0 auto;width:26px;height:26px;color:var(--kraken-purple);}
+.code-c .cicon svg{width:26px;height:26px;}
+.code-c .ckicker{font-size:var(--fs-micro);letter-spacing:0.08em;text-transform:uppercase;color:var(--cool-gray);font-weight:600;}
+.code-c h3{font-size:19px;line-height:1.3;margin:0 0 10px;letter-spacing:-0.01em;}
+.code-c .desc{font-size:14.5px;line-height:1.62;color:var(--secondary);margin:0 0 16px;}
+.code-c .callouts{margin-top:auto;display:flex;flex-direction:column;gap:10px;}
+.code-c .takeaway{background:var(--kraken-purple-subtle);border-left:3px solid var(--kraken-purple);
+  border-radius:0 10px 10px 0;padding:11px 14px;font-size:13.5px;line-height:1.55;}
+.code-c .mozaik{display:flex;gap:9px;font-size:13px;line-height:1.55;color:var(--cool-gray);}
+.code-c .mozaik .pin{color:var(--kraken-purple);flex:0 0 auto;}
+.field{background:var(--white);border:1px solid var(--border-gray);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-micro);}
+.field .k{font-weight:700;font-size:15px;color:var(--near-black);}
+.field .v{font-size:13.5px;color:var(--cool-gray);margin-top:4px;line-height:1.45;}
+.field .ic{width:30px;height:30px;border-radius:9px;background:var(--kraken-purple-subtle);color:var(--kraken-purple);display:grid;place-items:center;margin-bottom:10px;}
+.field .ic svg{width:17px;height:17px;}
+.big{font-family:var(--font-brand);font-size:34px;font-weight:700;letter-spacing:-1px;color:var(--kraken-purple);line-height:1;margin:2px 0 10px;}
+.formula{font-family:var(--font-mono);font-size:13px;background:var(--d-box);border-radius:10px;padding:10px 12px;color:var(--near-black);margin:0 0 14px;line-height:1.5;}
+.rlist{list-style:none;margin:18px 0 0;padding:0;border-top:1px solid var(--border-gray);}
+.rlist li{display:flex;gap:14px;align-items:baseline;justify-content:space-between;padding:13px 2px;border-bottom:1px solid var(--border-gray);}
+.rlist .t{font-weight:600;font-size:15px;color:var(--near-black);}
+.rlist .s{font-size:13px;color:var(--cool-gray);text-align:right;}
+.lane-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding-bottom:10px;border-bottom:3px solid var(--kraken-purple);}
+.lane-h.alt{border-bottom-color:var(--warning,#d97706);}
+.lane-h b{font-size:12px;letter-spacing:.08em;text-transform:uppercase;}
+.lane-h span{font-size:12.5px;color:var(--cool-gray);}
+.note{margin-top:22px;background:var(--d-box);border-radius:14px;padding:16px 20px;font-size:14.5px;line-height:1.55;color:var(--near-black);}
+.rules{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+@media(min-width:900px){.rules{grid-template-columns:repeat(3,1fr);}}
+.rule{position:relative;background:linear-gradient(160deg,var(--kraken-purple) 0%,var(--kraken-purple-deep) 100%);color:#fff;border-radius:18px;padding:22px 22px 20px;display:flex;flex-direction:column;min-height:200px;}
+.rule .n{font-family:var(--font-brand);font-size:40px;font-weight:700;opacity:.35;line-height:1;letter-spacing:-1.5px;}
+.rule h3{color:#fff;font-size:18.5px;line-height:1.35;margin:12px 0 10px;}
+.rule ul{margin:0 0 12px;padding-left:18px;font-size:14px;line-height:1.6;color:rgba(255,255,255,.88);}
+.rule .scope{margin-top:auto;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.75);}
+.mail{background:var(--white);border:1px solid var(--border-gray);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-micro);display:flex;flex-direction:column;}
+.mail .mh{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--border-gray);background:#fcfcfd;flex-wrap:wrap;}
+.mail .step{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--kraken-purple-deep);background:var(--kraken-purple-subtle);border-radius:8px;padding:3px 8px;}
+.mail .ch{font-size:12px;font-weight:600;color:var(--cool-gray);}
+.mail .day{margin-left:auto;font-size:12px;color:var(--silver-blue);font-weight:600;}
+.mail .subj{padding:12px 16px 0;font-size:13px;color:var(--cool-gray);}
+.mail .subj b{color:var(--near-black);font-weight:600;}
+.mail .body{padding:10px 16px 14px;font-size:14.5px;line-height:1.6;color:var(--near-black);white-space:pre-line;}
+.mail .why{margin-top:auto;border-top:1px dashed var(--border-gray);padding:11px 16px 13px;font-size:13px;line-height:1.5;color:var(--cool-gray);}
+.mail .why b{color:var(--kraken-purple);}
+.seq{width:100%;border-collapse:collapse;margin-top:22px;font-size:14px;}
+.seq th{text-align:left;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--cool-gray);font-weight:600;padding:8px 10px;border-bottom:2px solid var(--border-gray);}
+.seq td{padding:10px;border-bottom:1px solid var(--border-gray);vertical-align:top;}
+.seq td.n{font-family:var(--font-mono);font-weight:700;color:var(--kraken-purple-deep);width:40px;}
+.seq td.d{color:var(--cool-gray);white-space:nowrap;width:70px;}
+.seq tr.th td{background:var(--kraken-purple-subtle);font-weight:600;color:var(--kraken-purple-deep);font-size:13px;}
+.tchip{display:inline-block;font-size:11.5px;font-weight:700;border-radius:9999px;padding:2px 9px;margin-right:6px;}
+.tchip.e{background:var(--kraken-purple-subtle);color:var(--kraken-purple-deep);}
+.tchip.l{background:#e6f0fd;color:#1f5fbf;}
+.tchip.c{background:var(--d-good-soft);color:var(--d-good-text);}
+.stat-row{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 2px;}
+.stat-chip{background:var(--d-good-soft);color:var(--d-good-text);border-radius:9999px;font-size:13px;font-weight:600;padding:6px 13px;}
+.check{list-style:none;padding:0;margin:22px 0 0;display:grid;grid-template-columns:1fr;gap:10px;}
+@media(min-width:900px){.check{grid-template-columns:1fr 1fr;}}
+.check li{display:flex;gap:12px;align-items:flex-start;background:var(--white);border:1px solid var(--border-gray);border-radius:12px;padding:13px 15px;font-size:14.5px;line-height:1.5;cursor:pointer;user-select:none;}
+.check li .bx{flex:0 0 auto;width:20px;height:20px;border-radius:6px;border:2px solid var(--silver-blue);display:grid;place-items:center;margin-top:1px;}
+.check li .bx svg{width:13px;height:13px;color:#fff;opacity:0;}
+.check li.on{border-color:var(--kraken-purple);background:var(--kraken-purple-subtle);}
+.check li.on .bx{background:var(--kraken-purple);border-color:var(--kraken-purple);}
+.check li.on .bx svg{opacity:1;}
+.dl-row{display:flex;flex-wrap:wrap;gap:16px;margin-top:22px;}
+.dl{flex:1 1 320px;display:flex;gap:14px;align-items:flex-start;text-decoration:none;background:#fff;
+  border:1px solid var(--border-gray);border-radius:14px;padding:18px 20px;transition:border-color .15s, box-shadow .15s;}
+.dl:hover{border-color:var(--kraken-purple);box-shadow:0 10px 30px rgba(40,30,90,.10);text-decoration:none;}
+.dl .ic{flex:0 0 auto;width:40px;height:40px;border-radius:10px;background:var(--kraken-purple-subtle);color:var(--kraken-purple);display:flex;align-items:center;justify-content:center;}
+.dl .ic svg{width:22px;height:22px;}
+.dl .t{display:block;font-weight:600;color:#101114;font-size:15px;}
+.dl .d{display:block;font-size:13px;color:var(--cool-gray);margin-top:3px;line-height:1.45;}
+.dl .ext{display:block;font-size:11.5px;font-weight:700;letter-spacing:.4px;color:var(--kraken-purple);margin-top:7px;}
+.fig-cap{font-size:12.5px;color:var(--cool-gray);margin-top:8px;}
+@media(max-width:600px){.code-c{padding:18px 18px 16px;}.code-c h3{font-size:17.5px;}.seq td.d{white-space:normal;}}
+</style>
+<script>
+document.addEventListener('click',function(e){var li=e.target.closest('.check li');if(li)li.classList.toggle('on');});
+</script>
+<script src="../shared/academy.js" defer></script>
+</head>
+<body>
+<div id="gate"><div class="card" id="gateCard"></div></div>
+<div class="progress" id="progress"></div>
+
+<svg class="iconsheet" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="_ic" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></g>
+  </defs>
+  <symbol id="ic-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></symbol>
+  <symbol id="ic-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-5 4z"/></symbol>
+  <symbol id="ic-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8.5V20l-4-2.5v-4z"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 17l-5.4 2.7 1.2-6.1L3.3 9.4l6.1-.8z"/></symbol>
+  <symbol id="ic-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ic-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H14a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5.5"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M18 20a6 6 0 0 0-3.5-5.5"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-11"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2.4 5.6L8 16l2.4-5.6z"/></symbol>
+  <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l1.5 5-2 1.3a12 12 0 0 0 6.2 6.2l1.3-2 5 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></symbol>
+  <symbol id="ic-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M8 3v3.4c0 2 4 3.6 4 5.6s-4 3.6-4 5.6V21"/><path d="M16 3v3.4c0 2-4 3.6-4 5.6s4 3.6 4 5.6V21"/></symbol>
+  <symbol id="ic-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M19 18v3H6.5A2.5 2.5 0 0 1 4 18.5"/></symbol>
+  <symbol id="ic-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1.5A3.5 3.5 0 0 0 7 11M17 6h3v1.5A3.5 3.5 0 0 1 17 11M9.5 19h5M10 14.5l-.5 4.5h5l-.5-4.5"/></symbol>
+  <symbol id="ic-funnel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-3 5H6z"/><path d="M6.5 11h11l-2.5 4.5h-6z"/><path d="M10 17.5h4L13 21h-2z"/></symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></symbol>
+  <symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="ic-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></symbol>
+  <symbol id="ic-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7.5" y="12" width="3" height="5"/><rect x="12.5" y="8" width="3" height="9"/><rect x="17.5" y="5" width="2.5" height="12"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+</svg>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="../index.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <a class="backlink" href="../index.html">← Academy</a>
+    <a class="langswitch navlang" href="tr.html" data-setlang="tr">Türkçe</a>
+    <div class="spacer"></div>
+    <div class="toc" id="toc">
+      <a href="#p1">Pipeline</a>
+      <a href="#p2">Funnel</a>
+      <a href="#p3">Tests</a>
+      <a href="#p4">Won</a>
+      <a href="#p5">Lost</a>
+      <a href="#p6">Rules</a>
+      <a href="#resources">Download</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#p1">What a pipeline is</a>
+  <a href="#p2">TOFU · MOFU · BOFU</a>
+  <a href="#p3">Three health tests</a>
+  <a href="#p4">Won reasons</a>
+  <a href="#p5">Lost reasons</a>
+  <a href="#p6">Three rules</a>
+  <a href="#resources">Download the PDF</a>
+</div>
+
+<header class="hero">
+  <span class="eyebrow"><span class="dot"></span><span class="micro" style="color:var(--kraken-purple)">101 · Sales Fundamentals</span></span>
+  <h1>Every customer goes through the same funnel. <em>What changes is what we do at each layer.</em></h1>
+  <p class="sub">The Mozaik sales team’s shared language for opportunities: what a pipeline is, the three layers of the funnel, how to tell a healthy pipeline from a hopeful one, and the reasons we win and lose. Short enough to learn in one sitting, specific enough to use in Monday’s review.</p>
+  <div class="hero-meta">
+    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">6</div><div class="l">Sections</div></div>
+    <div class="stat"><div class="v count">3</div><div class="l">Rules, no exceptions</div></div>
+    <div class="stat"><div class="v count">~10</div><div class="l">Minutes</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="part" id="p1">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">01</div>
+    <div class="part-label">Part 01 — The basics</div>
+    <h2>What a pipeline is</h2>
+    <p class="lead">A live list of every sales opportunity that hasn’t closed yet, with the stage each one is in. It shows the future, not the past. And it is not a customer list: a list sits still, a pipeline moves.</p>
+  </div>
+  <div class="grid4">
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></div><div class="k">Who</div><div class="v">the customer and the decision-maker</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-chart"/></svg></div><div class="k">How much</div><div class="v">estimated value (₺)</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-funnel"/></svg></div><div class="k">Which stage</div><div class="v">where it sits in the funnel</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-calendar"/></svg></div><div class="k">When</div><div class="v">expected close date</div></div>
+  </div>
+  <div class="note reveal">Every opportunity in the pipeline answers these four questions. If one is blank, it isn’t an opportunity yet — it’s a name.</div>
+</section>
+
+<section class="part" id="p2">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">02</div>
+    <div class="part-label">Part 02 — The funnel</div>
+    <h2>TOFU · MOFU · BOFU: the three layers</h2>
+    <p class="lead">Top, middle and bottom of the funnel. Each layer has a different question on the customer’s mind, so each one needs something different from the rep.</p>
+  </div>
+  <div class="reveal" style="margin-top:22px"><div class="fig">
+    <svg viewBox="0 0 760 330" xmlns="http://www.w3.org/2000/svg"><polygon class="fg" style="--i:0" points="50.0,20 450.0,20 415.0,110 85.0,110" fill="var(--kraken-purple-subtle)" stroke="var(--kraken-purple)" stroke-width="1.5"/><text class="fg" style="--i:0" x="250" y="67.0" fill="var(--kraken-purple-deep)" font-size="24" font-weight="700" text-anchor="middle" font-family="var(--font-brand)">TOFU</text><text class="fg" style="--i:0" x="250" y="87.0" fill="var(--kraken-purple-deep)" font-size="11" font-weight="700" letter-spacing="1.4" text-anchor="middle" opacity=".8">AWARENESS</text><polygon class="fg" style="--i:1" points="91.0,118 409.0,118 374.0,208 126.0,208" fill="var(--kraken-purple)" stroke="var(--kraken-purple)" stroke-width="1.5"/><text class="fg" style="--i:1" x="250" y="165.0" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle" font-family="var(--font-brand)">MOFU</text><text class="fg" style="--i:1" x="250" y="185.0" fill="#ffffff" font-size="11" font-weight="700" letter-spacing="1.4" text-anchor="middle" opacity=".8">CONSIDERATION</text><polygon class="fg" style="--i:2" points="132.0,216 368.0,216 325.0,306 175.0,306" fill="var(--kraken-purple-deep)" stroke="var(--kraken-purple-deep)" stroke-width="1.5"/><text class="fg" style="--i:2" x="250" y="263.0" fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle" font-family="var(--font-brand)">BOFU</text><text class="fg" style="--i:2" x="250" y="283.0" fill="#ffffff" font-size="11" font-weight="700" letter-spacing="1.4" text-anchor="middle" opacity=".8">DECISION</text><path class="fg" style="--i:3" d="M470 28 v172" stroke="var(--kraken-purple)" stroke-width="2" fill="none"/><path class="fg" style="--i:3" d="M464 28 h12 M464 200 h12" stroke="var(--kraken-purple)" stroke-width="2"/><text class="fg" style="--i:3" x="490" y="104" fill="var(--near-black)" font-size="14" font-weight="600">Where the work gets done</text><text class="fg" style="--i:3" x="490" y="124" fill="var(--cool-gray)" font-size="12.5">TOFU and MOFU: most of the rep’s time</text><path class="fg" style="--i:4" d="M470 222 v80" stroke="var(--d-bad)" stroke-width="2" fill="none"/><path class="fg" style="--i:4" d="M464 222 h12 M464 302 h12" stroke="var(--d-bad)" stroke-width="2"/><text class="fg" style="--i:4" x="490" y="258" fill="var(--d-bad-text)" font-size="14" font-weight="600">The most expensive loss</text><text class="fg" style="--i:4" x="490" y="278" fill="var(--cool-gray)" font-size="12.5">everything is already invested here</text></svg>
+  </div><div class="fig-cap">Widths are schematic, not Mozaik data.</div></div>
+  <div class="grid3">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">TOFU</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-funnel"/></svg></span><span class="ckicker">Awareness</span></div>
+    <h3>“What is Mozaik? Who are they? Do I need this?”</h3>
+    <p class="desc"><b>The rep:</b> Get attention, spark interest, capture contact details.</p>
+    <div class="callouts">
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Instagram ads, trade fairs, a walk-in at the showroom.</div></div>
+    </div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">MOFU</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-funnel"/></svg></span><span class="ckicker">Consideration</span></div>
+    <h3>“Is it right for me? How is it different from the alternatives?”</h3>
+    <p class="desc"><b>The rep:</b> Understand the need, scope the project, prepare the proposal.</p>
+    <div class="callouts">
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Showroom appointment, site measurement, moodboard, revised proposal.</div></div>
+    </div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">BOFU</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-funnel"/></svg></span><span class="ckicker">Decision</span></div>
+    <h3>“Do the price, delivery and terms work?”</h3>
+    <p class="desc"><b>The rep:</b> Resolve the objection, pin down the terms, get the signature.</p>
+    <div class="callouts">
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Contract, deposit, production and installation dates.</div></div>
+    </div>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="p3">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">03</div>
+    <div class="part-label">Part 03 — Health</div>
+    <h2>A good pipeline passes three tests</h2>
+    <p class="lead">A big pipeline isn’t automatically a good one. Check these three before you trust the number.</p>
+  </div>
+  <div class="grid3">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-chart"/></svg></span><span class="ckicker">Coverage</span></div>
+    <h3>Big enough</h3>
+    <div class="formula">Open pipeline ₺ ÷ remaining target ₺</div>
+    <p class="desc">The right multiple is 1 ÷ your win rate. Win 1 in 3 and you need 3× coverage.</p>
+    <div class="callouts">
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> At a 25% win rate, ₺2M left to sell this quarter needs ₺8M in open pipeline — not ₺2M.</div></div>
+    </div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-trend"/></svg></span><span class="ckicker">Velocity</span></div>
+    <h3>Moving</h3>
+    <div class="formula">Opportunities with no stage change in 30 days</div>
+    <p class="desc">Keep this number small. An opportunity that hasn’t moved in a month is rotting.</p>
+    <div class="callouts">
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> If a hotel proposal has sat at “quote sent” since last month, call this week — or close it.</div></div>
+    </div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span class="ckicker">Hygiene</span></div>
+    <h3>Honest</h3>
+    <div class="formula">Close date in the past, still open</div>
+    <p class="desc">These records quietly inflate the forecast. Update the date with a reason, or close them.</p>
+    <div class="callouts">
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> A Friday five-minute sweep of past-due dates keeps the Monday review honest.</div></div>
+    </div>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="p4">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">04</div>
+    <div class="part-label">Part 04 — Winning</div>
+    <h2>Won reasons</h2>
+    <p class="lead">Every closed opportunity carries one primary reason. Pick the one that tipped it — not every reason that was true.</p>
+  </div>
+  <div class="grid4">
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-trophy"/></svg></div><div class="k">Design & product fit</div><div class="v">They found the product they were looking for with us</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-trophy"/></svg></div><div class="k">Showroom & rep experience</div><div class="v">The process built trust</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-trophy"/></svg></div><div class="k">Custom-production flexibility</div><div class="v">Size, fabric, colour or revisions were accommodated</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-trophy"/></svg></div><div class="k">Existing customer or referral</div><div class="v">Came back, or came on a recommendation</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-trophy"/></svg></div><div class="k">Delivery time</div><div class="v">We beat the competitor on lead time</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-trophy"/></svg></div><div class="k">One-stop solution</div><div class="v">Furniture, lighting and installation together</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-trophy"/></svg></div><div class="k">Price & payment terms</div><div class="v">The commercial offer decided it</div></div>
+    <div class="field reveal"><div class="ic"><svg viewBox="0 0 24 24"><use href="#ic-trophy"/></svg></div><div class="k">Spec compliance · Contract</div><div class="v">We met the technical and certification requirements</div></div>
+  </div>
+</section>
+
+<section class="part" id="p5">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">05</div>
+    <div class="part-label">Part 05 — Losing</div>
+    <h2>Lost reasons</h2>
+    <p class="lead">Two very different groups. Logging the right one is what lets us fix the right thing.</p>
+  </div>
+  <div class="grid2">
+    <div class="reveal"><div class="lane-h"><b>Lost to a competitor</b><span>Competitor name required</span></div><ul class="rlist" style="border-top:0;margin-top:0"><li><span class="t">Price</span><span class="s">Pricing, value story</span></li><li><span class="t">Delivery time</span><span class="s">Production & planning</span></li><li><span class="t">Product or design</span><span class="s">Collection & stock</span></li><li><span class="t">Spec compliance</span><span class="s">Contract pre-work</span></li><li><span class="t">Relationship</span><span class="s">Account management</span></li></ul></div>
+    <div class="reveal"><div class="lane-h alt"><b>No decision</b><span>Not lost to a competitor</span></div><ul class="rlist" style="border-top:0;margin-top:0"><li><span class="t">Project cancelled or postponed</span><span class="s">Market side</span></li><li><span class="t">Budget not approved</span><span class="s">Qualification</span></li><li><span class="t">No decision, contact went cold</span><span class="s">Follow-up discipline</span></li></ul></div>
+  </div>
+  <div class="note reveal">These two groups look the same in the win rate, but they are opposite problems: one is about product and price, the other about follow-up discipline.</div>
+</section>
+
+<section class="part" id="p6">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">06</div>
+    <div class="part-label">Part 06 — The rules</div>
+    <h2>Three rules, no exceptions</h2>
+    <p class="lead">The whole pipeline is only as useful as its weakest record. These three keep every record useful.</p>
+  </div>
+  <div class="rules">
+    <div class="rule reveal"><div class="n">01</div><h3>Every opportunity always has a defined next activity</h3><div class="scope">All opportunities</div></div>
+    <div class="rule reveal"><div class="n">02</div><h3>An expected close date is entered</h3><div class="scope">MOFU and beyond</div></div>
+    <div class="rule reveal"><div class="n">03</div><h3>The notes hold three bullets that summarise the deal</h3><ul><li>Scope and amount</li><li>Decision process and objections</li><li>Close and delivery plan</li></ul><div class="scope">BOFU</div></div>
+  </div>
+</section>
+
+<section class="part" id="resources">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">★</div>
+    <div class="part-label">Resources</div>
+    <h2>The printable original</h2>
+    <p class="lead">The two-page Pipeline 101 reference in Turkish — print it and keep it next to the desk.</p>
+  </div>
+  <div class="dl-row reveal">
+  <a class="dl" href="Pipeline-101-Mozaik-Satis-Ekibi-Referansi.pdf" target="_blank" rel="noopener">
+    <span class="ic"><svg viewBox="0 0 24 24"><use href="#ic-download"/></svg></span>
+    <span><span class="t">Pipeline 101 — Mozaik Sales Team Reference</span><span class="d">The original two-page reference sheet: funnel, three tests, won and lost reasons, three rules.</span><span class="ext">PDF · Turkish · 2 pages</span></span>
+  </a>
+  </div>
+</section>
+
+</div>
+
+<section class="cta">
+  <div class="inner">
+    <div class="reveal">
+      <span class="micro" style="color:rgba(255,255,255,0.7)">The one thing to remember</span>
+      <h2 style="margin-top:14px;">A pipeline is a promise about the future — keep it honest.</h2>
+      <p>Know the stage, the value, the decision-maker and the date for every opportunity. Move it or close it. And when one closes, log the real reason — that’s how next quarter gets easier.</p>
+    </div>
+    <div class="principles reveal">
+      <div class="p"><div class="n">01 — Four answers</div><div class="t">Who, how much, which stage, when — for every opportunity.</div></div>
+      <div class="p"><div class="n">02 — Three tests</div><div class="t">Big enough, moving, honest.</div></div>
+      <div class="p"><div class="n">03 — Three rules</div><div class="t">Next activity, close date, three-bullet notes.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="complete" id="completeBox"></div>
+
+<footer class="foot">
+  <div class="inner">
+    <a class="brand" href="../index.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <div class="src">Pipeline 101 is a Mozaik Design sales team reference (October 2026). Funnel widths are schematic. For internal Mozaik training only. Styled in the Kraken Design System.</div>
+  </div>
+</footer>
+
+<script src="../shared/course.js" defer></script>
+</body>
+</html>
