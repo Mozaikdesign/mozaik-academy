@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Top SDRs Hit Quota — Mozaik Academy</title>
+<meta name="description" content="Four plays from the top SDRs: the quota maths (with a calculator), a daily operating system, buying signals and tiers, and crisp four-part outreach — adapted for Mozaik.">
+<script>
+(function(){
+  try{
+    var CUR='en';
+    var saved=localStorage.getItem('mozaik_lang');
+    if(saved && saved!==CUR && location.search.indexOf('l=1')<0){
+      location.replace((CUR==='en'?'tr.html':'index.html')+'?l=1');
+    }
+  }catch(e){}
+})();
+</script>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../shared/course.css">
+<link rel="stylesheet" href="../shared/academy.css">
+<script>window.MOZAIK = {
+  "lang": "en",
+  "page": "course",
+  "id": "sdr-quota",
+  "tour": [
+    {
+      "n": "SDR Toolkit",
+      "t": "Welcome, {name} 👋",
+      "b": "How the best SDRs hit quota without grinding: know the maths, protect your mornings, call the accounts with a reason to buy, and keep messages crisp. About 15 minutes."
+    },
+    {
+      "n": "Step 1 of 2",
+      "t": "Put your own numbers in",
+      "b": "Part 01 has a calculator. Enter your quota and conversion rates to see your weekly dials and emails."
+    },
+    {
+      "n": "Step 2 of 2",
+      "t": "Mark it complete when you finish",
+      "b": "There is a “Mark as complete” button at the bottom of the page."
+    }
+  ]
+};</script>
+<style>
+.grid2{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+.grid3{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;}
+@media(min-width:900px){.grid2{grid-template-columns:1fr 1fr;gap:20px;}.grid3{grid-template-columns:repeat(3,1fr);}.grid4{grid-template-columns:repeat(4,1fr);}}
+.code-c{background:var(--white);border:1px solid var(--border-gray);border-radius:18px;
+  padding:22px 22px 18px;display:flex;flex-direction:column;box-shadow:var(--shadow-micro);}
+.code-c .card-top{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;}
+.code-c .num{flex:0 0 auto;min-width:34px;height:34px;padding:0 8px;border-radius:10px;display:grid;place-items:center;
+  background:var(--kraken-purple-subtle);color:var(--kraken-purple-deep);
+  font-family:var(--font-mono);font-size:13px;font-weight:700;letter-spacing:-0.02em;}
+.code-c .cicon{flex:0 0 auto;width:26px;height:26px;color:var(--kraken-purple);}
+.code-c .cicon svg{width:26px;height:26px;}
+.code-c .ckicker{font-size:var(--fs-micro);letter-spacing:0.08em;text-transform:uppercase;color:var(--cool-gray);font-weight:600;}
+.code-c h3{font-size:19px;line-height:1.3;margin:0 0 10px;letter-spacing:-0.01em;}
+.code-c .desc{font-size:14.5px;line-height:1.62;color:var(--secondary);margin:0 0 16px;}
+.code-c .callouts{margin-top:auto;display:flex;flex-direction:column;gap:10px;}
+.code-c .takeaway{background:var(--kraken-purple-subtle);border-left:3px solid var(--kraken-purple);
+  border-radius:0 10px 10px 0;padding:11px 14px;font-size:13.5px;line-height:1.55;}
+.code-c .mozaik{display:flex;gap:9px;font-size:13px;line-height:1.55;color:var(--cool-gray);}
+.code-c .mozaik .pin{color:var(--kraken-purple);flex:0 0 auto;}
+.field{background:var(--white);border:1px solid var(--border-gray);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-micro);}
+.field .k{font-weight:700;font-size:15px;color:var(--near-black);}
+.field .v{font-size:13.5px;color:var(--cool-gray);margin-top:4px;line-height:1.45;}
+.field .ic{width:30px;height:30px;border-radius:9px;background:var(--kraken-purple-subtle);color:var(--kraken-purple);display:grid;place-items:center;margin-bottom:10px;}
+.field .ic svg{width:17px;height:17px;}
+.big{font-family:var(--font-brand);font-size:34px;font-weight:700;letter-spacing:-1px;color:var(--kraken-purple);line-height:1;margin:2px 0 10px;}
+.formula{font-family:var(--font-mono);font-size:13px;background:var(--d-box);border-radius:10px;padding:10px 12px;color:var(--near-black);margin:0 0 14px;line-height:1.5;}
+.rlist{list-style:none;margin:18px 0 0;padding:0;border-top:1px solid var(--border-gray);}
+.rlist li{display:flex;gap:14px;align-items:baseline;justify-content:space-between;padding:13px 2px;border-bottom:1px solid var(--border-gray);}
+.rlist .t{font-weight:600;font-size:15px;color:var(--near-black);}
+.rlist .s{font-size:13px;color:var(--cool-gray);text-align:right;}
+.lane-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding-bottom:10px;border-bottom:3px solid var(--kraken-purple);}
+.lane-h.alt{border-bottom-color:var(--warning,#d97706);}
+.lane-h b{font-size:12px;letter-spacing:.08em;text-transform:uppercase;}
+.lane-h span{font-size:12.5px;color:var(--cool-gray);}
+.note{margin-top:22px;background:var(--d-box);border-radius:14px;padding:16px 20px;font-size:14.5px;line-height:1.55;color:var(--near-black);}
+.rules{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+@media(min-width:900px){.rules{grid-template-columns:repeat(3,1fr);}}
+.rule{position:relative;background:linear-gradient(160deg,var(--kraken-purple) 0%,var(--kraken-purple-deep) 100%);color:#fff;border-radius:18px;padding:22px 22px 20px;display:flex;flex-direction:column;min-height:200px;}
+.rule .n{font-family:var(--font-brand);font-size:40px;font-weight:700;opacity:.35;line-height:1;letter-spacing:-1.5px;}
+.rule h3{color:#fff;font-size:18.5px;line-height:1.35;margin:12px 0 10px;}
+.rule ul{margin:0 0 12px;padding-left:18px;font-size:14px;line-height:1.6;color:rgba(255,255,255,.88);}
+.rule .scope{margin-top:auto;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.75);}
+.mail{background:var(--white);border:1px solid var(--border-gray);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-micro);display:flex;flex-direction:column;}
+.mail .mh{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--border-gray);background:#fcfcfd;flex-wrap:wrap;}
+.mail .step{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--kraken-purple-deep);background:var(--kraken-purple-subtle);border-radius:8px;padding:3px 8px;}
+.mail .ch{font-size:12px;font-weight:600;color:var(--cool-gray);}
+.mail .day{margin-left:auto;font-size:12px;color:var(--silver-blue);font-weight:600;}
+.mail .subj{padding:12px 16px 0;font-size:13px;color:var(--cool-gray);}
+.mail .subj b{color:var(--near-black);font-weight:600;}
+.mail .body{padding:10px 16px 14px;font-size:14.5px;line-height:1.6;color:var(--near-black);white-space:pre-line;}
+.mail .why{margin-top:auto;border-top:1px dashed var(--border-gray);padding:11px 16px 13px;font-size:13px;line-height:1.5;color:var(--cool-gray);}
+.mail .why b{color:var(--kraken-purple);}
+.seq{width:100%;border-collapse:collapse;margin-top:22px;font-size:14px;}
+.seq th{text-align:left;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--cool-gray);font-weight:600;padding:8px 10px;border-bottom:2px solid var(--border-gray);}
+.seq td{padding:10px;border-bottom:1px solid var(--border-gray);vertical-align:top;}
+.seq td.n{font-family:var(--font-mono);font-weight:700;color:var(--kraken-purple-deep);width:40px;}
+.seq td.d{color:var(--cool-gray);white-space:nowrap;width:70px;}
+.seq tr.th td{background:var(--kraken-purple-subtle);font-weight:600;color:var(--kraken-purple-deep);font-size:13px;}
+.tchip{display:inline-block;font-size:11.5px;font-weight:700;border-radius:9999px;padding:2px 9px;margin-right:6px;}
+.tchip.e{background:var(--kraken-purple-subtle);color:var(--kraken-purple-deep);}
+.tchip.l{background:#e6f0fd;color:#1f5fbf;}
+.tchip.c{background:var(--d-good-soft);color:var(--d-good-text);}
+.stat-row{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 2px;}
+.stat-chip{background:var(--d-good-soft);color:var(--d-good-text);border-radius:9999px;font-size:13px;font-weight:600;padding:6px 13px;}
+.check{list-style:none;padding:0;margin:22px 0 0;display:grid;grid-template-columns:1fr;gap:10px;}
+@media(min-width:900px){.check{grid-template-columns:1fr 1fr;}}
+.check li{display:flex;gap:12px;align-items:flex-start;background:var(--white);border:1px solid var(--border-gray);border-radius:12px;padding:13px 15px;font-size:14.5px;line-height:1.5;cursor:pointer;user-select:none;}
+.check li .bx{flex:0 0 auto;width:20px;height:20px;border-radius:6px;border:2px solid var(--silver-blue);display:grid;place-items:center;margin-top:1px;}
+.check li .bx svg{width:13px;height:13px;color:#fff;opacity:0;}
+.check li.on{border-color:var(--kraken-purple);background:var(--kraken-purple-subtle);}
+.check li.on .bx{background:var(--kraken-purple);border-color:var(--kraken-purple);}
+.check li.on .bx svg{opacity:1;}
+.dl-row{display:flex;flex-wrap:wrap;gap:16px;margin-top:22px;}
+.dl{flex:1 1 320px;display:flex;gap:14px;align-items:flex-start;text-decoration:none;background:#fff;
+  border:1px solid var(--border-gray);border-radius:14px;padding:18px 20px;transition:border-color .15s, box-shadow .15s;}
+.dl:hover{border-color:var(--kraken-purple);box-shadow:0 10px 30px rgba(40,30,90,.10);text-decoration:none;}
+.dl .ic{flex:0 0 auto;width:40px;height:40px;border-radius:10px;background:var(--kraken-purple-subtle);color:var(--kraken-purple);display:flex;align-items:center;justify-content:center;}
+.dl .ic svg{width:22px;height:22px;}
+.dl .t{display:block;font-weight:600;color:#101114;font-size:15px;}
+.dl .d{display:block;font-size:13px;color:var(--cool-gray);margin-top:3px;line-height:1.45;}
+.dl .ext{display:block;font-size:11.5px;font-weight:700;letter-spacing:.4px;color:var(--kraken-purple);margin-top:7px;}
+.fig-cap{font-size:12.5px;color:var(--cool-gray);margin-top:8px;}
+@media(max-width:600px){.code-c{padding:18px 18px 16px;}.code-c h3{font-size:17.5px;}.seq td.d{white-space:normal;}}
+.talk{margin:4px 0 16px;border:1px solid var(--border-gray);border-radius:14px;overflow:hidden;}
+.talk .ln{display:grid;grid-template-columns:104px 1fr;gap:12px;padding:10px 14px;font-size:14px;line-height:1.55;border-top:1px solid var(--border-gray);}
+.talk .ln:first-child{border-top:0;}
+.talk .who{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--cool-gray);padding-top:3px;}
+.talk .ln.p{background:#fafafb;}
+.talk .ln.p .t{color:var(--secondary);font-style:italic;}
+.talk .ln.a .who{color:var(--kraken-purple);}
+.talk .ln.i .who{color:#1f7ae0;}
+.talk .ln.d .who{color:var(--d-good-text);}
+@media(max-width:600px){.talk .ln{grid-template-columns:1fr;gap:2px;}}
+</style>
+<script>
+document.addEventListener('click',function(e){var li=e.target.closest('.check li');if(li)li.classList.toggle('on');});
+</script>
+<style>
+.calc{display:grid;grid-template-columns:1fr;gap:20px;margin-top:24px;}
+@media(min-width:900px){.calc{grid-template-columns:1.1fr 1fr;}}
+.calc .in{background:var(--white);border:1px solid var(--border-gray);border-radius:18px;padding:20px 22px;box-shadow:var(--shadow-micro);}
+.calc .row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--border-gray);font-size:14.5px;}
+.calc .row:last-child{border-bottom:0;}
+.calc .row label{color:var(--near-black);}
+.calc .row small{display:block;color:var(--cool-gray);font-size:12px;}
+.calc input{width:86px;font:inherit;font-weight:600;text-align:right;padding:6px 9px;border:1px solid var(--border-gray);border-radius:9px;color:var(--kraken-purple-deep);background:#fcfcfd;}
+.calc input:focus{outline:2px solid var(--kraken-purple);border-color:transparent;}
+.calc .grp{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--kraken-purple);margin:14px 0 2px;}
+.calc .grp:first-child{margin-top:0;}
+.calc .out{background:linear-gradient(160deg,var(--kraken-purple) 0%,var(--kraken-purple-deep) 100%);color:#fff;border-radius:18px;padding:22px 24px;display:flex;flex-direction:column;gap:14px;}
+.calc .out .big2{display:flex;gap:14px;flex-wrap:wrap;}
+.calc .out .k{flex:1 1 140px;background:rgba(255,255,255,.12);border-radius:14px;padding:14px 16px;}
+.calc .out .k b{display:block;font-family:var(--font-brand);font-size:38px;letter-spacing:-1px;line-height:1.05;}
+.calc .out .k span{font-size:13px;opacity:.85;}
+.calc .out .chain{font-size:13.5px;line-height:1.7;opacity:.92;}
+.calc .out .chain b{font-weight:700;}
+.calc .out .day{font-size:13px;background:rgba(255,255,255,.1);border-radius:10px;padding:10px 12px;line-height:1.5;}
+</style>
+<script src="../shared/academy.js" defer></script>
+</head>
+<body>
+<div id="gate"><div class="card" id="gateCard"></div></div>
+<div class="progress" id="progress"></div>
+
+<svg class="iconsheet" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="_ic" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></g>
+  </defs>
+  <symbol id="ic-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></symbol>
+  <symbol id="ic-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-5 4z"/></symbol>
+  <symbol id="ic-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8.5V20l-4-2.5v-4z"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 17l-5.4 2.7 1.2-6.1L3.3 9.4l6.1-.8z"/></symbol>
+  <symbol id="ic-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ic-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H14a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5.5"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M18 20a6 6 0 0 0-3.5-5.5"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-11"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2.4 5.6L8 16l2.4-5.6z"/></symbol>
+  <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l1.5 5-2 1.3a12 12 0 0 0 6.2 6.2l1.3-2 5 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></symbol>
+  <symbol id="ic-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M8 3v3.4c0 2 4 3.6 4 5.6s-4 3.6-4 5.6V21"/><path d="M16 3v3.4c0 2-4 3.6-4 5.6s4 3.6 4 5.6V21"/></symbol>
+  <symbol id="ic-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M19 18v3H6.5A2.5 2.5 0 0 1 4 18.5"/></symbol>
+  <symbol id="ic-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1.5A3.5 3.5 0 0 0 7 11M17 6h3v1.5A3.5 3.5 0 0 1 17 11M9.5 19h5M10 14.5l-.5 4.5h5l-.5-4.5"/></symbol>
+  <symbol id="ic-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M7 21h10M6 7l-3 6h6zM18 7l-3 6h6zM4.5 7h15"/><circle cx="12" cy="5" r="1.3"/></symbol>
+  <symbol id="ic-person" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="6.5" r="3.3"/><path d="M5.8 21.5c0-5.4 2.3-9 6.2-9s6.2 3.6 6.2 9z"/></symbol>
+  <symbol id="ic-funnel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-3 5H6z"/><path d="M6.5 11h11l-2.5 4.5h-6z"/><path d="M10 17.5h4L13 21h-2z"/></symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></symbol>
+  <symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="ic-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></symbol>
+  <symbol id="ic-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7.5" y="12" width="3" height="5"/><rect x="12.5" y="8" width="3" height="9"/><rect x="17.5" y="5" width="2.5" height="12"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+</svg>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="../index.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <a class="backlink" href="../index.html">← Academy</a>
+    <a class="langswitch navlang" href="tr.html" data-setlang="tr">Türkçe</a>
+    <div class="spacer"></div>
+    <div class="toc" id="toc">
+      <a href="#q1">Maths</a>
+      <a href="#q2">Day</a>
+      <a href="#q3">Signals</a>
+      <a href="#q4">Message</a>
+      <a href="#q5">Checklist</a>
+      <a href="#resources">Download</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#q1">Know the quota maths</a>
+  <a href="#q2">The daily operating system</a>
+  <a href="#q3">Signals and tiers</a>
+  <a href="#q4">Crisp outreach</a>
+  <a href="#q5">Weekly checklist</a>
+  <a href="#resources">Download the guide</a>
+</div>
+
+<header class="hero">
+  <span class="eyebrow"><span class="dot"></span><span class="micro" style="color:var(--kraken-purple)">SDR Toolkit · Quota Playbook</span></span>
+  <h1>Thirty prospects with a reason to buy <em>beat a hundred cold ones.</em></h1>
+  <p class="sub">The grinder who makes 300 calls a day rarely tops the leaderboard — they’re calling the wrong accounts, at the wrong time, with the wrong message. The best SDRs treat quota like a science. Four plays: know your numbers, protect your mornings, hunt the signals, and keep every message crisp.</p>
+  <div class="hero-meta">
+    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">4</div><div class="l">Plays</div></div>
+    <div class="stat"><div class="v">9–12</div><div class="l">Your prospecting hours</div></div>
+    <div class="stat"><div class="v">30 &gt; 100</div><div class="l">Warm beats cold</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="part" id="q1">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">01</div>
+    <div class="part-label">Play 1 — The maths</div>
+    <h2>Know the 100%-to-quota maths</h2>
+    <p class="lead">To beat your quota you have to know it — in activities, not meetings. Work backwards: volume × conversion = meetings. Put your own numbers in.</p>
+  </div>
+  <div class="calc reveal" id="qcalc" data-l="{&quot;loc&quot;: &quot;en-GB&quot;, &quot;chain&quot;: &quot;Book <b>{book}</b> meetings a month → <b>{cm}</b> from calls needs <b>{conn}</b> conversations from <b>{dials}</b> dials; <b>{em}</b> from email needs <b>{rep}</b> replies from <b>{mails}</b> emails.&quot;, &quot;day&quot;: &quot;That’s about <b>{dd} dials</b> and <b>{ed} emails</b> every working day. Want less volume? Improve a conversion rate — try it above.&quot;}">
+    <div class="in"><div class="grp">Your target</div><div class="row"><label for="q_quota">Meetings to hold per month<small>your quota</small></label><input id="q_quota" type="number" inputmode="decimal" value="15"></div><div class="row"><label for="q_show">Show rate %<small>how many booked meetings actually happen</small></label><input id="q_show" type="number" inputmode="decimal" value="75"></div><div class="row"><label for="q_split">Share from calls %<small>the rest comes from email</small></label><input id="q_split" type="number" inputmode="decimal" value="50"></div><div class="row"><label for="q_weeks">Working weeks per month<small></small></label><input id="q_weeks" type="number" inputmode="decimal" value="4"></div><div class="grp">Calls</div><div class="row"><label for="q_conn">Connect rate %<small>dials that reach a person</small></label><input id="q_conn" type="number" inputmode="decimal" value="5"></div><div class="row"><label for="q_cmeet">Meeting rate %<small>conversations that become a meeting</small></label><input id="q_cmeet" type="number" inputmode="decimal" value="20"></div><div class="grp">Email</div><div class="row"><label for="q_reply">Reply rate %<small>emails that get a reply</small></label><input id="q_reply" type="number" inputmode="decimal" value="2"></div><div class="row"><label for="q_rmeet">Reply → meeting %<small>replies that become a meeting</small></label><input id="q_rmeet" type="number" inputmode="decimal" value="20"></div></div>
+    <div class="out">
+      <div class="big2"><div class="k"><b id="o_dw">0</b><span>dials per week</span></div><div class="k"><b id="o_ew">0</b><span>emails per week</span></div></div>
+      <div class="chain" id="o_chain"></div>
+      <div class="day" id="o_day"></div>
+    </div>
+  </div>
+  <div class="note reveal">Default numbers are the guide’s example. Use last month’s real rates — the calculator only becomes useful with your own data.</div>
+</section>
+
+<section class="part" id="q2">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">02</div>
+    <div class="part-label">Play 2 — The day</div>
+    <h2>Use a daily operating system</h2>
+    <p class="lead">Most SDRs spend the morning on chat and internal meetings, burn their energy by noon, then can’t face calling at 3pm. Do the hardest work first and hit all your inputs before lunch.</p>
+  </div>
+  <div class="reveal" style="margin-top:22px"><div class="fig">
+    <svg viewBox="0 0 760 210" xmlns="http://www.w3.org/2000/svg"><rect class="fg" style="--i:0" x="63.0" y="44" width="207.3" height="96" rx="12" fill="var(--d-good-soft)" stroke="var(--success)" stroke-width="1.5"/><text class="fg" style="--i:0" x="166.7" y="84" fill="var(--near-black)" font-size="15" font-weight="700" text-anchor="middle">Green · 9–12</text><text class="fg" style="--i:0" x="166.7" y="106" fill="var(--cool-gray)" font-size="12" text-anchor="middle">1 call block + 1 email block</text><rect class="fg" style="--i:1" x="276.3" y="44" width="207.3" height="96" rx="12" fill="var(--warning-subtle)" stroke="var(--warning)" stroke-width="1.5"/><text class="fg" style="--i:1" x="380.0" y="84" fill="var(--near-black)" font-size="15" font-weight="700" text-anchor="middle">Yellow · 12–3</text><text class="fg" style="--i:1" x="380.0" y="106" fill="var(--cool-gray)" font-size="12" text-anchor="middle">flex calls & meetings</text><rect class="fg" style="--i:2" x="489.7" y="44" width="207.3" height="96" rx="12" fill="var(--d-bad-soft)" stroke="var(--d-bad)" stroke-width="1.5"/><text class="fg" style="--i:2" x="593.3" y="84" fill="var(--near-black)" font-size="15" font-weight="700" text-anchor="middle">Red · 3–6</text><text class="fg" style="--i:2" x="593.3" y="106" fill="var(--cool-gray)" font-size="12" text-anchor="middle">admin, CRM and tomorrow’s list</text><text class="fg" style="--i:0" x="60.0" y="164" fill="var(--silver-blue)" font-size="12" text-anchor="middle">09:00</text><text class="fg" style="--i:0" x="273.3" y="164" fill="var(--silver-blue)" font-size="12" text-anchor="middle">12:00</text><text class="fg" style="--i:0" x="486.7" y="164" fill="var(--silver-blue)" font-size="12" text-anchor="middle">15:00</text><text class="fg" style="--i:0" x="700.0" y="164" fill="var(--silver-blue)" font-size="12" text-anchor="middle">18:00</text><text class="fg" style="--i:0" x="60" y="26" fill="var(--cool-gray)" font-size="12.5">A prospecting day in three colours</text><text class="fg" style="--i:4" x="380" y="196" fill="var(--near-black)" font-size="12.5" font-weight="600" text-anchor="middle">Inbox only at 8:30, 12:00 and 15:00 — context switching kills SDRs.</text></svg>
+  </div><div class="fig-cap">Green is protected time. Nothing internal gets booked there.</div></div>
+  <div class="grid3">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-phone"/></svg></span><span class="ckicker">Calls first</span></div>
+    <h3>Dial first thing in the morning</h3>
+    <p class="desc">It’s the hardest, most draining task — do it while your energy is highest.</p>
+    <div class="callouts">
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> A 9:00 calling block before the showroom gets busy.</div></div>
+    </div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg></span><span class="ckicker">Timebox the inbox</span></div>
+    <h3>Check email at 8:30, 12 and 3</h3>
+    <p class="desc">Every switch costs focus. Three windows a day is enough for anything that isn’t on fire.</p>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-file"/></svg></span><span class="ckicker">Lists at the end</span></div>
+    <h3>Build tomorrow’s list today</h3>
+    <p class="desc">If you’re building a list at 9am you’re already behind the rep who built it last night and started the day dialling.</p>
+    <div class="callouts">
+      <div class="mozaik"><span class="pin">★</span><div><b>At Mozaik:</b> Finish each day with tomorrow’s 20–30 accounts and their context ready in the CRM.</div></div>
+    </div>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="q3">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">03</div>
+    <div class="part-label">Play 3 — Signals</div>
+    <h2>Hunt the signals, tier your accounts</h2>
+    <p class="lead">A signal is proof that an account is more likely to have a problem you can solve. Work your list top to bottom with equal effort and you’ll stay at the bottom of the leaderboard. Learn which signals mean “ready” and call those first.</p>
+  </div>
+  <div class="reveal" style="margin-top:22px"><div class="lane-h"><b>Buying signals for Mozaik</b><span></span></div><ul class="rlist" style="border-top:0;margin-top:0"><li><span class="t">New opening announced</span><span class="s">a hotel, restaurant, clinic or office announces a new location — a fit-out on a deadline</span></li><li><span class="t">Renovation or tender</span><span class="s">a refurbishment notice, a tender, a planning approval</span></li><li><span class="t">New decision-maker</span><span class="s">a new GM, project director or head of purchasing wants to make a mark</span></li><li><span class="t">Your champion moved</span><span class="s">an architect or buyer you’ve worked with joins a new company</span></li><li><span class="t">Hiring for opening</span><span class="s">job ads for opening staff mean the property is coming soon</span></li><li><span class="t">Came back to us</span><span class="s">repeat website or showroom visits from a past lead</span></li><li><span class="t">Named the pain</span><span class="s">a decision-maker talks publicly about delays, quality or sustainability</span></li></ul></div>
+  <div class="reveal" style="margin-top:22px"><div class="fig">
+    <svg viewBox="0 0 760 220" xmlns="http://www.w3.org/2000/svg"><rect class="fg" style="--i:0" x="30" y="20" width="700" height="54" rx="12" fill="var(--d-bad-soft)" stroke="var(--d-bad)" stroke-width="1.5"/><text class="fg" style="--i:0" x="50" y="44" fill="var(--near-black)" font-size="14.5" font-weight="700">Tier 1 — problem now</text><text class="fg" style="--i:0" x="50" y="62" fill="var(--cool-gray)" font-size="12">opening date set, tender out, new decision-maker, champion moved, repeat visits</text><text class="fg" style="--i:0" x="714" y="53" fill="var(--near-black)" font-size="12.5" font-weight="600" text-anchor="end">call first, extra dials</text><rect class="fg" style="--i:1" x="30" y="84" width="580" height="54" rx="12" fill="var(--warning-subtle)" stroke="var(--warning)" stroke-width="1.5"/><text class="fg" style="--i:1" x="50" y="108" fill="var(--near-black)" font-size="14.5" font-weight="700">Tier 2 — problem soon</text><text class="fg" style="--i:1" x="50" y="126" fill="var(--cool-gray)" font-size="12">planning approval, hiring, funding, engaging with our content</text><text class="fg" style="--i:1" x="594" y="117" fill="var(--near-black)" font-size="12.5" font-weight="600" text-anchor="end">full sequence</text><rect class="fg" style="--i:2" x="30" y="148" width="460" height="54" rx="12" fill="var(--d-box)" stroke="var(--border-gray)" stroke-width="1.5"/><text class="fg" style="--i:2" x="50" y="172" fill="var(--near-black)" font-size="14.5" font-weight="700">Tier 3 — everyone else</text><text class="fg" style="--i:2" x="50" y="190" fill="var(--cool-gray)" font-size="12">fits our profile, no signal yet</text><text class="fg" style="--i:2" x="474" y="181" fill="var(--near-black)" font-size="12.5" font-weight="600" text-anchor="end">light touch</text></svg>
+  </div><div class="fig-cap">Adjust effort by tier — a few extra dials on Tier 1 converts far better than equal effort everywhere.</div></div>
+  <div class="note reveal">None of these show up in a static list built from company size and sector. Keep a watch list of your top accounts and check it for a reason to reach out.</div>
+</section>
+
+<section class="part" id="q4">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">04</div>
+    <div class="part-label">Play 4 — The message</div>
+    <h2>Outreach: the crisper the better</h2>
+    <p class="lead">Good outbound is short and shockingly clear, with no marketing jargon. Lead with something you actually learned about them — that’s your edge — in as few words as it takes.</p>
+  </div>
+  <div class="grid4">
+    <div class="field reveal"><div class="ic"><b>1</b></div><div class="k">What I saw</div><div class="v">the signal</div></div>
+    <div class="field reveal"><div class="ic"><b>2</b></div><div class="k">The problem</div><div class="v">I think you have</div></div>
+    <div class="field reveal"><div class="ic"><b>3</b></div><div class="k">Who we helped</div><div class="v">solve it</div></div>
+    <div class="field reveal"><div class="ic"><b>4</b></div><div class="k">A small ask</div><div class="v">open to learning more?</div></div>
+  </div>
+  <div class="mail reveal" style="margin-top:22px;max-width:640px">
+    <div class="mh"><span class="ch">Putting the four parts together</span></div>
+    <div class="subj">Subject: <b>moda opening</b></div>
+    <div class="body">Hi Emre,
+
+Saw you’re opening a third branch in Moda this spring.
+
+Usually that means the dining room gets finished last — and seating that can’t survive a year of service.
+
+We made the seating and lighting for a five-branch group in Istanbul, delivered to each opening date.
+
+Open to learning more?</div>
+    <div class="why"><b>Why it works:</b> four sentences, one per part — signal, problem, proof, ask. Under 60 words, no adjectives about ourselves.</div>
+  </div>
+</section>
+
+<section class="part" id="q5">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">05</div>
+    <div class="part-label">Weekly checklist</div>
+    <h2>Your week, in eight boxes</h2>
+    <p class="lead">Tap each one at the end of the week.</p>
+  </div>
+  <ul class="check reveal">
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>I know my weekly dials and emails for this month</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>My 9–12 block was protected every day</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>Calls came before email and before internal meetings</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>I checked my inbox in three windows, not all day</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>Tomorrow’s list was built before I went home</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>Tier 1 accounts got extra dials</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>Every first message led with a real signal</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>Every message was four sentences or fewer</span></li>
+  </ul>
+</section>
+
+<section class="part" id="resources">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">★</div>
+    <div class="part-label">Resources</div>
+    <h2>The original field guide</h2>
+    <p class="lead">The full field guide (in English). The Mozaik signals, tiers and example above are our own adaptation; the guide also covers a tool its co-author makes, which we don’t use.</p>
+  </div>
+  <div class="dl-row reveal">
+  <a class="dl" href="30MPC-Unify-How-Top-SDRs-Hit-Quota.pdf" target="_blank" rel="noopener">
+    <span class="ic"><svg viewBox="0 0 24 24"><use href="#ic-download"/></svg></span>
+    <span><span class="t">How Top SDRs Hit Quota Every Year</span><span class="d">The original 12-page SDR field guide: quota maths, daily operating system, signals and tiers, four-part messaging.</span><span class="ext">PDF · English · 30MPC × Unify</span></span>
+  </a>
+  <a class="dl" href="../sdr-sequence/index.html">
+    <span class="ic"><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg></span>
+    <span><span class="t">Next: The 30-Day Outbound Sequence</span><span class="d">Turn your Tier 1 accounts into a month of touches across email, phone and LinkedIn.</span><span class="ext">SDR Toolkit · Sequence</span></span>
+  </a>
+  </div>
+</section>
+
+</div>
+
+<section class="cta">
+  <div class="inner">
+    <div class="reveal">
+      <span class="micro" style="color:rgba(255,255,255,0.7)">The one thing to remember</span>
+      <h2 style="margin-top:14px;">Work the accounts with a reason to buy. Skip the rest.</h2>
+      <p>Know the numbers you need each week, do the hard work before lunch, call the accounts showing a signal first, and say it in four crisp sentences. Same effort, far less rejection, more meetings.</p>
+    </div>
+    <div class="principles reveal">
+      <div class="p"><div class="n">01 — Maths</div><div class="t">Quota → meetings → conversations → dials and emails.</div></div>
+      <div class="p"><div class="n">02 — Day</div><div class="t">Green 9–12 prospecting, red 3–6 admin.</div></div>
+      <div class="p"><div class="n">03 — Signals</div><div class="t">Tier 1 first, with extra effort.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="complete" id="completeBox"></div>
+
+<footer class="foot">
+  <div class="inner">
+    <a class="brand" href="../index.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <div class="src">Adapted from <b>“How Top SDRs Hit Quota Every Year”</b> (30 Minutes to President’s Club × Unify, SDR Field Guide). The four plays and default numbers are theirs; the Mozaik signals, tiers, example, calculator and diagrams are original. All rights to the original belong to its authors; shared here for internal Mozaik training only. Styled in the Kraken Design System.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var f=document.getElementById('qcalc'); if(!f) return;
+  var L=JSON.parse(f.getAttribute('data-l'));
+  function v(id){var x=parseFloat(String(document.getElementById(id).value).replace(',','.'));return isNaN(x)?0:x;}
+  function fmt(n){return Math.round(n).toLocaleString(L.loc);}
+  function run(){
+    var q=v('q_quota'), show=v('q_show')/100, split=v('q_split')/100,
+        cm=v('q_cmeet')/100, cc=v('q_conn')/100, er=v('q_reply')/100, em=v('q_rmeet')/100, wd=v('q_weeks');
+    var book=show?q/show:0, callM=book*split, mailM=book*(1-split);
+    var conns=cm?callM/cm:0, dials=cc?conns/cc:0, reps=em?mailM/em:0, mails=er?reps/er:0;
+    var w=wd||4;
+    document.getElementById('o_dw').textContent=fmt(dials/w);
+    document.getElementById('o_ew').textContent=fmt(mails/w);
+    document.getElementById('o_chain').innerHTML=L.chain.replace('{book}',fmt(book)).replace('{cm}',fmt(callM)).replace('{conn}',fmt(conns)).replace('{dials}',fmt(dials)).replace('{em}',fmt(mailM)).replace('{rep}',fmt(reps)).replace('{mails}',fmt(mails));
+    document.getElementById('o_day').innerHTML=L.day.replace('{dd}',fmt(dials/w/5)).replace('{ed}',fmt(mails/w/5));
+  }
+  f.addEventListener('input',run); run();
+})();
+</script>
+<script src="../shared/course.js" defer></script>
+</body>
+</html>
