@@ -36,6 +36,14 @@
     "Doğan Balamir Nazlıca"
   ];
   var ADMINS = ["Doğan Balamir Nazlıca"];     /* can open the Analytics view */
+  /* Time on site counts only ACTIVE time: the tab is visible and someone has
+     scrolled, clicked, typed or touched the page in the last IDLE_MIN minutes
+     (or is watching an embedded video). Sessions logged before ACTIVE_SINCE
+     used the old open-tab timer, so the admin view caps each one at
+     LEGACY_CAP_MIN. The raw rows in the sheet are never changed. */
+  var IDLE_MIN = 3;
+  var ACTIVE_SINCE = "2026-10-18T15:30:00Z";
+  var LEGACY_CAP_MIN = 45;
   /* ======================================================================= */
 
   var P = window.MOZAIK || {};
@@ -62,6 +70,7 @@
       thName: 'Name', thSign: 'Sign-ins', thTime: 'Total time', thLast: 'Last seen',
       thCourse: 'Training', thViews: 'Opens',
       aByCourse: 'By training',
+      aNote: 'Time is active reading time. Sessions before 18 Oct 2026 used an open-tab timer and are capped at ' + LEGACY_CAP_MIN + ' min each.',
       doneQ: 'Finished this training?',
       doneHint: 'Mark it complete so it shows as done on your Academy home.',
       doneBtn: 'Mark as complete', doneOn: 'Completed on ', undo: 'Mark as not complete',
@@ -95,6 +104,7 @@
       thName: 'İsim', thSign: 'Giriş', thTime: 'Toplam süre', thLast: 'Son görülme',
       thCourse: 'Eğitim', thViews: 'Açılma',
       aByCourse: 'Eğitim bazında',
+      aNote: 'Süre, aktif okuma süresidir. 18 Ekim 2026 öncesindeki oturumlar açık sekme süresini saydığı için her biri en fazla ' + LEGACY_CAP_MIN + ' dk olarak sayılır.',
       doneQ: 'Bu eğitimi bitirdin mi?',
       doneHint: 'Tamamlandı olarak işaretle; Academy ana sayfanda tamamlandı görünsün.',
       doneBtn: 'Tamamlandı olarak işaretle', doneOn: 'Tamamlanma: ', undo: 'Tamamlanmadı olarak işaretle',
@@ -177,6 +187,7 @@
     '<div class="kpi"><div class="k">' + T.kPeople + '</div><div class="v" id="kPeople">–</div></div>' +
     '<div class="kpi"><div class="k">' + T.kTime + '</div><div class="v" id="kTime">–</div></div>' +
     '<div class="kpi"><div class="k">' + T.kAvg + '</div><div class="v" id="kAvg">–</div></div></div>' +
+    '<p class="amuted" style="font-size:12.5px;margin:12px 2px 0">' + T.aNote + '</p>' +
     '<div id="aCourseWrap" style="display:none"><h4>' + T.aByCourse + '</h4>' +
     '<table><thead><tr><th>' + T.thCourse + '</th><th>' + T.thViews + '</th><th></th></tr></thead>' +
     '<tbody id="aCourseBody"></tbody></table></div>' +
@@ -204,7 +215,7 @@
   });
 
   /* ------------------------------ analytics ------------------------------ */
-  var sessionUser = null, sessionStart = null, ended = false;
+  var sessionUser = null, sessionStart = null;
 
   function send(event, extra) {
     if (!ANALYTICS_URL || ANALYTICS_URL.indexOf('__') === 0) return;
@@ -216,10 +227,37 @@
       else { fetch(ANALYTICS_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(payload) }); }
     } catch (e) { }
   }
+  /* ---- active-time timer ------------------------------------------------ */
+  var IDLE_MS = IDLE_MIN * 60 * 1000, activeMs = 0, lastTick = 0, lastInput = 0, tickTimer = null;
+  function watchingVideo() {
+    var a = document.activeElement;
+    return !!(a && a.tagName === 'IFRAME');
+  }
+  function tick() {
+    var now = Date.now();
+    if (lastTick && document.visibilityState === 'visible') {
+      /* a focused video counts as active, but never more than one idle window
+         per tick, so a sleeping laptop can't add hours */
+      var until = watchingVideo() ? Math.min(now, lastTick + IDLE_MS) : Math.min(now, lastInput + IDLE_MS);
+      var add = until - lastTick;
+      if (add > 0) activeMs += add;
+    }
+    lastTick = now;
+  }
+  function onInput() { tick(); lastInput = Date.now(); }
+  function startTimer() {
+    activeMs = 0; lastTick = lastInput = Date.now();
+    if (!tickTimer) tickTimer = setInterval(tick, 15000);
+    ['scroll', 'wheel', 'mousemove', 'mousedown', 'keydown', 'touchstart', 'click'].forEach(function (ev) {
+      window.addEventListener(ev, onInput, { passive: true, capture: true });
+    });
+  }
   function endSession() {
-    if (ended || !sessionUser || !sessionStart) return;
-    ended = true;
-    send('session_end', { duration_seconds: Math.round((Date.now() - sessionStart) / 1000) });
+    if (!sessionUser || !sessionStart) return;
+    tick();
+    var secs = Math.round(activeMs / 1000);
+    activeMs = 0;
+    if (secs > 0) send('session_end', { duration_seconds: secs });
   }
   function fmtDur(sec) {
     sec = Math.round(sec || 0);
@@ -241,18 +279,25 @@
     s.src = ANALYTICS_URL + '?callback=__mozAnalytics&t=' + Date.now();
     document.head.appendChild(s);
   }
+  var ACTIVE_SINCE_MS = new Date(ACTIVE_SINCE).getTime();
+  function rowSec(r) {
+    var sec = Number(r.duration) || 0;
+    var t = new Date(r.ts).getTime();
+    if (!(t >= ACTIVE_SINCE_MS)) sec = Math.min(sec, LEGACY_CAP_MIN * 60);
+    return sec;
+  }
   function renderAnalytics(data) {
     var rows = (data && data.rows) || [];
     var logins = rows.filter(function (r) { return r.event === 'login'; });
     var ends = rows.filter(function (r) { return r.event === 'session_end'; });
-    var totalSec = ends.reduce(function (a, r) { return a + (Number(r.duration) || 0); }, 0);
+    var totalSec = ends.reduce(function (a, r) { return a + rowSec(r); }, 0);
     var people = {}, courses = {};
     rows.forEach(function (r) {
       if (r.page) { courses[r.page] = (courses[r.page] || 0) + 1; }
       if (!r.name) return;
       var p = people[r.name] || (people[r.name] = { signins: 0, sec: 0, last: null });
       if (r.event === 'login') p.signins++;
-      if (r.event === 'session_end') p.sec += Number(r.duration) || 0;
+      if (r.event === 'session_end') p.sec += rowSec(r);
       var t = new Date(r.ts).getTime();
       if (!p.last || t > p.last) p.last = t;
     });
@@ -398,7 +443,8 @@
 
   /* ------------------------------- session -------------------------------- */
   function startSession(name, isFresh) {
-    sessionUser = name; sessionStart = Date.now(); ended = false;
+    sessionUser = name; sessionStart = Date.now();
+    startTimer();
     document.body.classList.remove('locked');
     gate.hidden = true;
     addUserChip(name);
@@ -410,7 +456,10 @@
     if (hasTour && ls(TOUR_KEY) !== '1') { startTour(name); } else { showWelcome(name); }
     window.addEventListener('pagehide', endSession);
     window.addEventListener('beforeunload', endSession);
-    document.addEventListener('visibilitychange', function () { if (document.visibilityState === 'hidden') endSession(); });
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'hidden') { endSession(); }
+      else { lastTick = lastInput = Date.now(); }
+    });
   }
 
   function tryLogin() {
