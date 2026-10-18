@@ -116,3 +116,8 @@ a.ccard:hover .cgo::after{ transform:translateX(3px); }
 .ccard .cover.plum{ background:linear-gradient(135deg,#9b4dd6 0%, #6a1fa3 100%); }
 .ccard .cover.berry{ background:linear-gradient(135deg,#c2418f 0%, #7d1d63 100%); }
 .ccard .cover.teal{ background:linear-gradient(135deg,#2a8f83 0%, #125e57 100%); }
+.ccard .cover.coral{ background:linear-gradient(135deg,#f0645a 0%, #b8322f 100%); }
+.ccard .cover.crimson{ background:linear-gradient(135deg,#c93a5b 0%, #7e1838 100%); }
+.ccard .cover.violet{ background:linear-gradient(135deg,#7b5cf0 0%, #4527a0 100%); }
+/* cover gradient: 06 Flow (ocean) */
+.ccard .cover.ocean{ background:linear-gradient(135deg,#1aa6c9 0%, #0b5f86 100%); }
