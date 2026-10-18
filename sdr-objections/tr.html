@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soğuk Arama İtirazları — Mozaik Academy</title>
+<meta name="description" content="Soğuk aramada en sık duyulan 18 itiraz ve hepsini karşılayan üç adımlı yöntem — hak ver, teşvik et, test sürüşünü sat — her biri için Mozaik senaryolarıyla.">
+<script>
+(function(){
+  try{
+    var CUR='tr';
+    var saved=localStorage.getItem('mozaik_lang');
+    if(saved && saved!==CUR && location.search.indexOf('l=1')<0){
+      location.replace((CUR==='en'?'tr.html':'index.html')+'?l=1');
+    }
+  }catch(e){}
+})();
+</script>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../shared/course.css">
+<link rel="stylesheet" href="../shared/academy.css">
+<script>window.MOZAIK = {
+  "lang": "tr",
+  "page": "course",
+  "id": "sdr-objections",
+  "tour": [
+    {
+      "n": "SDR Araç Seti",
+      "t": "Hoş geldin, {name} 👋",
+      "b": "Soğuk aramalarda duyacağın on sekiz itiraz ve hepsini karşılayan tek bir üç adımlı yöntem. Her biri bir Mozaik senaryosuyla. Yaklaşık 20 dakika."
+    },
+    {
+      "n": "Adım 1 / 2",
+      "t": "Önce yöntemi öğren",
+      "b": "Bölüm 01 çerçeveyi anlatıyor. Senaryoları ezberleme — üç adımı öğren, sonra senaryolarda nasıl çalıştığını gör."
+    },
+    {
+      "n": "Adım 2 / 2",
+      "t": "Bitirince tamamlandı olarak işaretle",
+      "b": "Sayfanın en altında “Tamamlandı olarak işaretle” düğmesi var."
+    }
+  ]
+};</script>
+<style>
+.grid2{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+.grid3{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;}
+@media(min-width:900px){.grid2{grid-template-columns:1fr 1fr;gap:20px;}.grid3{grid-template-columns:repeat(3,1fr);}.grid4{grid-template-columns:repeat(4,1fr);}}
+.code-c{background:var(--white);border:1px solid var(--border-gray);border-radius:18px;
+  padding:22px 22px 18px;display:flex;flex-direction:column;box-shadow:var(--shadow-micro);}
+.code-c .card-top{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;}
+.code-c .num{flex:0 0 auto;min-width:34px;height:34px;padding:0 8px;border-radius:10px;display:grid;place-items:center;
+  background:var(--kraken-purple-subtle);color:var(--kraken-purple-deep);
+  font-family:var(--font-mono);font-size:13px;font-weight:700;letter-spacing:-0.02em;}
+.code-c .cicon{flex:0 0 auto;width:26px;height:26px;color:var(--kraken-purple);}
+.code-c .cicon svg{width:26px;height:26px;}
+.code-c .ckicker{font-size:var(--fs-micro);letter-spacing:0.08em;text-transform:uppercase;color:var(--cool-gray);font-weight:600;}
+.code-c h3{font-size:19px;line-height:1.3;margin:0 0 10px;letter-spacing:-0.01em;}
+.code-c .desc{font-size:14.5px;line-height:1.62;color:var(--secondary);margin:0 0 16px;}
+.code-c .callouts{margin-top:auto;display:flex;flex-direction:column;gap:10px;}
+.code-c .takeaway{background:var(--kraken-purple-subtle);border-left:3px solid var(--kraken-purple);
+  border-radius:0 10px 10px 0;padding:11px 14px;font-size:13.5px;line-height:1.55;}
+.code-c .mozaik{display:flex;gap:9px;font-size:13px;line-height:1.55;color:var(--cool-gray);}
+.code-c .mozaik .pin{color:var(--kraken-purple);flex:0 0 auto;}
+.field{background:var(--white);border:1px solid var(--border-gray);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-micro);}
+.field .k{font-weight:700;font-size:15px;color:var(--near-black);}
+.field .v{font-size:13.5px;color:var(--cool-gray);margin-top:4px;line-height:1.45;}
+.field .ic{width:30px;height:30px;border-radius:9px;background:var(--kraken-purple-subtle);color:var(--kraken-purple);display:grid;place-items:center;margin-bottom:10px;}
+.field .ic svg{width:17px;height:17px;}
+.big{font-family:var(--font-brand);font-size:34px;font-weight:700;letter-spacing:-1px;color:var(--kraken-purple);line-height:1;margin:2px 0 10px;}
+.formula{font-family:var(--font-mono);font-size:13px;background:var(--d-box);border-radius:10px;padding:10px 12px;color:var(--near-black);margin:0 0 14px;line-height:1.5;}
+.rlist{list-style:none;margin:18px 0 0;padding:0;border-top:1px solid var(--border-gray);}
+.rlist li{display:flex;gap:14px;align-items:baseline;justify-content:space-between;padding:13px 2px;border-bottom:1px solid var(--border-gray);}
+.rlist .t{font-weight:600;font-size:15px;color:var(--near-black);}
+.rlist .s{font-size:13px;color:var(--cool-gray);text-align:right;}
+.lane-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding-bottom:10px;border-bottom:3px solid var(--kraken-purple);}
+.lane-h.alt{border-bottom-color:var(--warning,#d97706);}
+.lane-h b{font-size:12px;letter-spacing:.08em;text-transform:uppercase;}
+.lane-h span{font-size:12.5px;color:var(--cool-gray);}
+.note{margin-top:22px;background:var(--d-box);border-radius:14px;padding:16px 20px;font-size:14.5px;line-height:1.55;color:var(--near-black);}
+.rules{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+@media(min-width:900px){.rules{grid-template-columns:repeat(3,1fr);}}
+.rule{position:relative;background:linear-gradient(160deg,var(--kraken-purple) 0%,var(--kraken-purple-deep) 100%);color:#fff;border-radius:18px;padding:22px 22px 20px;display:flex;flex-direction:column;min-height:200px;}
+.rule .n{font-family:var(--font-brand);font-size:40px;font-weight:700;opacity:.35;line-height:1;letter-spacing:-1.5px;}
+.rule h3{color:#fff;font-size:18.5px;line-height:1.35;margin:12px 0 10px;}
+.rule ul{margin:0 0 12px;padding-left:18px;font-size:14px;line-height:1.6;color:rgba(255,255,255,.88);}
+.rule .scope{margin-top:auto;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.75);}
+.mail{background:var(--white);border:1px solid var(--border-gray);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-micro);display:flex;flex-direction:column;}
+.mail .mh{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--border-gray);background:#fcfcfd;flex-wrap:wrap;}
+.mail .step{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--kraken-purple-deep);background:var(--kraken-purple-subtle);border-radius:8px;padding:3px 8px;}
+.mail .ch{font-size:12px;font-weight:600;color:var(--cool-gray);}
+.mail .day{margin-left:auto;font-size:12px;color:var(--silver-blue);font-weight:600;}
+.mail .subj{padding:12px 16px 0;font-size:13px;color:var(--cool-gray);}
+.mail .subj b{color:var(--near-black);font-weight:600;}
+.mail .body{padding:10px 16px 14px;font-size:14.5px;line-height:1.6;color:var(--near-black);white-space:pre-line;}
+.mail .why{margin-top:auto;border-top:1px dashed var(--border-gray);padding:11px 16px 13px;font-size:13px;line-height:1.5;color:var(--cool-gray);}
+.mail .why b{color:var(--kraken-purple);}
+.seq{width:100%;border-collapse:collapse;margin-top:22px;font-size:14px;}
+.seq th{text-align:left;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--cool-gray);font-weight:600;padding:8px 10px;border-bottom:2px solid var(--border-gray);}
+.seq td{padding:10px;border-bottom:1px solid var(--border-gray);vertical-align:top;}
+.seq td.n{font-family:var(--font-mono);font-weight:700;color:var(--kraken-purple-deep);width:40px;}
+.seq td.d{color:var(--cool-gray);white-space:nowrap;width:70px;}
+.seq tr.th td{background:var(--kraken-purple-subtle);font-weight:600;color:var(--kraken-purple-deep);font-size:13px;}
+.tchip{display:inline-block;font-size:11.5px;font-weight:700;border-radius:9999px;padding:2px 9px;margin-right:6px;}
+.tchip.e{background:var(--kraken-purple-subtle);color:var(--kraken-purple-deep);}
+.tchip.l{background:#e6f0fd;color:#1f5fbf;}
+.tchip.c{background:var(--d-good-soft);color:var(--d-good-text);}
+.stat-row{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 2px;}
+.stat-chip{background:var(--d-good-soft);color:var(--d-good-text);border-radius:9999px;font-size:13px;font-weight:600;padding:6px 13px;}
+.check{list-style:none;padding:0;margin:22px 0 0;display:grid;grid-template-columns:1fr;gap:10px;}
+@media(min-width:900px){.check{grid-template-columns:1fr 1fr;}}
+.check li{display:flex;gap:12px;align-items:flex-start;background:var(--white);border:1px solid var(--border-gray);border-radius:12px;padding:13px 15px;font-size:14.5px;line-height:1.5;cursor:pointer;user-select:none;}
+.check li .bx{flex:0 0 auto;width:20px;height:20px;border-radius:6px;border:2px solid var(--silver-blue);display:grid;place-items:center;margin-top:1px;}
+.check li .bx svg{width:13px;height:13px;color:#fff;opacity:0;}
+.check li.on{border-color:var(--kraken-purple);background:var(--kraken-purple-subtle);}
+.check li.on .bx{background:var(--kraken-purple);border-color:var(--kraken-purple);}
+.check li.on .bx svg{opacity:1;}
+.dl-row{display:flex;flex-wrap:wrap;gap:16px;margin-top:22px;}
+.dl{flex:1 1 320px;display:flex;gap:14px;align-items:flex-start;text-decoration:none;background:#fff;
+  border:1px solid var(--border-gray);border-radius:14px;padding:18px 20px;transition:border-color .15s, box-shadow .15s;}
+.dl:hover{border-color:var(--kraken-purple);box-shadow:0 10px 30px rgba(40,30,90,.10);text-decoration:none;}
+.dl .ic{flex:0 0 auto;width:40px;height:40px;border-radius:10px;background:var(--kraken-purple-subtle);color:var(--kraken-purple);display:flex;align-items:center;justify-content:center;}
+.dl .ic svg{width:22px;height:22px;}
+.dl .t{display:block;font-weight:600;color:#101114;font-size:15px;}
+.dl .d{display:block;font-size:13px;color:var(--cool-gray);margin-top:3px;line-height:1.45;}
+.dl .ext{display:block;font-size:11.5px;font-weight:700;letter-spacing:.4px;color:var(--kraken-purple);margin-top:7px;}
+.fig-cap{font-size:12.5px;color:var(--cool-gray);margin-top:8px;}
+@media(max-width:600px){.code-c{padding:18px 18px 16px;}.code-c h3{font-size:17.5px;}.seq td.d{white-space:normal;}}
+.talk{margin:4px 0 16px;border:1px solid var(--border-gray);border-radius:14px;overflow:hidden;}
+.talk .ln{display:grid;grid-template-columns:104px 1fr;gap:12px;padding:10px 14px;font-size:14px;line-height:1.55;border-top:1px solid var(--border-gray);}
+.talk .ln:first-child{border-top:0;}
+.talk .who{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--cool-gray);padding-top:3px;}
+.talk .ln.p{background:#fafafb;}
+.talk .ln.p .t{color:var(--secondary);font-style:italic;}
+.talk .ln.a .who{color:var(--kraken-purple);}
+.talk .ln.i .who{color:#1f7ae0;}
+.talk .ln.d .who{color:var(--d-good-text);}
+@media(max-width:600px){.talk .ln{grid-template-columns:1fr;gap:2px;}}
+</style>
+<script>
+document.addEventListener('click',function(e){var li=e.target.closest('.check li');if(li)li.classList.toggle('on');});
+</script>
+<script src="../shared/academy.js" defer></script>
+</head>
+<body>
+<div id="gate"><div class="card" id="gateCard"></div></div>
+<div class="progress" id="progress"></div>
+
+<svg class="iconsheet" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="_ic" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></g>
+  </defs>
+  <symbol id="ic-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></symbol>
+  <symbol id="ic-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-5 4z"/></symbol>
+  <symbol id="ic-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8.5V20l-4-2.5v-4z"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 17l-5.4 2.7 1.2-6.1L3.3 9.4l6.1-.8z"/></symbol>
+  <symbol id="ic-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ic-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H14a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5.5"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M18 20a6 6 0 0 0-3.5-5.5"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-11"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2.4 5.6L8 16l2.4-5.6z"/></symbol>
+  <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l1.5 5-2 1.3a12 12 0 0 0 6.2 6.2l1.3-2 5 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></symbol>
+  <symbol id="ic-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M8 3v3.4c0 2 4 3.6 4 5.6s-4 3.6-4 5.6V21"/><path d="M16 3v3.4c0 2-4 3.6-4 5.6s4 3.6 4 5.6V21"/></symbol>
+  <symbol id="ic-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M19 18v3H6.5A2.5 2.5 0 0 1 4 18.5"/></symbol>
+  <symbol id="ic-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1.5A3.5 3.5 0 0 0 7 11M17 6h3v1.5A3.5 3.5 0 0 1 17 11M9.5 19h5M10 14.5l-.5 4.5h5l-.5-4.5"/></symbol>
+  <symbol id="ic-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M7 21h10M6 7l-3 6h6zM18 7l-3 6h6zM4.5 7h15"/><circle cx="12" cy="5" r="1.3"/></symbol>
+  <symbol id="ic-person" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="6.5" r="3.3"/><path d="M5.8 21.5c0-5.4 2.3-9 6.2-9s6.2 3.6 6.2 9z"/></symbol>
+  <symbol id="ic-funnel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-3 5H6z"/><path d="M6.5 11h11l-2.5 4.5h-6z"/><path d="M10 17.5h4L13 21h-2z"/></symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></symbol>
+  <symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="ic-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></symbol>
+  <symbol id="ic-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7.5" y="12" width="3" height="5"/><rect x="12.5" y="8" width="3" height="9"/><rect x="17.5" y="5" width="2.5" height="12"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+</svg>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="../tr.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <a class="backlink" href="../tr.html">← Academy</a>
+    <a class="langswitch navlang" href="index.html" data-setlang="en">English</a>
+    <div class="spacer"></div>
+    <div class="toc" id="toc">
+      <a href="#o1">Yöntem</a>
+      <a href="#o2">Savuşturma</a>
+      <a href="#o3">Durumsal</a>
+      <a href="#o4">Mevcut</a>
+      <a href="#o5">Pratik</a>
+      <a href="#resources">İndir</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#o1">Üç adımlı yöntem</a>
+  <a href="#o2">Savuşturma itirazları</a>
+  <a href="#o3">Durumsal itirazlar</a>
+  <a href="#o4">Mevcut tedarikçi itirazları</a>
+  <a href="#o5">Pratik listesi</a>
+  <a href="#resources">Orijinali indir</a>
+</div>
+
+<header class="hero">
+  <span class="eyebrow"><span class="dot"></span><span class="micro" style="color:var(--kraken-purple)">SDR Araç Seti · Soğuk Arama</span></span>
+  <h1>On sekiz itiraz. <em>Hepsi için tek bir yol.</em></h1>
+  <p class="sub">Soğuk aramada müşterinin ilk söylediği şey neredeyse hiçbir zaman gerçek itirazı değildir — bölünmeye verilen bir reflekstir. Bu araç seti her itiraz için tek bir üç adımlı yöntem veriyor, sonra gerçekten duyacağın on sekiz itirazı tek tek ele alıyor; her biri mobilya ve aydınlatma satışımıza göre yazılmış bir senaryoyla.</p>
+  <div class="hero-meta">
+    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">18</div><div class="l">İtiraz</div></div>
+    <div class="stat"><div class="v count">3</div><div class="l">Adım</div></div>
+    <div class="stat"><div class="v">3</div><div class="l">Grup: savuşturma · durumsal · mevcut</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="part" id="o1">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">01</div>
+    <div class="part-label">Bölüm 01 — Yöntem</div>
+    <h2>İtirazların çoğu aslında itiraz değildir</h2>
+    <p class="lead">Soğuk arama bir bölünmedir ve insanlar bölünmeye, onu bitirecek ilk bahaneye sarılarak tepki verir. Mantıkla tartışmak sadece daha çok iter. Önce tepkiyi yatıştırmalısın — hak vererek.</p>
+  </div>
+  <div class="reveal" style="margin-top:22px"><div class="fig">
+    <svg viewBox="0 0 760 230" xmlns="http://www.w3.org/2000/svg"><defs><marker id="aO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--silver-blue)"/></marker></defs><rect class="fg" style="--i:0" x="20" y="40" width="210" height="110" rx="14" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="1.5"/><text class="fg" style="--i:0" x="38" y="72" fill="var(--kraken-purple)" font-size="13" font-weight="700">1</text><text class="fg" style="--i:0" x="125" y="92" fill="var(--near-black)" font-size="17" font-weight="700" text-anchor="middle">Hak ver</text><text class="fg" style="--i:0" x="125" y="118" fill="var(--cool-gray)" font-size="12" text-anchor="middle">“Haklısınız…”</text><text class="fg" style="--i:3" x="125" y="182" fill="var(--near-black)" font-size="12.5" font-weight="600" text-anchor="middle">itmeyi bırakır</text><line class="fg" style="--i:0" x1="234" y1="95" x2="270" y2="95" stroke="var(--silver-blue)" stroke-width="2" marker-end="url(#aO)"/><rect class="fg" style="--i:1" x="275" y="40" width="210" height="110" rx="14" fill="#e6f0fd" stroke="#1f7ae0" stroke-width="1.5"/><text class="fg" style="--i:1" x="293" y="72" fill="#1f7ae0" font-size="13" font-weight="700">2</text><text class="fg" style="--i:1" x="380" y="92" fill="var(--near-black)" font-size="17" font-weight="700" text-anchor="middle">Teşvik et</text><text class="fg" style="--i:1" x="380" y="118" fill="var(--cool-gray)" font-size="12" text-anchor="middle">“kimse sizi tekrar aramasın diye…”</text><text class="fg" style="--i:4" x="380" y="182" fill="var(--near-black)" font-size="12.5" font-weight="600" text-anchor="middle">gerçek itirazı duyarsın</text><line class="fg" style="--i:1" x1="489" y1="95" x2="525" y2="95" stroke="var(--silver-blue)" stroke-width="2" marker-end="url(#aO)"/><rect class="fg" style="--i:2" x="530" y="40" width="210" height="110" rx="14" fill="var(--d-good-soft)" stroke="var(--success)" stroke-width="1.5"/><text class="fg" style="--i:2" x="548" y="72" fill="var(--success)" font-size="13" font-weight="700">3</text><text class="fg" style="--i:2" x="635" y="92" fill="var(--near-black)" font-size="17" font-weight="700" text-anchor="middle">Test sürüşünü sat</text><text class="fg" style="--i:2" x="635" y="118" fill="var(--cool-gray)" font-size="12" text-anchor="middle">“neler olduğunu bilin diye”</text><text class="fg" style="--i:5" x="635" y="182" fill="var(--near-black)" font-size="12.5" font-weight="600" text-anchor="middle">bakmayı kabul eder</text><text class="fg" style="--i:0" x="20" y="22" fill="var(--cool-gray)" font-size="12.5">İtirazla kavga etme. Onu tepki vermekten dinlemeye taşı.</text><text class="fg" style="--i:6" x="380" y="216" fill="var(--cool-gray)" font-size="12" text-anchor="middle">Mobilyayı değil, bakmayı sat. Ürün telefonda değil, toplantıda satılır.</text></svg>
+  </div><div class="fig-cap">Üç adımlı yöntem (kaynakta “Mr. Miyagi yöntemi” deniyor).</div></div>
+  <div class="grid3">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span class="ckicker">Adım 1</span></div>
+    <h3>İtiraza hak ver</h3>
+    <p class="desc">Karşı koymayan biriyle kavga etmeye devam etmek tuhaf hissettirir. Hak vermek, tepki yerine dinlemeyi getirir.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> “Haklısınız — bu günlerde bütçeyi korumak bile zor, bir de üstüne eklemek…”</div>
+    </div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg></span><span class="ckicker">Adım 2</span></div>
+    <h3>Konuşmayı teşvik et</h3>
+    <p class="desc">Gerçek nedeni hâlâ bilmiyorsun. Söylemeleri için bir neden ver: kimse onları tekrar aramasın. Çoktan seçmeli sor — yanıtlaması daha kolay.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> “Kimse sizi tekrar aramasın diye soruyorum — bu yıl bütçe mi yok, yoksa her harcama bir savaş mı?”</div>
+    </div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg></span><span class="ckicker">Adım 3</span></div>
+    <h3>Arabayı değil, test sürüşünü sat</h3>
+    <p class="desc">Ürünü anlatma — savunma hemen geri gelir. Hiç almasalar bile neden bakmaya değer olduğunu sat.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Çıkarım:</b> “Muhtemelen şimdi almayacaksınız. Ama bütçe açılınca neler olduğunu bilirsiniz. Kısa bir göz atmaya açık mısınız?”</div>
+    </div>
+  </article>
+  </div>
+  <div class="note reveal"><b>Başlamadan önce:</b> Senaryoları ezberleme. Önce üç adımı ve üç itiraz grubunu öğren, sonra senaryolarda yöntemin nasıl çalıştığını gör ve kendi cümlelerini bul.</div>
+</section>
+
+<section class="part" id="o2">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">02</div>
+    <div class="part-label">Bölüm 02 — Savuşturma</div>
+    <h2>Savuşturma itirazları: refleksler</h2>
+    <p class="lead">“İlgilenmiyorum”, “sonra arayın”, “bir şeyler gönderin”. Bunlar gerçek itiraz değil, dolayısıyla henüz karşılanacak bir şey yok. Hak ver, sonra gerçek nedeni söylet. Kaba davrandıklarında dobra ol — tepkileri ne kadar sertse, seninki o kadar sakin ve esprili olsun.</p>
+  </div>
+  <div class="grid2">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">01</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-x"/></svg></span><span class="ckicker">Savuşturma</span></div>
+    <h3>İlgilenmiyorum</h3>
+    <p class="desc">En yaygın ve en az gerçek itiraz. Güçlüce hak ver, suçu sunumuna at, sonra çoktan seçmeli sor — “soğuk aramalardan nefret ediyorum” şıkkı dahil.</p>
+    <div class="talk"><div class="ln p"><span class="who">Müşteri</span><span class="t">İlgilenmiyorum.</span></div><div class="ln a"><span class="who">1 · Hak ver</span><span class="t">Haklısınız — ya sunumum çok kötüydü ya da ilgilenseydiniz bizi zaten arardınız.</span></div><div class="ln i"><span class="who">2 · Teşvik et</span><span class="t">Kimse sizi tekrar aramasın diye sorayım: zaten bir tedarikçiniz mi var, proje gündeminizde mi değil, yoksa soğuk aramalardan mı nefret ediyorsunuz? Üçüncüsü de olur.</span></div><div class="ln p"><span class="who">Müşteri</span><span class="t">Zaten bir üreticiyle çalışıyoruz.</span></div><div class="ln d"><span class="who">Sonra</span><span class="t">Gerçek itiraz bu. Şimdi yöntemi tekrar uygula (bkz. 16).</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">02</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-calendar"/></svg></span><span class="ckicker">Savuşturma</span></div>
+    <h3>6 ay sonra arayın</h3>
+    <p class="desc">Genelde kibarca söylenmiş bir “ilgilenmiyorum”. Altı ay sonra gerçekten bir şey olup olmayacağını sor. Varsa, karar o zaman kolay olsun diye bakmayı bugün sat.</p>
+    <div class="talk"><div class="ln p"><span class="who">Müşteri</span><span class="t">Belki — altı ay sonra arayın.</span></div><div class="ln a"><span class="who">1 · Hak ver</span><span class="t">Mantıklı. Acil olsaydı siz ulaşırdınız.</span></div><div class="ln i"><span class="who">2 · Teşvik et</span><span class="t">Geri aradığımda saçma durmayayım — altı ay sonra bir şey mi olacak, yoksa şu an çok mu yoğunsunuz?</span></div><div class="ln p"><span class="who">Müşteri</span><span class="t">Önce yeni bir proje direktörü atayacağız.</span></div><div class="ln d"><span class="who">3 · Test sürüşü</span><span class="t">Ben de öncesinde büyük bir karar vermezdim. Ama yeni direktörler genelde seçenekleri bilmek ister. İlk gününde eline bir kısa liste verebilmeniz için şimdi kısa bir göz atmaya açık mısınız?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">03</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-file"/></svg></span><span class="ckicker">Savuşturma</span></div>
+    <h3>Bir şeyler gönderin</h3>
+    <p class="desc">Kimse genel broşür okumaz — sadece hayır demeye çekinirler. Ne için istediklerini sor; ısrar ederlerse kibarca dile getir ve bir takip üzerinde anlaş.</p>
+    <div class="talk"><div class="ln p"><span class="who">Müşteri</span><span class="t">Bana bir şeyler gönderin.</span></div><div class="ln a"><span class="who">1 · Hak ver</span><span class="t">Tabii — ben de önce görmek isterdim.</span></div><div class="ln i"><span class="who">2 · Teşvik et</span><span class="t">Gelen kutunuzu doldurmayayım: aklınızda belirli bir proje mi var, yoksa genel bir tanıtım mı?</span></div><div class="ln p"><span class="who">Müşteri</span><span class="t">Genel.</span></div><div class="ln d"><span class="who">3 · Test sürüşü</span><span class="t">Açıkçası katalog size pek bir şey söylemez — showroomda (ya da telefonda) 15 dakika, uygun olup olmadığını söyler. Değilse 15 dakikanızı geri veririm.</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">04</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></span><span class="ckicker">Savuşturma</span></div>
+    <h3>Benim alanım değil</h3>
+    <p class="desc">Ya doğru kişi ve kaçıyor, ya da gerçekten değil. Sorumlu olduğunu düşündüğün kişinin adını ver. Kaçıyorsa gerçek itiraz çıkar; değilse adını anmak için izin iste.</p>
+    <div class="talk"><div class="ln p"><span class="who">Müşteri</span><span class="t">Bu benim alanım değil.</span></div><div class="ln a"><span class="who">1 · Hak ver</span><span class="t">Benim hatam. Mobilya genelde ya satın almada ya da proje direktöründe olur — yanlış tahmin ettim.</span></div><div class="ln i"><span class="who">2 · Teşvik et</span><span class="t">Yanlış kişiyi rahatsız etmeyeyim — bu satın almadan Aylin Hanım’da mı? Sırada onu arayacaktım.</span></div><div class="ln p"><span class="who">Müşteri</span><span class="t">Evet, Aylin bakıyor.</span></div><div class="ln d"><span class="who">Referans</span><span class="t">Biraz büyük bir ricam olabilir mi? Bundan sonra ona yazacağım — konuştuğumuzu söylememin sakıncası var mı?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">05</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-phone"/></svg></span><span class="ckicker">Savuşturma · sunumdan önce</span></div>
+    <h3>Numaramı nereden buldunuz?</h3>
+    <p class="desc">Kekeleme. Beklediklerinden daha şeffaf ol, sonra neden aradığını söylemek için izin iste.</p>
+    <div class="talk"><div class="ln p"><span class="who">Müşteri</span><span class="t">Numaramı nereden buldunuz?</span></div><div class="ln a"><span class="who">1 · Hak ver</span><span class="t">Şirketinizin web sitesinden — proje ekibi altında yazıyor. Kötü bir anda yakaladım galiba; isterseniz orada ne yazdığını tam olarak söyleyebilirim.</span></div><div class="ln i"><span class="who">2 · Teşvik et</span><span class="t">Ben de bu aramaları yapmayı sevmiyorum ama bunun için hazırlandım. Neden özellikle sizi aradığımı söyleyeyim, sonrasında kapatabilirsiniz — olur mu?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">06</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-clock"/></svg></span><span class="ckicker">Savuşturma · sunumdan önce</span></div>
+    <h3>Toplantıdayım</h3>
+    <p class="desc">Önemli bir toplantıda kimse telefon açmaz. Hafif bir espriyle karşıla, sonra iki seçenek sun: sonrası için takvim daveti ya da şimdi 30 saniye.</p>
+    <div class="talk"><div class="ln p"><span class="who">Müşteri</span><span class="t">Toplantıdayım.</span></div><div class="ln a"><span class="who">1 · Hak ver</span><span class="t">Eyvah — hoparlöre alın, bütün odadan özür dileyeyim.</span></div><div class="ln p"><span class="who">Müşteri</span><span class="t">Yok… ne hakkında?</span></div><div class="ln i"><span class="who">2 · Teşvik et</span><span class="t">Sizi iki kez bölmek istemem. Bugün sonrası için kısa bir davet mi göndereyim, yoksa tekrar aramayayım diye 30 saniyede şimdi mi anlatayım?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">07</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-x"/></svg></span><span class="ckicker">Savuşturma · sunumdan önce</span></div>
+    <h3>Bu bir soğuk arama mı?</h3>
+    <p class="desc">Genelde sinirle söylenir. Küçülme — sakin, dürüst, biraz esprili ol ve hazırlandığını göster.</p>
+    <div class="talk"><div class="ln p"><span class="who">Müşteri</span><span class="t">Bu bir soğuk arama mı?</span></div><div class="ln a"><span class="who">1 · Hak ver</span><span class="t">Evet — ve çok kötü gidiyor. Kimse bu aramaları sevmiyor, o yüzden önce sizin hakkınızda araştırma yaptım.</span></div><div class="ln i"><span class="who">2 · Teşvik et</span><span class="t">Ekibimizden kimse sizi tekrar rahatsız etmesin diye, neden aradığımı söyleyeyim — uygun değilse kapatın, olur mu?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">08</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></span><span class="ckicker">Savuşturma · sunumdan önce</span></div>
+    <h3>Başkası sandım</h3>
+    <p class="desc">Tuhaflığı espriyle karşıla ve beklediği arama gelir gelmez kapatabileceğine söz ver.</p>
+    <div class="talk"><div class="ln p"><span class="who">Müşteri</span><span class="t">Aa — başkası sandım.</span></div><div class="ln a"><span class="who">1 · Hak ver</span><span class="t">İsterseniz sesimi değiştiririm! Ben de bir arama beklerken satışçı çıkınca sinir oluyorum.</span></div><div class="ln i"><span class="who">2 · Teşvik et</span><span class="t">Neden aradığımı tek cümleyle söyleyeyim — beklediğiniz arama gelirse hemen kapatın.</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">09</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-hourglass"/></svg></span><span class="ckicker">Savuşturma · sunumdan önce</span></div>
+    <h3>Telefonu kapatma</h3>
+    <p class="desc">“Hat kesildi” diye hemen geri arama. Tarihi, saati ve tam söylediklerini not et; bir hafta sonra bunları kullanarak ara.</p>
+    <div class="talk"><div class="ln p"><span class="who">Müşteri</span><span class="t">Konuşamam, büyük bir toplantıya hazırlanıyorum. <i>(kapatır)</i></span></div><div class="ln a"><span class="who">Bir hafta sonra</span><span class="t">Selin Hanım, en son 19 Ekim’de saat 14.30 civarı konuştuk — büyük bir toplantıya hazırlanıyordunuz ve haklı olarak telefonu kapattınız.</span></div><div class="ln i"><span class="who">2 · Teşvik et</span><span class="t">Yine bölüyorum biliyorum ama bunun için hazırlandım. Neden tekrar aradığımı söyleyeyim — sonra isterseniz kapatın, olur mu?</span></div></div>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="o3">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">03</div>
+    <div class="part-label">Bölüm 03 — Durumsal</div>
+    <h2>Durumsal itirazlar: değişimin maliyeti</h2>
+    <p class="lead">Değeri görseler bile işi gözlerinin önüne getirirler: bütçe istemek, yürütecek birini bulmak, ters giderse risk. Satın almayı satma. Tüm baskıyı kaldır ve bakmayı sat — heyecan telefonda değil, toplantıda gelir.</p>
+  </div>
+  <div class="grid2">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">10</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-chart"/></svg></span><span class="ckicker">Durumsal</span></div>
+    <h3>Bütçe yok</h3>
+    <p class="desc">Zamanlama mı (bu dönem bütçe yok) yoksa değer mi (her harcama bir savaş) sor. Her iki durumda da satın almayı uzaklaştır ve bütçe açıldığında işe yarayacak bir bakışı sat.</p>
+    <div class="talk"><div class="ln p"><span class="who">Müşteri</span><span class="t">Bunun için bütçemiz yok.</span></div><div class="ln a"><span class="who">1 · Hak ver</span><span class="t">Anlıyorum — bu günlerde bütçeyi korumak bile zor.</span></div><div class="ln i"><span class="who">2 · Teşvik et</span><span class="t">Kimse sizi tekrar aramasın diye: bu yıl hiç mi yok, yoksa her harcama büyük bir mücadele mi?</span></div><div class="ln p"><span class="who">Müşteri</span><span class="t">Açıkçası biraz ikisi de.</span></div><div class="ln d"><span class="who">3 · Test sürüşü</span><span class="t">Muhtemelen şimdi almayacaksınız. Ama bütçe açıldığında, önceden bakmış olanlar ne isteyeceğini bilir. Neler olduğunu bilmek için kısa bir göz atmaya açık mısınız?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">11</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-scale"/></svg></span><span class="ckicker">Durumsal</span></div>
+    <h3>Çok pahalı</h3>
+    <p class="desc">Fiyat şoku mu, yoksa değeri mi görmediler — öğren. İndirim sözü vermeden esneklik olduğunu ima et.</p>
+    <div class="talk"><div class="ln p"><span class="who">Müşteri</span><span class="t">Çok pahalısınız.</span></div><div class="ln a"><span class="who">1 · Hak ver</span><span class="t">Haklısınız — hiçbir zaman en ucuz değiliz, ama nadiren çok uzağız.</span></div><div class="ln i"><span class="who">2 · Teşvik et</span><span class="t">Sorabilir miyim: toplam tutar mıydı, yoksa aradaki farkın neyi karşıladığı mı net değildi?</span></div><div class="ln p"><span class="who">Müşteri</span><span class="t">Sizden %30 düşük bir teklif aldık.</span></div><div class="ln d"><span class="who">3 · Test sürüşü</span><span class="t">Çok da uzak değil. Kumaş, kaplama, adet — şartname aşağı ya da yukarı inebilir. Daha ucuz olacağına söz vermem ama birebir karşılaştırabilmeniz için birkaç seçenek gösterebilir miyim?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">12</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-hourglass"/></svg></span><span class="ckicker">Durumsal</span></div>
+    <h3>Zaman / kapasite yok</h3>
+    <p class="desc">Herkes hep meşgul. Gülümseyerek geçici olup olmadığını sor — sonra küçük ekiplerin bizimle nasıl daha çok iş çıkardığını sat.</p>
+    <div class="talk"><div class="ln p"><span class="who">Müşteri</span><span class="t">Çok yoğunuz, bunu üstlenemeyiz.</span></div><div class="ln a"><span class="who">1 · Hak ver</span><span class="t">Anlıyorum — konuştuğum her proje ekibi üç kişinin işini yapıyor.</span></div><div class="ln i"><span class="who">2 · Teşvik et</span><span class="t">Yoğun bir dönem mi, yoksa 2032’ye kadar böyle mi?</span></div><div class="ln p"><span class="who">Müşteri</span><span class="t">2032 gibi hissettiriyor.</span></div><div class="ln d"><span class="who">3 · Test sürüşü</span><span class="t">O zaman bizi 2032’ye yazayım. Ciddisi — en iyi müşterilerimiz mobilya, aydınlatma ve kurulum için tek tedarikçi isteyen küçük ekipler. En azından nasıl işlediğini gösterebilir miyim?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">13</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-person"/></svg></span><span class="ckicker">Durumsal</span></div>
+    <h3>Önce birini işe almamız lazım</h3>
+    <p class="desc">İşe alınan kişinin başlangıç tarihi var mı, sor. Yakındaysa o tarihe davet gönder. Değilse yeni kişiye hazır bir kısa liste olsun diye şimdi bakmayı sat.</p>
+    <div class="talk"><div class="ln p"><span class="who">Müşteri</span><span class="t">Yeni proje müdürünü almadan hiçbir şey kıpırdamaz.</span></div><div class="ln a"><span class="who">1 · Hak ver</span><span class="t">Mantıklı — kimse yeni yöneticinin bozacağı bir karar istemez.</span></div><div class="ln i"><span class="who">2 · Teşvik et</span><span class="t">Biri alındı ve başlangıç tarihi var mı, yoksa arama yeni mi başladı?</span></div><div class="ln p"><span class="who">Müşteri</span><span class="t">Yeni başladı.</span></div><div class="ln d"><span class="who">3 · Test sürüşü</span><span class="t">Yeni yöneticiler genelde seçenekleri bilmek ister. Ona hazır bir kısa liste olsun diye kısa bir göz atmaya açık mısınız?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">14</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-filter"/></svg></span><span class="ckicker">Durumsal</span></div>
+    <h3>Bize uygun değil</h3>
+    <p class="desc">Neden uygun olmadığını düşündüklerini sor. Sonra sosyal kanıta yaslan — benzer bir müşterinin nasıl kullandığını göstermeyi teklif et.</p>
+    <div class="talk"><div class="ln p"><span class="who">Müşteri</span><span class="t">Siz daha çok perakende markasısınız — büyük proje işleri yapmıyorsunuz.</span></div><div class="ln a"><span class="who">1 · Hak ver</span><span class="t">İlginç — ve haklısınız, ölçekte teslim edebileceğinden emin olmadığınız kimseye bakmazsınız.</span></div><div class="ln i"><span class="who">2 · Teşvik et</span><span class="t">Vaktinizi tekrar almayayım: kapasite mi, teslim süreleri mi, yoksa duyduğunuz bir şey mi?</span></div><div class="ln p"><span class="who">Müşteri</span><span class="t">Bir meslektaşım 200 odayı kaldıramayacağınızı söyledi.</span></div><div class="ln d"><span class="who">3 · Test sürüşü</span><span class="t">Sizi telefonda ikna edemem. Ama teslim ettiğimiz 200 odalı bir oteli gösterebilir miyim — uygun olursa ekipleriyle de tanıştırırım?</span></div></div>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="o4">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">04</div>
+    <div class="part-label">Bölüm 04 — Mevcut tedarikçi</div>
+    <h2>Mevcut tedarikçi itirazları: asla kötüleme</h2>
+    <p class="lead">Mevcut tedarikçiyi eleştirmek onu savunmalarına yol açar. Hiçbir tedarikçi mükemmel değildir — bir eksiği kendi bakış açılarından fark etmelerine yardım et, sonra benzer müşterilerin tercihleri satışı yapsın.</p>
+  </div>
+  <div class="note reveal" style="margin-top:0">Tercihlerine hak ver → bir eksiği ortaya çıkaran nazik bir “tuzak” soru sor → bakmayı sosyal kanıtla sat.</div>
+  <div class="grid2">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">15</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></span><span class="ckicker">Mevcut tedarikçi</span></div>
+    <h3>Kendimiz hallediyoruz</h3>
+    <p class="desc">Kendi hallettiklerini öv, sonra kendi imkânlarıyla genelde yapılamayan şeyi sor.</p>
+    <div class="talk"><div class="ln p"><span class="who">Müşteri</span><span class="t">Mobilyayı kendimiz tedarik ediyoruz.</span></div><div class="ln a"><span class="who">1 · Hak ver</span><span class="t">Güzel — bu genelde ekibinizde piyasayı çok iyi bilen biri var demek.</span></div><div class="ln i"><span class="who">2 · Teşvik et</span><span class="t">O zaman özel ölçü ya da sahada uyumlu aydınlatma işine henüz girmiyorsunuz herhalde?</span></div><div class="ln p"><span class="who">Müşteri</span><span class="t">Aslında giriyoruz — tam bir baş ağrısı.</span></div><div class="ln d"><span class="who">3 · Test sürüşü</span><span class="t">Ekiplerin çoğu tam da bu yüzden bize geliyor: tek tedarikçi, tek takvim. Muhtemelen kendiniz tedarik etmeye devam edeceksiniz, ama tek elde toplamanın neye benzeyeceğini gösterebilir miyim?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">16</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-flag"/></svg></span><span class="ckicker">Mevcut tedarikçi</span></div>
+    <h3>Rakip biliniyor</h3>
+    <p class="desc">Asla kötüleme. Öv, sonra bildiğin eksikle ilgili bir soru sor.</p>
+    <div class="talk"><div class="ln p"><span class="who">Müşteri</span><span class="t">Zaten başka bir üreticiyle çalışıyoruz.</span></div><div class="ln a"><span class="who">1 · Hak ver</span><span class="t">İyi bir ekip — açıkçası memnunsanız değiştirmek nadiren mantıklı.</span></div><div class="ln i"><span class="who">2 · Teşvik et</span><span class="t">Tekrar rahatsız etmeyelim diye soruyorum — aydınlatmayı da onlar yapmıyor, değil mi?</span></div><div class="ln p"><span class="who">Müşteri</span><span class="t">Hayır, o ayrı bir tedarikçi. Neden?</span></div><div class="ln d"><span class="who">3 · Test sürüşü</span><span class="t">Diğer otel ekipleri sahada mobilyayla aydınlatmanın hiç tam uyuşmadığını gördü. Biz ikisini de yapıyoruz. Muhtemelen değiştirmeyeceksiniz, ama neler olduğunu bilmeniz için nasıl işlediğini gösterebilir miyim?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">17</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-target"/></svg></span><span class="ckicker">Mevcut tedarikçi</span></div>
+    <h3>Rakip bilinmiyor</h3>
+    <p class="desc">İnsanlar “kiminle çalışıyorsunuz?” sorusunda kapanır. Öğrenmek için çoktan seçmeli sor, sonra yöntemi tekrar uygula.</p>
+    <div class="talk"><div class="ln p"><span class="who">Müşteri</span><span class="t">Zaten bir tedarikçimiz var.</span></div><div class="ln a"><span class="who">1 · Hak ver</span><span class="t">Birinin olacağını tahmin etmeliydim.</span></div><div class="ln i"><span class="who">2 · Teşvik et</span><span class="t">Bunu kapalı olarak işaretleyebilmem için — büyük proje üreticilerinden biri mi, yerel bir atölye mi, yoksa bir ithalatçı mı?</span></div><div class="ln p"><span class="who">Müşteri</span><span class="t">Yerel bir atölye.</span></div><div class="ln d"><span class="who">Sonra</span><span class="t">Tamam — şimdi ölçek ya da teslim süresiyle ilgili bir tuzak soruyla yöntemi tekrar uygula (bkz. 16).</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">18</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-calendar"/></svg></span><span class="ckicker">Mevcut tedarikçi</span></div>
+    <h3>Sözleşmemiz var</h3>
+    <p class="desc">Bilinen rakiple aynı — sadece şimdi değiştirme baskısını kaldır.</p>
+    <div class="talk"><div class="ln p"><span class="who">Müşteri</span><span class="t">Bu proje için bağlıyız.</span></div><div class="ln a"><span class="who">1 · Hak ver</span><span class="t">Mantıklı — ben de proje ortasında değiştirmezdim.</span></div><div class="ln i"><span class="who">2 · Teşvik et</span><span class="t">Merak ettim, bir sonraki tesisi de kapsıyor mu, yoksa sadece bu projeyi mi?</span></div><div class="ln p"><span class="who">Müşteri</span><span class="t">Sadece bunu.</span></div><div class="ln d"><span class="who">3 · Test sürüşü</span><span class="t">O zaman hiç acele yok. Bir sonrakinden önce elinizde bir karşılaştırma olsun diye neyi farklı yapacağımızı gösterebilir miyim?</span></div></div>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="o5">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">05</div>
+    <div class="part-label">Bölüm 05 — Pratik</div>
+    <h2>Pratik listesi</h2>
+    <p class="lead">Bir sonraki arama seansından önce bunları bir arkadaşınla çalış. Okumadan yapabildiğinde her birine dokun.</p>
+  </div>
+  <ul class="check reveal">
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>Üç adımı ezbere söyleyebiliyorum</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>“İlgilenmiyorum”, “sonra arayın” ve “bir şeyler gönderin” için birer “hak ver” cümlem var</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>Açık uçlu “neden?” yerine hep çoktan seçmeli soruyorum</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>Teşvikim değişiyor: “kimse sizi tekrar aramasın”, “gelen kutunuzu doldurmayayım”, “yanlış kişiyi rahatsız etmeyeyim”</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>Siparişi değil; bir bakışı, showroom ziyaretini ya da moodboard’u satıyorum</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>Rakibi asla kötülemiyorum</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>Telefon kapatıldığında tarihi, saati ve tam söylediklerini not ediyorum</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>“Bu bir soğuk arama mı?” için sakin ve esprili bir cümlem var</span></li>
+  </ul>
+</section>
+
+<section class="part" id="resources">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">★</div>
+    <div class="part-label">Kaynaklar</div>
+    <h2>Orijinal rehber</h2>
+    <p class="lead">On sekiz itirazın tamamı ve orijinal konuşma metinleriyle rehberin tamamı (İngilizce). Yukarıdaki Mozaik senaryoları bizim uyarlamamız.</p>
+  </div>
+  <div class="dl-row reveal">
+  <a class="dl" href="30MPC-18-Cold-Call-Objections-and-Scripts.pdf" target="_blank" rel="noopener">
+    <span class="ic"><svg viewBox="0 0 24 24"><use href="#ic-download"/></svg></span>
+    <span><span class="t">18 Cold Call Objections and Scripts for Each</span><span class="d">25 sayfalık orijinal rehber: yöntem, üç itiraz grubu ve her biri için bir senaryo.</span><span class="ext">PDF · İngilizce · 30 Minutes to President’s Club</span></span>
+  </a>
+  <a class="dl" href="../sdr-cold-outbound/tr.html">
+    <span class="ic"><svg viewBox="0 0 24 24"><use href="#ic-book"/></svg></span>
+    <span><span class="t">Eğitim: Toplantı Getiren Soğuk Outbound</span><span class="d">12 derslik eğitim — aramaların e-posta yanıtlarını neden iki-üç katına çıkardığı dahil.</span><span class="ext">Mozaik Academy · Eğitim 05</span></span>
+  </a>
+  </div>
+</section>
+
+</div>
+
+<section class="cta">
+  <div class="inner">
+    <div class="reveal">
+      <span class="micro" style="color:rgba(255,255,255,0.7)">Akılda kalması gereken tek şey</span>
+      <h2 style="margin-top:14px;">Önce hak ver. Gerçek nedeni öğren. Siparişi değil, bakmayı sat.</h2>
+      <p>İlk itiraz bir karar değil, reflekstir. Onu yatıştır, konuşmaları için bir neden ver ve küçük bir şey iste — bir bakış, bir ziyaret, bir moodboard. Sipariş toplantıda kazanılır.</p>
+    </div>
+    <div class="principles reveal">
+      <div class="p"><div class="n">01 — Hak ver</div><div class="t">“Haklısınız” kavgayı bitirir.</div></div>
+      <div class="p"><div class="n">02 — Teşvik et</div><div class="t">“Kimse sizi tekrar aramasın diye…” gerçek itirazı getirir.</div></div>
+      <div class="p"><div class="n">03 — Test sürüşü</div><div class="t">“Neler olduğunu bilin diye” toplantıyı getirir.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="complete" id="completeBox"></div>
+
+<footer class="foot">
+  <div class="inner">
+    <a class="brand" href="../tr.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <div class="src"><b>“18 Cold Call Objections and Scripts for Each”</b> (30 Minutes to President’s Club, Cold Call Course) kaynağından uyarlanmıştır. Yöntem ve itiraz listesi onlara aittir; Mozaik senaryoları ve diyagram özgündür. Orijinalin tüm hakları yazarlarına aittir; burada yalnızca Mozaik iç eğitimi için paylaşılmıştır. Kraken Design System ile tasarlanmıştır.</div>
+  </div>
+</footer>
+
+<script src="../shared/course.js" defer></script>
+</body>
+</html>

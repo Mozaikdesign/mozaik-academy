@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cold Call Objections — Mozaik Academy</title>
+<meta name="description" content="18 cold call objections and a three-step method to handle any of them — agree, incentivise, sell the test drive — with Mozaik scripts for each.">
+<script>
+(function(){
+  try{
+    var CUR='en';
+    var saved=localStorage.getItem('mozaik_lang');
+    if(saved && saved!==CUR && location.search.indexOf('l=1')<0){
+      location.replace((CUR==='en'?'tr.html':'index.html')+'?l=1');
+    }
+  }catch(e){}
+})();
+</script>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../shared/course.css">
+<link rel="stylesheet" href="../shared/academy.css">
+<script>window.MOZAIK = {
+  "lang": "en",
+  "page": "course",
+  "id": "sdr-objections",
+  "tour": [
+    {
+      "n": "SDR Toolkit",
+      "t": "Welcome, {name} 👋",
+      "b": "Eighteen objections you'll hear on cold calls, and one three-step method that handles all of them. Each comes with a Mozaik script. About 20 minutes."
+    },
+    {
+      "n": "Step 1 of 2",
+      "t": "Learn the method before the scripts",
+      "b": "Part 01 is the framework. Don't memorise the scripts — learn the three steps, then use the scripts to hear it in action."
+    },
+    {
+      "n": "Step 2 of 2",
+      "t": "Mark it complete when you finish",
+      "b": "There is a “Mark as complete” button at the bottom of the page."
+    }
+  ]
+};</script>
+<style>
+.grid2{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+.grid3{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;}
+@media(min-width:900px){.grid2{grid-template-columns:1fr 1fr;gap:20px;}.grid3{grid-template-columns:repeat(3,1fr);}.grid4{grid-template-columns:repeat(4,1fr);}}
+.code-c{background:var(--white);border:1px solid var(--border-gray);border-radius:18px;
+  padding:22px 22px 18px;display:flex;flex-direction:column;box-shadow:var(--shadow-micro);}
+.code-c .card-top{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;}
+.code-c .num{flex:0 0 auto;min-width:34px;height:34px;padding:0 8px;border-radius:10px;display:grid;place-items:center;
+  background:var(--kraken-purple-subtle);color:var(--kraken-purple-deep);
+  font-family:var(--font-mono);font-size:13px;font-weight:700;letter-spacing:-0.02em;}
+.code-c .cicon{flex:0 0 auto;width:26px;height:26px;color:var(--kraken-purple);}
+.code-c .cicon svg{width:26px;height:26px;}
+.code-c .ckicker{font-size:var(--fs-micro);letter-spacing:0.08em;text-transform:uppercase;color:var(--cool-gray);font-weight:600;}
+.code-c h3{font-size:19px;line-height:1.3;margin:0 0 10px;letter-spacing:-0.01em;}
+.code-c .desc{font-size:14.5px;line-height:1.62;color:var(--secondary);margin:0 0 16px;}
+.code-c .callouts{margin-top:auto;display:flex;flex-direction:column;gap:10px;}
+.code-c .takeaway{background:var(--kraken-purple-subtle);border-left:3px solid var(--kraken-purple);
+  border-radius:0 10px 10px 0;padding:11px 14px;font-size:13.5px;line-height:1.55;}
+.code-c .mozaik{display:flex;gap:9px;font-size:13px;line-height:1.55;color:var(--cool-gray);}
+.code-c .mozaik .pin{color:var(--kraken-purple);flex:0 0 auto;}
+.field{background:var(--white);border:1px solid var(--border-gray);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-micro);}
+.field .k{font-weight:700;font-size:15px;color:var(--near-black);}
+.field .v{font-size:13.5px;color:var(--cool-gray);margin-top:4px;line-height:1.45;}
+.field .ic{width:30px;height:30px;border-radius:9px;background:var(--kraken-purple-subtle);color:var(--kraken-purple);display:grid;place-items:center;margin-bottom:10px;}
+.field .ic svg{width:17px;height:17px;}
+.big{font-family:var(--font-brand);font-size:34px;font-weight:700;letter-spacing:-1px;color:var(--kraken-purple);line-height:1;margin:2px 0 10px;}
+.formula{font-family:var(--font-mono);font-size:13px;background:var(--d-box);border-radius:10px;padding:10px 12px;color:var(--near-black);margin:0 0 14px;line-height:1.5;}
+.rlist{list-style:none;margin:18px 0 0;padding:0;border-top:1px solid var(--border-gray);}
+.rlist li{display:flex;gap:14px;align-items:baseline;justify-content:space-between;padding:13px 2px;border-bottom:1px solid var(--border-gray);}
+.rlist .t{font-weight:600;font-size:15px;color:var(--near-black);}
+.rlist .s{font-size:13px;color:var(--cool-gray);text-align:right;}
+.lane-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding-bottom:10px;border-bottom:3px solid var(--kraken-purple);}
+.lane-h.alt{border-bottom-color:var(--warning,#d97706);}
+.lane-h b{font-size:12px;letter-spacing:.08em;text-transform:uppercase;}
+.lane-h span{font-size:12.5px;color:var(--cool-gray);}
+.note{margin-top:22px;background:var(--d-box);border-radius:14px;padding:16px 20px;font-size:14.5px;line-height:1.55;color:var(--near-black);}
+.rules{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+@media(min-width:900px){.rules{grid-template-columns:repeat(3,1fr);}}
+.rule{position:relative;background:linear-gradient(160deg,var(--kraken-purple) 0%,var(--kraken-purple-deep) 100%);color:#fff;border-radius:18px;padding:22px 22px 20px;display:flex;flex-direction:column;min-height:200px;}
+.rule .n{font-family:var(--font-brand);font-size:40px;font-weight:700;opacity:.35;line-height:1;letter-spacing:-1.5px;}
+.rule h3{color:#fff;font-size:18.5px;line-height:1.35;margin:12px 0 10px;}
+.rule ul{margin:0 0 12px;padding-left:18px;font-size:14px;line-height:1.6;color:rgba(255,255,255,.88);}
+.rule .scope{margin-top:auto;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.75);}
+.mail{background:var(--white);border:1px solid var(--border-gray);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-micro);display:flex;flex-direction:column;}
+.mail .mh{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--border-gray);background:#fcfcfd;flex-wrap:wrap;}
+.mail .step{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--kraken-purple-deep);background:var(--kraken-purple-subtle);border-radius:8px;padding:3px 8px;}
+.mail .ch{font-size:12px;font-weight:600;color:var(--cool-gray);}
+.mail .day{margin-left:auto;font-size:12px;color:var(--silver-blue);font-weight:600;}
+.mail .subj{padding:12px 16px 0;font-size:13px;color:var(--cool-gray);}
+.mail .subj b{color:var(--near-black);font-weight:600;}
+.mail .body{padding:10px 16px 14px;font-size:14.5px;line-height:1.6;color:var(--near-black);white-space:pre-line;}
+.mail .why{margin-top:auto;border-top:1px dashed var(--border-gray);padding:11px 16px 13px;font-size:13px;line-height:1.5;color:var(--cool-gray);}
+.mail .why b{color:var(--kraken-purple);}
+.seq{width:100%;border-collapse:collapse;margin-top:22px;font-size:14px;}
+.seq th{text-align:left;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--cool-gray);font-weight:600;padding:8px 10px;border-bottom:2px solid var(--border-gray);}
+.seq td{padding:10px;border-bottom:1px solid var(--border-gray);vertical-align:top;}
+.seq td.n{font-family:var(--font-mono);font-weight:700;color:var(--kraken-purple-deep);width:40px;}
+.seq td.d{color:var(--cool-gray);white-space:nowrap;width:70px;}
+.seq tr.th td{background:var(--kraken-purple-subtle);font-weight:600;color:var(--kraken-purple-deep);font-size:13px;}
+.tchip{display:inline-block;font-size:11.5px;font-weight:700;border-radius:9999px;padding:2px 9px;margin-right:6px;}
+.tchip.e{background:var(--kraken-purple-subtle);color:var(--kraken-purple-deep);}
+.tchip.l{background:#e6f0fd;color:#1f5fbf;}
+.tchip.c{background:var(--d-good-soft);color:var(--d-good-text);}
+.stat-row{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 2px;}
+.stat-chip{background:var(--d-good-soft);color:var(--d-good-text);border-radius:9999px;font-size:13px;font-weight:600;padding:6px 13px;}
+.check{list-style:none;padding:0;margin:22px 0 0;display:grid;grid-template-columns:1fr;gap:10px;}
+@media(min-width:900px){.check{grid-template-columns:1fr 1fr;}}
+.check li{display:flex;gap:12px;align-items:flex-start;background:var(--white);border:1px solid var(--border-gray);border-radius:12px;padding:13px 15px;font-size:14.5px;line-height:1.5;cursor:pointer;user-select:none;}
+.check li .bx{flex:0 0 auto;width:20px;height:20px;border-radius:6px;border:2px solid var(--silver-blue);display:grid;place-items:center;margin-top:1px;}
+.check li .bx svg{width:13px;height:13px;color:#fff;opacity:0;}
+.check li.on{border-color:var(--kraken-purple);background:var(--kraken-purple-subtle);}
+.check li.on .bx{background:var(--kraken-purple);border-color:var(--kraken-purple);}
+.check li.on .bx svg{opacity:1;}
+.dl-row{display:flex;flex-wrap:wrap;gap:16px;margin-top:22px;}
+.dl{flex:1 1 320px;display:flex;gap:14px;align-items:flex-start;text-decoration:none;background:#fff;
+  border:1px solid var(--border-gray);border-radius:14px;padding:18px 20px;transition:border-color .15s, box-shadow .15s;}
+.dl:hover{border-color:var(--kraken-purple);box-shadow:0 10px 30px rgba(40,30,90,.10);text-decoration:none;}
+.dl .ic{flex:0 0 auto;width:40px;height:40px;border-radius:10px;background:var(--kraken-purple-subtle);color:var(--kraken-purple);display:flex;align-items:center;justify-content:center;}
+.dl .ic svg{width:22px;height:22px;}
+.dl .t{display:block;font-weight:600;color:#101114;font-size:15px;}
+.dl .d{display:block;font-size:13px;color:var(--cool-gray);margin-top:3px;line-height:1.45;}
+.dl .ext{display:block;font-size:11.5px;font-weight:700;letter-spacing:.4px;color:var(--kraken-purple);margin-top:7px;}
+.fig-cap{font-size:12.5px;color:var(--cool-gray);margin-top:8px;}
+@media(max-width:600px){.code-c{padding:18px 18px 16px;}.code-c h3{font-size:17.5px;}.seq td.d{white-space:normal;}}
+.talk{margin:4px 0 16px;border:1px solid var(--border-gray);border-radius:14px;overflow:hidden;}
+.talk .ln{display:grid;grid-template-columns:104px 1fr;gap:12px;padding:10px 14px;font-size:14px;line-height:1.55;border-top:1px solid var(--border-gray);}
+.talk .ln:first-child{border-top:0;}
+.talk .who{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--cool-gray);padding-top:3px;}
+.talk .ln.p{background:#fafafb;}
+.talk .ln.p .t{color:var(--secondary);font-style:italic;}
+.talk .ln.a .who{color:var(--kraken-purple);}
+.talk .ln.i .who{color:#1f7ae0;}
+.talk .ln.d .who{color:var(--d-good-text);}
+@media(max-width:600px){.talk .ln{grid-template-columns:1fr;gap:2px;}}
+</style>
+<script>
+document.addEventListener('click',function(e){var li=e.target.closest('.check li');if(li)li.classList.toggle('on');});
+</script>
+<script src="../shared/academy.js" defer></script>
+</head>
+<body>
+<div id="gate"><div class="card" id="gateCard"></div></div>
+<div class="progress" id="progress"></div>
+
+<svg class="iconsheet" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="_ic" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></g>
+  </defs>
+  <symbol id="ic-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></symbol>
+  <symbol id="ic-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-5 4z"/></symbol>
+  <symbol id="ic-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8.5V20l-4-2.5v-4z"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 17l-5.4 2.7 1.2-6.1L3.3 9.4l6.1-.8z"/></symbol>
+  <symbol id="ic-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ic-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H14a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5.5"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M18 20a6 6 0 0 0-3.5-5.5"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-11"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2.4 5.6L8 16l2.4-5.6z"/></symbol>
+  <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l1.5 5-2 1.3a12 12 0 0 0 6.2 6.2l1.3-2 5 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></symbol>
+  <symbol id="ic-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M8 3v3.4c0 2 4 3.6 4 5.6s-4 3.6-4 5.6V21"/><path d="M16 3v3.4c0 2-4 3.6-4 5.6s4 3.6 4 5.6V21"/></symbol>
+  <symbol id="ic-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M19 18v3H6.5A2.5 2.5 0 0 1 4 18.5"/></symbol>
+  <symbol id="ic-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1.5A3.5 3.5 0 0 0 7 11M17 6h3v1.5A3.5 3.5 0 0 1 17 11M9.5 19h5M10 14.5l-.5 4.5h5l-.5-4.5"/></symbol>
+  <symbol id="ic-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M7 21h10M6 7l-3 6h6zM18 7l-3 6h6zM4.5 7h15"/><circle cx="12" cy="5" r="1.3"/></symbol>
+  <symbol id="ic-person" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="6.5" r="3.3"/><path d="M5.8 21.5c0-5.4 2.3-9 6.2-9s6.2 3.6 6.2 9z"/></symbol>
+  <symbol id="ic-funnel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-3 5H6z"/><path d="M6.5 11h11l-2.5 4.5h-6z"/><path d="M10 17.5h4L13 21h-2z"/></symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></symbol>
+  <symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="ic-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></symbol>
+  <symbol id="ic-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7.5" y="12" width="3" height="5"/><rect x="12.5" y="8" width="3" height="9"/><rect x="17.5" y="5" width="2.5" height="12"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+</svg>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="../index.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <a class="backlink" href="../index.html">← Academy</a>
+    <a class="langswitch navlang" href="tr.html" data-setlang="tr">Türkçe</a>
+    <div class="spacer"></div>
+    <div class="toc" id="toc">
+      <a href="#o1">Method</a>
+      <a href="#o2">Dismissive</a>
+      <a href="#o3">Situational</a>
+      <a href="#o4">Existing</a>
+      <a href="#o5">Practice</a>
+      <a href="#resources">Download</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#o1">The three-step method</a>
+  <a href="#o2">Dismissive objections</a>
+  <a href="#o3">Situational objections</a>
+  <a href="#o4">Existing-solution objections</a>
+  <a href="#o5">Practice checklist</a>
+  <a href="#resources">Download the original</a>
+</div>
+
+<header class="hero">
+  <span class="eyebrow"><span class="dot"></span><span class="micro" style="color:var(--kraken-purple)">SDR Toolkit · Cold Calling</span></span>
+  <h1>Eighteen objections. <em>One way to handle all of them.</em></h1>
+  <p class="sub">The first thing a prospect says on a cold call is almost never their real objection — it’s a reflex to being interrupted. This toolkit gives you one three-step method for any objection, then walks through the eighteen you’ll actually hear, each with a script written for how we sell furniture and lighting.</p>
+  <div class="hero-meta">
+    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">18</div><div class="l">Objections</div></div>
+    <div class="stat"><div class="v count">3</div><div class="l">Steps</div></div>
+    <div class="stat"><div class="v">3</div><div class="l">Families: dismissive · situational · existing</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="part" id="o1">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">01</div>
+    <div class="part-label">Part 01 — The method</div>
+    <h2>Most objections aren’t really objections</h2>
+    <p class="lead">A cold call is an interruption, and people react to interruptions by grabbing the first excuse to end them. Arguing with logic only pushes harder. You have to disarm the reaction first — by agreeing.</p>
+  </div>
+  <div class="reveal" style="margin-top:22px"><div class="fig">
+    <svg viewBox="0 0 760 230" xmlns="http://www.w3.org/2000/svg"><defs><marker id="aO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="var(--silver-blue)"/></marker></defs><rect class="fg" style="--i:0" x="20" y="40" width="210" height="110" rx="14" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="1.5"/><text class="fg" style="--i:0" x="38" y="72" fill="var(--kraken-purple)" font-size="13" font-weight="700">1</text><text class="fg" style="--i:0" x="125" y="92" fill="var(--near-black)" font-size="17" font-weight="700" text-anchor="middle">Agree</text><text class="fg" style="--i:0" x="125" y="118" fill="var(--cool-gray)" font-size="12" text-anchor="middle">“I hear you…”</text><text class="fg" style="--i:3" x="125" y="182" fill="var(--near-black)" font-size="12.5" font-weight="600" text-anchor="middle">they stop pushing</text><line class="fg" style="--i:0" x1="234" y1="95" x2="270" y2="95" stroke="var(--silver-blue)" stroke-width="2" marker-end="url(#aO)"/><rect class="fg" style="--i:1" x="275" y="40" width="210" height="110" rx="14" fill="#e6f0fd" stroke="#1f7ae0" stroke-width="1.5"/><text class="fg" style="--i:1" x="293" y="72" fill="#1f7ae0" font-size="13" font-weight="700">2</text><text class="fg" style="--i:1" x="380" y="92" fill="var(--near-black)" font-size="17" font-weight="700" text-anchor="middle">Incentivise</text><text class="fg" style="--i:1" x="380" y="118" fill="var(--cool-gray)" font-size="12" text-anchor="middle">“just so no one calls you again…”</text><text class="fg" style="--i:4" x="380" y="182" fill="var(--near-black)" font-size="12.5" font-weight="600" text-anchor="middle">you hear the real objection</text><line class="fg" style="--i:1" x1="489" y1="95" x2="525" y2="95" stroke="var(--silver-blue)" stroke-width="2" marker-end="url(#aO)"/><rect class="fg" style="--i:2" x="530" y="40" width="210" height="110" rx="14" fill="var(--d-good-soft)" stroke="var(--success)" stroke-width="1.5"/><text class="fg" style="--i:2" x="548" y="72" fill="var(--success)" font-size="13" font-weight="700">3</text><text class="fg" style="--i:2" x="635" y="92" fill="var(--near-black)" font-size="17" font-weight="700" text-anchor="middle">Sell the test drive</text><text class="fg" style="--i:2" x="635" y="118" fill="var(--cool-gray)" font-size="12" text-anchor="middle">“so you know what’s out there”</text><text class="fg" style="--i:5" x="635" y="182" fill="var(--near-black)" font-size="12.5" font-weight="600" text-anchor="middle">they agree to take a look</text><text class="fg" style="--i:0" x="20" y="22" fill="var(--cool-gray)" font-size="12.5">Don’t fight the objection. Move them from reacting to listening.</text><text class="fg" style="--i:6" x="380" y="216" fill="var(--cool-gray)" font-size="12" text-anchor="middle">Sell the look, not the furniture. The product gets sold in the meeting, not on the call.</text></svg>
+  </div><div class="fig-cap">The three-step method (the source calls it the “Mr. Miyagi method”).</div></div>
+  <div class="grid3">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span class="ckicker">Step 1</span></div>
+    <h3>Agree with the objection</h3>
+    <p class="desc">It feels silly to keep fighting someone who isn’t fighting back. Agreeing gets them listening instead of reacting.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> “I hear you — budgets are hard enough to keep these days, let alone add to.”</div>
+    </div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg></span><span class="ckicker">Step 2</span></div>
+    <h3>Incentivise the conversation</h3>
+    <p class="desc">You still don’t know the real reason. Give them a reason to tell you: so nobody calls them again. Use multiple choice — it’s easier to answer.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> “Just so no one calls you again — is it that there’s no budget this year, or that every purchase is a battle?”</div>
+    </div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-route"/></svg></span><span class="ckicker">Step 3</span></div>
+    <h3>Sell the test drive, not the car</h3>
+    <p class="desc">Don’t pitch the product — that puts the guard straight back up. Sell why it’s worth a look even if they never buy.</p>
+    <div class="callouts">
+      <div class="takeaway"><b>Takeaway:</b> “You probably won’t buy now. But if budget frees up, you’ll know what’s out there. Open to a look?”</div>
+    </div>
+  </article>
+  </div>
+  <div class="note reveal"><b>Before you start:</b> Don’t memorise the scripts. Learn the three steps and the three families of objection first, then use the scripts to hear the method in action and find your own words.</div>
+</section>
+
+<section class="part" id="o2">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">02</div>
+    <div class="part-label">Part 02 — Dismissive</div>
+    <h2>Dismissive objections: the reflexes</h2>
+    <p class="lead">“Not interested”, “call me later”, “send me something”. These aren’t real objections, so there’s nothing to handle yet. Agree, then get them to tell you the real reason. When they’re rude, be disarmingly blunt — the more extreme their reaction, the calmer and funnier yours.</p>
+  </div>
+  <div class="grid2">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">01</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-x"/></svg></span><span class="ckicker">Dismissive</span></div>
+    <h3>Not interested</h3>
+    <p class="desc">The most common objection and the least real one. Agree hard, blame your pitch, then offer multiple choice — including “you just hate cold calls”.</p>
+    <div class="talk"><div class="ln p"><span class="who">Prospect</span><span class="t">I’m not interested.</span></div><div class="ln a"><span class="who">1 · Agree</span><span class="t">Fair enough — either my pitch was terrible or you’d have called us already.</span></div><div class="ln i"><span class="who">2 · Incentivise</span><span class="t">Just so no one calls you again, can I ask: is it that you already have a supplier, the project isn’t on your radar, or you just hate cold calls? Number three is allowed.</span></div><div class="ln p"><span class="who">Prospect</span><span class="t">We already work with a manufacturer.</span></div><div class="ln d"><span class="who">Next</span><span class="t">Got it — that’s the real one. Now run the method again (see 16).</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">02</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-calendar"/></svg></span><span class="ckicker">Dismissive</span></div>
+    <h3>Call me in 6 months</h3>
+    <p class="desc">Usually “not interested” said politely. Ask whether something real happens in six months. If it does, sell the look today so the decision is easier then.</p>
+    <div class="talk"><div class="ln p"><span class="who">Prospect</span><span class="t">Maybe — call me in six months.</span></div><div class="ln a"><span class="who">1 · Agree</span><span class="t">Makes sense. If it were urgent you’d have reached out.</span></div><div class="ln i"><span class="who">2 · Incentivise</span><span class="t">So I don’t sound silly when I call back — is something happening in six months, or are you just swamped right now?</span></div><div class="ln p"><span class="who">Prospect</span><span class="t">We’re appointing a new project director first.</span></div><div class="ln d"><span class="who">3 · Test drive</span><span class="t">I wouldn’t decide anything big before that either. But a new director usually wants to know the options. Open to a short look now, so you can hand them a shortlist on day one?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">03</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-file"/></svg></span><span class="ckicker">Dismissive</span></div>
+    <h3>Send me some information</h3>
+    <p class="desc">No one reads generic brochures — they’re just too polite to say no. Ask what they want it for; if they still insist, call it out kindly and agree a follow-up.</p>
+    <div class="talk"><div class="ln p"><span class="who">Prospect</span><span class="t">Just send me some information.</span></div><div class="ln a"><span class="who">1 · Agree</span><span class="t">Of course — I’d want to see it first too.</span></div><div class="ln i"><span class="who">2 · Incentivise</span><span class="t">So I don’t clutter your inbox: is there a specific project in mind, or just a general overview?</span></div><div class="ln p"><span class="who">Prospect</span><span class="t">Just general.</span></div><div class="ln d"><span class="who">3 · Test drive</span><span class="t">Honestly, a catalogue won’t tell you much — 15 minutes in the showroom (or on a call) will tell you if it’s a fit. If it isn’t, I’ll give you the 15 minutes back.</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">04</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></span><span class="ckicker">Dismissive</span></div>
+    <h3>Not my responsibility</h3>
+    <p class="desc">Either they are the right person and dodging, or they really aren’t. Name who you think owns it. If they’re dodging, the real objection comes out; if not, ask to mention their name.</p>
+    <div class="talk"><div class="ln p"><span class="who">Prospect</span><span class="t">That’s not my area.</span></div><div class="ln a"><span class="who">1 · Agree</span><span class="t">My mistake. Furniture usually sits with either purchasing or the project director — I guessed wrong.</span></div><div class="ln i"><span class="who">2 · Incentivise</span><span class="t">So I don’t bother the wrong person — is this with Aylin in purchasing? I was going to call her next.</span></div><div class="ln p"><span class="who">Prospect</span><span class="t">Yes, Aylin handles it.</span></div><div class="ln d"><span class="who">Referral</span><span class="t">Could I ask a slightly unreasonable favour? I’m writing to her after this — mind if I mention we spoke?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">05</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-phone"/></svg></span><span class="ckicker">Dismissive · before the pitch</span></div>
+    <h3>Where did you get my number?</h3>
+    <p class="desc">Don’t stammer. Be more transparent than they expect, then ask permission to say why you called.</p>
+    <div class="talk"><div class="ln p"><span class="who">Prospect</span><span class="t">Where did you get my number?</span></div><div class="ln a"><span class="who">1 · Agree</span><span class="t">From your company website — it’s listed under the project team. Sounds like I’ve caught you at a bad time; I can tell you exactly what’s listed if that helps.</span></div><div class="ln i"><span class="who">2 · Incentivise</span><span class="t">I don’t love making these calls either, but I did prepare for this one. Could I tell you why I called you specifically, and you can hang up on me after that?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">06</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-clock"/></svg></span><span class="ckicker">Dismissive · before the pitch</span></div>
+    <h3>I’m in a meeting</h3>
+    <p class="desc">Nobody answers a call in a meeting that matters. Match it with a light joke, then offer two choices: a calendar slot later, or 30 seconds now.</p>
+    <div class="talk"><div class="ln p"><span class="who">Prospect</span><span class="t">I’m in a meeting.</span></div><div class="ln a"><span class="who">1 · Agree</span><span class="t">Oh no — put me on speaker and I’ll apologise to the whole room.</span></div><div class="ln p"><span class="who">Prospect</span><span class="t">No… what’s it about?</span></div><div class="ln i"><span class="who">2 · Incentivise</span><span class="t">I’d hate to interrupt you twice. Shall I send a short invite for later today, or tell you in 30 seconds now so I don’t call again?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">07</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-x"/></svg></span><span class="ckicker">Dismissive · before the pitch</span></div>
+    <h3>Is this a cold call?</h3>
+    <p class="desc">Usually said in irritation. Don’t shrink — be calm, honest, a bit funny, and show you prepared.</p>
+    <div class="talk"><div class="ln p"><span class="who">Prospect</span><span class="t">Is this a cold call?</span></div><div class="ln a"><span class="who">1 · Agree</span><span class="t">Yes — and it’s going terribly. Nobody loves these calls, so I did my homework on you first.</span></div><div class="ln i"><span class="who">2 · Incentivise</span><span class="t">So nobody from our team bothers you again, can I tell you why I called — and if it’s not a fit, you can hang up?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">08</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></span><span class="ckicker">Dismissive · before the pitch</span></div>
+    <h3>I thought you were someone else</h3>
+    <p class="desc">Lean into the awkwardness with humour, and promise they can hang up the moment the call they’re waiting for comes through.</p>
+    <div class="talk"><div class="ln p"><span class="who">Prospect</span><span class="t">Oh — I thought you were someone else.</span></div><div class="ln a"><span class="who">1 · Agree</span><span class="t">I can do a different voice if it helps! I hate it too when I’m expecting a call and it’s a salesperson.</span></div><div class="ln i"><span class="who">2 · Incentivise</span><span class="t">Let me tell you in one line why I called — and if your call comes through, hang up on me straight away.</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">09</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-hourglass"/></svg></span><span class="ckicker">Dismissive · before the pitch</span></div>
+    <h3>The hang-up</h3>
+    <p class="desc">Don’t call straight back pretending you got cut off. Note the date, time and their exact words, then call a week later using them.</p>
+    <div class="talk"><div class="ln p"><span class="who">Prospect</span><span class="t">I can’t talk, I’m preparing for a big meeting. <i>(click)</i></span></div><div class="ln a"><span class="who">A week later</span><span class="t">Selin, we last spoke on 19 October around 2:30 — you were preparing for a big meeting and, fairly, hung up on me.</span></div><div class="ln i"><span class="who">2 · Incentivise</span><span class="t">I know I’m interrupting again, but I prepared for this one. Can I tell you why I called back — then you can hang up if you like?</span></div></div>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="o3">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">03</div>
+    <div class="part-label">Part 03 — Situational</div>
+    <h2>Situational objections: the cost of changing</h2>
+    <p class="lead">Even when they see the value, they picture the work: asking for budget, someone to manage it, the risk if it goes wrong. Don’t sell the purchase. Take all the pressure off and sell the look — they’ll get excited in the meeting, not on the phone.</p>
+  </div>
+  <div class="grid2">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">10</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-chart"/></svg></span><span class="ckicker">Situational</span></div>
+    <h3>No budget</h3>
+    <p class="desc">Ask if it’s timing (no budget this cycle) or value (every spend is a fight). Either way, push the purchase away and sell a look for when budget frees up.</p>
+    <div class="talk"><div class="ln p"><span class="who">Prospect</span><span class="t">We don’t have budget for this.</span></div><div class="ln a"><span class="who">1 · Agree</span><span class="t">I hear you — keeping a budget is hard enough these days.</span></div><div class="ln i"><span class="who">2 · Incentivise</span><span class="t">So no one calls you again: is it that there’s nothing this year, or that any spend means a big fight?</span></div><div class="ln p"><span class="who">Prospect</span><span class="t">A bit of both, honestly.</span></div><div class="ln d"><span class="who">3 · Test drive</span><span class="t">You probably won’t buy now. But when budget frees up, the people who’ve already looked know what to ask for. Open to a short look, so you know what’s out there?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">11</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-scale"/></svg></span><span class="ckicker">Situational</span></div>
+    <h3>Too expensive</h3>
+    <p class="desc">Find out if it’s sticker shock or that they didn’t see the value. Hint at flexibility without promising a discount.</p>
+    <div class="talk"><div class="ln p"><span class="who">Prospect</span><span class="t">You’re too expensive.</span></div><div class="ln a"><span class="who">1 · Agree</span><span class="t">Fair — we’re never the cheapest, but we’re rarely far off either.</span></div><div class="ln i"><span class="who">2 · Incentivise</span><span class="t">Can I ask: was it the total amount, or that it wasn’t clear what the difference was buying you?</span></div><div class="ln p"><span class="who">Prospect</span><span class="t">We got a quote 30% under yours.</span></div><div class="ln d"><span class="who">3 · Test drive</span><span class="t">Not crazy far off. Spec can go up or down — fabric, finish, quantities. I won’t promise it’ll be cheaper, but could I show you a couple of options so you can compare like for like?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">12</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-hourglass"/></svg></span><span class="ckicker">Situational</span></div>
+    <h3>No time / bandwidth</h3>
+    <p class="desc">Everyone is busy forever. Ask with a smile whether it’s temporary — then sell how other lean teams get more done with you.</p>
+    <div class="talk"><div class="ln p"><span class="who">Prospect</span><span class="t">We’re stretched, we can’t take this on.</span></div><div class="ln a"><span class="who">1 · Agree</span><span class="t">Understood — every project team I talk to is doing three jobs.</span></div><div class="ln i"><span class="who">2 · Incentivise</span><span class="t">Is it a busy season, or will you be swamped until 2032?</span></div><div class="ln p"><span class="who">Prospect</span><span class="t">Feels like 2032.</span></div><div class="ln d"><span class="who">3 · Test drive</span><span class="t">I’ll pencil us in for 2032 then. Seriously — our best clients are small teams who want one supplier for furniture, lighting and installation. Could I at least show you how that works?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">13</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-person"/></svg></span><span class="ckicker">Situational</span></div>
+    <h3>Need to hire someone first</h3>
+    <p class="desc">Ask whether the hire has a start date. If it’s soon, send an invite for then. If not, sell a look now so they have a shortlist ready for the new person.</p>
+    <div class="talk"><div class="ln p"><span class="who">Prospect</span><span class="t">Nothing moves until we hire a new project manager.</span></div><div class="ln a"><span class="who">1 · Agree</span><span class="t">Makes sense — no one wants a decision the new boss will undo.</span></div><div class="ln i"><span class="who">2 · Incentivise</span><span class="t">Has someone been hired with a start date, or is the search just starting?</span></div><div class="ln p"><span class="who">Prospect</span><span class="t">Just started.</span></div><div class="ln d"><span class="who">3 · Test drive</span><span class="t">A new manager usually arrives wanting to know the options. Open to a quick look, so you have a shortlist ready for them?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">14</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-filter"/></svg></span><span class="ckicker">Situational</span></div>
+    <h3>It’s not right for us</h3>
+    <p class="desc">Ask why they think it isn’t a fit. Then lean on social proof — offer to show how a similar client used it.</p>
+    <div class="talk"><div class="ln p"><span class="who">Prospect</span><span class="t">You’re more of a retail brand — you don’t do big contract projects.</span></div><div class="ln a"><span class="who">1 · Agree</span><span class="t">Interesting — and fair, you wouldn’t look at anyone unless you were sure they could deliver at scale.</span></div><div class="ln i"><span class="who">2 · Incentivise</span><span class="t">So we don’t waste your time again: was it capacity, lead times, or something you heard?</span></div><div class="ln p"><span class="who">Prospect</span><span class="t">A colleague said you can’t handle 200 rooms.</span></div><div class="ln d"><span class="who">3 · Test drive</span><span class="t">I won’t convince you on the phone. But could I show you a 200-room hotel we delivered — and introduce you to their team if it makes sense?</span></div></div>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="o4">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">04</div>
+    <div class="part-label">Part 04 — Existing solution</div>
+    <h2>Existing-solution objections: never badmouth</h2>
+    <p class="lead">Criticising their current supplier makes them defend it. No supplier is perfect — help them notice a gap on their own terms, then let similar clients’ choices do the selling.</p>
+  </div>
+  <div class="note reveal" style="margin-top:0">Agree with their choice → ask a gentle “trap” question that reveals a gap → sell the look with social proof.</div>
+  <div class="grid2">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">15</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-users"/></svg></span><span class="ckicker">Existing solution</span></div>
+    <h3>We do it in-house</h3>
+    <p class="desc">Compliment the in-house approach, then ask about the thing in-house usually can’t do.</p>
+    <div class="talk"><div class="ln p"><span class="who">Prospect</span><span class="t">We source furniture ourselves.</span></div><div class="ln a"><span class="who">1 · Agree</span><span class="t">Nice — that usually means someone on your team really knows the market.</span></div><div class="ln i"><span class="who">2 · Incentivise</span><span class="t">Then I guess you’re not doing custom sizes or matching lighting on site yet?</span></div><div class="ln p"><span class="who">Prospect</span><span class="t">We are, actually — it’s a headache.</span></div><div class="ln d"><span class="who">3 · Test drive</span><span class="t">That’s why most teams come to us: one supplier, one schedule. You’ll probably keep sourcing yourselves, but could I show you what consolidating it would look like?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">16</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-flag"/></svg></span><span class="ckicker">Existing solution</span></div>
+    <h3>Competitor known</h3>
+    <p class="desc">Never badmouth. Praise them, then ask a question about the gap you know they have.</p>
+    <div class="talk"><div class="ln p"><span class="who">Prospect</span><span class="t">We already work with another manufacturer.</span></div><div class="ln a"><span class="who">1 · Agree</span><span class="t">They’re a good group — honestly, it rarely makes sense to switch if you’re happy.</span></div><div class="ln i"><span class="who">2 · Incentivise</span><span class="t">Just so we don’t bother you again — they must not be doing lighting for you too, right?</span></div><div class="ln p"><span class="who">Prospect</span><span class="t">No, that’s a separate supplier. Why?</span></div><div class="ln d"><span class="who">3 · Test drive</span><span class="t">Other hotel teams found the furniture and lighting never quite matched on site. We do both. You probably won’t switch, but could I show you how that works, so you know what’s out there?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">17</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-target"/></svg></span><span class="ckicker">Existing solution</span></div>
+    <h3>Competitor unknown</h3>
+    <p class="desc">People clam up at “who do you use?”. Offer multiple choice to find out, then run the method again.</p>
+    <div class="talk"><div class="ln p"><span class="who">Prospect</span><span class="t">We already have a supplier.</span></div><div class="ln a"><span class="who">1 · Agree</span><span class="t">I should have guessed you’d have someone in place.</span></div><div class="ln i"><span class="who">2 · Incentivise</span><span class="t">So I can mark this one closed — is it one of the big contract manufacturers, a local workshop, or an importer?</span></div><div class="ln p"><span class="who">Prospect</span><span class="t">A local workshop.</span></div><div class="ln d"><span class="who">Next</span><span class="t">Got it — now run the method again with a trap question about scale or lead times (see 16).</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">18</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-calendar"/></svg></span><span class="ckicker">Existing solution</span></div>
+    <h3>Stuck in a contract</h3>
+    <p class="desc">Same as a known competitor — just take the pressure off switching now.</p>
+    <div class="talk"><div class="ln p"><span class="who">Prospect</span><span class="t">We’re tied in for this project.</span></div><div class="ln a"><span class="who">1 · Agree</span><span class="t">Makes sense — I wouldn’t switch mid-project either.</span></div><div class="ln i"><span class="who">2 · Incentivise</span><span class="t">Out of curiosity, does that cover the next property too, or just this one?</span></div><div class="ln p"><span class="who">Prospect</span><span class="t">Just this one.</span></div><div class="ln d"><span class="who">3 · Test drive</span><span class="t">Then no rush at all. Could I show you what we’d do differently, so you have a comparison ready before the next one?</span></div></div>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="o5">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">05</div>
+    <div class="part-label">Part 05 — Practice</div>
+    <h2>Practice checklist</h2>
+    <p class="lead">Run through these with a colleague before your next calling session. Tap each one when you can do it without reading.</p>
+  </div>
+  <ul class="check reveal">
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>I can say all three steps from memory</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>I have an “agree” line for not interested, call me later and send me something</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>I always offer multiple choice instead of an open “why?”</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>My incentive changes: “so no one calls you again”, “so I don’t clutter your inbox”, “so I don’t bother the wrong person”</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>I sell a look, a showroom visit or a moodboard — never the order</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>I never badmouth a competitor</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>After a hang-up I note date, time and their exact words</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>I have one calm, funny line for “is this a cold call?”</span></li>
+  </ul>
+</section>
+
+<section class="part" id="resources">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">★</div>
+    <div class="part-label">Resources</div>
+    <h2>The original guide</h2>
+    <p class="lead">The full guide with all eighteen objections and the original talk tracks. The Mozaik scripts above are our own adaptation.</p>
+  </div>
+  <div class="dl-row reveal">
+  <a class="dl" href="30MPC-18-Cold-Call-Objections-and-Scripts.pdf" target="_blank" rel="noopener">
+    <span class="ic"><svg viewBox="0 0 24 24"><use href="#ic-download"/></svg></span>
+    <span><span class="t">18 Cold Call Objections and Scripts for Each</span><span class="d">The original 25-page guide: the method, the three families of objection and a script for each.</span><span class="ext">PDF · English · 30 Minutes to President’s Club</span></span>
+  </a>
+  <a class="dl" href="../sdr-cold-outbound/index.html">
+    <span class="ic"><svg viewBox="0 0 24 24"><use href="#ic-book"/></svg></span>
+    <span><span class="t">Training: Cold Outbound that Books Meetings</span><span class="d">The 12-lesson training — including why calls double or triple your email replies.</span><span class="ext">Mozaik Academy · Course 05</span></span>
+  </a>
+  </div>
+</section>
+
+</div>
+
+<section class="cta">
+  <div class="inner">
+    <div class="reveal">
+      <span class="micro" style="color:rgba(255,255,255,0.7)">The one thing to remember</span>
+      <h2 style="margin-top:14px;">Agree first. Get the real reason. Sell the look, not the order.</h2>
+      <p>The first objection is a reflex, not a decision. Disarm it, give them a reason to talk, and ask for something small — a look, a visit, a moodboard. The order gets won in the meeting.</p>
+    </div>
+    <div class="principles reveal">
+      <div class="p"><div class="n">01 — Agree</div><div class="t">“I hear you” stops the fight.</div></div>
+      <div class="p"><div class="n">02 — Incentivise</div><div class="t">“So no one calls you again…” gets the real objection.</div></div>
+      <div class="p"><div class="n">03 — Test drive</div><div class="t">“So you know what’s out there” gets the meeting.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="complete" id="completeBox"></div>
+
+<footer class="foot">
+  <div class="inner">
+    <a class="brand" href="../index.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <div class="src">Adapted from <b>“18 Cold Call Objections and Scripts for Each”</b> (30 Minutes to President’s Club, Cold Call Course). The method and objection list are theirs; the Mozaik scripts and diagram are original. All rights to the original belong to its authors; shared here for internal Mozaik training only. Styled in the Kraken Design System.</div>
+  </div>
+</footer>
+
+<script src="../shared/course.js" defer></script>
+</body>
+</html>
