@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The First 60 Seconds — Mozaik Academy</title>
+<meta name="description" content="Two cold call openers that don’t sound like a telemarketer, the problem proposition, and four full Mozaik examples of the first minute.">
+<script>
+(function(){
+  try{
+    var CUR='en';
+    var saved=localStorage.getItem('mozaik_lang');
+    if(saved && saved!==CUR && location.search.indexOf('l=1')<0){
+      location.replace((CUR==='en'?'tr.html':'index.html')+'?l=1');
+    }
+  }catch(e){}
+})();
+</script>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="../shared/course.css">
+<link rel="stylesheet" href="../shared/academy.css">
+<script>window.MOZAIK = {
+  "lang": "en",
+  "page": "course",
+  "id": "sdr-openers",
+  "tour": [
+    {
+      "n": "SDR Toolkit",
+      "t": "Welcome, {name} 👋",
+      "b": "How to win the first minute of a cold call: two openers, one way to describe the problem, and four full Mozaik examples. About 15 minutes."
+    },
+    {
+      "n": "Step 1 of 2",
+      "t": "Read the examples out loud",
+      "b": "Part 05 has four complete first minutes. Say them out loud — tone matters as much as the words."
+    },
+    {
+      "n": "Step 2 of 2",
+      "t": "Mark it complete when you finish",
+      "b": "There is a “Mark as complete” button at the bottom of the page."
+    }
+  ]
+};</script>
+<style>
+.grid2{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+.grid3{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+.grid4{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;}
+@media(min-width:900px){.grid2{grid-template-columns:1fr 1fr;gap:20px;}.grid3{grid-template-columns:repeat(3,1fr);}.grid4{grid-template-columns:repeat(4,1fr);}}
+.code-c{background:var(--white);border:1px solid var(--border-gray);border-radius:18px;
+  padding:22px 22px 18px;display:flex;flex-direction:column;box-shadow:var(--shadow-micro);}
+.code-c .card-top{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;}
+.code-c .num{flex:0 0 auto;min-width:34px;height:34px;padding:0 8px;border-radius:10px;display:grid;place-items:center;
+  background:var(--kraken-purple-subtle);color:var(--kraken-purple-deep);
+  font-family:var(--font-mono);font-size:13px;font-weight:700;letter-spacing:-0.02em;}
+.code-c .cicon{flex:0 0 auto;width:26px;height:26px;color:var(--kraken-purple);}
+.code-c .cicon svg{width:26px;height:26px;}
+.code-c .ckicker{font-size:var(--fs-micro);letter-spacing:0.08em;text-transform:uppercase;color:var(--cool-gray);font-weight:600;}
+.code-c h3{font-size:19px;line-height:1.3;margin:0 0 10px;letter-spacing:-0.01em;}
+.code-c .desc{font-size:14.5px;line-height:1.62;color:var(--secondary);margin:0 0 16px;}
+.code-c .callouts{margin-top:auto;display:flex;flex-direction:column;gap:10px;}
+.code-c .takeaway{background:var(--kraken-purple-subtle);border-left:3px solid var(--kraken-purple);
+  border-radius:0 10px 10px 0;padding:11px 14px;font-size:13.5px;line-height:1.55;}
+.code-c .mozaik{display:flex;gap:9px;font-size:13px;line-height:1.55;color:var(--cool-gray);}
+.code-c .mozaik .pin{color:var(--kraken-purple);flex:0 0 auto;}
+.field{background:var(--white);border:1px solid var(--border-gray);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-micro);}
+.field .k{font-weight:700;font-size:15px;color:var(--near-black);}
+.field .v{font-size:13.5px;color:var(--cool-gray);margin-top:4px;line-height:1.45;}
+.field .ic{width:30px;height:30px;border-radius:9px;background:var(--kraken-purple-subtle);color:var(--kraken-purple);display:grid;place-items:center;margin-bottom:10px;}
+.field .ic svg{width:17px;height:17px;}
+.big{font-family:var(--font-brand);font-size:34px;font-weight:700;letter-spacing:-1px;color:var(--kraken-purple);line-height:1;margin:2px 0 10px;}
+.formula{font-family:var(--font-mono);font-size:13px;background:var(--d-box);border-radius:10px;padding:10px 12px;color:var(--near-black);margin:0 0 14px;line-height:1.5;}
+.rlist{list-style:none;margin:18px 0 0;padding:0;border-top:1px solid var(--border-gray);}
+.rlist li{display:flex;gap:14px;align-items:baseline;justify-content:space-between;padding:13px 2px;border-bottom:1px solid var(--border-gray);}
+.rlist .t{font-weight:600;font-size:15px;color:var(--near-black);}
+.rlist .s{font-size:13px;color:var(--cool-gray);text-align:right;}
+.lane-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding-bottom:10px;border-bottom:3px solid var(--kraken-purple);}
+.lane-h.alt{border-bottom-color:var(--warning,#d97706);}
+.lane-h b{font-size:12px;letter-spacing:.08em;text-transform:uppercase;}
+.lane-h span{font-size:12.5px;color:var(--cool-gray);}
+.note{margin-top:22px;background:var(--d-box);border-radius:14px;padding:16px 20px;font-size:14.5px;line-height:1.55;color:var(--near-black);}
+.rules{display:grid;grid-template-columns:1fr;gap:18px;margin-top:26px;}
+@media(min-width:900px){.rules{grid-template-columns:repeat(3,1fr);}}
+.rule{position:relative;background:linear-gradient(160deg,var(--kraken-purple) 0%,var(--kraken-purple-deep) 100%);color:#fff;border-radius:18px;padding:22px 22px 20px;display:flex;flex-direction:column;min-height:200px;}
+.rule .n{font-family:var(--font-brand);font-size:40px;font-weight:700;opacity:.35;line-height:1;letter-spacing:-1.5px;}
+.rule h3{color:#fff;font-size:18.5px;line-height:1.35;margin:12px 0 10px;}
+.rule ul{margin:0 0 12px;padding-left:18px;font-size:14px;line-height:1.6;color:rgba(255,255,255,.88);}
+.rule .scope{margin-top:auto;font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.75);}
+.mail{background:var(--white);border:1px solid var(--border-gray);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-micro);display:flex;flex-direction:column;}
+.mail .mh{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:1px solid var(--border-gray);background:#fcfcfd;flex-wrap:wrap;}
+.mail .step{font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--kraken-purple-deep);background:var(--kraken-purple-subtle);border-radius:8px;padding:3px 8px;}
+.mail .ch{font-size:12px;font-weight:600;color:var(--cool-gray);}
+.mail .day{margin-left:auto;font-size:12px;color:var(--silver-blue);font-weight:600;}
+.mail .subj{padding:12px 16px 0;font-size:13px;color:var(--cool-gray);}
+.mail .subj b{color:var(--near-black);font-weight:600;}
+.mail .body{padding:10px 16px 14px;font-size:14.5px;line-height:1.6;color:var(--near-black);white-space:pre-line;}
+.mail .why{margin-top:auto;border-top:1px dashed var(--border-gray);padding:11px 16px 13px;font-size:13px;line-height:1.5;color:var(--cool-gray);}
+.mail .why b{color:var(--kraken-purple);}
+.seq{width:100%;border-collapse:collapse;margin-top:22px;font-size:14px;}
+.seq th{text-align:left;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--cool-gray);font-weight:600;padding:8px 10px;border-bottom:2px solid var(--border-gray);}
+.seq td{padding:10px;border-bottom:1px solid var(--border-gray);vertical-align:top;}
+.seq td.n{font-family:var(--font-mono);font-weight:700;color:var(--kraken-purple-deep);width:40px;}
+.seq td.d{color:var(--cool-gray);white-space:nowrap;width:70px;}
+.seq tr.th td{background:var(--kraken-purple-subtle);font-weight:600;color:var(--kraken-purple-deep);font-size:13px;}
+.tchip{display:inline-block;font-size:11.5px;font-weight:700;border-radius:9999px;padding:2px 9px;margin-right:6px;}
+.tchip.e{background:var(--kraken-purple-subtle);color:var(--kraken-purple-deep);}
+.tchip.l{background:#e6f0fd;color:#1f5fbf;}
+.tchip.c{background:var(--d-good-soft);color:var(--d-good-text);}
+.stat-row{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 2px;}
+.stat-chip{background:var(--d-good-soft);color:var(--d-good-text);border-radius:9999px;font-size:13px;font-weight:600;padding:6px 13px;}
+.check{list-style:none;padding:0;margin:22px 0 0;display:grid;grid-template-columns:1fr;gap:10px;}
+@media(min-width:900px){.check{grid-template-columns:1fr 1fr;}}
+.check li{display:flex;gap:12px;align-items:flex-start;background:var(--white);border:1px solid var(--border-gray);border-radius:12px;padding:13px 15px;font-size:14.5px;line-height:1.5;cursor:pointer;user-select:none;}
+.check li .bx{flex:0 0 auto;width:20px;height:20px;border-radius:6px;border:2px solid var(--silver-blue);display:grid;place-items:center;margin-top:1px;}
+.check li .bx svg{width:13px;height:13px;color:#fff;opacity:0;}
+.check li.on{border-color:var(--kraken-purple);background:var(--kraken-purple-subtle);}
+.check li.on .bx{background:var(--kraken-purple);border-color:var(--kraken-purple);}
+.check li.on .bx svg{opacity:1;}
+.dl-row{display:flex;flex-wrap:wrap;gap:16px;margin-top:22px;}
+.dl{flex:1 1 320px;display:flex;gap:14px;align-items:flex-start;text-decoration:none;background:#fff;
+  border:1px solid var(--border-gray);border-radius:14px;padding:18px 20px;transition:border-color .15s, box-shadow .15s;}
+.dl:hover{border-color:var(--kraken-purple);box-shadow:0 10px 30px rgba(40,30,90,.10);text-decoration:none;}
+.dl .ic{flex:0 0 auto;width:40px;height:40px;border-radius:10px;background:var(--kraken-purple-subtle);color:var(--kraken-purple);display:flex;align-items:center;justify-content:center;}
+.dl .ic svg{width:22px;height:22px;}
+.dl .t{display:block;font-weight:600;color:#101114;font-size:15px;}
+.dl .d{display:block;font-size:13px;color:var(--cool-gray);margin-top:3px;line-height:1.45;}
+.dl .ext{display:block;font-size:11.5px;font-weight:700;letter-spacing:.4px;color:var(--kraken-purple);margin-top:7px;}
+.fig-cap{font-size:12.5px;color:var(--cool-gray);margin-top:8px;}
+@media(max-width:600px){.code-c{padding:18px 18px 16px;}.code-c h3{font-size:17.5px;}.seq td.d{white-space:normal;}}
+.talk{margin:4px 0 16px;border:1px solid var(--border-gray);border-radius:14px;overflow:hidden;}
+.talk .ln{display:grid;grid-template-columns:104px 1fr;gap:12px;padding:10px 14px;font-size:14px;line-height:1.55;border-top:1px solid var(--border-gray);}
+.talk .ln:first-child{border-top:0;}
+.talk .who{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--cool-gray);padding-top:3px;}
+.talk .ln.p{background:#fafafb;}
+.talk .ln.p .t{color:var(--secondary);font-style:italic;}
+.talk .ln.a .who{color:var(--kraken-purple);}
+.talk .ln.i .who{color:#1f7ae0;}
+.talk .ln.d .who{color:var(--d-good-text);}
+@media(max-width:600px){.talk .ln{grid-template-columns:1fr;gap:2px;}}
+</style>
+<script>
+document.addEventListener('click',function(e){var li=e.target.closest('.check li');if(li)li.classList.toggle('on');});
+</script>
+<script src="../shared/academy.js" defer></script>
+</head>
+<body>
+<div id="gate"><div class="card" id="gateCard"></div></div>
+<div class="progress" id="progress"></div>
+
+<svg class="iconsheet" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="_ic" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></g>
+  </defs>
+  <symbol id="ic-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4"/><path d="M5 4h12l-2.5 4L17 12H5"/></symbol>
+  <symbol id="ic-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></symbol>
+  <symbol id="ic-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v8a1.5 1.5 0 0 1-1.5 1.5H9l-5 4z"/></symbol>
+  <symbol id="ic-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8.5V20l-4-2.5v-4z"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.8-4.5 4.2 1.2 6.1L12 17l-5.4 2.7 1.2-6.1L3.3 9.4l6.1-.8z"/></symbol>
+  <symbol id="ic-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ic-route" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H14a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5.5"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><path d="M16 5.2a3 3 0 0 1 0 5.6"/><path d="M18 20a6 6 0 0 0-3.5-5.5"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5 11-11"/></symbol>
+  <symbol id="ic-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="ic-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="ic-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2.4 5.6L8 16l2.4-5.6z"/></symbol>
+  <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l1.5 5-2 1.3a12 12 0 0 0 6.2 6.2l1.3-2 5 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4 5.2 2 2 0 0 1 6 3z"/></symbol>
+  <symbol id="ic-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10M7 21h10"/><path d="M8 3v3.4c0 2 4 3.6 4 5.6s-4 3.6-4 5.6V21"/><path d="M16 3v3.4c0 2-4 3.6-4 5.6s4 3.6 4 5.6V21"/></symbol>
+  <symbol id="ic-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H19v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M19 18v3H6.5A2.5 2.5 0 0 1 4 18.5"/></symbol>
+  <symbol id="ic-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v1.5A3.5 3.5 0 0 0 7 11M17 6h3v1.5A3.5 3.5 0 0 1 17 11M9.5 19h5M10 14.5l-.5 4.5h5l-.5-4.5"/></symbol>
+  <symbol id="ic-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M7 21h10M6 7l-3 6h6zM18 7l-3 6h6zM4.5 7h15"/><circle cx="12" cy="5" r="1.3"/></symbol>
+  <symbol id="ic-person" viewBox="0 0 24 24" fill="currentColor" stroke="none"><circle cx="12" cy="6.5" r="3.3"/><path d="M5.8 21.5c0-5.4 2.3-9 6.2-9s6.2 3.6 6.2 9z"/></symbol>
+  <symbol id="ic-funnel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18l-3 5H6z"/><path d="M6.5 11h11l-2.5 4.5h-6z"/><path d="M10 17.5h4L13 21h-2z"/></symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></symbol>
+  <symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="ic-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></symbol>
+  <symbol id="ic-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7.5" y="12" width="3" height="5"/><rect x="12.5" y="8" width="3" height="9"/><rect x="17.5" y="5" width="2.5" height="12"/></symbol>
+  <symbol id="ic-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+</svg>
+
+<nav class="top">
+  <div class="inner">
+    <a class="brand" href="../index.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <a class="backlink" href="../index.html">← Academy</a>
+    <a class="langswitch navlang" href="tr.html" data-setlang="tr">Türkçe</a>
+    <div class="spacer"></div>
+    <div class="toc" id="toc">
+      <a href="#f1">Why</a>
+      <a href="#f2">Opener A</a>
+      <a href="#f3">Opener B</a>
+      <a href="#f4">Problem</a>
+      <a href="#f5">Examples</a>
+      <a href="#f6">Practice</a>
+      <a href="#resources">Download</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#f1">Why calls are lost early</a>
+  <a href="#f2">“Heard the name?” opener</a>
+  <a href="#f3">Tailored permission opener</a>
+  <a href="#f4">The problem proposition</a>
+  <a href="#f5">Four full examples</a>
+  <a href="#f6">Practice checklist</a>
+  <a href="#resources">Download the original</a>
+</div>
+
+<header class="hero">
+  <span class="eyebrow"><span class="dot"></span><span class="micro" style="color:var(--kraken-purple)">SDR Toolkit · Cold Calling</span></span>
+  <h1>The goal of the first 60 seconds <em>is to earn the next 60.</em></h1>
+  <p class="sub">Most cold calls are lost in the first minute — same openers, same chirpy tone, same buzzwords, and the prospect files you under “telemarketer”. This toolkit gives you two openers that lead with context, a way to describe the problem so the solution takes one sentence, and four complete first minutes written for Mozaik.</p>
+  <div class="hero-meta">
+    <div class="stat"><div class="v count" style="color:var(--kraken-purple)">2</div><div class="l">Openers</div></div>
+    <div class="stat"><div class="v">3</div><div class="l">Steps to the problem proposition</div></div>
+    <div class="stat"><div class="v count">4</div><div class="l">Full Mozaik examples</div></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="part" id="f1">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">01</div>
+    <div class="part-label">Part 01 — Why calls are lost early</div>
+    <h2>Two openers to ban today</h2>
+    <p class="lead">When the prospect picks up, they’re listening for the first sign you’re a telemarketer: the chirpy voice, the script, the lack of research, the line everyone uses. These two lines give you away instantly.</p>
+  </div>
+  <div class="reveal" style="margin-top:22px"><div class="fig">
+    <svg viewBox="0 0 760 200" xmlns="http://www.w3.org/2000/svg"><rect class="fg" style="--i:0" x="40" y="50" width="204" height="70" rx="12" fill="var(--d-grow-soft)" stroke="var(--kraken-purple)" stroke-width="1.5"/><text class="fg" style="--i:0" x="142.0" y="80" fill="var(--near-black)" font-size="15" font-weight="700" text-anchor="middle">Opener</text><text class="fg" style="--i:0" x="142.0" y="102" fill="var(--cool-gray)" font-size="12" text-anchor="middle">context first, then your name</text><rect class="fg" style="--i:1" x="250" y="50" width="304" height="70" rx="12" fill="#e6f0fd" stroke="#1f7ae0" stroke-width="1.5"/><text class="fg" style="--i:1" x="402.0" y="80" fill="var(--near-black)" font-size="15" font-weight="700" text-anchor="middle">Problem proposition</text><text class="fg" style="--i:1" x="402.0" y="102" fill="var(--cool-gray)" font-size="12" text-anchor="middle">a problem they recognise + one-line solution</text><rect class="fg" style="--i:2" x="560" y="50" width="154" height="70" rx="12" fill="var(--d-good-soft)" stroke="var(--success)" stroke-width="1.5"/><text class="fg" style="--i:2" x="637.0" y="80" fill="var(--near-black)" font-size="15" font-weight="700" text-anchor="middle">Ask</text><text class="fg" style="--i:2" x="637.0" y="102" fill="var(--cool-gray)" font-size="12" text-anchor="middle">interest, not a meeting</text><line class="fg" style="--i:0" x1="40" y1="130" x2="40" y2="140" stroke="var(--d-axis)" stroke-width="1.5"/><text class="fg" style="--i:0" x="40" y="156" fill="var(--silver-blue)" font-size="11.5" text-anchor="middle">0s</text><line class="fg" style="--i:0" x1="250" y1="130" x2="250" y2="140" stroke="var(--d-axis)" stroke-width="1.5"/><text class="fg" style="--i:0" x="250" y="156" fill="var(--silver-blue)" font-size="11.5" text-anchor="middle">~20s</text><line class="fg" style="--i:0" x1="560" y1="130" x2="560" y2="140" stroke="var(--d-axis)" stroke-width="1.5"/><text class="fg" style="--i:0" x="560" y="156" fill="var(--silver-blue)" font-size="11.5" text-anchor="middle">~50s</text><line class="fg" style="--i:0" x1="714" y1="130" x2="714" y2="140" stroke="var(--d-axis)" stroke-width="1.5"/><text class="fg" style="--i:0" x="714" y="156" fill="var(--silver-blue)" font-size="11.5" text-anchor="middle">60s</text><line class="fg" style="--i:0" x1="40" y1="135" x2="714" y2="135" stroke="var(--d-axis)" stroke-width="1.5"/><text class="fg" style="--i:0" x="40" y="30" fill="var(--cool-gray)" font-size="12.5">The first minute of a good cold call</text><text class="fg" style="--i:4" x="380" y="188" fill="var(--near-black)" font-size="12.5" font-weight="600" text-anchor="middle">Get to second 61 and you’re in a conversation, not a brush-off.</text></svg>
+  </div><div class="fig-cap">Rough timings — the opener should be the shortest part.</div></div>
+  <div class="grid2">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-x"/></svg></span><span class="ckicker">Banned opener 1</span></div>
+    <h3>“How’s your day going?”</h3>
+    <p class="desc">You don’t care, they know you don’t, and you’ll get a sigh and “fine — what’s this about?”, which means “what are you selling?”</p>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-x"/></svg></span><span class="ckicker">Banned opener 2</span></div>
+    <h3>“Did I catch you at a bad time?”</h3>
+    <p class="desc">It’s a cold call — of course it’s a bad time. They say yes, and you never reach them again.</p>
+  </article>
+  </div>
+  <div class="note reveal"><b>Lead with context instead.</b> Open with something that shows you’re not a complete stranger — a client in the same building, the same industry, a project you read about. Three things happen:</div>
+  <div class="grid3">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-zap"/></svg></span><span class="ckicker"></span></div>
+    <h3>The sit-up moment</h3>
+    <p class="desc">They realise you may work with their peers, so you’re not someone they can brush off without consequence.</p>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-target"/></svg></span><span class="ckicker"></span></div>
+    <h3>It can’t be canned</h3>
+    <p class="desc">The context is unique to them, so it never sounds like a script — even if everyone used it.</p>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span class="ckicker"></span></div>
+    <h3>“Telemarketer” disappears</h3>
+    <p class="desc">You prove in five seconds that you did your homework.</p>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="f2">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">02</div>
+    <div class="part-label">Part 02 — Opener A</div>
+    <h2>The “Heard the name?” opener</h2>
+    <p class="lead">Context first, then your name, then a question that makes them wonder whether they should have heard of you.</p>
+  </div>
+  <div class="grid3">
+    <div class="field reveal"><div class="ic"><b>1</b></div><div class="k">Lead with context</div><div class="v">Before anything else — even your name. “We work with a few other hotels on the Bodrum peninsula.”</div></div>
+    <div class="field reveal"><div class="ic"><b>2</b></div><div class="k">Then introduce yourself</div><div class="v">“It’s Deniz from Mozaik Design…”</div></div>
+    <div class="field reveal"><div class="ic"><b>3</b></div><div class="k">Ask the question</div><div class="v">“…heard the name around?” Now they’re thinking: should I have?</div></div>
+  </div>
+  <div class="reveal" style="margin-top:22px"><div class="lane-h"><b>Context that works for us</b><span></span></div><ul class="rlist" style="border-top:0;margin-top:0"><li><span class="t">Same area</span><span class="s">“We work with a few other restaurants on Bağdat Caddesi.”</span></li><li><span class="t">Same building</span><span class="s">“We furnished a couple of offices in your tower in Maslak.”</span></li><li><span class="t">Same industry</span><span class="s">“We work with a few boutique hotel groups in Istanbul.”</span></li><li><span class="t">Same role + city</span><span class="s">“We work with other project directors in Ankara.”</span></li></ul></div>
+  <div class="grid2">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-x"/></svg></span><span class="ckicker"></span></div>
+    <h3>If they say no</h3>
+    <p class="desc">Most will. Smile and go straight into the problem: “Ha — guess we’re not as famous as I thought. The reason I’m calling is…”</p>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span class="ckicker"></span></div>
+    <h3>If they say yes</h3>
+    <p class="desc">“Oh good — we’d normally be working with someone like you by now. What did you hear?” They usually still don’t know what you do, so give the same short pitch.</p>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="f3">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">03</div>
+    <div class="part-label">Part 03 — Opener B</div>
+    <h2>The tailored permission opener</h2>
+    <p class="lead">Lead with something about them that connects to a problem you solve, admit it’s a cold call, then ask for 30 seconds — and give them control of what happens next.</p>
+  </div>
+  <div class="grid2">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-phone"/></svg></span><span class="ckicker">Talk track</span></div>
+    <h3>Context tied to a problem</h3>
+    <p class="desc">Not their university or hobby — something that implies a problem we solve: a new branch opening (a fit-out on a deadline), a renovation announcement, a new head of projects, a tender notice.</p>
+    <div class="talk"><div class="ln a"><span class="who">Context</span><span class="t">Selin, I just read that the group is opening a new property in Bodrum next spring.</span></div><div class="ln a"><span class="who">Own it</span><span class="t">I’ll be honest — this is a cold call, but it’s a well-researched one.</span></div><div class="ln a"><span class="who">Permission</span><span class="t">Can I have 30 seconds to tell you why that news made me call you specifically — and then you tell me whether it makes sense to talk?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-x"/></svg></span><span class="ckicker"></span></div>
+    <h3>If they say no</h3>
+    <p class="desc">They’re refusing the interruption, not your product. Give them a reason to say more, then offer now or later.</p>
+    <div class="talk"><div class="ln i"><span class="who">Incentive</span><span class="t">My bad. Just so nobody from our team bothers you again — is it that I caught you at a terrible time, or you already know what we do and it’s just not a priority?</span></div><div class="ln d"><span class="who">Now or later</span><span class="t">Thanks for being straight with me. I don’t love interrupting people either, and I did prepare for this one. Can I take 30 seconds now so I don’t call again — or shall I send a short invite for later today?</span></div></div>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="f4">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">04</div>
+    <div class="part-label">Part 04 — The pitch</div>
+    <h2>The problem proposition</h2>
+    <p class="lead">Forget the value proposition. Buzzwords (“premium quality”, “one-stop solution”, “leading manufacturer”) set off the telemarketer alarm, and people act on pain far more than on benefits. Describe the problem so vividly that the solution only needs one sentence.</p>
+  </div>
+  <div class="grid3">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-flag"/></svg></span><span class="ckicker">Step 1</span></div>
+    <h3>A triggering problem</h3>
+    <p class="desc">Paint it like a film scene so they remember the worst part of their week.</p><ul style="margin:0 0 6px;padding-left:18px;font-size:14px;line-height:1.6;color:var(--secondary)"><li><b>Who</b> felt it — hotel project directors, restaurant owners, office facility managers</li><li><b>What</b> annoyed them — late deliveries, mismatched finishes, three suppliers to chase</li><li><b>When</b> it happened — two weeks before opening, the night before the inspection</li><li><b>How</b> it felt — stressful, embarrassing, exhausting</li></ul>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-zap"/></svg></span><span class="ckicker">Step 2</span></div>
+    <h3>A one-sentence solution</h3>
+    <p class="desc">“We do X so the problem goes away.” X is your single biggest differentiator — not every feature.</p><ul style="margin:0 0 6px;padding-left:18px;font-size:14px;line-height:1.6;color:var(--secondary)"><li>Furniture and lighting from our own workshops, so one team owns the deadline</li><li>Resist listing everything — the problem and a little social proof do the rest</li></ul>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg></span><span class="ckicker">Step 3</span></div>
+    <h3>An interest-based ask</h3>
+    <p class="desc">Check interest before asking for a meeting. A small yes first.</p><ul style="margin:0 0 6px;padding-left:18px;font-size:14px;line-height:1.6;color:var(--secondary)"><li>“This probably came out of nowhere — but open to hearing more when I’m not calling out of the blue?”</li><li>“I’m sure you have someone — but does any of that sound even slightly interesting?”</li><li>“You’re probably all set — but would you be against taking a look?”</li></ul>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="f5">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">05</div>
+    <div class="part-label">Part 05 — Four full examples</div>
+    <h2>The whole first minute, four ways</h2>
+    <p class="lead">Read them out loud. Slow down, sound curious, not chirpy — tone does half the work.</p>
+  </div>
+  <div class="grid2">
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">1</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-phone"/></svg></span><span class="ckicker">Tailored permission · hotel group</span></div>
+    <h3>Example 1</h3>
+    
+    <div class="talk"><div class="ln a"><span class="who">Opener</span><span class="t">Selin, I just read that the group is opening its new Bodrum property next spring.</span></div><div class="ln a"><span class="who">Opener</span><span class="t">I’ll be honest — it’s a cold call, but a well-researched one. Can I have 30 seconds to tell you why I called, then you decide if it’s worth talking?</span></div><div class="ln p"><span class="who">Prospect</span><span class="t">Go on.</span></div><div class="ln i"><span class="who">Problem</span><span class="t">When I talk to hotel project directors, the worst part is usually the last month: 80 rooms of furniture from one supplier, lighting from another, and nobody owning the date.</span></div><div class="ln i"><span class="who">Problem</span><span class="t">We make furniture and lighting in our own workshops, so one team owns the opening date — we did the same for a 60-room hotel in Çeşme last year.</span></div><div class="ln d"><span class="who">Ask</span><span class="t">You may have this covered — but open to hearing more when I’m not calling out of the blue?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">2</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-phone"/></svg></span><span class="ckicker">“Heard the name?” · architecture studio</span></div>
+    <h3>Example 2</h3>
+    
+    <div class="talk"><div class="ln a"><span class="who">Opener</span><span class="t">Hi Kerem — we work with a few other architecture studios in Nişantaşı.</span></div><div class="ln a"><span class="who">Opener</span><span class="t">It’s Deniz from Mozaik Design. Heard the name around?</span></div><div class="ln p"><span class="who">Prospect</span><span class="t">Don’t think so — how can I help?</span></div><div class="ln i"><span class="who">Problem</span><span class="t">Ha, then this is a proper cold call! Most studios we talk to love the design stage and dread the procurement stage — three suppliers, samples that don’t match the render, and the client calling you about the delay.</span></div><div class="ln i"><span class="who">Problem</span><span class="t">We produce custom pieces to your drawings, with samples in a week, so what gets installed is what you drew.</span></div><div class="ln d"><span class="who">Ask</span><span class="t">You probably have your favourite workshops. But open to a look, so you know what’s out there?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">3</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-phone"/></svg></span><span class="ckicker">Tailored permission · restaurant group</span></div>
+    <h3>Example 3</h3>
+    
+    <div class="talk"><div class="ln a"><span class="who">Opener</span><span class="t">Emre, I saw you’re opening a third branch in Moda.</span></div><div class="ln a"><span class="who">Opener</span><span class="t">Full honesty, it’s a cold call — but I did my homework. Can I have 30 seconds, and you can hang up after if it’s not relevant?</span></div><div class="ln p"><span class="who">Prospect</span><span class="t">Fine, go.</span></div><div class="ln i"><span class="who">Problem</span><span class="t">Restaurant owners tell us the dining room always ends up the last thing done — chairs that don’t survive a year of service, and the opening slipping because seating is late.</span></div><div class="ln i"><span class="who">Problem</span><span class="t">We make contract-grade seating and lighting to your brand, delivered to the opening date — like we did for a group with five branches in Istanbul.</span></div><div class="ln d"><span class="who">Ask</span><span class="t">I’m sure you have a supplier. But does that sound even slightly interesting?</span></div></div>
+  </article>
+  <article class="code-c reveal anchor">
+    <div class="card-top"><span class="num">4</span><span class="cicon"><svg viewBox="0 0 24 24"><use href="#ic-phone"/></svg></span><span class="ckicker">“Heard the name?” · office fit-out</span></div>
+    <h3>Example 4</h3>
+    
+    <div class="talk"><div class="ln a"><span class="who">Opener</span><span class="t">Hi Aylin — we furnished a couple of offices in your tower in Maslak.</span></div><div class="ln a"><span class="who">Opener</span><span class="t">It’s Deniz from Mozaik Design. Heard the name around?</span></div><div class="ln p"><span class="who">Prospect</span><span class="t">No, sorry.</span></div><div class="ln i"><span class="who">Problem</span><span class="t">Well, that makes this a cold call! When we talk to facility managers before a move, they’re usually stuck between a desk catalogue that looks like every other office and a designer budget the CFO won’t sign.</span></div><div class="ln i"><span class="who">Problem</span><span class="t">We do custom office furniture and lighting at contract prices, so the new office looks like your brand without blowing the budget.</span></div><div class="ln d"><span class="who">Ask</span><span class="t">You may be well into it. But open to a look, if nothing else so you have a comparison?</span></div></div>
+  </article>
+  </div>
+</section>
+
+<section class="part" id="f6">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">06</div>
+    <div class="part-label">Part 06 — Practice</div>
+    <h2>Practice checklist</h2>
+    <p class="lead">Tap each one when you can do it without reading.</p>
+  </div>
+  <ul class="check reveal">
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>I never open with “how’s your day?” or “bad time?”</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>I have context ready for every call before I dial</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>I say the context before my own name</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>I own the cold call with a straight face — and a smile</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>I ask for 30 seconds and give them control of what happens after</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>My problem has a who, a what, a when and a feeling</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>My solution is one sentence — one differentiator</span></li>
+    <li><span class="bx"><svg viewBox="0 0 24 24"><use href="#ic-check"/></svg></span><span>I ask for interest first, not a meeting</span></li>
+  </ul>
+</section>
+
+<section class="part" id="resources">
+  <div class="part-head reveal anchor">
+    <div class="part-ghost">★</div>
+    <div class="part-label">Resources</div>
+    <h2>The original toolkit</h2>
+    <p class="lead">The full toolkit (in English), with the original talk tracks. The Mozaik openers and examples above are our own adaptation.</p>
+  </div>
+  <div class="dl-row reveal">
+  <a class="dl" href="30MPC-Cold-Call-Openers-and-Pitch-Examples.docx" download>
+    <span class="ic"><svg viewBox="0 0 24 24"><use href="#ic-download"/></svg></span>
+    <span><span class="t">2 Cold Call Openers & 4 Full Pitch Examples</span><span class="d">The original toolkit: banned openers, both context-first openers, the problem proposition and four full examples.</span><span class="ext">DOCX · English · 30 Minutes to President’s Club</span></span>
+  </a>
+  <a class="dl" href="../sdr-objections/index.html">
+    <span class="ic"><svg viewBox="0 0 24 24"><use href="#ic-message"/></svg></span>
+    <span><span class="t">Next: Cold Call Objections</span><span class="d">What to do after the first minute — 18 objections and the three-step method.</span><span class="ext">SDR Toolkit · Objections</span></span>
+  </a>
+  </div>
+</section>
+
+</div>
+
+<section class="cta">
+  <div class="inner">
+    <div class="reveal">
+      <span class="micro" style="color:rgba(255,255,255,0.7)">The one thing to remember</span>
+      <h2 style="margin-top:14px;">Context first. Problem next. Ask small.</h2>
+      <p>Say something that proves you did your homework before you even say your name. Describe a problem they recognise so well that the solution takes one sentence. Then ask if they’re interested — not for an hour of their time.</p>
+    </div>
+    <div class="principles reveal">
+      <div class="p"><div class="n">01 — Opener</div><div class="t">Context, then your name, then permission or “heard the name?”.</div></div>
+      <div class="p"><div class="n">02 — Problem</div><div class="t">Who, what, when, how it felt — then one sentence of solution.</div></div>
+      <div class="p"><div class="n">03 — Ask</div><div class="t">Interest first. The meeting comes after the yes.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="complete" id="completeBox"></div>
+
+<footer class="foot">
+  <div class="inner">
+    <a class="brand" href="../index.html">
+      <div class="chip">M</div>
+      <div class="wm">Mozaik <span>Academy</span></div>
+    </a>
+    <div class="src">Adapted from <b>“Toolkit: 2 Cold Call Openers & 4 Full Pitch Examples”</b> (30 Minutes to President’s Club, Cold Call Course). The openers and the problem proposition are theirs; the Mozaik examples and diagram are original. All rights to the original belong to its authors; shared here for internal Mozaik training only. Styled in the Kraken Design System.</div>
+  </div>
+</footer>
+
+<script src="../shared/course.js" defer></script>
+</body>
+</html>
