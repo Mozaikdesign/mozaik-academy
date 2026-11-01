@@ -121,3 +121,5 @@ a.ccard:hover .cgo::after{ transform:translateX(3px); }
 .ccard .cover.violet{ background:linear-gradient(135deg,#7b5cf0 0%, #4527a0 100%); }
 /* cover gradient: 06 Flow (ocean) */
 .ccard .cover.ocean{ background:linear-gradient(135deg,#1aa6c9 0%, #0b5f86 100%); }
+/* cover gradient: T1 Teamwork (forest) */
+.ccard .cover.forest{ background:linear-gradient(135deg,#3f9a5a 0%, #1c5e36 100%); }
